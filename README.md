@@ -23,9 +23,9 @@
 ---
 
 ## Introduction
-**[Project Name]** is a [genre of the game] developed by **[Team/Organization Name]** during **[timeframe]**.  
-This project was created as part of **[context, e.g., a school project, game jam, or indie initiative]**.  
-The development process included **[key phases, such as preproduction, production, etc.]**.
+**[IceBreakers]** is a [beat'em up party game] developed by **[Team/Organization Name]** during **[five weeks]**.  
+This project was created as part of **[the top down 3D project of second year in the Ecole des Nouvelles Images]**.  
+The development process included **[one week of production, three weeks of production, and a final week of postproduction]**.
 
 ---
 
