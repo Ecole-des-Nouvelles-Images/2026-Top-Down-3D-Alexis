@@ -1,5 +1,5 @@
 
-# [Project Name]
+# [IceBreakers]
 
 [A brief and engaging tagline or description of the game]
 
