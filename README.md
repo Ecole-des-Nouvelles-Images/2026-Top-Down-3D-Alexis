@@ -1,5 +1,5 @@
 
-# [IceBreakers]
+# IceBreakers
 
 [A brief and engaging tagline or description of the game]
 
@@ -23,9 +23,9 @@
 ---
 
 ## Introduction
-**[IceBreakers]** is a [beat'em up party game] developed by **[Team/Organization Name]** during **[five weeks]**.  
-This project was created as part of **[the top down 3D project of second year in the Ecole des Nouvelles Images]**.  
-The development process included **[one week of production, three weeks of production, and a final week of postproduction]**.
+**IceBreakers** is a beat'em up party game developed by **Team/Organization Name** during **five weeks**.  
+This project was created as part of **the top down 3D project of second year in the Ecole des Nouvelles Images**.  
+The development process included **one week of production, three weeks of production, and a final week of postproduction**.
 
 ---
 
