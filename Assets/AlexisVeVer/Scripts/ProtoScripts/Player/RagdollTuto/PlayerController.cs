@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,67 +6,46 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 {
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] private Rigidbody _rb;
-        [SerializeField] private ConfigurableJoint _mainJoint;
+        [SerializeField] private Animator _animator;
         
+        private Rigidbody _rb;
+        private ConfigurableJoint _mainJoint;
+         
         //Inputs
         private Vector2 _moveInput;
-        private bool _jumpPressed;
 
         //ControllerSettings
         [SerializeField] private float _speedModifier;
         [SerializeField] private float _rotationSpeed;
+        [SerializeField] private float _jumpForceModifier;
         [SerializeField]  private float _additionalGravity = 10;
         [SerializeField] private float _maxSpeed;
         
         //States
-        private bool _isGrounded;
-        
-        //Raycasts
-        private RaycastHit[] _raycastHits = new RaycastHit[10];
+        public bool IsGrounded;
 
-        public PlayerController(bool jumpPressed)
-        {
-            _jumpPressed = jumpPressed;
-        }
-
-        // Start is called once before the first execution of Update after the MonoBehaviour is created
-        void Start()
+        void Awake()
         {
             _rb = GetComponent<Rigidbody>();
             _mainJoint = GetComponent<ConfigurableJoint>();
         }
 
+        // Start is called once before the first execution of Update after the MonoBehaviour is created
+        void Start()
+        {
+            
+        }
+
         // Update is called once per frame
         void Update()
         {
-            _rb.linearVelocity = new Vector3(_moveInput.x * _speedModifier, 0, _moveInput.y * _speedModifier) * -1;
+            
         }
 
         void FixedUpdate()
         {
-            //assume we are not grounded
-            _isGrounded = false;
-            
-            //Check if we are grounded
-            int numberOfHits =
-                Physics.SphereCastNonAlloc(_rb.position, 0.1f, transform.up * -1, _raycastHits, 0.5f);
-            
-            //Check if results are acceptable
-            for (int i = 0; i < numberOfHits; i++)
-            {
-                //Ignore self hits
-                if (_raycastHits[i].transform.root == transform)
-                {
-                    continue;
-                }
-                
-                _isGrounded = true;
-
-                break;
-            }
             //extra gravity to make the character less floaty
-            if (!_isGrounded)
+            if (!IsGrounded)
             {
                 _rb.AddForce(Vector3.down * _additionalGravity);
             }
@@ -77,11 +57,12 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             {
                 Quaternion desiredDirection = Quaternion.LookRotation(new Vector3(_moveInput.x, 0, _moveInput.y * - 1), transform.up);
                 
-                //rotate target towards direction
+                // rotate target towards direction
                 _mainJoint.targetRotation = Quaternion.RotateTowards(_mainJoint.targetRotation, desiredDirection, Time.fixedDeltaTime * _rotationSpeed);
             }
-
-
+            
+            // move
+            _rb.linearVelocity = new Vector3(_moveInput.x * _speedModifier, 0, _moveInput.y * _speedModifier) * -1;
         }
         
         private void OnMove(InputValue value)
@@ -91,7 +72,11 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         private void OnJump()
         {
-            _jumpPressed = true;
+            if (IsGrounded)
+            {
+                _rb.AddForce(Vector3.up * _jumpForceModifier, ForceMode.Impulse);
+                IsGrounded = false;
+            }
         }
     }
 }
