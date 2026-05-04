@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PenguinCarry
+  m_Mask: 01000000000000000000000000000000000000000100000001000000010000000100000000000000000000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: NS_Pinguin00_Skeleton
+    m_Weight: 0
+  - m_Path: NS_Pinguin00_Skeleton/Bone
+    m_Weight: 0
+  - m_Path: NS_Pinguin00_Skeleton/Bone/Bone.001
+    m_Weight: 0
+  - m_Path: NS_Pinguin00_Skeleton/Bone/Bone.001/Bone.002
+    m_Weight: 0
+  - m_Path: NS_Pinguin00_Skeleton/Bone/Bone.001/shoulder.l
+    m_Weight: 0
+  - m_Path: NS_Pinguin00_Skeleton/Bone/Bone.001/shoulder.l/upper_arm.l
+    m_Weight: 1
+  - m_Path: NS_Pinguin00_Skeleton/Bone/Bone.001/shoulder.l/upper_arm.l/forearm.l
+    m_Weight: 1
+  - m_Path: NS_Pinguin00_Skeleton/Bone/Bone.001/shoulder.l/upper_arm.l/forearm.l/hand.l
+    m_Weight: 0
+  - m_Path: NS_Pinguin00_Skeleton/Bone/Bone.001/shoulder.r
+    m_Weight: 0
+  - m_Path: NS_Pinguin00_Skeleton/Bone/Bone.001/shoulder.r/upper_arm.r
+    m_Weight: 1
+  - m_Path: NS_Pinguin00_Skeleton/Bone/Bone.001/shoulder.r/upper_arm.r/forearm.r
+    m_Weight: 1
+  - m_Path: NS_Pinguin00_Skeleton/Bone/Bone.001/shoulder.r/upper_arm.r/forearm.r/hand.r
+    m_Weight: 0
+  - m_Path: NS_Pinguin00_Skeleton/Bone/hip.l
+    m_Weight: 0
+  - m_Path: NS_Pinguin00_Skeleton/Bone/hip.l/leg.l
+    m_Weight: 0
+  - m_Path: NS_Pinguin00_Skeleton/Bone/hip.l/leg.l/foot.l
+    m_Weight: 0
+  - m_Path: NS_Pinguin00_Skeleton/Bone/hip.r
+    m_Weight: 0
+  - m_Path: NS_Pinguin00_Skeleton/Bone/hip.r/leg.r
+    m_Weight: 0
+  - m_Path: NS_Pinguin00_Skeleton/Bone/hip.r/leg.r/foot.r
+    m_Weight: 0
+  - m_Path: NS_Pinguin00_Skeleton/Bone.003
+    m_Weight: 0
+  - m_Path: NS_Pinguin00_Skeleton/Bone.003/Bone.004
+    m_Weight: 0
+  - m_Path: NS_Pinguin00_Skeleton/Bone.003/Bone.004/Bone.005
+    m_Weight: 0
+  - m_Path: NS_Pinguin00_Skeleton/elbow.l
+    m_Weight: 0
+  - m_Path: NS_Pinguin00_Skeleton/elbow.r
+    m_Weight: 0
+  - m_Path: NS_Pinguin00_Skeleton/wrist.l
+    m_Weight: 0
+  - m_Path: NS_Pinguin00_Skeleton/wrist.r
+    m_Weight: 0
+  - m_Path: NS_Pinguin_00_low
+    m_Weight: 0
