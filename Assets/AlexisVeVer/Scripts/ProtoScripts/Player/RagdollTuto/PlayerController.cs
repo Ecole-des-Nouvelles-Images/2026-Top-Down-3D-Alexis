@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -21,6 +22,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         [SerializeField] private float _jumpForceModifier;
         [SerializeField] private float _additionalGravity = 10;
         [SerializeField] private float _maxSpeed;
+        [SerializeField] private float _slideForceMultiplier;
         
         //Character parts
         [Header("Character hitboxes"), Space(4)]
@@ -38,7 +40,12 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             _rb = GetComponent<Rigidbody>();
             _mainJoint = GetComponent<ConfigurableJoint>();
         }
-        
+
+        private void Start()
+        {
+            _rb.linearDamping = _speedModifier / _maxSpeed;
+        }
+
         void Update()
         {
             //extra gravity to make the character less floaty
@@ -59,7 +66,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             }
             
             // move
-            _rb.linearVelocity = new Vector3(_moveInput.x * _speedModifier, 0, _moveInput.y * _speedModifier) * -1; 
+            _rb.AddForce(new Vector3(_moveInput.x * _speedModifier, 0, _moveInput.y * _speedModifier) * -1); 
         }
         
         private void OnMove(InputValue value)
@@ -100,6 +107,11 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         {
             _grabHitboxLeftHand.enabled = false;
             _grabHitboxRightHand.enabled = false;
+        }
+
+        private void OnSlide()
+        {
+            _rb.AddForce(new Vector3(_rb.linearVelocity.x * _slideForceMultiplier, 0, _rb.linearVelocity.z * _slideForceMultiplier), ForceMode.VelocityChange);
         }
     }
 }
