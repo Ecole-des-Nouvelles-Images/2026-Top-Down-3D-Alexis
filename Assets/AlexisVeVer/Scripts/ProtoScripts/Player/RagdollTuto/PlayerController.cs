@@ -26,10 +26,11 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         
         //Character parts
         [Header("Character hitboxes"), Space(4)]
-        [SerializeField] private SphereCollider _grabHitboxLeftHand;
-        [SerializeField] private SphereCollider _grabHitboxRightHand;
         [SerializeField] private GameObject _attackHitboxLeftHand;
         [SerializeField] private GameObject _attackHitboxRightHand;
+
+        public bool LeftHandGrab;
+        public bool RightHandGrab;
         
         //States
         public bool IsGrounded;
@@ -85,12 +86,12 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         private void OnLeftHandGrab()
         {
-            _grabHitboxLeftHand.enabled = true;
+            LeftHandGrab = true;
         }
 
         private void OnRightHandGrab()
         {
-            _grabHitboxRightHand.enabled = true;
+            RightHandGrab = true;
         }
 
         private void OnLeftHandAttack()
@@ -105,8 +106,8 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         
         private void OnShoulderReleased()
         {
-            _grabHitboxLeftHand.enabled = false;
-            _grabHitboxRightHand.enabled = false;
+            LeftHandGrab = false;
+            RightHandGrab = false;
         }
 
         private void OnSlide()
