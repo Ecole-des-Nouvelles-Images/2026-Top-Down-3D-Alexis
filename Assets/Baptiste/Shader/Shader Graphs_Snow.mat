@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_New Shader Graph 1
-  m_Shader: {fileID: -6465566751694194690, guid: 28503550f7c69e54fb13e59604573379, type: 3}
+  m_Name: Shader Graphs_Snow
+  m_Shader: {fileID: -6465566751694194690, guid: 638b2eb5384dd9b428aeeaca216228ae, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -24,8 +24,28 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _IceTexture:
-        m_Texture: {fileID: 2800000, guid: 4a483bf611910df4d979e4d866f3ab06, type: 3}
+    - _SampleTexture2D_1ea3ed4ba56042859086fd09659384d9_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 54e86318ab082584c9dedda62882f0b8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_4765174bb0034c5da0542fe05d553e19_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: e2dbfc7ff13ceb046a7da36ab41aa4ee, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_47fb96eddf014b32ae0c7a55b8623281_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: f816a19d0c7c454478cd2bf8d387b628, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_8c701bf307704a679108c7fb3a6d7017_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: af625e4fcfb1a824aa4b5b221cbab8c2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_a3676c2e38994e30866ed43c08c46f69_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 938aaea67ca2e1943905dfffc7b49161, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_ba9b021e04704195bdc35ed1a0dad572_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: dd57b625fa738d9409bd678a9c5d4b26, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -42,20 +62,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FresnelPower: 0.16
-    - _Metallic: 0.134
-    - _Normal: 0.33
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _RefractionAmount: -0.09
-    - _Smoothness: 0.662
-    m_Colors:
-    - _Color: {r: 0.31399074, g: 0.6361538, b: 1.0566038, a: 1}
-    - _FresnelColor: {r: 0.16976683, g: 0.23741458, b: 0.3301887, a: 1}
-    - _IceTilling: {r: 4.29, g: 3, b: 0, a: 0}
+    m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &3758368867014878385
+--- !u!114 &3936625443715804908
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
