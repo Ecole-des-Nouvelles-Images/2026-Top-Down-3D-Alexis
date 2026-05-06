@@ -549,6 +549,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2744724912901722342, guid: dda53d207f643ec48bf8dc3ef4bc6521, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3215084845884273598, guid: dda53d207f643ec48bf8dc3ef4bc6521, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -691,6 +695,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8908660927176846528, guid: dda53d207f643ec48bf8dc3ef4bc6521, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1141609521}
+    - targetCorrespondingSourceObject: {fileID: 5709003703456869120, guid: dda53d207f643ec48bf8dc3ef4bc6521, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2137688927}
+    - targetCorrespondingSourceObject: {fileID: 5709003703456869120, guid: dda53d207f643ec48bf8dc3ef4bc6521, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2137688926}
   m_SourcePrefab: {fileID: 100100000, guid: dda53d207f643ec48bf8dc3ef4bc6521, type: 3}
 --- !u!135 &540885142 stripped
 SphereCollider:
@@ -931,6 +941,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &752513669 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5709003703456869120, guid: dda53d207f643ec48bf8dc3ef4bc6521, type: 3}
+  m_PrefabInstance: {fileID: 472786751}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &826032169
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1112,11 +1127,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.HandGrabsThing
   _playerController: {fileID: 876878932}
   _springForce: 100
-  _damperForce: 100
-  _breakForce: 1000
+  _damperForce: 10
+  _breakForce: 150
   _breakTorque: 200
   _isLeftHand: 1
   _rigidbody: {fileID: 1141609517}
+  _isGrabbing: 0
 --- !u!135 &1141609522
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1415,6 +1431,47 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 1209549556167227730, guid: dda53d207f643ec48bf8dc3ef4bc6521, type: 3}
   m_PrefabInstance: {fileID: 472786751}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2137688926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752513669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d50a42c631f7794eb89aa6b7d3552a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.HandGrabsThing
+  _playerController: {fileID: 876878932}
+  _springForce: 100
+  _damperForce: 100
+  _breakForce: 200
+  _breakTorque: 200
+  _isLeftHand: 0
+  _rigidbody: {fileID: 2137688922}
+  _isGrabbing: 0
+--- !u!135 &2137688927
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752513669}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.01
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

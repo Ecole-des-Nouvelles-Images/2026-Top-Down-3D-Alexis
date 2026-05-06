@@ -8,19 +8,19 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
     public class HandGrabsThing : MonoBehaviour
     {
         [SerializeField] private PlayerController _playerController;
-        
+
         [SerializeField] private float _springForce = 100;
         [SerializeField] private float _damperForce = 100;
         [SerializeField] private float _breakForce = 200;
         [SerializeField] private float _breakTorque = 200;
         [SerializeField] private bool _isLeftHand;
         [SerializeField] private Rigidbody _rigidbody;
-        
-        private Collider _otherCollider;
+
+        [SerializeField] private Collider _otherCollider;
         private SpringJoint _joint;
 
         private bool IsGrabbing => _joint != null;
-        
+
         private int _layerNumber;
 
         void Awake()
@@ -29,46 +29,49 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         }
 
         private void Update()
-        { 
+        {
             // grab left hand
-            if (_isLeftHand && _playerController.LeftHandGrab && !IsGrabbing && _otherCollider != null)
+            if (_isLeftHand && _playerController.LeftHandGrab && _otherCollider != null)
             {
                 _joint = gameObject.AddComponent<SpringJoint>();
                 _joint.connectedBody = _otherCollider.GetComponentInParent<Rigidbody>();
                 _joint.spring = _springForce;
                 _joint.breakForce = _breakForce;
                 _joint.breakTorque = _breakTorque;
+                _playerController.LeftHandGrab = false;
             }
 
-            if (_isLeftHand && !_playerController.LeftHandGrab && IsGrabbing)
+            if (_isLeftHand && !_playerController.LeftHandGrab && _playerController.LeftHandReleaseGrab)
             {
                 Destroy(_joint);
+                _playerController.LeftHandReleaseGrab = false;
             }
-            
             // grab right hand
-            if (!_isLeftHand && _playerController.LeftHandGrab && !IsGrabbing)
+            if (!_isLeftHand && !_playerController.LeftHandGrab && _otherCollider != null)
             {
                 _joint = gameObject.AddComponent<SpringJoint>();
                 _joint.connectedBody = _otherCollider.GetComponent<Rigidbody>();
                 _joint.spring = _springForce;
                 _joint.breakForce = _breakForce;
                 _joint.breakTorque = _breakTorque;
+                _playerController.RightHandGrab = false;
             }
 
-            if (!_isLeftHand && !_playerController.LeftHandGrab && IsGrabbing)
+            if (!_isLeftHand && !_playerController.RightHandGrab && _playerController.RightHandReleaseGrab)
             {
                 Destroy(_joint);
+                _playerController.RightHandReleaseGrab = false;
             }
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.CompareTag("Ground")) return;
+            if (other.gameObject.layer == 4) return;
             if (other.gameObject == gameObject) return;
             if (other.GetComponent<Rigidbody>() == null) return;
             if (other.GetComponent<HandGrabsThing>() == this) return;
             if (other.gameObject.layer == _layerNumber) return;
-            
+
             _otherCollider = other;
         }
 
@@ -78,10 +81,9 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             if (other.GetComponent<Rigidbody>() == null) return;
             if (other.GetComponent<HandGrabsThing>() == this) return;
             if (_otherCollider != other) return;
-            
-            _otherCollider =  null;
-        }
 
+            _otherCollider =  null;
+        } 
         private void OnDrawGizmos()
         {
             if (!IsGrabbing) return;

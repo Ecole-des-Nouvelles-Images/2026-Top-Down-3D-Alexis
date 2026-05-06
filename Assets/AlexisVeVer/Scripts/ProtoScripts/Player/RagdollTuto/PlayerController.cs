@@ -31,6 +31,8 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         public bool LeftHandGrab;
         public bool RightHandGrab;
+        public bool LeftHandReleaseGrab;
+        public bool RightHandReleaseGrab;
         
         //States
         public bool IsGrounded;
@@ -93,6 +95,16 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         {
             RightHandGrab = true;
         }
+        
+        private void OnLeftHandReleaseGrab()
+        {
+            LeftHandReleaseGrab = true;
+        }
+
+        private void OnRightHandReleaseGrab()
+        {
+            RightHandReleaseGrab = true;
+        }
 
         private void OnLeftHandAttack()
         {
@@ -104,12 +116,6 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             _attackHitboxRightHand.SetActive(true);
         }
         
-        private void OnShoulderReleased()
-        {
-            LeftHandGrab = false;
-            RightHandGrab = false;
-        }
-
         private void OnSlide()
         {
             _rb.AddForce(new Vector3(_rb.linearVelocity.x * _slideForceMultiplier, 0, _rb.linearVelocity.z * _slideForceMultiplier), ForceMode.VelocityChange);
