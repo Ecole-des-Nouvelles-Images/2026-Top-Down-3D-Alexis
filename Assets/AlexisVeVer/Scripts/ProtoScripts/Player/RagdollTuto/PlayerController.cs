@@ -15,14 +15,8 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         //Inputs
         private Vector2 _moveInput;
 
-        //ControllerSettings
-        [Header("Movements parameters"), Space(4)]
-        [SerializeField] private float _speedModifier;
-        [SerializeField] private float _rotationSpeed;
-        [SerializeField] private float _jumpForceModifier;
-        [SerializeField] private float _additionalGravity = 10;
-        [SerializeField] private float _maxSpeed;
-        [SerializeField] private float _slideForceMultiplier;
+        //ScriptableObject Reference
+        [SerializeField] private PlayerStats _playerStats;
         
         //Character parts
         [Header("Character hitboxes"), Space(4)]
@@ -46,7 +40,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         private void Start()
         {
-            _rb.linearDamping = _speedModifier / _maxSpeed;
+            _rb.linearDamping = _playerStats.SpeedModifier / _playerStats.MaxSpeed;
         }
 
         void Update()
@@ -54,7 +48,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             //extra gravity to make the character less floaty
             if (!IsGrounded)
             {
-                _rb.AddForce(Vector3.down * _additionalGravity);
+                _rb.AddForce(Vector3.down * _playerStats.AdditionalGravity);
             }
             
             // look towards the direction we want to move
@@ -65,11 +59,11 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
                 Quaternion desiredDirection = Quaternion.LookRotation(new Vector3(_moveInput.x, 0, _moveInput.y * - 1), transform.up);
                 
                 // rotate target towards direction
-                _mainJoint.targetRotation = Quaternion.RotateTowards(_mainJoint.targetRotation, desiredDirection, Time.fixedDeltaTime * _rotationSpeed);
+                _mainJoint.targetRotation = Quaternion.RotateTowards(_mainJoint.targetRotation, desiredDirection, Time.fixedDeltaTime * _playerStats.RotationSpeed);
             }
             
             // move
-            _rb.AddForce(new Vector3(_moveInput.x * _speedModifier, 0, _moveInput.y * _speedModifier) * -1); 
+            _rb.AddForce(new Vector3(_moveInput.x * _playerStats.SpeedModifier, 0, _moveInput.y * _playerStats.SpeedModifier) * -1); 
         }
         
         private void OnMove(InputValue value)
@@ -81,7 +75,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         {
             if (IsGrounded)
             {
-                _rb.AddForce(Vector3.up * _jumpForceModifier, ForceMode.Impulse);
+                _rb.AddForce(Vector3.up * _playerStats.JumpForceModifier, ForceMode.Impulse);
                 IsGrounded = false;
             }
         }
@@ -118,7 +112,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         
         private void OnSlide()
         {
-            _rb.AddForce(new Vector3(_rb.linearVelocity.x * _slideForceMultiplier, 0, _rb.linearVelocity.z * _slideForceMultiplier), ForceMode.VelocityChange);
+            _rb.AddForce(new Vector3(_rb.linearVelocity.x * _playerStats.SlideForceMultiplier, 0, _rb.linearVelocity.z * _playerStats.SlideForceMultiplier), ForceMode.VelocityChange);
         }
     }
 }
