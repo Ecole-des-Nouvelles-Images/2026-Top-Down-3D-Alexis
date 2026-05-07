@@ -14,9 +14,10 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         [SerializeField] private float _breakForce = 200;
         [SerializeField] private float _breakTorque = 200;
         [SerializeField] private bool _isLeftHand;
-        [SerializeField] private Rigidbody _rigidbody;
 
         [SerializeField] private Collider _otherCollider;
+        
+        private Rigidbody _rigidbody;
         private SpringJoint _joint;
 
         private bool IsGrabbing => _joint != null;
@@ -25,6 +26,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         void Awake()
         {
+            _rigidbody = GetComponent<Rigidbody>();
             _layerNumber = gameObject.layer;
         }
 
@@ -47,7 +49,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
                 _playerController.LeftHandReleaseGrab = false;
             }
             // grab right hand
-            if (!_isLeftHand && !_playerController.LeftHandGrab && _otherCollider != null)
+            if (!_isLeftHand && _playerController.RightHandGrab && _otherCollider != null)
             {
                 _joint = gameObject.AddComponent<SpringJoint>();
                 _joint.connectedBody = _otherCollider.GetComponent<Rigidbody>();
