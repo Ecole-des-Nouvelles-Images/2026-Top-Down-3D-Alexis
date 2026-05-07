@@ -48,7 +48,7 @@
                     "id": "b5230b3d-0378-4a44-acbe-214700b25153",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "Press",
+                    "interactions": "",
                     "initialStateCheck": false
                 },
                 {
@@ -57,7 +57,7 @@
                     "id": "8a09a039-cefa-42d3-9f93-1ee77b129231",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "Press",
+                    "interactions": "",
                     "initialStateCheck": false
                 },
                 {
@@ -66,7 +66,16 @@
                     "id": "e18223e6-d2db-42be-af9d-3889a0919a53",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "Hold",
+                    "interactions": "Press",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "LeftHandReleaseGrab",
+                    "type": "Button",
+                    "id": "1d21580f-ec38-4959-ab93-e1816544e91b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press(behavior=1)",
                     "initialStateCheck": false
                 },
                 {
@@ -75,16 +84,25 @@
                     "id": "3e6081dd-5e24-4501-b197-17487bda0668",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "Hold",
+                    "interactions": "Press",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ShoulderReleased",
+                    "name": "RightHandReleaseGrab",
                     "type": "Button",
-                    "id": "65769eed-7b56-4ac1-9c8d-2114e13ec0e3",
+                    "id": "fbefba4a-34d9-4094-81b0-05007c354e5e",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "Press(behavior=1)",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Slide",
+                    "type": "Button",
+                    "id": "0af354bf-3419-4a2f-ba67-d780df8d5e86",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
                     "initialStateCheck": false
                 }
             ],
@@ -421,45 +439,67 @@
                 },
                 {
                     "name": "",
-                    "id": "eef3181a-14ba-41fc-8b85-f452499a1cde",
-                    "path": "<Gamepad>/rightShoulder",
-                    "interactions": "Press(behavior=1)",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ShoulderReleased",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8509b762-a283-4412-80cf-2202273c4933",
-                    "path": "<Gamepad>/leftShoulder",
-                    "interactions": "Press(behavior=1)",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ShoulderReleased",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "0d447b2a-d1fb-4660-b3b7-6de7fb8eb59e",
-                    "path": "<Mouse>/leftButton",
+                    "id": "2d255df3-4a22-487f-8928-221cb474119b",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ShoulderReleased",
+                    "action": "Slide",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "6d42c410-d858-4087-88c4-bb15a53f88ea",
+                    "id": "2a222f00-51cd-4d19-806e-6a5ced1c013d",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Slide",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "902f7f95-a206-4687-9151-90dd39da038c",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "ShoulderReleased",
+                    "action": "RightHandReleaseGrab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "edd69344-0fa1-4537-98e1-728ecde34bf2",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightHandReleaseGrab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "48cfdd24-2760-44a7-bd3f-17cee9d59105",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftHandReleaseGrab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "64f4a684-0437-4964-b3e8-e77234fbadba",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LeftHandReleaseGrab",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
