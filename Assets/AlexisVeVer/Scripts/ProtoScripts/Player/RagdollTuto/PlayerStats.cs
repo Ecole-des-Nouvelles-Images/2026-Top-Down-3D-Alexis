@@ -27,5 +27,10 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         public float AdditionalGravity = 10;
         public float MaxSpeed;
         public float SlideForceMultiplier;
+
+        [Header("Slide parameters"), Space(4)] 
+        public bool CanSlide;
+        public float TimeFromSlide;
+        public float SlideCd;
     }
 }

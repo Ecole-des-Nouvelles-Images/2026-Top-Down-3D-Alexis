@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
