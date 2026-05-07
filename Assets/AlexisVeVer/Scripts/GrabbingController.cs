@@ -1,79 +1,68 @@
 using System;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
-namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
+namespace AlexisVeVer.Scripts
 {
-    public class HandGrabsThing : MonoBehaviour
+    public class GrabbingController : MonoBehaviour
     {
-        [SerializeField] private PlayerController _playerController;
-
+        [SerializeField] private float _flyForce = 10;
+        [SerializeField] private float _moveSpeed = 10;
         [SerializeField] private float _springForce = 100;
         [SerializeField] private float _damperForce = 100;
         [SerializeField] private float _breakForce = 200;
         [SerializeField] private float _breakTorque = 200;
-        [SerializeField] private bool _isLeftHand;
-
-        [SerializeField] private Collider _otherCollider;
+        [SerializeField] private bool _jumpActive;
+        [SerializeField] private bool _moveActive;
+        [SerializeField] private bool _invertMove;
         
+        private Collider _otherCollider;
         private Rigidbody _rigidbody;
         private SpringJoint _joint;
 
         private bool IsGrabbing => _joint != null;
-
-        private int _layerNumber;
-
-        void Awake()
+        private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
-            _layerNumber = gameObject.layer;
         }
 
         private void Update()
         {
-            // grab left hand
-            if (_isLeftHand && _playerController.LeftHandGrab && _otherCollider != null)
+            // movement
+            if (_moveActive)
             {
-                _joint = gameObject.AddComponent<SpringJoint>();
-                _joint.connectedBody = _otherCollider.GetComponentInParent<Rigidbody>();
-                _joint.spring = _springForce;
-                _joint.breakForce = _breakForce;
-                _joint.breakTorque = _breakTorque;
-                _playerController.LeftHandGrab = false;
+                Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")) * (_moveSpeed * Time.deltaTime);
+                if (_invertMove) move *= -1;
+                transform.Translate(move, Space.World);
             }
-
-            if (_isLeftHand && !_playerController.LeftHandGrab && _playerController.LeftHandReleaseGrab)
+            
+            // jump
+            if (Input.GetButtonDown("Jump") && _jumpActive)
             {
-                Destroy(_joint);
-                _playerController.LeftHandReleaseGrab = false;
+                _rigidbody.AddForce(Vector3.up * _flyForce, ForceMode.Impulse);
             }
-            // grab right hand
-            if (!_isLeftHand && _playerController.RightHandGrab && _otherCollider != null)
+            
+            // grab
+            if (Input.GetKeyDown(KeyCode.E) && _otherCollider && !IsGrabbing)
             {
                 _joint = gameObject.AddComponent<SpringJoint>();
                 _joint.connectedBody = _otherCollider.GetComponent<Rigidbody>();
                 _joint.spring = _springForce;
                 _joint.breakForce = _breakForce;
                 _joint.breakTorque = _breakTorque;
-                _playerController.RightHandGrab = false;
             }
 
-            if (!_isLeftHand && !_playerController.RightHandGrab && _playerController.RightHandReleaseGrab)
+            if (Input.GetKeyUp(KeyCode.E) && _otherCollider && IsGrabbing)
             {
                 Destroy(_joint);
-                _playerController.RightHandReleaseGrab = false;
             }
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.layer == 4) return;
             if (other.gameObject == gameObject) return;
             if (other.GetComponent<Rigidbody>() == null) return;
-            if (other.GetComponent<HandGrabsThing>() == this) return;
-            if (other.gameObject.layer == _layerNumber) return;
-
+            if (other.GetComponent<GrabbingController>() == this) return;
+            
             _otherCollider = other;
         }
 
@@ -81,11 +70,13 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         {
             if (other.gameObject == gameObject) return;
             if (other.GetComponent<Rigidbody>() == null) return;
-            if (other.GetComponent<HandGrabsThing>() == this) return;
+            if (other.GetComponent<GrabbingController>() == this) return;
             if (_otherCollider != other) return;
-
+            
             _otherCollider =  null;
-        } 
+            Destroy(_joint);
+        }
+
         private void OnDrawGizmos()
         {
             if (!IsGrabbing) return;
