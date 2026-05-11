@@ -12,6 +12,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
             {
                 _playerController.IsGrounded = true;
+                _playerController.gameObject.transform.SetParent(other.gameObject.transform);
             }
         }
 

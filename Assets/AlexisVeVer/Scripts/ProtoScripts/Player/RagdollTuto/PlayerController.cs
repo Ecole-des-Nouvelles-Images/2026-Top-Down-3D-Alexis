@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -36,6 +34,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             _animator = GetComponent<Animator>();
             _rb = GetComponent<Rigidbody>();
             _mainJoint = GetComponent<ConfigurableJoint>();
+            _playerStats.CanSlide = true;
         }
 
         private void Start()
@@ -64,6 +63,17 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             
             // move
             _rb.AddForce(new Vector3(_moveInput.x * _playerStats.SpeedModifier, 0, _moveInput.y * _playerStats.SpeedModifier) * -1); 
+            
+            // slide cooldown
+            if (!_playerStats.CanSlide)
+            {
+                _playerStats.TimeFromSlide += Time.deltaTime;
+                if (_playerStats.TimeFromSlide >= _playerStats.SlideCd)
+                {
+                    _playerStats.CanSlide = true;
+                    _playerStats.TimeFromSlide = 0;
+                }
+            }
         }
         
         private void OnMove(InputValue value)
@@ -112,7 +122,12 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         
         private void OnSlide()
         {
-            _rb.AddForce(new Vector3(_rb.linearVelocity.x * _playerStats.SlideForceMultiplier, 0, _rb.linearVelocity.z * _playerStats.SlideForceMultiplier), ForceMode.VelocityChange);
+            if (_playerStats.CanSlide)
+            {
+                _rb.AddForce(new Vector3(_rb.linearVelocity.x * _playerStats.SlideForceMultiplier, 0, _rb.linearVelocity.z * _playerStats.SlideForceMultiplier),
+                    ForceMode.VelocityChange);
+                _playerStats.CanSlide = false;
+            }
         }
     }
 }

@@ -50,7 +50,7 @@ Material:
     - _RefractionAmount: -0.09
     - _Smoothness: 0.662
     m_Colors:
-    - _Color: {r: 0.31399074, g: 0.6361538, b: 1.0566038, a: 1}
+    - _Color: {r: 0.50087076, g: 0.7032046, b: 1.344109, a: 1}
     - _FresnelColor: {r: 0.16976683, g: 0.23741458, b: 0.3301887, a: 1}
     - _IceTilling: {r: 4.29, g: 3, b: 0, a: 0}
   m_BuildTextureStacks: []
