@@ -1,3 +1,4 @@
+using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items;
 using UnityEngine;
 
 namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
@@ -32,5 +33,8 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         public bool CanSlide;
         public float TimeFromSlide;
         public float SlideCd;
+
+        [Header("Items parameters"), Space(4)] 
+        public bool ItemPickedUp;
     }
 }

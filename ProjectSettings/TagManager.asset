@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Bazooka
+  - Katana
+  - LandMine
+  - Fan
+  - Hammer
   layers:
   - Default
   - TransparentFX
