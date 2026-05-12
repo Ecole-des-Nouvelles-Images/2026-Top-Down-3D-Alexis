@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6853c9afb03c8242a559dfe19249a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackDamage
+  _playerStats: {fileID: 0}
 --- !u!1 &1461144572126099582
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,8 +561,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7d4c7023412ea4dbad20c335845290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.PlayerController
-  _playerStats: {fileID: 0}
+  PlayerStats: {fileID: 0}
   _attackHitboxLeftHand: {fileID: 7924188966785012204}
+  _handSocket: {fileID: 8203804911086243919}
   _attackHitboxRightHand: {fileID: 946141764635847396}
   LeftHandGrab: 0
   RightHandGrab: 0
@@ -650,6 +652,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6853c9afb03c8242a559dfe19249a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackDamage
+  _playerStats: {fileID: 0}
+--- !u!1 &8203804911086243919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8269715071157552535}
+  m_Layer: 0
+  m_Name: HandSocket
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8269715071157552535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8203804911086243919}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3448901219764223794}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6694435058593838544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -808,6 +842,9 @@ PrefabInstance:
       addedObject: {fileID: 5184839816188075740}
     - targetCorrespondingSourceObject: {fileID: 8303402228788300514, guid: 5ccecffc78f54f44c88e4fe83fe2e369, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 8269715071157552535}
+    - targetCorrespondingSourceObject: {fileID: 8303402228788300514, guid: 5ccecffc78f54f44c88e4fe83fe2e369, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 5329638981597255172}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4117295995840858356, guid: 5ccecffc78f54f44c88e4fe83fe2e369, type: 3}
@@ -864,6 +901,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -7792039166672920880, guid: 5ccecffc78f54f44c88e4fe83fe2e369, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4786289697361117941}
+    - targetCorrespondingSourceObject: {fileID: -2946097152170228155, guid: 5ccecffc78f54f44c88e4fe83fe2e369, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6063111176047415774}
     - targetCorrespondingSourceObject: {fileID: 1060174288075876885, guid: 5ccecffc78f54f44c88e4fe83fe2e369, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8674425802089484368}
@@ -1045,6 +1085,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6127031673915385213, guid: 5ccecffc78f54f44c88e4fe83fe2e369, type: 3}
   m_PrefabInstance: {fileID: 6694435058593838544}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &863060588621902741 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2946097152170228155, guid: 5ccecffc78f54f44c88e4fe83fe2e369, type: 3}
+  m_PrefabInstance: {fileID: 6694435058593838544}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6063111176047415774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863060588621902741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b87102d610860784e9c0a962e9c4d8f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HandAttach
 --- !u!1 &3215084845884273598 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8104561323687560814, guid: 5ccecffc78f54f44c88e4fe83fe2e369, type: 3}

@@ -1,3 +1,4 @@
+using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,77 +6,89 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 {
     public class PlayerController : MonoBehaviour
     {
-        //Components
-        private Animator _animator;
-        private Rigidbody _rb;
-        private ConfigurableJoint _mainJoint;
-         
-        //Inputs
-        private Vector2 _moveInput;
-
         //ScriptableObject Reference
-        [SerializeField] private PlayerStats _playerStats;
-        
+        public PlayerStats PlayerStats;
+
         //Character parts
-        [Header("Character hitboxes"), Space(4)]
-        [SerializeField] private GameObject _attackHitboxLeftHand;
+        [Header("Character hitboxes")] [Space(4)] [SerializeField]
+        private GameObject _attackHitboxLeftHand;
+
+        [SerializeField] private GameObject _handSocket;
         [SerializeField] private GameObject _attackHitboxRightHand;
 
         public bool LeftHandGrab;
         public bool RightHandGrab;
         public bool LeftHandReleaseGrab;
         public bool RightHandReleaseGrab;
-        
+
         //States
         public bool IsGrounded;
 
-        void Awake()
+        //Components
+        private Animator _animator;
+
+        private Weapon _currentWeapon;
+        private ConfigurableJoint _mainJoint;
+
+        //Inputs
+        private Vector2 _moveInput;
+        private Rigidbody _rb;
+        
+        public bool WeaponEquipped => _currentWeapon != null;
+
+        private void Awake()
         {
             _animator = GetComponent<Animator>();
             _rb = GetComponent<Rigidbody>();
             _mainJoint = GetComponent<ConfigurableJoint>();
-            _playerStats.CanSlide = true;
+
+            //SO reset
+            PlayerStats.CanSlide = true;
+            PlayerStats.TimeFromSlide = 0;
+            PlayerStats.ItemPickedUp = false;
         }
 
         private void Start()
         {
-            _rb.linearDamping = _playerStats.SpeedModifier / _playerStats.MaxSpeed;
+            _rb.linearDamping = PlayerStats.SpeedModifier / PlayerStats.MaxSpeed;
         }
 
-        void Update()
+        private void Update()
         {
             //extra gravity to make the character less floaty
-            if (!IsGrounded)
-            {
-                _rb.AddForce(Vector3.down * _playerStats.AdditionalGravity);
-            }
-            
+            if (!IsGrounded) _rb.AddForce(Vector3.down * PlayerStats.AdditionalGravity);
+
             // look towards the direction we want to move
-            float inputMagnitude = _moveInput.magnitude;
+            var inputMagnitude = _moveInput.magnitude;
 
             if (inputMagnitude != 0)
             {
-                Quaternion desiredDirection = Quaternion.LookRotation(new Vector3(_moveInput.x, 0, _moveInput.y * - 1), transform.up);
-                
+                var desiredDirection =
+                    Quaternion.LookRotation(new Vector3(_moveInput.x, 0, _moveInput.y * -1), transform.up);
+
                 // rotate target towards direction
-                _mainJoint.targetRotation = Quaternion.RotateTowards(_mainJoint.targetRotation, desiredDirection, Time.fixedDeltaTime * _playerStats.RotationSpeed);
+                _mainJoint.targetRotation = Quaternion.RotateTowards(_mainJoint.targetRotation, desiredDirection,
+                    Time.fixedDeltaTime * PlayerStats.RotationSpeed);
             }
-            
+
             // move
-            _rb.AddForce(new Vector3(_moveInput.x * _playerStats.SpeedModifier, 0, _moveInput.y * _playerStats.SpeedModifier) * -1); 
-            
+            _rb.AddForce(new Vector3(_moveInput.x * PlayerStats.SpeedModifier, 0,
+                _moveInput.y * PlayerStats.SpeedModifier) * -1);
+
             // slide cooldown
-            if (!_playerStats.CanSlide)
+            if (!PlayerStats.CanSlide)
             {
-                _playerStats.TimeFromSlide += Time.deltaTime;
-                if (_playerStats.TimeFromSlide >= _playerStats.SlideCd)
+                PlayerStats.TimeFromSlide += Time.deltaTime;
+                if (PlayerStats.TimeFromSlide >= PlayerStats.SlideCd)
                 {
-                    _playerStats.CanSlide = true;
-                    _playerStats.TimeFromSlide = 0;
+                    PlayerStats.CanSlide = true;
+                    PlayerStats.TimeFromSlide = 0;
                 }
             }
+            
+            _currentWeapon?.AutoUse(this);
         }
-        
+
         private void OnMove(InputValue value)
         {
             _moveInput = value.Get<Vector2>();
@@ -85,21 +98,21 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         {
             if (IsGrounded)
             {
-                _rb.AddForce(Vector3.up * _playerStats.JumpForceModifier, ForceMode.Impulse);
+                _rb.AddForce(Vector3.up * PlayerStats.JumpForceModifier, ForceMode.Impulse);
                 IsGrounded = false;
             }
         }
 
         private void OnLeftHandGrab()
         {
-            LeftHandGrab = true;
+            if (!WeaponEquipped) LeftHandGrab = true;
         }
 
         private void OnRightHandGrab()
         {
-            RightHandGrab = true;
+            if (!WeaponEquipped) RightHandGrab = true;
         }
-        
+
         private void OnLeftHandReleaseGrab()
         {
             LeftHandReleaseGrab = true;
@@ -112,22 +125,48 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         private void OnLeftHandAttack()
         {
-            _attackHitboxLeftHand.SetActive(true);
+            if (WeaponEquipped)
+            {
+                _currentWeapon.Use(this);
+            }
+            else
+            {
+                _attackHitboxLeftHand.SetActive(true);
+            }
         }
 
         private void OnRightHandAttack()
         {
-            _attackHitboxRightHand.SetActive(true);
+            if (WeaponEquipped)
+            {
+                _currentWeapon.Use(this);
+            }
+            else
+            {
+                _attackHitboxRightHand.SetActive(true);
+            }
         }
-        
+
         private void OnSlide()
         {
-            if (_playerStats.CanSlide)
+            if (PlayerStats.CanSlide)
             {
-                _rb.AddForce(new Vector3(_rb.linearVelocity.x * _playerStats.SlideForceMultiplier, 0, _rb.linearVelocity.z * _playerStats.SlideForceMultiplier),
+                _rb.AddForce(
+                    new Vector3(_rb.linearVelocity.x * PlayerStats.SlideForceMultiplier, 0,
+                        _rb.linearVelocity.z * PlayerStats.SlideForceMultiplier),
                     ForceMode.VelocityChange);
-                _playerStats.CanSlide = false;
+                PlayerStats.CanSlide = false;
             }
+        }
+
+        public void Equip(Weapon weapon)
+        {
+            _currentWeapon = weapon;
+            _currentWeapon.Equip(this);
+            weapon.GetComponent<ItemPickUp>().enabled = false;
+            weapon.transform.parent = _handSocket.transform;
+            weapon.transform.localPosition = Vector3.zero;
+            weapon.transform.localRotation = Quaternion.Euler(Vector3.zero);
         }
     }
 }
