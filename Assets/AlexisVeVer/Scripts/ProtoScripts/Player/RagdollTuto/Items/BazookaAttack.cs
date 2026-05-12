@@ -7,11 +7,25 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
 {
     public class BazookaAttack : Weapon
     {
-        public override void Equip(PlayerController playerController) { }
+        [SerializeField] private GameObject _rocketPrefab;
+        [SerializeField] private GameObject _prePlacedRocket;
+        [SerializeField] private float _rocketLaunchingForce;
+
+        private PlayerController _playerController;
+        private Rigidbody _rocketRb;
+
+        public override void Equip(PlayerController playerController)
+        {
+            _playerController = playerController;
+        }
 
         public override void Use(PlayerController playerController)
         {
-            Debug.Log("FireRocket");
+            GameObject rocket = Instantiate(_rocketPrefab, _prePlacedRocket.transform.position, _prePlacedRocket.transform.rotation);
+            Destroy(_prePlacedRocket);
+            _rocketRb = rocket.GetComponent<Rigidbody>();
+            _rocketRb.AddForce(new Vector3(-_playerController.MoveInput.x, 0, _playerController.MoveInput.y) * _rocketLaunchingForce, 
+                ForceMode.Impulse);
             Destroy(gameObject);
         }
 

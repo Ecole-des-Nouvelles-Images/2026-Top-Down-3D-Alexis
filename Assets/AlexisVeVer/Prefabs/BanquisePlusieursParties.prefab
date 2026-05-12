@@ -78,7 +78,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 48edd7eab1eb21245bc475e37ccf37dc, type: 2}
     - target: {fileID: 919132149155446097, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
       propertyPath: m_Name
-      value: S_Ice00_low
+      value: BanquisePlusieursParties
       objectReference: {fileID: 0}
     - target: {fileID: 995996685453502570, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -114,11 +114,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5850441689043488623, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.56
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5850441689043488623, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.36
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5970835835565169226, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -147,5 +147,203 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 978776770042006926}
+    - targetCorrespondingSourceObject: {fileID: 8540625613243566530, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 339991102703939703}
+    - targetCorrespondingSourceObject: {fileID: -6147054180909398009, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6315071891593178853}
+    - targetCorrespondingSourceObject: {fileID: -9046321498903330271, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 494131988536033096}
+    - targetCorrespondingSourceObject: {fileID: 6971015668066378271, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4184598259724368979}
+    - targetCorrespondingSourceObject: {fileID: 4681910302398063085, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7243073597878636648}
+    - targetCorrespondingSourceObject: {fileID: 1062298808818020592, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8990111561850553658}
+    - targetCorrespondingSourceObject: {fileID: -3913673646406384713, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4030983607638670077}
   m_SourcePrefab: {fileID: 100100000, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
+--- !u!1 &1498829263622188207 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1062298808818020592, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
+  m_PrefabInstance: {fileID: 1905834516921064543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8990111561850553658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498829263622188207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fdf3bb38bf4bc1449cdfc2055db9755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Terrain.TerrainFloatAway
+  _generalTerrain: {fileID: 1635804697590702350}
+  _floatAwayDistance: 1000
+  _speedToFloatAway: 0.0005
+  FloatsAway: 0
+--- !u!1 &1635804697590702350 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
+  m_PrefabInstance: {fileID: 1905834516921064543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &978776770042006926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635804697590702350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77af1a3313bb7a4469d66c919edb10b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Terrain.TerrainSplitting
+  _terrains:
+  - {fileID: 7851049429262816669}
+  - {fileID: 3513833206846772312}
+  - {fileID: 1731599851338161790}
+  - {fileID: 8848702135387651648}
+  - {fileID: 6524483275202739634}
+  - {fileID: 1498829263622188207}
+  - {fileID: 6043044448703733736}
+  _terrainsTransform: []
+  _timeBetweenSplits: 10
+--- !u!1 &1731599851338161790 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -9046321498903330271, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
+  m_PrefabInstance: {fileID: 1905834516921064543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &494131988536033096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731599851338161790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fdf3bb38bf4bc1449cdfc2055db9755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Terrain.TerrainFloatAway
+  _generalTerrain: {fileID: 1635804697590702350}
+  _floatAwayDistance: 1000
+  _speedToFloatAway: 0.0005
+  FloatsAway: 0
+--- !u!1 &3513833206846772312 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6147054180909398009, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
+  m_PrefabInstance: {fileID: 1905834516921064543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6315071891593178853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3513833206846772312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fdf3bb38bf4bc1449cdfc2055db9755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Terrain.TerrainFloatAway
+  _generalTerrain: {fileID: 1635804697590702350}
+  _floatAwayDistance: 1000
+  _speedToFloatAway: 0.0005
+  FloatsAway: 0
+--- !u!1 &6043044448703733736 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -3913673646406384713, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
+  m_PrefabInstance: {fileID: 1905834516921064543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4030983607638670077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6043044448703733736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fdf3bb38bf4bc1449cdfc2055db9755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Terrain.TerrainFloatAway
+  _generalTerrain: {fileID: 1635804697590702350}
+  _floatAwayDistance: 1000
+  _speedToFloatAway: 0.0005
+  FloatsAway: 0
+--- !u!1 &6524483275202739634 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4681910302398063085, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
+  m_PrefabInstance: {fileID: 1905834516921064543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7243073597878636648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6524483275202739634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fdf3bb38bf4bc1449cdfc2055db9755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Terrain.TerrainFloatAway
+  _generalTerrain: {fileID: 1635804697590702350}
+  _floatAwayDistance: 1000
+  _speedToFloatAway: 0.0005
+  FloatsAway: 0
+--- !u!1 &7851049429262816669 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8540625613243566530, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
+  m_PrefabInstance: {fileID: 1905834516921064543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &339991102703939703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7851049429262816669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fdf3bb38bf4bc1449cdfc2055db9755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Terrain.TerrainFloatAway
+  _generalTerrain: {fileID: 1635804697590702350}
+  _floatAwayDistance: 1000
+  _speedToFloatAway: 0.0005
+  FloatsAway: 0
+--- !u!1 &8848702135387651648 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6971015668066378271, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
+  m_PrefabInstance: {fileID: 1905834516921064543}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4184598259724368979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8848702135387651648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fdf3bb38bf4bc1449cdfc2055db9755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Terrain.TerrainFloatAway
+  _generalTerrain: {fileID: 1635804697590702350}
+  _floatAwayDistance: 1000
+  _speedToFloatAway: 0.0005
+  FloatsAway: 0

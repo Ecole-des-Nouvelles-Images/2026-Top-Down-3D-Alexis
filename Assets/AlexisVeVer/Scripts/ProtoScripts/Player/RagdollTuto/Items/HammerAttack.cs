@@ -6,11 +6,16 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
 {
     public class HammerAttack : Weapon
     {
-        public override void Equip(PlayerController playerController) { }
+        [SerializeField] private GameObject _hitbox;
+        
+        public override void Equip(PlayerController playerController)
+        {
+            
+        }
 
         public override void Use(PlayerController playerController)
         {
-            Debug.Log("Hammer");
+            _hitbox.SetActive(true);
             Destroy(gameObject);
         }
 
