@@ -22,7 +22,6 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             
             _playerController.IsGrounded = true;
             _playerController.gameObject.transform.SetParent(hits[0].transform);
-            return;
         }
         
         

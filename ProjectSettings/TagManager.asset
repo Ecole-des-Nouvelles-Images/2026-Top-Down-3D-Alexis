@@ -9,6 +9,7 @@ TagManager:
   - LandMine
   - Fan
   - Hammer
+  - Ground
   layers:
   - Default
   - TransparentFX

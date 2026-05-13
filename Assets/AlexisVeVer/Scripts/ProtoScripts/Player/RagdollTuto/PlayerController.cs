@@ -10,9 +10,8 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         public PlayerStats PlayerStats;
 
         //Character parts
-        [Header("Character hitboxes")] [Space(4)] [SerializeField]
-        private GameObject _attackHitboxLeftHand;
-
+        [Header("Character hitboxes")] [Space(4)] 
+        [SerializeField] private GameObject _attackHitboxLeftHand;
         [SerializeField] private GameObject _handSocket;
         [SerializeField] private GameObject _attackHitboxRightHand;
 
@@ -92,7 +91,9 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
                 }
             }
             
-            _currentWeapon?.AutoUse(this);
+            if (_currentWeapon != null) {
+                _currentWeapon.AutoUse(this);
+            }
         }
 
         private void OnMove(InputValue value)
@@ -173,6 +174,11 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             weapon.transform.parent = _handSocket.transform;
             weapon.transform.localPosition = Vector3.zero;
             weapon.transform.localRotation = Quaternion.Euler(new Vector3(90, 90, 0));
+        }
+
+        public void UnEquip()
+        {
+            _currentWeapon.Equip(null);
         }
     }
 }

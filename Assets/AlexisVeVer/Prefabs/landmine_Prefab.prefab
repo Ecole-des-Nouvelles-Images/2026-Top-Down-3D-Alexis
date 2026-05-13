@@ -1,5 +1,77 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7642061736843568763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1952737172494562742}
+  - component: {fileID: 6531207584104300488}
+  - component: {fileID: 6419684568291154610}
+  m_Layer: 0
+  m_Name: ExplosionRadius
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1952737172494562742
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7642061736843568763}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7654093485352685118}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &6531207584104300488
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7642061736843568763}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.03
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6419684568291154610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7642061736843568763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdc2305fd08a38243aab3c13c01b0119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LandMineExplosion
+  _landMine: {fileID: 2308813302784200928}
+  _explosionForce: 0
+  _explosionRadiusModifier: 0
+  _upwardsForceModifier: 0
+  _mineDamage: 0
+  _mineStun: 0
 --- !u!1001 &7904507863876856277
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22,19 +94,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 32d669876d661b74ab9e349a2dcab04c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 32d669876d661b74ab9e349a2dcab04c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 32d669876d661b74ab9e349a2dcab04c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 32d669876d661b74ab9e349a2dcab04c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 32d669876d661b74ab9e349a2dcab04c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -42,11 +114,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 32d669876d661b74ab9e349a2dcab04c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 32d669876d661b74ab9e349a2dcab04c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 32d669876d661b74ab9e349a2dcab04c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -58,7 +130,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 32d669876d661b74ab9e349a2dcab04c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1952737172494562742}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 32d669876d661b74ab9e349a2dcab04c, type: 3}
       insertIndex: -1
@@ -90,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd313a34c401604a827a19bac6723b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items.ItemPickUp
-  _rotationVector: {x: 0, y: 0, z: 10}
+  _rotationVector: {x: 0, y: 30, z: 0}
   _timeBeforeDestroy: 0
 --- !u!114 &2308813302784200928
 MonoBehaviour:
@@ -104,6 +179,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bed23be446a501c40ba3dee29932dcb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items.DropMine
+  _mineThrowingForce: 5
+  _gravityForce: 10
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 8
+  _groundedMineRotation: {x: 0.49999997, y: -0.49999997, z: 0.49999997, w: -0.49999997}
+  _explosionRadius: {fileID: 7642061736843568763}
+  _mineSent: 0
 --- !u!65 &2515353263868021843
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -147,8 +230,13 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!4 &7654093485352685118 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 32d669876d661b74ab9e349a2dcab04c, type: 3}
+  m_PrefabInstance: {fileID: 7904507863876856277}
+  m_PrefabAsset: {fileID: 0}
