@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,12 +7,23 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Terrain
     public class TerrainSplitting : MonoBehaviour
     {
         [SerializeField] private List<GameObject> _terrains;
-        
         [SerializeField] private List<Transform> _terrainsTransform;
+        [SerializeField] private float _timeBetweenSplits;
         
         private GameObject _terrainToSplit;
-
         private int _terrainToRemove;
+        private float _timeSinceLastSplit = 0;
+        
+
+        private void Update()
+        {
+            _timeSinceLastSplit += Time.deltaTime;
+            if (_timeSinceLastSplit >= _timeBetweenSplits)
+            {
+                SplitTerrain();
+                _timeSinceLastSplit = 0;
+            }
+        }
 
         [ContextMenu("SplitTerrain")]
         public void SplitTerrain()
@@ -30,7 +42,6 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Terrain
                     _terrainToSplit = terrain.gameObject;
                     _terrainToRemove = terraincounter;
                 }
-
                 terraincounter++;
             }
 

@@ -10,9 +10,8 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         public PlayerStats PlayerStats;
 
         //Character parts
-        [Header("Character hitboxes")] [Space(4)] [SerializeField]
-        private GameObject _attackHitboxLeftHand;
-
+        [Header("Character hitboxes")] [Space(4)] 
+        [SerializeField] private GameObject _attackHitboxLeftHand;
         [SerializeField] private GameObject _handSocket;
         [SerializeField] private GameObject _attackHitboxRightHand;
 
@@ -22,7 +21,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         public bool RightHandReleaseGrab;
 
         //States
-        public bool IsGrounded;
+        private bool _isGrounded;
 
         //Components
         private Animator _animator;
@@ -31,11 +30,17 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         private ConfigurableJoint _mainJoint;
 
         //Inputs
-        private Vector2 _moveInput;
+        public Vector2 MoveInput;
         private Rigidbody _rb;
+
+        public bool IsGrounded {
+            get =>_isGrounded;
+
+            set { _isGrounded = value; }
+        }
         
         public bool WeaponEquipped => _currentWeapon != null;
-
+        
         private void Awake()
         {
             _animator = GetComponent<Animator>();
@@ -56,15 +61,15 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         private void Update()
         {
             //extra gravity to make the character less floaty
-            if (!IsGrounded) _rb.AddForce(Vector3.down * PlayerStats.AdditionalGravity);
+            if (!_isGrounded) _rb.AddForce(Vector3.down * PlayerStats.AdditionalGravity);
 
             // look towards the direction we want to move
-            var inputMagnitude = _moveInput.magnitude;
+            var inputMagnitude = MoveInput.magnitude;
 
             if (inputMagnitude != 0)
             {
                 var desiredDirection =
-                    Quaternion.LookRotation(new Vector3(_moveInput.x, 0, _moveInput.y * -1), transform.up);
+                    Quaternion.LookRotation(new Vector3(MoveInput.x, 0, MoveInput.y * -1), transform.up);
 
                 // rotate target towards direction
                 _mainJoint.targetRotation = Quaternion.RotateTowards(_mainJoint.targetRotation, desiredDirection,
@@ -72,8 +77,8 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             }
 
             // move
-            _rb.AddForce(new Vector3(_moveInput.x * PlayerStats.SpeedModifier, 0,
-                _moveInput.y * PlayerStats.SpeedModifier) * -1);
+            _rb.AddForce(new Vector3(MoveInput.x * PlayerStats.SpeedModifier, 0,
+                MoveInput.y * PlayerStats.SpeedModifier) * -1);
 
             // slide cooldown
             if (!PlayerStats.CanSlide)
@@ -86,20 +91,22 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
                 }
             }
             
-            _currentWeapon?.AutoUse(this);
+            if (_currentWeapon != null) {
+                _currentWeapon.AutoUse(this);
+            }
         }
 
         private void OnMove(InputValue value)
         {
-            _moveInput = value.Get<Vector2>();
+            MoveInput = value.Get<Vector2>();
         }
 
         private void OnJump()
         {
-            if (IsGrounded)
+            if (_isGrounded)
             {
                 _rb.AddForce(Vector3.up * PlayerStats.JumpForceModifier, ForceMode.Impulse);
-                IsGrounded = false;
+                _isGrounded = false;
             }
         }
 
@@ -166,7 +173,12 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             weapon.GetComponent<ItemPickUp>().enabled = false;
             weapon.transform.parent = _handSocket.transform;
             weapon.transform.localPosition = Vector3.zero;
-            weapon.transform.localRotation = Quaternion.Euler(Vector3.zero);
+            weapon.transform.localRotation = Quaternion.Euler(new Vector3(90, 90, 0));
+        }
+
+        public void UnEquip()
+        {
+            _currentWeapon.Equip(null);
         }
     }
 }

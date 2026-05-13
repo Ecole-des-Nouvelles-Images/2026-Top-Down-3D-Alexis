@@ -4,8 +4,10 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Terrain
 {
     public class TerrainFloatAway : MonoBehaviour
     { 
+        [SerializeField] private GameObject _generalTerrain;
         [SerializeField] private float _floatAwayDistance;
         [SerializeField] private float _speedToFloatAway;
+        
 
         public bool FloatsAway = false;
         
@@ -16,7 +18,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Terrain
             if (FloatsAway)
             {
                 transform.position = Vector3.MoveTowards(transform.position, 
-                    transform.position * _floatAwayDistance, _speedToFloatAway);
+                    _generalTerrain.transform.position - transform.position * _floatAwayDistance, _speedToFloatAway);
             }
         }
     }
