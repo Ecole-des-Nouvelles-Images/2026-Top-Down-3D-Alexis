@@ -1,4 +1,5 @@
 using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items;
+using AlexisVeVer.Scripts.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -32,6 +33,9 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         //Inputs
         public Vector2 MoveInput;
         private Rigidbody _rb;
+        
+        //PauseMenu
+        [SerializeField] private GameObject _pauseMenu;
 
         public bool IsGrounded {
             get =>_isGrounded;
@@ -163,6 +167,20 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
                         _rb.linearVelocity.z * PlayerStats.SlideForceMultiplier),
                     ForceMode.VelocityChange);
                 PlayerStats.CanSlide = false;
+            }
+        }
+
+        private void OnPauseGame()
+        {
+            if (_pauseMenu.activeSelf)
+            {
+                Time.timeScale = 1;
+                _pauseMenu.SetActive(false);
+            }
+            else
+            {
+                Time.timeScale = 0;
+                _pauseMenu.SetActive(true);
             }
         }
 
