@@ -10,6 +10,11 @@ namespace AlexisVeVer.Scripts.UI
         [SerializeField] private GameObject _creditsMenu;
         [SerializeField] private GameObject _quitDoubleCheck;
 
+        void Awake()
+        {
+            Time.timeScale = 1;
+        }
+        
         public void Play()
         {
             SceneManager.LoadScene("AlexisVeVer/Scenes/SceneProd");
