@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d50a42c631f7794eb89aa6b7d3552a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.HandGrabsThing
-  _playerController: {fileID: 0}
+  _playerController: {fileID: 5904697903220254232}
   _springForce: 100
   _damperForce: 100
   _breakForce: 200
@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d50a42c631f7794eb89aa6b7d3552a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.HandGrabsThing
-  _playerController: {fileID: 0}
+  _playerController: {fileID: 5904697903220254232}
   _springForce: 100
   _damperForce: 100
   _breakForce: 200
@@ -315,8 +315,8 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  offset: {x: 0, y: -0.2, z: 0}
-  _radius: 0.28
+  offset: {x: 0, y: -0.23, z: 0}
+  _radius: 0.25
 --- !u!1 &5403266460701730717
 GameObject:
   m_ObjectHideFlags: 0
@@ -575,6 +575,7 @@ MonoBehaviour:
   LeftHandReleaseGrab: 0
   RightHandReleaseGrab: 0
   MoveInput: {x: 0, y: 0}
+  _pauseMenu: {fileID: 0}
 --- !u!114 &8032176426206229588
 MonoBehaviour:
   m_ObjectHideFlags: 0
