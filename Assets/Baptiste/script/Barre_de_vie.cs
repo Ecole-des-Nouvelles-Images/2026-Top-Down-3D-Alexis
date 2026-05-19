@@ -23,6 +23,7 @@ public class Barre_de_vie : MonoBehaviour
         _shaker.DOShakePosition(shakeDuration, pos);
         _shaker.DOShakeRotation(shakeDuration, shakeAmount);
         _shaker.DOShakeScale(shakeDuration, scale);
+        _shaker = Instantiate(_shakerbase);
     }
 
    

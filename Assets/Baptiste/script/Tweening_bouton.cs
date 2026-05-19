@@ -14,8 +14,6 @@ namespace Baptiste.script
         [SerializeField] private float rotate = 2;
         [SerializeField] private float pos = 1.2f;
         [SerializeField] private float rotate_shake = 5;
-        const float duration = 5;
-
 
 
         public void OnPointerEnter(PointerEventData eventData)
