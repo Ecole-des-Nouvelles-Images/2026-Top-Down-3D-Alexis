@@ -1,6 +1,7 @@
 using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items;
 using AlexisVeVer.Scripts.UI;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 using UnityEngine.InputSystem;
 
 namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
@@ -16,11 +17,17 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         [SerializeField] private GameObject _handSocket;
         [SerializeField] private GameObject _attackHitboxRightHand;
 
+        public bool PlayerInGrabZone;
         public bool LeftHandGrab;
         public bool RightHandGrab;
         public bool LeftHandReleaseGrab;
         public bool RightHandReleaseGrab;
 
+        //AnimatorIK
+        [SerializeField] private TwoBoneIKConstraint _leftHandIK;
+        [SerializeField] private TwoBoneIKConstraint _rightHandIK;
+        private GrabZoneDetection _grabZoneDetection;
+        
         //States
         private bool _isGrounded;
 
@@ -35,6 +42,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         private Rigidbody _rb;
         
         //PauseMenu
+        [Header("PauseMenu Reference")] [Space(4)] 
         [SerializeField] private GameObject _pauseMenu;
 
         public bool IsGrounded {
@@ -50,6 +58,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             _animator = GetComponent<Animator>();
             _rb = GetComponent<Rigidbody>();
             _mainJoint = GetComponent<ConfigurableJoint>();
+            _grabZoneDetection = GetComponentInChildren<GrabZoneDetection>();
 
             //SO reset
             PlayerStats.CanSlide = true;
@@ -59,7 +68,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         private void Start()
         {
-            _rb.linearDamping = PlayerStats.SpeedModifier / PlayerStats.MaxSpeed;
+            //_rb.linearDamping = PlayerStats.SpeedModifier / PlayerStats.MaxSpeed;
         }
 
         private void Update()
@@ -97,6 +106,35 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             
             if (_currentWeapon != null) {
                 _currentWeapon.AutoUse(this);
+            }
+            
+            // hands prepared for grab
+            if (PlayerInGrabZone)
+            {
+                Transform newTarget = null;
+                foreach (Collider otherPlayers in _grabZoneDetection.EnnemyPlayerColliders)
+                {
+                    if (newTarget == null)
+                    {
+                        newTarget = otherPlayers.transform;
+                    }
+                    else
+                    {
+                        if (Vector3.Distance(transform.position, otherPlayers.transform.position) <
+                            Vector3.Distance(transform.position, newTarget.position))
+                        {
+                            newTarget = otherPlayers.transform;
+                        }
+                    }
+                }
+                _leftHandIK.data.target = newTarget;
+                _rightHandIK.data.target = newTarget;
+            }
+            
+            else if (!PlayerInGrabZone)
+            {
+                _leftHandIK.data.target = null;
+                _rightHandIK.data.target = null;
             }
         }
 

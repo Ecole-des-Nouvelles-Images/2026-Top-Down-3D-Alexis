@@ -1,6 +1,4 @@
-using System;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Dependencies.NCalc;
+using System.Linq;
 using UnityEngine;
 
 namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
@@ -68,6 +66,8 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         private void OnTriggerEnter(Collider other)
         {
+            if (GetComponentsInParent<Transform>().Contains(other.transform)) return;
+            if (other.gameObject == gameObject) return;
             if (other.gameObject.layer == 4) return;
             if (other.gameObject == gameObject) return;
             if (other.GetComponent<Rigidbody>() == null) return;
@@ -79,13 +79,11 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.gameObject == gameObject) return;
-            if (other.GetComponent<Rigidbody>() == null) return;
-            if (other.GetComponent<HandGrabsThing>() == this) return;
-            if (_otherCollider != other) return;
+            if (other != _otherCollider) return;
 
             _otherCollider =  null;
         } 
+        
         private void OnDrawGizmos()
         {
             if (!IsGrabbing) return;
