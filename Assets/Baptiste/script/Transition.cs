@@ -27,18 +27,5 @@ namespace Baptiste.script
             rect.DOAnchorMin(_endAnchorMin, speed);
             rect.DOAnchorMax(_endAnchorMax, speed);
         }
-    
-        private void Update()
-        {
-            if (_isTransitioning = true)
-            {
-                _timer += Time.deltaTime;
-                if (_timer >= _transitionDuration)
-                {
-                    SceneManager.LoadScene(_nameScene);
-                }
-            }
-       
-        }
     }
 }

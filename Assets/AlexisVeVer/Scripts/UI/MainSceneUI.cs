@@ -1,3 +1,5 @@
+using System;
+using Baptiste.script;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,11 +11,22 @@ namespace AlexisVeVer.Scripts.UI
         [SerializeField] private GameObject _optionsMenu;
         [SerializeField] private GameObject _creditsMenu;
         [SerializeField] private GameObject _quitDoubleCheck;
+        [SerializeField] private GameObject _transition;
 
+        [SerializeField] private float _timerForTransition = 2;
+        [SerializeField] private float _transitionTime;
+        [SerializeField] private bool _doTransition;
+        
+        void Awake()
+        {
+            Time.timeScale = 1;
+            _transition.SetActive(false);
+        }
+        
         public void Play()
         {
-            SceneManager.LoadScene("AlexisVeVer/Scenes/SceneProd");
-            Time.timeScale = 1;
+            _doTransition = true;
+            _transition.SetActive(true);
         }
 
         public void OpenOptionsMenu()
@@ -53,6 +66,22 @@ namespace AlexisVeVer.Scripts.UI
         public void LeaveChecked()
         {
             Application.Quit();
+        }
+
+        private void Update()
+        {
+            if (_doTransition)
+            {
+                _transitionTime += Time.deltaTime;
+            }
+            
+            if (_transitionTime >= _timerForTransition)
+            {
+                SceneManager.LoadScene("AlexisVeVer/Scenes/SceneProd");
+                _transitionTime = 0;
+                _doTransition = false;
+                Time.timeScale = 1;
+            }
         }
     }
 }
