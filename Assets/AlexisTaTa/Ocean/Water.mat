@@ -50,6 +50,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _FadeDistance: -0.4
     - _FoamAmount: 1.04
     - _FoamCutoff: 1.49
     - _FoamScale: 298.54
@@ -60,7 +61,7 @@ Material:
     - _Color3: {r: 0.12549017, g: 0.40977556, b: 0.5176471, a: 1}
     - _Color_1: {r: 0, g: 0, b: 0, a: 1}
     - _Color_2: {r: 0.044010323, g: 0.088307716, b: 0.21698111, a: 1}
-    - _FoamColor: {r: 0.6033731, g: 0.7407441, b: 0.8584906, a: 1}
+    - _FoamColor: {r: 0.004805972, g: 0.19537859, b: 0.33962262, a: 1}
     - _foam: {r: 0.1254902, g: 0.40784317, b: 0.5176471, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
