@@ -22,7 +22,8 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         public float AttackDuration;
         
         [Header("Movements parameters"), Space(4)]
-        public float SpeedModifier;
+        public float WalkingSpeedModifier;
+        public float AirSpeedModifier;
         public float RotationSpeed;
         public float JumpForceModifier;
         public float AdditionalGravity = 10;

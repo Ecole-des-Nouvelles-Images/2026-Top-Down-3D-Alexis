@@ -21,7 +21,8 @@ MonoBehaviour:
   AttackDamage: 0
   AttackStun: 0
   AttackDuration: 0
-  SpeedModifier: 25
+  WalkingSpeedModifier: 100
+  AirSpeedModifier: 50
   RotationSpeed: 300
   JumpForceModifier: 100
   AdditionalGravity: 150

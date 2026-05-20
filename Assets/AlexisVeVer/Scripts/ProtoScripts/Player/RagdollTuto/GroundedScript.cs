@@ -1,4 +1,5 @@
 using System;
+using AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM;
 using UnityEngine;
 
 namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
@@ -6,6 +7,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
     public class GroundedScript : MonoBehaviour
     {
         [SerializeField] private PlayerController _playerController;
+        [SerializeField] private FsmControllerSetup _fsmControllerSetup;
         [SerializeField] LayerMask _groundLayer;
         [SerializeField] private Vector3 offset;
         [SerializeField] private float _radius = 0.5f;
@@ -15,13 +17,33 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
                 transform.position + offset, _radius, Vector3.down,  0,_groundLayer);
 
             if (hits.Length <= 0) {
-                _playerController.IsGrounded = false;
-                _playerController.gameObject.transform.SetParent(null);
-                return;
+                if (_playerController != null)
+                {
+                    _playerController.IsGrounded = false;
+                    _playerController.gameObject.transform.SetParent(null);
+                    return;
+                }
+                
+                if (_fsmControllerSetup != null)
+                {
+                    _fsmControllerSetup.IsGrounded = false;
+                    _fsmControllerSetup.gameObject.transform.SetParent(null);
+                    return;
+                }
             }
             
-            _playerController.IsGrounded = true;
-            _playerController.gameObject.transform.SetParent(hits[0].transform);
+            if (_playerController != null)
+            {
+                _playerController.IsGrounded = true;
+                _playerController.gameObject.transform.SetParent(hits[0].transform);
+            }
+            
+            if (_fsmControllerSetup != null)
+            {
+                _fsmControllerSetup.IsGrounded = true;
+                _fsmControllerSetup.gameObject.transform.SetParent(hits[0].transform);
+                return;
+            }
         }
         
         
@@ -30,23 +52,4 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             Gizmos.DrawWireSphere(transform.position + offset, _radius);
         }  
     }
-    
-    
-        //private void OnTriggerStay(Collider other)
-        //{
-        //    RaycastHit[] hits =Physics.SphereCastAll(transform.position + offset, _radius, Vector3.down);
-        //    
-        //    if (other.gameObject.layer == LayerMask.NameToLayer("Ground")) {
-        //        _playerController.IsGrounded = true;
-        //        _playerController.gameObject.transform.SetParent(other.gameObject.transform);
-        //    }
-        //}
-//
-        //private void OnTriggerExit(Collider other)
-        //{
-        //    if (other.gameObject.layer == LayerMask.NameToLayer("Ground")) {
-        //        _playerController.IsGrounded = false;
-        //    }
-        //}
-  //  }
 }
