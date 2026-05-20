@@ -60,6 +60,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: 64a6e48a367138a4db00665abb83b3c8, type: 2}
+    - target: {fileID: -2681638220329358725, guid: 884f83390f38159428a0a9b15fbdc62d, type: 3}
+      propertyPath: m_Name
+      value: NS_Pinguin_01_Skeleton
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 884f83390f38159428a0a9b15fbdc62d, type: 3}
       propertyPath: m_Name
       value: NS_Pinguin_03
