@@ -40,6 +40,11 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
             {
                 return new ItemCarryState();
             }
+
+            if (playerController.IsGrounded && playerController.doAttackLeftHand || playerController.doAttackRightHand)
+            {
+                return new AttackState();
+            }
             
             return null;
         }

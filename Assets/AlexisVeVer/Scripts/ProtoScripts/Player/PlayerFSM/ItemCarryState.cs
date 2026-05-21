@@ -17,10 +17,11 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
         public override void OnUpdate(PlayerController playerController)
         {
             playerController.Move(playerController.PlayerStats.ItemCarrySpeedModifier);
-            if (playerController.doAttack)
+            if (playerController.doAttackRightHand || playerController.doAttackLeftHand)
             {
                 playerController.CurrentWeapon.Use(playerController);
-                playerController.doAttack = false;
+                playerController.doAttackRightHand = false;
+                playerController.doAttackLeftHand  = false;
             }
         }
 

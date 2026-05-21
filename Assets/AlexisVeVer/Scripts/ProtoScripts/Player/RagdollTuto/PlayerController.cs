@@ -26,7 +26,9 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         public bool canSlide;
         public bool doSlide;
         public bool canJump;
-        public bool doAttack;
+        public bool doAttackRightHand;
+        public bool doAttackLeftHand;
+        public bool attackOver;
 
         private float _timeSinceSlideInCd;
         
@@ -34,7 +36,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         private bool _isGrounded;
 
         //Components
-        public Animator Animator;
+        public Animator CharacterAnimator;
 
         public Weapon CurrentWeapon;
         private ConfigurableJoint _mainJoint;
@@ -57,7 +59,6 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         
         private void Awake()
         {
-            Animator = GetComponent<Animator>();
             Rb = GetComponent<Rigidbody>();
             _mainJoint = GetComponent<ConfigurableJoint>();
 
@@ -139,12 +140,12 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         private void OnLeftHandAttack()
         {
-            doAttack = true;
+            doAttackLeftHand = true;
         }
 
         private void OnRightHandAttack()
         {
-            doAttack = true;
+            doAttackRightHand = true;
         }
 
         private void OnSlide()
