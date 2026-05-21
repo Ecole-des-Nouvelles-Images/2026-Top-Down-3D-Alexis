@@ -7,6 +7,7 @@ namespace Baptiste.script
     public class Transition : MonoBehaviour
     {
         [SerializeField] private float speed = 4f;
+        [SerializeField] private AnimationCurve curve = AnimationCurve.EaseInOut(0, 0, 1, 1);
         [Space(5)]
         [SerializeField] private Vector2 _startAnchorMin= new Vector2(0,0);
         [SerializeField] private Vector2 _startAnchorMax= new Vector2(1,0);
@@ -24,8 +25,8 @@ namespace Baptiste.script
             RectTransform rect = transform.GetComponent<RectTransform>();
             rect.anchorMin = _startAnchorMin;
             rect.anchorMax = _startAnchorMax;
-            rect.DOAnchorMin(_endAnchorMin, speed);
-            rect.DOAnchorMax(_endAnchorMax, speed);
+            rect.DOAnchorMin(_endAnchorMin, speed).SetEase(curve).SetUpdate(true);
+            rect.DOAnchorMax(_endAnchorMax, speed).SetEase(curve).SetUpdate(true);
         }
     }
 }
