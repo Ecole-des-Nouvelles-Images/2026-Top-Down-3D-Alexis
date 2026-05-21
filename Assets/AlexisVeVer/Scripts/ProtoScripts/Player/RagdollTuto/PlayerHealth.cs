@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 {
@@ -8,32 +9,37 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         [SerializeField] private GameObject _playerController;
         
         [SerializeField] private Animator _animator;
+        [SerializeField] private Image _healthBar;
         
         [SerializeField] private float _animationTime;
+        private float _currentHealth;
+        private float _currentStun;
 
         private void Awake()
         {
-            _playerStats.CurrentHealth = _playerStats.MaxHealth;
-            _playerStats.CurrentStun = _playerStats.MinStun;
+            _currentHealth = _playerStats.MaxHealth;
+            _currentStun = _playerStats.MinStun;
         }
 
         private void Update()
         {
-            if (_playerStats.CurrentStun >= _playerStats.MaxStun)
+            if (_currentStun >= _playerStats.MaxStun)
             {
                 GetStunned();
             }
 
-            if (_playerStats.CurrentHealth <= 0)
+            if (_currentHealth <= 0)
             {
                 Dies();
             }
+            
+            // _healthBar.fillAmount = _currentHealth / _playerStats.MaxHealth;
         }
 
         public void GetHit(float damage, float stun)
         {
-            _playerStats.CurrentHealth -= damage;
-            _playerStats.CurrentStun += stun;
+            _currentHealth -= damage;
+            _currentStun += stun;
             Debug.Log("J'ai été touché. Ma vie est désormais de " + _playerStats.CurrentHealth + " et ma valeur de stun est désormais de " +  _playerStats.CurrentStun);
         }
 
@@ -46,7 +52,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             {
                 _playerController.GetComponent<PlayerController>().enabled = true;
             }
-            _playerStats.CurrentStun = _playerStats.MinStun;
+            _currentStun = _playerStats.MinStun;
         }
 
         private void Dies()

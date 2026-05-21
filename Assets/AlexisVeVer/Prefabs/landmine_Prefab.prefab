@@ -165,8 +165,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd313a34c401604a827a19bac6723b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items.ItemPickUp
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
   _rotationVector: {x: 0, y: 30, z: 0}
+  _offset: {x: 0, y: 0, z: 0}
   _timeBeforeDestroy: 0
+  _radius: 1
 --- !u!114 &2308813302784200928
 MonoBehaviour:
   m_ObjectHideFlags: 0

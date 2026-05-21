@@ -13,13 +13,21 @@ MonoBehaviour:
   m_Name: P2
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.PlayerStats
   MaxHealth: 15
-  CurrentHealth: 0
+  CurrentHealth: 15
   MinStun: 0
   CurrentStun: 0
   MaxStun: 5
+  StunDuration: 0
+  AttackDamage: 0
+  AttackStun: 0
+  AttackDuration: 0
   SpeedModifier: 25
   RotationSpeed: 300
   JumpForceModifier: 100
   AdditionalGravity: 150
   MaxSpeed: 15
   SlideForceMultiplier: 10
+  CanSlide: 1
+  TimeFromSlide: 0
+  SlideCd: 0
+  ItemPickedUp: 0

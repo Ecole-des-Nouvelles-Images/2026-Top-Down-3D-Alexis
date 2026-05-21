@@ -21,13 +21,13 @@ MonoBehaviour:
   AttackDamage: 0
   AttackStun: 0
   AttackDuration: 0
-  SpeedModifier: 25
+  WalkingSpeedModifier: 50
+  AirSpeedModifier: 50
+  ItemCarrySpeedModifier: 0
   RotationSpeed: 300
   JumpForceModifier: 100
   AdditionalGravity: 150
   MaxSpeed: 15
-  SlideForceMultiplier: 10
-  CanSlide: 1
-  TimeFromSlide: 0
+  SlideForceMultiplier: 3
   SlideCd: 5
   ItemPickedUp: 0

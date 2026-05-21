@@ -84,7 +84,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.0015
+  m_Radius: 0.01
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8826397193608406161
 MonoBehaviour:
@@ -99,152 +99,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackDamage
   _playerStats: {fileID: 0}
---- !u!1 &1461144572126099582
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5996200723015115043}
-  - component: {fileID: 2665371613227346586}
-  - component: {fileID: 675818734124999747}
-  m_Layer: 0
-  m_Name: GrabLeftHand
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5996200723015115043
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461144572126099582}
-  serializedVersion: 2
-  m_LocalRotation: {x: -5.84923e-10, y: -0.000000023110818, z: -0.025242347, w: 0.99968135}
-  m_LocalPosition: {x: 0, y: 0.0017420299, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 5322441578609807168}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &2665371613227346586
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461144572126099582}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.002
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &675818734124999747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461144572126099582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d50a42c631f7794eb89aa6b7d3552a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.HandGrabsThing
-  _playerController: {fileID: 5904697903220254232}
-  _springForce: 100
-  _damperForce: 100
-  _breakForce: 200
-  _breakTorque: 200
-  _isLeftHand: 0
-  _otherCollider: {fileID: 0}
---- !u!1 &2744724912901722342
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5184839816188075740}
-  - component: {fileID: 4251331694309400383}
-  - component: {fileID: 6404279710823874837}
-  m_Layer: 0
-  m_Name: GrabRightHand
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5184839816188075740
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2744724912901722342}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.00000008144426, y: -0.000000023591765, z: 0.025242394, w: 0.99968135}
-  m_LocalPosition: {x: 0, y: 0.0017420298, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3428426099581181394}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &4251331694309400383
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2744724912901722342}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.002
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6404279710823874837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2744724912901722342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d50a42c631f7794eb89aa6b7d3552a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.HandGrabsThing
-  _playerController: {fileID: 5904697903220254232}
-  _springForce: 100
-  _damperForce: 100
-  _breakForce: 200
-  _breakTorque: 200
-  _isLeftHand: 0
-  _otherCollider: {fileID: 0}
 --- !u!1 &5374549657713556617
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,10 +424,6 @@ MonoBehaviour:
   _attackHitboxLeftHand: {fileID: 7924188966785012204}
   _handSocket: {fileID: 8203804911086243919}
   _attackHitboxRightHand: {fileID: 946141764635847396}
-  LeftHandGrab: 0
-  RightHandGrab: 0
-  LeftHandReleaseGrab: 0
-  RightHandReleaseGrab: 0
   MoveInput: {x: 0, y: 0}
   _pauseMenu: {fileID: 0}
 --- !u!114 &8032176426206229588
@@ -589,8 +439,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   _playerStats: {fileID: 0}
-  _playerController: {fileID: 0}
-  _animator: {fileID: 0}
+  _playerController: {fileID: 5403266460701730717}
+  _animator: {fileID: 976714451567282241}
+  _healthBar: {fileID: 0}
   _animationTime: 4
 --- !u!1 &7924188966785012204
 GameObject:
@@ -644,7 +495,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.0015
+  m_Radius: 0.01
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2704830631820944890
 MonoBehaviour:
@@ -837,15 +688,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -7693707970686305648, guid: 5ccecffc78f54f44c88e4fe83fe2e369, type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 5996200723015115043}
     - targetCorrespondingSourceObject: {fileID: 6127031673915385213, guid: 5ccecffc78f54f44c88e4fe83fe2e369, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4942782252000965661}
-    - targetCorrespondingSourceObject: {fileID: 8319096741401913346, guid: 5ccecffc78f54f44c88e4fe83fe2e369, type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 5184839816188075740}
     - targetCorrespondingSourceObject: {fileID: 8303402228788300514, guid: 5ccecffc78f54f44c88e4fe83fe2e369, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8269715071157552535}
@@ -907,9 +752,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -7792039166672920880, guid: 5ccecffc78f54f44c88e4fe83fe2e369, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4786289697361117941}
-    - targetCorrespondingSourceObject: {fileID: -2946097152170228155, guid: 5ccecffc78f54f44c88e4fe83fe2e369, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6063111176047415774}
     - targetCorrespondingSourceObject: {fileID: 1060174288075876885, guid: 5ccecffc78f54f44c88e4fe83fe2e369, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8674425802089484368}
@@ -1091,23 +933,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6127031673915385213, guid: 5ccecffc78f54f44c88e4fe83fe2e369, type: 3}
   m_PrefabInstance: {fileID: 6694435058593838544}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &863060588621902741 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -2946097152170228155, guid: 5ccecffc78f54f44c88e4fe83fe2e369, type: 3}
+--- !u!95 &976714451567282241 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 5ccecffc78f54f44c88e4fe83fe2e369, type: 3}
   m_PrefabInstance: {fileID: 6694435058593838544}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6063111176047415774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863060588621902741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b87102d610860784e9c0a962e9c4d8f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HandAttach
 --- !u!1 &3215084845884273598 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8104561323687560814, guid: 5ccecffc78f54f44c88e4fe83fe2e369, type: 3}
@@ -1422,19 +1252,9 @@ ConfigurableJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!4 &3428426099581181394 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8319096741401913346, guid: 5ccecffc78f54f44c88e4fe83fe2e369, type: 3}
-  m_PrefabInstance: {fileID: 6694435058593838544}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3448901219764223794 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8303402228788300514, guid: 5ccecffc78f54f44c88e4fe83fe2e369, type: 3}
-  m_PrefabInstance: {fileID: 6694435058593838544}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &5322441578609807168 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -7693707970686305648, guid: 5ccecffc78f54f44c88e4fe83fe2e369, type: 3}
   m_PrefabInstance: {fileID: 6694435058593838544}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &5709003703456869120 stripped
