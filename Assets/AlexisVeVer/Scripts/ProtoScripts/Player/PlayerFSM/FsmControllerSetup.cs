@@ -48,8 +48,8 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 
         private void Start()
         {
-            _currentState = new IdleState();
-            _currentState.OnStateEnter(this);
+            // _currentState = new IdleState();
+            // _currentState.OnStateEnter(this);
         }
 
         private void Update()
@@ -66,24 +66,23 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
                     canSlide = true;
                     _timeSinceSlideInCd = 0;
                 }
-                Debug.Log(_timeSinceSlideInCd);
             }
             
             // FSM Gestion
-            if (_currentState != null)
-            {
-                // Update Methods
-                _currentState.OnUpdate(this);
-        
-                //State Switching
-                PlayerStateMachine nextBaseState = _currentState.NextState(this);
-                if (nextBaseState != null)
-                {
-                    _currentState.OnStateExit(this); 
-                    _currentState = nextBaseState; 
-                    _currentState.OnStateEnter(this);
-                }
-            }
+            // if (_currentState != null)
+            // {
+            //     // Update Methods
+            //     _currentState.OnUpdate(this);
+            //
+            //     //State Switching
+            //     PlayerStateMachine nextBaseState = _currentState.NextState(this);
+            //     if (nextBaseState != null)
+            //     {
+            //         _currentState.OnStateExit(this); 
+            //         _currentState = nextBaseState; 
+            //         _currentState.OnStateEnter(this);
+            //     }
+            // }
         }
 
         private void OnMove(InputValue value)

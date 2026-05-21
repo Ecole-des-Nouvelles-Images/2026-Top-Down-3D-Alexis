@@ -5,12 +5,12 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 {
     public abstract class PlayerStateMachine
     {
-        public abstract void OnStateEnter(FsmControllerSetup playerController);
+        public abstract void OnStateEnter(PlayerController playerController);
         
-        public abstract void OnUpdate(FsmControllerSetup playerController);
+        public abstract void OnUpdate(PlayerController playerController);
         
-        public abstract void OnStateExit(FsmControllerSetup playerController);
+        public abstract void OnStateExit(PlayerController playerController);
         
-        public abstract PlayerStateMachine NextState(FsmControllerSetup playerController);
+        public abstract PlayerStateMachine NextState(PlayerController playerController);
     }
 }

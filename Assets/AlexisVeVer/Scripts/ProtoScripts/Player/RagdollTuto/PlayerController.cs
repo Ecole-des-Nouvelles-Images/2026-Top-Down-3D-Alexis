@@ -24,7 +24,11 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         //FSM Transitions
         public bool canAttack;
         public bool canSlide;
+        public bool doSlide;
         public bool canJump;
+        public bool doAttack;
+
+        private float _timeSinceSlideInCd;
         
         //States
         private bool _isGrounded;
@@ -58,15 +62,13 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             _mainJoint = GetComponent<ConfigurableJoint>();
 
             //SO reset
-            PlayerStats.CanSlide = true;
-            PlayerStats.TimeFromSlide = 0;
             PlayerStats.ItemPickedUp = false;
         }
 
         private void Start()
         {
             _currentState = new IdleState();
-            //_currentState.OnStateEnter(this);
+            _currentState.OnStateEnter(this);
         }
 
         private void Update()
@@ -88,13 +90,13 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             }
 
             // slide cooldown
-            if (!PlayerStats.CanSlide)
+            if (!canSlide)
             {
-                PlayerStats.TimeFromSlide += Time.deltaTime;
-                if (PlayerStats.TimeFromSlide >= PlayerStats.SlideCd)
+                _timeSinceSlideInCd += Time.deltaTime;
+                if (_timeSinceSlideInCd >= PlayerStats.SlideCd)
                 {
-                    PlayerStats.CanSlide = true;
-                    PlayerStats.TimeFromSlide = 0;
+                    canSlide = true;
+                    _timeSinceSlideInCd = 0;
                 }
             }
             
@@ -103,22 +105,22 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             }
             
             
-            //
-            // // FSM Gestion
-            // if (_currentState != null)
-            // {
-            //     // Update Methods
-            //     _currentState.OnUpdate(this);
-            //
-            //     //State Switching
-            //     PlayerStateMachine nextBaseState = _currentState.NextState(this);
-            //     if (nextBaseState != null)
-            //     {
-            //         _currentState.OnStateExit(this); 
-            //         _currentState = nextBaseState; 
-            //         _currentState.OnStateEnter(this);
-            //     }
-            // }
+            
+            // FSM Gestion
+            if (_currentState != null)
+            {
+                // Update Methods
+                _currentState.OnUpdate(this);
+            
+                //State Switching
+                PlayerStateMachine nextBaseState = _currentState.NextState(this);
+                if (nextBaseState != null)
+                {
+                    _currentState.OnStateExit(this); 
+                    _currentState = nextBaseState; 
+                    _currentState.OnStateEnter(this);
+                }
+            }
         }
 
         private void OnMove(InputValue value)
@@ -137,37 +139,19 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         private void OnLeftHandAttack()
         {
-            if (WeaponEquipped)
-            {
-                CurrentWeapon.Use(this);
-            }
-            else
-            {
-                _attackHitboxLeftHand.SetActive(true);
-            }
+            doAttack = true;
         }
 
         private void OnRightHandAttack()
         {
-            if (WeaponEquipped)
-            {
-                CurrentWeapon.Use(this);
-            }
-            else
-            {
-                _attackHitboxRightHand.SetActive(true);
-            }
+            doAttack = true;
         }
 
         private void OnSlide()
         {
             if (canSlide)
             {
-                Rb.AddForce(
-                    new Vector3(Rb.linearVelocity.x * PlayerStats.SlideForceMultiplier, 0,
-                        Rb.linearVelocity.z * PlayerStats.SlideForceMultiplier),
-                    ForceMode.VelocityChange);
-                PlayerStats.CanSlide = false;
+                doSlide = true;
             }
         }
 
@@ -205,6 +189,11 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             Rb.linearDamping = speedModifier / PlayerStats.MaxSpeed;
             Rb.AddForce(new Vector3(MoveInput.x * speedModifier, 0,
                 MoveInput.y * speedModifier) * -1);
+        }
+        
+        public void GravityModification(float gravityModifier)
+        {
+            Rb.AddForce(Vector3.down * gravityModifier);
         }
     }
 }

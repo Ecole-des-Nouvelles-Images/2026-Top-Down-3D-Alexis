@@ -7,34 +7,38 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 {
     public class IdleState : PlayerStateMachine
     {
-        public override void OnStateEnter(FsmControllerSetup fsmControllerSetup)
+        public override void OnStateEnter(PlayerController playerController)
         {
             //fsmControllerSetup.Animator.SetBool("isIdle", true);
-            fsmControllerSetup.canAttack = true;
-            fsmControllerSetup.canSlide = false;
-            fsmControllerSetup.canJump = true;
+            playerController.canAttack = true;
+            playerController.canJump = true;
         }
 
-        public override void OnUpdate(FsmControllerSetup fsmControllerSetup)
+        public override void OnUpdate(PlayerController playerController)
         {
-            fsmControllerSetup.Move(fsmControllerSetup.PlayerStats.WalkingSpeedModifier);
+            playerController.Move(playerController.PlayerStats.WalkingSpeedModifier);
         }
 
-        public override void OnStateExit(FsmControllerSetup fsmControllerSetup)
+        public override void OnStateExit(PlayerController playerController)
         {
             //fsmControllerSetup.Animator.SetBool("isIdle", false);
         }
 
-        public override PlayerStateMachine NextState(FsmControllerSetup fsmControllerSetup)
+        public override PlayerStateMachine NextState(PlayerController playerController)
         {
-            if (fsmControllerSetup.Rb.linearVelocity.magnitude >= 0.2f)
+            if (playerController.Rb.linearVelocity.magnitude >= 0.2f)
             {
                 return new MovementState();
             }
 
-            if (!fsmControllerSetup.IsGrounded && fsmControllerSetup.canJump)
+            if (!playerController.IsGrounded && playerController.canJump)
             {
                 return new JumpState();
+            }
+
+            if (playerController.CurrentWeapon != null)
+            {
+                return new ItemCarryState();
             }
             
             return null;

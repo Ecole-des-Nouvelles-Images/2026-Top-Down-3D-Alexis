@@ -4,25 +4,25 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 {
     public class AttackState : PlayerStateMachine
     {
-        public override void OnStateEnter(FsmControllerSetup fsmControllerSetup)
+        public override void OnStateEnter(PlayerController playerController)
         {
             //fsmControllerSetup.Animator.SetBool("Hit", true);
-            fsmControllerSetup.canAttack = false;
-            fsmControllerSetup.canSlide = false;
-            fsmControllerSetup.canJump = false;
+            playerController.canAttack = false;
+            playerController.canSlide = false;
+            playerController.canJump = false;
         }
 
-        public override void OnUpdate(FsmControllerSetup fsmControllerSetup)
+        public override void OnUpdate(PlayerController playerController)
         {
             throw new System.NotImplementedException();
         }
 
-        public override void OnStateExit(FsmControllerSetup fsmControllerSetup)
+        public override void OnStateExit(PlayerController playerController)
         {
             throw new System.NotImplementedException();
         }
 
-        public override PlayerStateMachine NextState(FsmControllerSetup fsmControllerSetup)
+        public override PlayerStateMachine NextState(PlayerController playerController)
         {
             throw new System.NotImplementedException();
         }

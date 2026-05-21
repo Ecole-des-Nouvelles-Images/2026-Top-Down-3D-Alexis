@@ -5,37 +5,41 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 {
     public class JumpState : PlayerStateMachine
     {
-        public override void OnStateEnter(FsmControllerSetup fsmControllerSetup)
+        public override void OnStateEnter(PlayerController playerController)
         {
-            Debug.Log("JumpStateEnter");
-            //fsmControllerSetup.Animator.SetBool("Jump", true);
-            fsmControllerSetup.canAttack = false;
-            fsmControllerSetup.canSlide = true;
-            fsmControllerSetup.canJump = false;
+            //playerController.Animator.SetBool("Jump", true);
+            playerController.canAttack = false;
+            playerController.canJump = false;
         }
 
-        public override void OnUpdate(FsmControllerSetup fsmControllerSetup)
+        public override void OnUpdate(PlayerController playerController)
         {
-            fsmControllerSetup.Move(fsmControllerSetup.PlayerStats.AirSpeedModifier);
-            fsmControllerSetup.GravityModification(fsmControllerSetup.PlayerStats.AdditionalGravity);
+            playerController.Move(playerController.PlayerStats.AirSpeedModifier);
+            playerController.GravityModification(playerController.PlayerStats.AdditionalGravity);
         }
 
-        public override void OnStateExit(FsmControllerSetup fsmControllerSetup)
+        public override void OnStateExit(PlayerController playerController)
         {
-            //fsmControllerSetup.Animator.SetBool("Jump", false);
+            //playerController.Animator.SetBool("Jump", false);
         }
 
-        public override PlayerStateMachine NextState(FsmControllerSetup fsmControllerSetup)
+        public override PlayerStateMachine NextState(PlayerController playerController)
         {
-            if (fsmControllerSetup.IsGrounded && fsmControllerSetup.Rb.linearVelocity.magnitude <= 0.2f)
+            if (playerController.IsGrounded && playerController.Rb.linearVelocity.magnitude <= 0.2f)
             {
                 return new IdleState();
             }
             
-            if (fsmControllerSetup.IsGrounded && fsmControllerSetup.Rb.linearVelocity.magnitude >= 0.2f)
+            if (playerController.IsGrounded && playerController.Rb.linearVelocity.magnitude >= 0.2f)
             {
                 return new MovementState();
             }
+            
+            if (playerController.CurrentWeapon != null && playerController.IsGrounded)
+            {
+                return new ItemCarryState();
+            }
+            
             return null;
         }
     }

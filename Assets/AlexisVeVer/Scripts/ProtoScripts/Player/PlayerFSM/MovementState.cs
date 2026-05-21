@@ -5,39 +5,43 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 {
     public class MovementState : PlayerStateMachine
     {
-        public override void OnStateEnter(FsmControllerSetup fsmControllerSetup)
+        public override void OnStateEnter(PlayerController playerController)
         {
-            //fsmControllerSetup.Animator.SetBool("Movement", true);
-            fsmControllerSetup.canAttack = true;
-            fsmControllerSetup.canSlide = true;
-            fsmControllerSetup.canJump = true;
+            //playerController.Animator.SetBool("Movement", true);
+            playerController.canAttack = true;
+            playerController.canJump = true;
         }
 
-        public override void OnUpdate(FsmControllerSetup fsmControllerSetup)
+        public override void OnUpdate(PlayerController playerController)
         {
-            fsmControllerSetup.Move(fsmControllerSetup.PlayerStats.WalkingSpeedModifier);
+            playerController.Move(playerController.PlayerStats.WalkingSpeedModifier);
         }
 
-        public override void OnStateExit(FsmControllerSetup fsmControllerSetup)
+        public override void OnStateExit(PlayerController playerController)
         { 
-            
+            Debug.Log("Movement State::OnStateExit");
         }
 
-        public override PlayerStateMachine NextState(FsmControllerSetup fsmControllerSetup)
+        public override PlayerStateMachine NextState(PlayerController playerController)
         {
-            if (fsmControllerSetup.Rb.linearVelocity.magnitude <= 0.2f)
+            if (playerController.Rb.linearVelocity.magnitude <= 0.2f)
             {
                 return new IdleState();
             }
             
-            if (!fsmControllerSetup.IsGrounded && fsmControllerSetup.canJump)
+            if (!playerController.IsGrounded && playerController.canJump)
             {
                 return new JumpState();
             }
             
-            if (fsmControllerSetup.canSlide && fsmControllerSetup.doSlide)
+            if (playerController.canSlide && playerController.doSlide)
             {
                 return new SlideState();
+            }
+            
+            if (playerController.CurrentWeapon != null)
+            {
+                return new ItemCarryState();
             }
             
             return null;

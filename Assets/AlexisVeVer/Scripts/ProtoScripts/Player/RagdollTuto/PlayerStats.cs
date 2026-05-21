@@ -24,6 +24,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         [Header("Movements parameters"), Space(4)]
         public float WalkingSpeedModifier;
         public float AirSpeedModifier;
+        public float ItemCarrySpeedModifier;
         public float RotationSpeed;
         public float JumpForceModifier;
         public float AdditionalGravity = 10;
@@ -31,8 +32,6 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         public float SlideForceMultiplier;
 
         [Header("Slide parameters"), Space(4)] 
-        public bool CanSlide;
-        public float TimeFromSlide;
         public float SlideCd;
 
         [Header("Items parameters"), Space(4)] 

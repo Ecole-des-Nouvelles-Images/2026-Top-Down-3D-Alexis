@@ -1,30 +1,57 @@
 using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto;
+using UnityEngine;
 
 namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 {
     public class ItemCarryState : PlayerStateMachine
     {
-        public override void OnStateEnter(FsmControllerSetup fsmControllerSetup)
+        public override void OnStateEnter(PlayerController playerController)
         {
-            //fsmControllerSetup.Animator.SetBool("CarryItem", true);
-            fsmControllerSetup.canAttack = false;
-            fsmControllerSetup.canSlide = true;
-            fsmControllerSetup.canJump = true;
+            Debug.Log("Entered ItemCarryState");
+            
+            //playerController.Animator.SetBool("CarryItem", true);
+            playerController.canAttack = false;
+            playerController.canJump = true;
         }
 
-        public override void OnUpdate(FsmControllerSetup fsmControllerSetup)
+        public override void OnUpdate(PlayerController playerController)
         {
-            throw new System.NotImplementedException();
+            playerController.Move(playerController.PlayerStats.ItemCarrySpeedModifier);
+            if (playerController.doAttack)
+            {
+                playerController.CurrentWeapon.Use(playerController);
+                playerController.doAttack = false;
+            }
         }
 
-        public override void OnStateExit(FsmControllerSetup fsmControllerSetup)
+        public override void OnStateExit(PlayerController playerController)
         {
-            throw new System.NotImplementedException();
+            Debug.Log("Exited ItemCarryState");
         }
 
-        public override PlayerStateMachine NextState(FsmControllerSetup fsmControllerSetup)
+        public override PlayerStateMachine NextState(PlayerController playerController)
         {
-            throw new System.NotImplementedException();
+            if (playerController.CurrentWeapon == null)
+            {
+                return new IdleState();
+            }
+            
+            if (playerController.CurrentWeapon != null && playerController.Rb.linearVelocity.magnitude >= 0.2f)
+            {
+                return new MovementState();
+            }
+            
+            if (playerController.CurrentWeapon != null && !playerController.IsGrounded)
+            {
+                return new JumpState();
+            }
+            
+            if (playerController.CurrentWeapon != null && playerController.canSlide && playerController.doSlide)
+            {
+                return new SlideState();
+            }
+            
+            return null;
         }
     }
 }

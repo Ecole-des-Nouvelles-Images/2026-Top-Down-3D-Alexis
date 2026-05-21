@@ -5,40 +5,45 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 {
     public class SlideState : PlayerStateMachine
     {
-        public override void OnStateEnter(FsmControllerSetup fsmControllerSetup)
+        public override void OnStateEnter(PlayerController playerController)
         {
-            Debug.Log("TimeInSlideState");
-            //fsmControllerSetup.Animator.SetBool("Slide", true);
-            fsmControllerSetup.canAttack = true;
-            fsmControllerSetup.canJump = false;
+            //playerController.Animator.SetBool("Slide", true);
+            playerController.canAttack = true;
+            playerController.canJump = false;
             
-            fsmControllerSetup.Rb.AddForce(
-                new Vector3(fsmControllerSetup.Rb.linearVelocity.x * fsmControllerSetup.PlayerStats.SlideForceMultiplier, 0,
-                    fsmControllerSetup.Rb.linearVelocity.z * fsmControllerSetup.PlayerStats.SlideForceMultiplier),
+            playerController.Rb.AddForce(
+                new Vector3(playerController.Rb.linearVelocity.x * playerController.PlayerStats.SlideForceMultiplier, 0,
+                    playerController.Rb.linearVelocity.z * playerController.PlayerStats.SlideForceMultiplier),
                 ForceMode.VelocityChange);
-            fsmControllerSetup.canSlide = false;
+            playerController.canSlide = false;
         }
 
-        public override void OnUpdate(FsmControllerSetup fsmControllerSetup)
+        public override void OnUpdate(PlayerController playerController)
         {
             
         }
 
-        public override void OnStateExit(FsmControllerSetup fsmControllerSetup)
+        public override void OnStateExit(PlayerController playerController)
         {
-            
+            playerController.doSlide = false;
+            Debug.Log("Exiting slide state");
         }
 
-        public override PlayerStateMachine NextState(FsmControllerSetup fsmControllerSetup)
+        public override PlayerStateMachine NextState(PlayerController playerController)
         {
-            if (fsmControllerSetup.IsGrounded && fsmControllerSetup.Rb.linearVelocity.magnitude <= 0.3f)
+            if (playerController.IsGrounded && playerController.Rb.linearVelocity.magnitude <= 0.3f)
             {
                 return new MovementState();
             }
             
-            if (!fsmControllerSetup.IsGrounded)
+            if (!playerController.IsGrounded)
             {
                 return new JumpState();
+            }
+            
+            if (playerController.CurrentWeapon != null && playerController.IsGrounded && playerController.Rb.linearVelocity.magnitude <= 0.3f)
+            {
+                return new ItemCarryState();
             }
             
             return null;
