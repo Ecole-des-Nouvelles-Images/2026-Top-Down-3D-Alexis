@@ -43,25 +43,9 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player
         public void OnAttackAnimationEnd()
         {
             _playerController.attackOver = true;
-            if (_playerController.doAttackLeftHand)
-            {
-                _playerController.doAttackLeftHand = false;
-            }
-            
-            if (_playerController.doAttackRightHand)
-            {
-                _playerController.doAttackRightHand = false;
-            }
-        }
-
-        public void OnStunAnimationEnd()
-        {
-            _playerController.playerHealth.IsStunned = false;
         }
         
-        public void OnDeadAnimationEnd()
-        {
-            Destroy(_playerController.gameObject, 0.5f);
-        }
+        
+        
     }
 }

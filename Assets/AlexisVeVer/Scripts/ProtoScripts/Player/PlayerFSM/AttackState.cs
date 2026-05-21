@@ -1,5 +1,4 @@
 using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto;
-using UnityEngine;
 
 namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 {
@@ -9,12 +8,12 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
         {
             if (playerController.doAttackLeftHand)
             {
-                playerController.CharacterAnimator.SetTrigger("AttackRight");
+                playerController.CharacterAnimator.SetTrigger("AttackLeft");
             }
             
             if (playerController.doAttackRightHand)
             {
-                playerController.CharacterAnimator.SetTrigger("AttackLeft");
+                playerController.CharacterAnimator.SetTrigger("AttackRight");
             }
         }
 
@@ -33,16 +32,6 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
             if (playerController.attackOver)
             {
                 return new IdleState();
-            }
-            
-            if (playerController.playerHealth.IsStunned)
-            {
-                return new StunnedState();
-            }
-            
-            if (playerController.playerHealth.IsDead)
-            {
-                return new DeathState();
             }
             
             return null;

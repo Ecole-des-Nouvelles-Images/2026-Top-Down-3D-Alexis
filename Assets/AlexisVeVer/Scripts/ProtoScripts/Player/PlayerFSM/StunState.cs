@@ -3,32 +3,29 @@ using UnityEngine;
 
 namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 {
-    public class StunnedState : PlayerStateMachine
+    public class StunState : PlayerStateMachine
     {
         public override void OnStateEnter(PlayerController playerController)
         {
-            playerController.CharacterAnimator.SetTrigger("Stun");
+            //playerController.Animator.SetBool("Stun", true);
+            playerController.canAttack = false;
+            playerController.canSlide = false;
+            playerController.canJump = false;
         }
 
         public override void OnUpdate(PlayerController playerController)
         {
-            
+            throw new System.NotImplementedException();
         }
 
         public override void OnStateExit(PlayerController playerController)
         {
-            playerController.playerHealth.CurrentStun = playerController.PlayerStats.MinStun;
+            throw new System.NotImplementedException();
         }
 
         public override PlayerStateMachine NextState(PlayerController playerController)
         {
-            
-            if (!playerController.playerHealth.IsStunned)
-            {
-                return new IdleState();
-            }
-            
-            return null;
+            throw new System.NotImplementedException();
         }
     }
 }

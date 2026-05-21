@@ -11,7 +11,6 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         public float CurrentHealth;
         
         [Header("Stun parameters"), Space(4)]
-        public float StaggerForce;
         public float MinStun;
         public float CurrentStun;
         public float MaxStun;

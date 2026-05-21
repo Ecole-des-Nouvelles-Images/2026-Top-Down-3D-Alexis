@@ -6,22 +6,25 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
     {
         public override void OnStateEnter(PlayerController playerController)
         {
-            playerController.CharacterAnimator.SetTrigger("Dead");
+            //fsmControllerSetup.Animator.SetBool("Dead", true);
+            playerController.canAttack = false;
+            playerController.canSlide = false;
+            playerController.canJump = false;
         }
 
         public override void OnUpdate(PlayerController playerController)
         {
-            
+            throw new System.NotImplementedException();
         }
 
         public override void OnStateExit(PlayerController playerController)
         {
-            // There is no exiting death
+            throw new System.NotImplementedException();
         }
 
         public override PlayerStateMachine NextState(PlayerController playerController)
         {
-            return null;
+            throw new System.NotImplementedException();
         }
     }
 }
