@@ -10,7 +10,6 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
             Debug.Log("Entered ItemCarryState");
             
             //playerController.Animator.SetBool("CarryItem", true);
-            playerController.canAttack = false;
             playerController.canJump = true;
         }
 
@@ -50,6 +49,21 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
             if (playerController.CurrentWeapon != null && playerController.canSlide && playerController.doSlide)
             {
                 return new SlideState();
+            }
+            
+            if (playerController.playerHealth.GotHit && !playerController.playerHealth.IsStunned && !playerController.playerHealth.IsDead)
+            {
+                return new StaggerState();
+            }
+            
+            if (playerController.playerHealth.IsStunned)
+            {
+                return new StunnedState();
+            }
+            
+            if (playerController.playerHealth.IsDead)
+            {
+                return new DeathState();
             }
             
             return null;

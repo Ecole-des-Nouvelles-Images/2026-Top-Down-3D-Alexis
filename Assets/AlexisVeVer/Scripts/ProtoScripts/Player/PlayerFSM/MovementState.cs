@@ -8,7 +8,6 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
         public override void OnStateEnter(PlayerController playerController)
         {
             playerController.CharacterAnimator.SetBool("Walking", true);
-            playerController.canAttack = true;
             playerController.canJump = true;
         }
 
@@ -47,6 +46,21 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
             if (playerController.IsGrounded && playerController.doAttackLeftHand || playerController.doAttackRightHand)
             {
                 return new AttackState();
+            }
+            
+            if (playerController.playerHealth.GotHit && !playerController.playerHealth.IsStunned && !playerController.playerHealth.IsDead)
+            {
+                return new StaggerState();
+            }
+            
+            if (playerController.playerHealth.IsStunned)
+            {
+                return new StunnedState();
+            }
+            
+            if (playerController.playerHealth.IsDead)
+            {
+                return new DeathState();
             }
             
             return null;

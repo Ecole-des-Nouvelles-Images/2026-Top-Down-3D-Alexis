@@ -8,7 +8,6 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
         public override void OnStateEnter(PlayerController playerController)
         {
             //playerController.Animator.SetBool("Slide", true);
-            playerController.canAttack = true;
             playerController.canJump = false;
             
             playerController.Rb.AddForce(
@@ -44,6 +43,21 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
             if (playerController.CurrentWeapon != null && playerController.IsGrounded && playerController.Rb.linearVelocity.magnitude <= 0.3f)
             {
                 return new ItemCarryState();
+            }
+            
+            if (playerController.playerHealth.GotHit && !playerController.playerHealth.IsStunned && !playerController.playerHealth.IsDead)
+            {
+                return new StaggerState();
+            }
+            
+            if (playerController.playerHealth.IsStunned)
+            {
+                return new StunnedState();
+            }
+            
+            if (playerController.playerHealth.IsDead)
+            {
+                return new DeathState();
             }
             
             return null;

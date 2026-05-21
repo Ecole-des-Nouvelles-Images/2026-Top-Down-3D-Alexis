@@ -22,7 +22,6 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         private PlayerStateMachine _currentState;
         
         //FSM Transitions
-        public bool canAttack;
         public bool canSlide;
         public bool doSlide;
         public bool canJump;
@@ -36,14 +35,14 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         private bool _isGrounded;
 
         //Components
-        public Animator CharacterAnimator;
-
-        public Weapon CurrentWeapon;
+        [HideInInspector] public PlayerHealth playerHealth;
+        [HideInInspector] public Animator CharacterAnimator;
+        [HideInInspector] public Weapon CurrentWeapon;
         private ConfigurableJoint _mainJoint;
 
         //Inputs
-        public Vector2 MoveInput;
-        public Rigidbody Rb;
+        [HideInInspector] public Vector2 MoveInput;
+        [HideInInspector] public Rigidbody Rb;
         
         //PauseMenu
         [Header("PauseMenu Reference")] [Space(4)] 

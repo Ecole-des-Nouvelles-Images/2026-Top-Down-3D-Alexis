@@ -327,6 +327,7 @@ MonoBehaviour:
   doAttackRightHand: 0
   doAttackLeftHand: 0
   attackOver: 0
+  playerHealth: {fileID: 0}
   CharacterAnimator: {fileID: 1045087246608804970}
   CurrentWeapon: {fileID: 0}
   MoveInput: {x: 0, y: 0}
@@ -345,10 +346,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   _playerStats: {fileID: 11400000, guid: 70d37fcc2f3e88b43b335b69c1e66c9d, type: 2}
-  _playerController: {fileID: 0}
+  _playerController: {fileID: 2844272104208962778}
   _animator: {fileID: 1045087246608804970}
   _healthBar: {fileID: 0}
   _animationTime: 4
+  CurrentHealth: 0
+  CurrentStun: 0
+  GotHit: 0
+  IsStunned: 0
+  IsDead: 0
 --- !u!1 &3650323665813018679
 GameObject:
   m_ObjectHideFlags: 0
