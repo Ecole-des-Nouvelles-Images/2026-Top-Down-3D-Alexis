@@ -1,5 +1,6 @@
 using System;
 using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto;
+using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items;
 using UnityEngine;
 
 namespace AlexisVeVer.Scripts.ProtoScripts.Player
@@ -43,6 +44,11 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player
         public void OnAttackAnimationEnd()
         {
             _playerController.attackOver = true;
+        }
+
+        public void OnHammerAttack()
+        {
+            _playerController.gameObject.GetComponentInChildren<HammerAttack>().OnAttack();
         }
         
         
