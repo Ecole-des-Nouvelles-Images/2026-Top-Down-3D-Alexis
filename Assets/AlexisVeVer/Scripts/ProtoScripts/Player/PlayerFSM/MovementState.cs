@@ -49,6 +49,11 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
                 return new AttackState();
             }
             
+            if (playerController.isStunned)
+            {
+                return new StunState();
+            }
+            
             return null;
         }
     }

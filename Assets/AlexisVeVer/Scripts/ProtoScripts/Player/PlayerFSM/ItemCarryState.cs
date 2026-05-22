@@ -52,6 +52,11 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
                 return new SlideState();
             }
             
+            if (playerController.isStunned)
+            {
+                return new StunState();
+            }
+            
             return null;
         }
     }

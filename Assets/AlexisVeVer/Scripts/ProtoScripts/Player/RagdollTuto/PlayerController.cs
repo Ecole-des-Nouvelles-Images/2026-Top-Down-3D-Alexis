@@ -29,6 +29,8 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         [HideInInspector] public bool doAttackRightHand;
         [HideInInspector] public bool doAttackLeftHand;
         [HideInInspector] public bool attackOver;
+        [HideInInspector] public bool isStunned;
+        [HideInInspector] public bool isDead;
 
         private float _timeSinceSlideInCd;
         
