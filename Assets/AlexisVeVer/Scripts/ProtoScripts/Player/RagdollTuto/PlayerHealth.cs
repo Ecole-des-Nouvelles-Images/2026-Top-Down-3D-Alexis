@@ -9,7 +9,6 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         [SerializeField] private PlayerController _playerController;
         
         [SerializeField] private Animator _animator;
-        [SerializeField] private Image _healthBar;
         
         [SerializeField] private float _animationTime;
         private float _currentHealth;

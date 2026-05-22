@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ccc08f77207dcb4da988e35015bb4a2, type: 3}
-  m_Name: P2
-  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.PlayerStats
+  m_Name: PlayerSo
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerOneStats
   MaxHealth: 15
   CurrentHealth: 15
   MinStun: 0
@@ -21,13 +21,13 @@ MonoBehaviour:
   AttackDamage: 0
   AttackStun: 0
   AttackDuration: 0
-  SpeedModifier: 25
+  WalkingSpeedModifier: 25
+  AirSpeedModifier: 50
+  ItemCarrySpeedModifier: 0
   RotationSpeed: 300
   JumpForceModifier: 100
   AdditionalGravity: 150
   MaxSpeed: 15
-  SlideForceMultiplier: 10
-  CanSlide: 1
-  TimeFromSlide: 0
-  SlideCd: 0
+  SlideForceMultiplier: 3
+  SlideCd: 5
   ItemPickedUp: 0

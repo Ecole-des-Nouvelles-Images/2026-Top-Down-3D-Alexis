@@ -20,7 +20,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 
         public override void OnStateExit(PlayerController playerController)
         {
-            //playerController.Animator.SetBool("Jump", false);
+            
         }
 
         public override PlayerStateMachine NextState(PlayerController playerController)

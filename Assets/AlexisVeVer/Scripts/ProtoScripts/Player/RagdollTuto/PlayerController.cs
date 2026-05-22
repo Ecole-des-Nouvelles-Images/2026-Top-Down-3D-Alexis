@@ -35,6 +35,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         [HideInInspector] public bool attackOver;
         [HideInInspector] public bool isStunned;
         [HideInInspector] public bool isDead;
+        [HideInInspector] public bool isDrowned;
 
         private float _timeSinceSlideInCd;
         
@@ -50,14 +51,17 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         //VFX
         [Header("VFX")] [Space(4)]
-        public GameObject FallSmoke;
-        public Vector3 FallSmokeOffset;
+        [SerializeField] private GameObject _fallSmoke;
+        [SerializeField] private Vector3 _fallSmokeOffset;
         
         public GameObject StunVfx;
         public Vector3 StunVfxOffset;
         
-        public GameObject DeathVfx;
-        public Vector3 DeathVfxOffset;
+        [SerializeField] private GameObject _deathVfx;
+        [SerializeField] private Vector3 _deathVfxOffset;
+        
+        [SerializeField] private GameObject _drownedVfx;
+        [SerializeField] private Vector3 _drownedVfxOffset;
         
         //Inputs
         public Vector2 MoveInput;
@@ -145,9 +149,16 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
                 }
             }
 
+            // Death gestion
             if (isDead)
             {
-                Instantiate(DeathVfx, transform.position + DeathVfxOffset, Quaternion.Euler(-90, 0, 0));
+                Instantiate(_deathVfx, transform.position + _deathVfxOffset, Quaternion.Euler(-90, 0, 0));
+                Destroy(gameObject);
+            }
+
+            if (isDrowned)
+            {
+                Instantiate(_drownedVfx, transform.position + _drownedVfxOffset, Quaternion.Euler(-90, 0, 0));
                 Destroy(gameObject);
             }
         }
@@ -213,7 +224,20 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             weapon.GetComponent<ItemPickUp>().enabled = false;
             weapon.transform.parent = _handSocket.transform;
             weapon.transform.localPosition = Vector3.zero;
-            weapon.transform.localRotation = Quaternion.Euler(new Vector3(90, 90, 0));
+            // Changer la rotation en fonction de l'objet équipé
+            if (weapon is HammerAttack)
+            {
+                weapon.transform.localRotation = Quaternion.Euler(new Vector3(-30, 340, 160));
+            }
+
+            if (weapon is BazookaAttack)
+            {
+                weapon.transform.localRotation = Quaternion.Euler(new Vector3(-90, 0, 90));
+            }
+            else
+            {
+                weapon.transform.localRotation = Quaternion.Euler(new Vector3(90, 90, 0));
+            }
         }
 
         public void UnEquip()

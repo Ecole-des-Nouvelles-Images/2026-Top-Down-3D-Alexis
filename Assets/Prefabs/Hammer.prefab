@@ -9,6 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1882748428546518139}
+  - component: {fileID: 322184668033638669}
+  - component: {fileID: 4017068430465244959}
+  - component: {fileID: 3216084888838979005}
   m_Layer: 0
   m_Name: Hammer
   m_TagString: Untagged
@@ -33,6 +36,64 @@ Transform:
   - {fileID: 781128043872813941}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &322184668033638669
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4713868974010988111}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6, y: 12, z: 10}
+  m_Center: {x: 0, y: 6, z: 0}
+--- !u!114 &4017068430465244959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4713868974010988111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbd313a34c401604a827a19bac6723b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items.ItemPickUp
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  _rotationVector: {x: 0, y: 0, z: 10}
+  _offset: {x: 0, y: 0, z: 0}
+  _timeBeforeDestroy: 0
+  _radius: 1
+--- !u!114 &3216084888838979005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4713868974010988111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80c99c920bc902b47a28103a1034fcfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items.HammerAttack
+  _hitbox: {fileID: 6383298053977706934}
+  _attackVfx: {fileID: 7991347955089512951, guid: dc25d4aa60aefea498a8be421cd7ae46, type: 3}
+  _attackVfxOffset: {x: -0.5, y: -0.1, z: 0.6}
+  _decal: {fileID: 7192839355555750716, guid: f954ae62f83c3644d8a40b7e5ac14dda, type: 3}
+  _decalOffset: {x: -2.2, y: -2.1, z: 0.5}
+  _animationTime: 0
 --- !u!1 &6383298053977706934
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,15 +184,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3915258031584504751, guid: a715fa2bf45968541b8d8674b7b46e0a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.13163
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3915258031584504751, guid: a715fa2bf45968541b8d8674b7b46e0a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.20225
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3915258031584504751, guid: a715fa2bf45968541b8d8674b7b46e0a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.27874
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3915258031584504751, guid: a715fa2bf45968541b8d8674b7b46e0a, type: 3}
       propertyPath: m_LocalRotation.w
