@@ -1,9 +1,13 @@
 using AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM;
 using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items;
 using AlexisVeVer.Scripts.UI;
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 {
@@ -63,6 +67,9 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         [Header("PauseMenu Reference")] [Space(4)] 
         [SerializeField] private GameObject _pauseMenu;
         
+        //Syncing of physics objects
+        SyncPhysicsObject[] syncPhysicsObjects;
+
         public bool IsGrounded {
             get =>_isGrounded;
 
@@ -73,6 +80,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         
         private void Awake()
         {
+            syncPhysicsObjects = GetComponentsInChildren<SyncPhysicsObject>();
             Rb = GetComponent<Rigidbody>();
             _mainJoint = GetComponent<ConfigurableJoint>();
 
@@ -141,6 +149,14 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             {
                 Instantiate(DeathVfx, transform.position + DeathVfxOffset, Quaternion.Euler(-90, 0, 0));
                 Destroy(gameObject);
+            }
+        }
+
+        private void FixedUpdate()
+        {
+            for (int i = 0; i < syncPhysicsObjects.Length; i++)
+            {
+                syncPhysicsObjects[i].UpdateJointFromAnimation();
             }
         }
 
@@ -216,5 +232,6 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         {
             Rb.AddForce(Vector3.down * gravityModifier);
         }
+        //Update the joints rotation based on the animation
     }
 }
