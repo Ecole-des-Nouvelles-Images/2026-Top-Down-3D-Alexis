@@ -40,6 +40,11 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
                 return new ItemCarryState();
             }
             
+            if (playerController.isStunned)
+            {
+                return new StunState();
+            }
+            
             return null;
         }
     }

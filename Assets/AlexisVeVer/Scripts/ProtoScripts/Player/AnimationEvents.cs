@@ -10,6 +10,9 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player
         [Header("PlayerController")]
         [SerializeField] private PlayerController _playerController;
         
+        [Header("PlayerHealth"), Space(10)]
+        [SerializeField] private PlayerHealth _playerHealth;
+        
         [Header("Attack Parameters"), Space(10)]
         [SerializeField] private GameObject _leftHandHitbox;
         [SerializeField] private GameObject _rightHandHitbox;
@@ -19,6 +22,12 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player
         private void Start()
         {
             
+        }
+        
+        public void OnStunAnimationEnd()
+        {
+            _playerController.isStunned = false;
+            _playerHealth.CurrentStun = 0;
         }
 
         public void OnActiveLeftHandHitbox()
@@ -44,6 +53,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player
         public void OnAttackAnimationEnd()
         {
             _playerController.attackOver = true;
+            Debug.Log("L'attaque est finie");
         }
 
         public void OnHammerAttack()

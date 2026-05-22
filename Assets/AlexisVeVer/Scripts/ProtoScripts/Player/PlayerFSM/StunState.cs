@@ -7,25 +7,28 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
     {
         public override void OnStateEnter(PlayerController playerController)
         {
-            //playerController.Animator.SetBool("Stun", true);
-            playerController.canAttack = false;
-            playerController.canSlide = false;
+            playerController.CharacterAnimator.SetBool("IsStunned", true);
             playerController.canJump = false;
         }
 
         public override void OnUpdate(PlayerController playerController)
         {
-            throw new System.NotImplementedException();
+            
         }
 
         public override void OnStateExit(PlayerController playerController)
         {
-            throw new System.NotImplementedException();
+            playerController.CharacterAnimator.SetBool("IsStunned", false);
         }
 
         public override PlayerStateMachine NextState(PlayerController playerController)
         {
-            throw new System.NotImplementedException();
+            if (!playerController.isStunned)
+            {
+                return new IdleState();
+            }
+            
+            return null;
         }
     }
 }
