@@ -21,7 +21,7 @@ MonoBehaviour:
   AttackDamage: 0
   AttackStun: 0
   AttackDuration: 0
-  WalkingSpeedModifier: 50
+  WalkingSpeedModifier: 10
   AirSpeedModifier: 50
   ItemCarrySpeedModifier: 0
   RotationSpeed: 300

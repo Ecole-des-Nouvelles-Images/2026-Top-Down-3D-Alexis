@@ -6,6 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="c7327bd5-3bda-4924-982b-1d4a14308c9e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2026-Top-Down-3D-Alexis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2026-Top-Down-3D-Alexis/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/SyncPhysicsObjects.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/SyncPhysicsObjects.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Physics material/ZeroFriction.physicMaterial" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Physics material/ZeroFriction.physicMaterial" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Prefabs/ManchotMafia.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Prefabs/ManchotMafia.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scenes/MainMenu.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scenes/MainMenu.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scriptable Objects/P1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Scriptable Objects/P1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/RagdollTuto/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/RagdollTuto/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/UI/MainSceneUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/UI/MainSceneUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/AC_Pinguin.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/AC_Pinguin.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/HitEffect.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/HitEffect.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +125,7 @@
       <workItem from="1779094961612" duration="4312000" />
       <workItem from="1779108805965" duration="946000" />
       <workItem from="1779352642777" duration="3469000" />
+      <workItem from="1779435812252" duration="4867000" />
     </task>
     <servers />
   </component>

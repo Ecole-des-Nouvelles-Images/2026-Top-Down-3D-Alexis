@@ -559,7 +559,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4503413245095512142, guid: 7bf372125b640844d9f5a152ad606f58, type: 3}
       propertyPath: m_Name
-      value: particules
+      value: PS_FanWind
       objectReference: {fileID: 0}
     - target: {fileID: 4862658050434882023, guid: 7bf372125b640844d9f5a152ad606f58, type: 3}
       propertyPath: m_LocalScale.x
