@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c7327bd5-3bda-4924-982b-1d4a14308c9e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2026-Top-Down-3D-Alexis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2026-Top-Down-3D-Alexis/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +16,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/AlexisTaTa/ConfigurableJointExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AlexisTaTa/TargetGroupAutoRegister.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@3b809f23691d/Runtime/Passes/ScriptableRenderPass.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@3b809f23691d/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
@@ -111,7 +111,7 @@
       <workItem from="1778665402606" duration="1973000" />
       <workItem from="1779094961612" duration="4312000" />
       <workItem from="1779108805965" duration="946000" />
-      <workItem from="1779352642777" duration="1799000" />
+      <workItem from="1779352642777" duration="3469000" />
     </task>
     <servers />
   </component>
