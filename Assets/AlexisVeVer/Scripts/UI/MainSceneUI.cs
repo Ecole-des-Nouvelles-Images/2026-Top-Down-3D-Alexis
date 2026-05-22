@@ -77,7 +77,7 @@ namespace AlexisVeVer.Scripts.UI
             
             if (_transitionTime >= _timerForTransition)
             {
-                SceneManager.LoadScene("AlexisVeVer/Scenes/SceneProd");
+                SceneManager.LoadScene("GameScene");
                 _transitionTime = 0;
                 _doTransition = false;
                 Time.timeScale = 1;
