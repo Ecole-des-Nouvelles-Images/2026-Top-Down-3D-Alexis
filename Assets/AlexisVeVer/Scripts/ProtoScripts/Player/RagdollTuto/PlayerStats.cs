@@ -8,13 +8,10 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
     {
         [Header("Health parameters"), Space(4)]
         public float MaxHealth;
-        public float CurrentHealth;
         
         [Header("Stun parameters"), Space(4)]
         public float MinStun;
-        public float CurrentStun;
         public float MaxStun;
-        public float StunDuration;
 
         [Header("Attack parameters"), Space(4)]
         public float AttackDamage;

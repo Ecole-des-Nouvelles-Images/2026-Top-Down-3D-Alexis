@@ -29,17 +29,19 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         [HideInInspector] public bool canAttack;
         [HideInInspector] public bool canSlide;
         [HideInInspector] public bool doSlide;
-        [HideInInspector] public bool canJump;
+         public bool canJump;
+         public bool jumped;
         [HideInInspector] public bool doAttackRightHand;
         [HideInInspector] public bool doAttackLeftHand;
         [HideInInspector] public bool attackOver;
         [HideInInspector] public bool isStunned;
         [HideInInspector] public bool isDead;
+        [HideInInspector] public bool isDrowned;
 
         private float _timeSinceSlideInCd;
         
         //States
-        private bool _isGrounded;
+        [SerializeField] private bool _isGrounded;
 
         //Components
         [Header("Animator")] [Space(4)] 
@@ -50,14 +52,17 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         //VFX
         [Header("VFX")] [Space(4)]
-        public GameObject FallSmoke;
-        public Vector3 FallSmokeOffset;
+        [SerializeField] private GameObject _fallSmoke;
+        [SerializeField] private Vector3 _fallSmokeOffset;
         
         public GameObject StunVfx;
         public Vector3 StunVfxOffset;
         
-        public GameObject DeathVfx;
-        public Vector3 DeathVfxOffset;
+        [SerializeField] private GameObject _deathVfx;
+        [SerializeField] private Vector3 _deathVfxOffset;
+        
+        [SerializeField] private GameObject _drownedVfx;
+        [SerializeField] private Vector3 _drownedVfxOffset;
         
         //Inputs
         public Vector2 MoveInput;
@@ -68,7 +73,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         [SerializeField] private GameObject _pauseMenu;
         
         //Syncing of physics objects
-        SyncPhysicsObject[] syncPhysicsObjects;
+        SyncPhysicsObject[] _syncPhysicsObjects;
 
         public bool IsGrounded {
             get =>_isGrounded;
@@ -76,11 +81,13 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             set { _isGrounded = value; }
         }
         
+        public PlayerStateMachine CurrentState => _currentState;
+        
         public bool WeaponEquipped => CurrentWeapon != null;
         
         private void Awake()
         {
-            syncPhysicsObjects = GetComponentsInChildren<SyncPhysicsObject>();
+            _syncPhysicsObjects = GetComponentsInChildren<SyncPhysicsObject>();
             Rb = GetComponent<Rigidbody>();
             _mainJoint = GetComponent<ConfigurableJoint>();
 
@@ -145,18 +152,25 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
                 }
             }
 
+            // Death gestion
             if (isDead)
             {
-                Instantiate(DeathVfx, transform.position + DeathVfxOffset, Quaternion.Euler(-90, 0, 0));
+                Instantiate(_deathVfx, transform.position + _deathVfxOffset, Quaternion.Euler(-90, 0, 0));
+                Destroy(gameObject);
+            }
+
+            if (isDrowned)
+            {
+                Instantiate(_drownedVfx, transform.position + _drownedVfxOffset, Quaternion.Euler(-90, 0, 0));
                 Destroy(gameObject);
             }
         }
 
         private void FixedUpdate()
         {
-            for (int i = 0; i < syncPhysicsObjects.Length; i++)
+            for (int i = 0; i < _syncPhysicsObjects.Length; i++)
             {
-                syncPhysicsObjects[i].UpdateJointFromAnimation();
+                _syncPhysicsObjects[i].UpdateJointFromAnimation();
             }
         }
 
@@ -167,9 +181,10 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         private void OnJump()
         {
-            if (_isGrounded)
+            if (_isGrounded && canJump)
             {
                 Rb.AddForce(Vector3.up * PlayerStats.JumpForceModifier, ForceMode.Impulse);
+                jumped = true;
                 _isGrounded = false;
             }
         }
@@ -213,7 +228,20 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             weapon.GetComponent<ItemPickUp>().enabled = false;
             weapon.transform.parent = _handSocket.transform;
             weapon.transform.localPosition = Vector3.zero;
-            weapon.transform.localRotation = Quaternion.Euler(new Vector3(90, 90, 0));
+            // Changer la rotation en fonction de l'objet équipé
+            if (weapon is HammerAttack)
+            {
+                weapon.transform.localRotation = Quaternion.Euler(new Vector3(-30, 340, 160));
+            }
+
+            if (weapon is BazookaAttack)
+            {
+                weapon.transform.localRotation = Quaternion.Euler(new Vector3(-90, 0, 90));
+            }
+            else
+            {
+                weapon.transform.localRotation = Quaternion.Euler(new Vector3(90, 90, 0));
+            }
         }
 
         public void UnEquip()

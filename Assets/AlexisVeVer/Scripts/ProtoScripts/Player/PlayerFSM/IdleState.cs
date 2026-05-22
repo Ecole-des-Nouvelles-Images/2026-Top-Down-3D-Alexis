@@ -31,7 +31,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
                 return new MovementState();
             }
 
-            if (!playerController.IsGrounded && playerController.canJump)
+            if (!playerController.IsGrounded && !playerController.jumped)
             {
                 return new JumpState();
             }
