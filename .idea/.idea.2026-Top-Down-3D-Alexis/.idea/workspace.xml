@@ -6,24 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="c7327bd5-3bda-4924-982b-1d4a14308c9e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2026-Top-Down-3D-Alexis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2026-Top-Down-3D-Alexis/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/AlexisTATAv2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisTaTa/AlexisTATAv2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/Tex3DCreator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/Tex3DCreator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/TexArrayCreator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/TexArrayCreator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/Water 1.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/Water 1.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/Water.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/Water.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/Water2.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/Water2.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/WaterShader 1.shadergraph" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/WaterShader 1.shadergraph.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/WaterShader.shadergraph" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/WaterShader.shadergraph.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/PC_Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/PC_Renderer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/SyncPhysicsObjects.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/SyncPhysicsObjects.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Physics material/ZeroFriction.physicMaterial" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Physics material/ZeroFriction.physicMaterial" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Prefabs/ManchotMafia.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Prefabs/ManchotMafia.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scenes/MainMenu.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scenes/MainMenu.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scriptable Objects/P1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Scriptable Objects/P1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/RagdollTuto/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/RagdollTuto/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/UI/MainSceneUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/UI/MainSceneUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/AC_Pinguin.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/AC_Pinguin.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/HitEffect.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/HitEffect.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +29,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/AlexisTaTa/ConfigurableJointExtensions.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AlexisTaTa/TargetGroupAutoRegister.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@3b809f23691d/Runtime/Passes/ScriptableRenderPass.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@3b809f23691d/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -127,6 +124,8 @@
       <workItem from="1778665402606" duration="1973000" />
       <workItem from="1779094961612" duration="4312000" />
       <workItem from="1779108805965" duration="946000" />
+      <workItem from="1779352642777" duration="3469000" />
+      <workItem from="1779435812252" duration="4867000" />
     </task>
     <servers />
   </component>

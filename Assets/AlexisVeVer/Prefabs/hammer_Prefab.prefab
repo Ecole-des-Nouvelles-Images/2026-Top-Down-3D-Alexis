@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1906569923010817331
+--- !u!1 &1283138267182088081
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4530773592931346742}
-  - component: {fileID: 3645723492875716077}
-  - component: {fileID: 6796961953744816705}
+  - component: {fileID: 6107542136023701078}
+  - component: {fileID: 4440251384063154466}
+  - component: {fileID: 8166440522462677404}
   m_Layer: 0
-  m_Name: Hitbox
+  m_Name: HammerHitBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4530773592931346742
+  m_IsActive: 0
+--- !u!4 &6107542136023701078
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1906569923010817331}
+  m_GameObject: {fileID: 1283138267182088081}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.50000006, y: -0.50000006, z: 0.49999997, w: 0.49999997}
+  m_LocalPosition: {x: -0.003, y: 0, z: 0.0059999996}
+  m_LocalScale: {x: 0.010000003, y: 0.010000001, z: 0.010000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3463391941197903807}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &3645723492875716077
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!65 &4440251384063154466
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1906569923010817331}
+  m_GameObject: {fileID: 1283138267182088081}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -50,17 +50,17 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.03, y: 0.03, z: 0.005}
+  m_Size: {x: 3, y: 0.4, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6796961953744816705
+--- !u!114 &8166440522462677404
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1906569923010817331}
+  m_GameObject: {fileID: 1283138267182088081}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 280ff46fbdba79847ba5dd6ff16649b3, type: 3}
@@ -129,7 +129,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6e523f0be9db1a64cb6117812f280e70, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4530773592931346742}
+      addedObject: {fileID: 6107542136023701078}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e523f0be9db1a64cb6117812f280e70, type: 3}
       insertIndex: -1
@@ -184,8 +184,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd313a34c401604a827a19bac6723b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items.ItemPickUp
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
   _rotationVector: {x: 0, y: 0, z: 10}
+  _offset: {x: 0, y: 0, z: 0}
   _timeBeforeDestroy: 0
+  _radius: 1
 --- !u!114 &6442212695842135026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,4 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c99c920bc902b47a28103a1034fcfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items.HammerAttack
-  _hitbox: {fileID: 1906569923010817331}
+  _hitbox: {fileID: 1283138267182088081}
+  _attackVfx: {fileID: 7991347955089512951, guid: dc25d4aa60aefea498a8be421cd7ae46, type: 3}
+  _decal: {fileID: 7192839355555750716, guid: f954ae62f83c3644d8a40b7e5ac14dda, type: 3}
+  _animationTime: 0

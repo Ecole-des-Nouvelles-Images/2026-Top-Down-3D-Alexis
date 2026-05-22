@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 2097410163921963801}
   - component: {fileID: 4796423539785673583}
   - component: {fileID: 3717283453619851279}
-  - component: {fileID: 7275281518640285712}
-  - component: {fileID: 6362307757648964477}
+  - component: {fileID: 4025254390348999759}
+  - component: {fileID: 2733655125276208801}
   m_Layer: 0
   m_Name: PlayerProto
   m_TagString: Untagged
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_DefaultActionMap: 
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &7275281518640285712
+--- !u!114 &4025254390348999759
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -184,11 +184,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 6377222401536570468}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5abbada897db9784d880232e6a6458ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d89a63046331454ba520d53bbe28397, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.PlayerController
-  _speedMultiplier: 10
---- !u!114 &6362307757648964477
+  m_EditorClassIdentifier: Assembly-CSharp::FSMControllerSetup
+  PlayerStats: {fileID: 11400000, guid: 70d37fcc2f3e88b43b335b69c1e66c9d, type: 2}
+  _attackHitboxLeftHand: {fileID: 0}
+  _attackHitboxRightHand: {fileID: 0}
+  canAttack: 0
+  canSlide: 0
+  canJump: 0
+  MoveInput: {x: 0, y: 0}
+  Rb: {fileID: 0}
+--- !u!114 &2733655125276208801
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,9 +204,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6377222401536570468}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86eb6c8603c0a694fbbcf4900209f247, type: 3}
+  m_Script: {fileID: 11500000, guid: 57ad8409d70c65840a862c44d76c46e2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.PhysicsControllerProto
-  _desiredPlayerGroundDistance: 1
-  _springStrength: 1
-  _springDamperStrength: 1
+  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.GroundedScript
+  _playerController: {fileID: 0}
+  _fsmControllerSetup: {fileID: 4025254390348999759}
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  offset: {x: 0, y: 0, z: 0}
+  _radius: 0.5

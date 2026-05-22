@@ -1,7 +1,13 @@
+using AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM;
 using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items;
 using AlexisVeVer.Scripts.UI;
+using System.Collections;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 {
@@ -15,27 +21,54 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         [SerializeField] private GameObject _attackHitboxLeftHand;
         [SerializeField] private GameObject _handSocket;
         [SerializeField] private GameObject _attackHitboxRightHand;
+        
+        // FSM 
+        private PlayerStateMachine _currentState;
+        
+        //FSM Transitions
+        [HideInInspector] public bool canAttack;
+        [HideInInspector] public bool canSlide;
+        [HideInInspector] public bool doSlide;
+        [HideInInspector] public bool canJump;
+        [HideInInspector] public bool doAttackRightHand;
+        [HideInInspector] public bool doAttackLeftHand;
+        [HideInInspector] public bool attackOver;
+        [HideInInspector] public bool isStunned;
+        [HideInInspector] public bool isDead;
 
-        public bool LeftHandGrab;
-        public bool RightHandGrab;
-        public bool LeftHandReleaseGrab;
-        public bool RightHandReleaseGrab;
-
+        private float _timeSinceSlideInCd;
+        
         //States
         private bool _isGrounded;
 
         //Components
-        private Animator _animator;
+        [Header("Animator")] [Space(4)] 
+        public Animator CharacterAnimator;
 
-        private Weapon _currentWeapon;
+        [HideInInspector] public Weapon CurrentWeapon;
         private ConfigurableJoint _mainJoint;
 
+        //VFX
+        [Header("VFX")] [Space(4)]
+        public GameObject FallSmoke;
+        public Vector3 FallSmokeOffset;
+        
+        public GameObject StunVfx;
+        public Vector3 StunVfxOffset;
+        
+        public GameObject DeathVfx;
+        public Vector3 DeathVfxOffset;
+        
         //Inputs
         public Vector2 MoveInput;
-        private Rigidbody _rb;
+        [HideInInspector] public Rigidbody Rb;
         
         //PauseMenu
+        [Header("PauseMenu Reference")] [Space(4)] 
         [SerializeField] private GameObject _pauseMenu;
+        
+        //Syncing of physics objects
+        SyncPhysicsObject[] syncPhysicsObjects;
 
         public bool IsGrounded {
             get =>_isGrounded;
@@ -43,29 +76,28 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             set { _isGrounded = value; }
         }
         
-        public bool WeaponEquipped => _currentWeapon != null;
+        public bool WeaponEquipped => CurrentWeapon != null;
         
         private void Awake()
         {
-            _animator = GetComponent<Animator>();
-            _rb = GetComponent<Rigidbody>();
+            syncPhysicsObjects = GetComponentsInChildren<SyncPhysicsObject>();
+            Rb = GetComponent<Rigidbody>();
             _mainJoint = GetComponent<ConfigurableJoint>();
 
             //SO reset
-            PlayerStats.CanSlide = true;
-            PlayerStats.TimeFromSlide = 0;
             PlayerStats.ItemPickedUp = false;
         }
 
         private void Start()
         {
-            _rb.linearDamping = PlayerStats.SpeedModifier / PlayerStats.MaxSpeed;
+            _currentState = new IdleState();
+            _currentState.OnStateEnter(this);
         }
 
         private void Update()
         {
             //extra gravity to make the character less floaty
-            if (!_isGrounded) _rb.AddForce(Vector3.down * PlayerStats.AdditionalGravity);
+            if (!_isGrounded) Rb.AddForce(Vector3.down * PlayerStats.AdditionalGravity);
 
             // look towards the direction we want to move
             var inputMagnitude = MoveInput.magnitude;
@@ -80,23 +112,51 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
                     Time.fixedDeltaTime * PlayerStats.RotationSpeed);
             }
 
-            // move
-            _rb.AddForce(new Vector3(MoveInput.x * PlayerStats.SpeedModifier, 0,
-                MoveInput.y * PlayerStats.SpeedModifier) * -1);
-
             // slide cooldown
-            if (!PlayerStats.CanSlide)
+            if (!canSlide)
             {
-                PlayerStats.TimeFromSlide += Time.deltaTime;
-                if (PlayerStats.TimeFromSlide >= PlayerStats.SlideCd)
+                _timeSinceSlideInCd += Time.deltaTime;
+                if (_timeSinceSlideInCd >= PlayerStats.SlideCd)
                 {
-                    PlayerStats.CanSlide = true;
-                    PlayerStats.TimeFromSlide = 0;
+                    canSlide = true;
+                    _timeSinceSlideInCd = 0;
                 }
             }
             
-            if (_currentWeapon != null) {
-                _currentWeapon.AutoUse(this);
+            if (CurrentWeapon != null) {
+                CurrentWeapon.AutoUse(this);
+            }
+            
+            
+            
+            // FSM Gestion
+            if (_currentState != null)
+            {
+                // Update Methods
+                _currentState.OnUpdate(this);
+            
+                //State Switching
+                PlayerStateMachine nextBaseState = _currentState.NextState(this);
+                if (nextBaseState != null)
+                {
+                    _currentState.OnStateExit(this); 
+                    _currentState = nextBaseState; 
+                    _currentState.OnStateEnter(this);
+                }
+            }
+
+            if (isDead)
+            {
+                Instantiate(DeathVfx, transform.position + DeathVfxOffset, Quaternion.Euler(-90, 0, 0));
+                Destroy(gameObject);
+            }
+        }
+
+        private void FixedUpdate()
+        {
+            for (int i = 0; i < syncPhysicsObjects.Length; i++)
+            {
+                syncPhysicsObjects[i].UpdateJointFromAnimation();
             }
         }
 
@@ -109,64 +169,26 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         {
             if (_isGrounded)
             {
-                _rb.AddForce(Vector3.up * PlayerStats.JumpForceModifier, ForceMode.Impulse);
+                Rb.AddForce(Vector3.up * PlayerStats.JumpForceModifier, ForceMode.Impulse);
                 _isGrounded = false;
             }
         }
 
-        private void OnLeftHandGrab()
-        {
-            if (!WeaponEquipped) LeftHandGrab = true;
-        }
-
-        private void OnRightHandGrab()
-        {
-            if (!WeaponEquipped) RightHandGrab = true;
-        }
-
-        private void OnLeftHandReleaseGrab()
-        {
-            LeftHandReleaseGrab = true;
-        }
-
-        private void OnRightHandReleaseGrab()
-        {
-            RightHandReleaseGrab = true;
-        }
-
         private void OnLeftHandAttack()
         {
-            if (WeaponEquipped)
-            {
-                _currentWeapon.Use(this);
-            }
-            else
-            {
-                _attackHitboxLeftHand.SetActive(true);
-            }
+            doAttackLeftHand = true;
         }
 
         private void OnRightHandAttack()
         {
-            if (WeaponEquipped)
-            {
-                _currentWeapon.Use(this);
-            }
-            else
-            {
-                _attackHitboxRightHand.SetActive(true);
-            }
+            doAttackRightHand = true;
         }
 
         private void OnSlide()
         {
-            if (PlayerStats.CanSlide)
+            if (canSlide)
             {
-                _rb.AddForce(
-                    new Vector3(_rb.linearVelocity.x * PlayerStats.SlideForceMultiplier, 0,
-                        _rb.linearVelocity.z * PlayerStats.SlideForceMultiplier),
-                    ForceMode.VelocityChange);
-                PlayerStats.CanSlide = false;
+                doSlide = true;
             }
         }
 
@@ -186,8 +208,8 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         public void Equip(Weapon weapon)
         {
-            _currentWeapon = weapon;
-            _currentWeapon.Equip(this);
+            CurrentWeapon = weapon;
+            CurrentWeapon.Equip(this);
             weapon.GetComponent<ItemPickUp>().enabled = false;
             weapon.transform.parent = _handSocket.transform;
             weapon.transform.localPosition = Vector3.zero;
@@ -196,7 +218,20 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         public void UnEquip()
         {
-            _currentWeapon.Equip(null);
+            CurrentWeapon.Equip(null);
         }
+
+        public void Move(float speedModifier)
+        {
+            Rb.linearDamping = speedModifier / PlayerStats.MaxSpeed;
+            Rb.AddForce(new Vector3(MoveInput.x * speedModifier, 0,
+                MoveInput.y * speedModifier) * -1);
+        }
+        
+        public void GravityModification(float gravityModifier)
+        {
+            Rb.AddForce(Vector3.down * gravityModifier);
+        }
+        //Update the joints rotation based on the animation
     }
 }
