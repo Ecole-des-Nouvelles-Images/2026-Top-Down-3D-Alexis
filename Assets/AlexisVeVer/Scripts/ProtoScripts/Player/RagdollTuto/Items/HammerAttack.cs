@@ -9,7 +9,9 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
         [SerializeField] private GameObject _hitbox;
         
         [SerializeField] private GameObject _attackVfx;
+        [SerializeField] private Vector3 _attackVfxOffset;
         [SerializeField] private GameObject _decal;
+        [SerializeField] private Vector3 _decalOffset;
         [SerializeField] private float _animationTime;
         
         private PlayerController _playerController;
@@ -29,8 +31,8 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
         public void OnAttack()
         {
             _hitbox.SetActive(true);
-            Instantiate(_attackVfx, _hitbox.transform.position, Quaternion.identity);
-            Instantiate(_decal, _hitbox.transform.position, Quaternion.identity);
+            Instantiate(_attackVfx, _hitbox.transform.position + _attackVfxOffset, Quaternion.identity);
+            Instantiate(_decal, _hitbox.transform.position + _decalOffset, Quaternion.identity);
             
             Invoke(nameof(_playerController.UnEquip), _animationTime);
             Destroy(gameObject, _animationTime);

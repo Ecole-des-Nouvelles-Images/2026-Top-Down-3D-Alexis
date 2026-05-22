@@ -25,6 +25,8 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
         public override void OnStateExit(PlayerController playerController)
         {
             playerController.attackOver = false;
+            playerController.doAttackLeftHand = false;
+            playerController.doAttackRightHand = false;
         }
 
         public override PlayerStateMachine NextState(PlayerController playerController)

@@ -45,11 +45,15 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         private ConfigurableJoint _mainJoint;
 
         //VFX
-        [Header("VFX")] [Space(4)] 
+        [Header("VFX")] [Space(4)]
         public GameObject FallSmoke;
-        public GameObject StunVfx;
-        public GameObject DeathVfx;
+        public Vector3 FallSmokeOffset;
         
+        public GameObject StunVfx;
+        public Vector3 StunVfxOffset;
+        
+        public GameObject DeathVfx;
+        public Vector3 DeathVfxOffset;
         
         //Inputs
         public Vector2 MoveInput;
@@ -131,6 +135,12 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
                     _currentState = nextBaseState; 
                     _currentState.OnStateEnter(this);
                 }
+            }
+
+            if (isDead)
+            {
+                Instantiate(DeathVfx, transform.position + DeathVfxOffset, Quaternion.identity);
+                Destroy(gameObject);
             }
         }
 

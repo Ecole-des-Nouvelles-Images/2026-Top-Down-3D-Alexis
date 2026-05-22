@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6853c9afb03c8242a559dfe19249a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackDamage
-  _playerStats: {fileID: 0}
+  _playerStats: {fileID: 11400000, guid: 70d37fcc2f3e88b43b335b69c1e66c9d, type: 2}
 --- !u!1 &2844272104208962778
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,8 +327,13 @@ MonoBehaviour:
   doAttackRightHand: 0
   doAttackLeftHand: 0
   attackOver: 0
+  isStunned: 0
+  isDead: 0
   CharacterAnimator: {fileID: 1045087246608804970}
   CurrentWeapon: {fileID: 0}
+  FallSmoke: {fileID: 0}
+  StunVfx: {fileID: 0}
+  DeathVfx: {fileID: 0}
   MoveInput: {x: 0, y: 0}
   Rb: {fileID: 0}
   _pauseMenu: {fileID: 0}
@@ -2305,5 +2310,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.AnimationEvents
   _playerController: {fileID: 4018240799022764144}
+  _playerHealth: {fileID: 0}
   _leftHandHitbox: {fileID: 4826017610833158087}
   _rightHandHitbox: {fileID: 749483547556364043}

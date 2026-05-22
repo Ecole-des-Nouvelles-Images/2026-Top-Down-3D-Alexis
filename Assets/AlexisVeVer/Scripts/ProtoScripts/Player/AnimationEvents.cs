@@ -23,6 +23,11 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player
         {
             
         }
+
+        public void OnStunAnimationStart()
+        {
+            Instantiate(_playerController.StunVfx, _playerController.transform.position + _playerController.StunVfxOffset, Quaternion.identity);
+        }
         
         public void OnStunAnimationEnd()
         {
@@ -53,15 +58,11 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player
         public void OnAttackAnimationEnd()
         {
             _playerController.attackOver = true;
-            Debug.Log("L'attaque est finie");
         }
 
-        public void OnHammerAttack()
+        public void OnHammerHitGround()
         {
             _playerController.gameObject.GetComponentInChildren<HammerAttack>().OnAttack();
         }
-        
-        
-        
     }
 }
