@@ -20,10 +20,13 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
                 _playerController.CharacterAnimator.SetBool("IsGrounded", false);
                 _playerController.gameObject.transform.SetParent(null);
             }
-            
-            _playerController.IsGrounded = true;
-            _playerController.CharacterAnimator.SetBool("IsGrounded", true);
-            _playerController.gameObject.transform.SetParent(hits[0].transform);
+
+            else
+            {
+                _playerController.IsGrounded = true;
+                _playerController.CharacterAnimator.SetBool("IsGrounded", true);
+                _playerController.gameObject.transform.SetParent(hits[0].transform);
+            }
         }
         
         

@@ -539,6 +539,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -87.71734
       objectReference: {fileID: 0}
+    - target: {fileID: 1537487711120047832, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: _playerHealth
+      value: 
+      objectReference: {fileID: 1122931770099171514}
+    - target: {fileID: 1537487711120047832, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: _leftHandHitbox
+      value: 
+      objectReference: {fileID: 4091700449381247136}
+    - target: {fileID: 1537487711120047832, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: _rightHandHitbox
+      value: 
+      objectReference: {fileID: 6502109409585541862}
+    - target: {fileID: 1537487711120047832, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: _playerController
+      value: 
+      objectReference: {fileID: 4018240799022764144}
     - target: {fileID: 1650857396962446768, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
@@ -954,6 +970,14 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 2047487608561971223, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
     - {fileID: 1876162198275581036, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+    - {fileID: 5504972196679071288, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+    - {fileID: 7437554286171545447, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+    - {fileID: 3515777423983390367, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+    - {fileID: 1614274254436548949, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+    - {fileID: 7371819639898131426, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+    - {fileID: 7916979261737340315, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+    - {fileID: 796345975876625023, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+    - {fileID: 3000910735662184394, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
     m_RemovedGameObjects:
     - {fileID: 4121783368765663729, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
     m_AddedGameObjects: []

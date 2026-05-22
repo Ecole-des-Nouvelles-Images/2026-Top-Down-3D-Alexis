@@ -13,20 +13,17 @@ MonoBehaviour:
   m_Name: PlayerSo
   m_EditorClassIdentifier: Assembly-CSharp::PlayerOneStats
   MaxHealth: 15
-  CurrentHealth: 15
   MinStun: 0
-  CurrentStun: 0
   MaxStun: 5
-  StunDuration: 0
   AttackDamage: 0
   AttackStun: 0
   AttackDuration: 0
-  WalkingSpeedModifier: 25
-  AirSpeedModifier: 50
-  ItemCarrySpeedModifier: 0
+  WalkingSpeedModifier: 10
+  AirSpeedModifier: 5
+  ItemCarrySpeedModifier: 7.5
   RotationSpeed: 300
-  JumpForceModifier: 100
-  AdditionalGravity: 150
+  JumpForceModifier: 30
+  AdditionalGravity: 5
   MaxSpeed: 15
   SlideForceMultiplier: 3
   SlideCd: 5

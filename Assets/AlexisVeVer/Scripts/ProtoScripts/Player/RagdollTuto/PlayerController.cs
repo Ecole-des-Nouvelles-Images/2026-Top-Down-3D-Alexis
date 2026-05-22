@@ -29,7 +29,8 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         [HideInInspector] public bool canAttack;
         [HideInInspector] public bool canSlide;
         [HideInInspector] public bool doSlide;
-        [HideInInspector] public bool canJump;
+         public bool canJump;
+         public bool jumped;
         [HideInInspector] public bool doAttackRightHand;
         [HideInInspector] public bool doAttackLeftHand;
         [HideInInspector] public bool attackOver;
@@ -40,7 +41,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         private float _timeSinceSlideInCd;
         
         //States
-        private bool _isGrounded;
+        [SerializeField] private bool _isGrounded;
 
         //Components
         [Header("Animator")] [Space(4)] 
@@ -72,7 +73,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         [SerializeField] private GameObject _pauseMenu;
         
         //Syncing of physics objects
-        SyncPhysicsObject[] syncPhysicsObjects;
+        SyncPhysicsObject[] _syncPhysicsObjects;
 
         public bool IsGrounded {
             get =>_isGrounded;
@@ -80,11 +81,13 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             set { _isGrounded = value; }
         }
         
+        public PlayerStateMachine CurrentState => _currentState;
+        
         public bool WeaponEquipped => CurrentWeapon != null;
         
         private void Awake()
         {
-            syncPhysicsObjects = GetComponentsInChildren<SyncPhysicsObject>();
+            _syncPhysicsObjects = GetComponentsInChildren<SyncPhysicsObject>();
             Rb = GetComponent<Rigidbody>();
             _mainJoint = GetComponent<ConfigurableJoint>();
 
@@ -165,9 +168,9 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         private void FixedUpdate()
         {
-            for (int i = 0; i < syncPhysicsObjects.Length; i++)
+            for (int i = 0; i < _syncPhysicsObjects.Length; i++)
             {
-                syncPhysicsObjects[i].UpdateJointFromAnimation();
+                _syncPhysicsObjects[i].UpdateJointFromAnimation();
             }
         }
 
@@ -178,9 +181,10 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         private void OnJump()
         {
-            if (_isGrounded)
+            if (_isGrounded && canJump)
             {
                 Rb.AddForce(Vector3.up * PlayerStats.JumpForceModifier, ForceMode.Impulse);
+                jumped = true;
                 _isGrounded = false;
             }
         }
