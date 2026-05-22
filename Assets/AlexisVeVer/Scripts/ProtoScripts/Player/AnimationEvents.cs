@@ -26,11 +26,13 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player
 
         public void OnStunAnimationStart()
         {
-            Instantiate(_playerController.StunVfx, _playerController.transform.position + _playerController.StunVfxOffset, Quaternion.identity);
+            Debug.Log("Instantiate stun particle");
+            Instantiate(_playerController.StunVfx, _playerController.transform.position + _playerController.StunVfxOffset, Quaternion.Euler(90, 0, 0));
         }
         
         public void OnStunAnimationEnd()
         {
+            Debug.Log("Stun end");
             _playerController.isStunned = false;
             _playerHealth.CurrentStun = 0;
         }
@@ -63,6 +65,11 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player
         public void OnHammerHitGround()
         {
             _playerController.gameObject.GetComponentInChildren<HammerAttack>().OnAttack();
+        }
+
+        public void OnHammerLeavesGround()
+        {
+            _playerController.gameObject.GetComponentInChildren<HammerAttack>().EndAttack();
         }
     }
 }

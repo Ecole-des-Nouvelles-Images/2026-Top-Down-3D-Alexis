@@ -39,8 +39,6 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             {
                 Dies();
             }
-            
-            // _healthBar.fillAmount = _currentHealth / _playerStats.MaxHealth;
         }
 
         public void GetHit(float damage, float stun)
@@ -52,34 +50,18 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         private void GetStunned()
         {
-            // _playerController.GetComponent<PlayerController>().enabled = false;
-            // float stunTime = 0;
-            // stunTime += Time.deltaTime;
-            // if (stunTime >= _playerStats.StunDuration)
-            // {
-            //     _playerController.GetComponent<PlayerController>().enabled = true;
-            // }
             _playerController.isStunned = true;
         }
 
         private void Dies()
         {
-            // _playerController.GetComponent<PlayerController>().enabled = false;
-            // Debug.Log("Player is Dead");
-            // // Animation de mort
-            // float timeBeforeDestroy = 0;
-            // timeBeforeDestroy += Time.deltaTime;
-            // if (timeBeforeDestroy > _animationTime)
-            // {
-            //     Destroy(_playerController);
-            // }
             _playerController.isDead = true;
         }
 
         [ContextMenu("TakeDamage")]
         private void TakeDamage()
         {
-            GetHit(3, 4);
+            GetHit(15, 0);
         }
     }
 }

@@ -37,5 +37,10 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
             Invoke(nameof(_playerController.UnEquip), _animationTime);
             Destroy(gameObject, _animationTime);
         }
+
+        public void EndAttack()
+        {
+            _hitbox.SetActive(false);
+        }
     }
 }

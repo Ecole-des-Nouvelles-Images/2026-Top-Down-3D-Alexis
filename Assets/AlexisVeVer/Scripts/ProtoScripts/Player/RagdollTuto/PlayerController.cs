@@ -139,7 +139,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
             if (isDead)
             {
-                Instantiate(DeathVfx, transform.position + DeathVfxOffset, Quaternion.identity);
+                Instantiate(DeathVfx, transform.position + DeathVfxOffset, Quaternion.Euler(-90, 0, 0));
                 Destroy(gameObject);
             }
         }
