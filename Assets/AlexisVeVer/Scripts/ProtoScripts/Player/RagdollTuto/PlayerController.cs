@@ -22,13 +22,13 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         private PlayerStateMachine _currentState;
         
         //FSM Transitions
-        public bool canAttack;
-        public bool canSlide;
-        public bool doSlide;
-        public bool canJump;
-        public bool doAttackRightHand;
-        public bool doAttackLeftHand;
-        public bool attackOver;
+        [HideInInspector] public bool canAttack;
+        [HideInInspector] public bool canSlide;
+        [HideInInspector] public bool doSlide;
+        [HideInInspector] public bool canJump;
+        [HideInInspector] public bool doAttackRightHand;
+        [HideInInspector] public bool doAttackLeftHand;
+        [HideInInspector] public bool attackOver;
 
         private float _timeSinceSlideInCd;
         
@@ -36,19 +36,27 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         private bool _isGrounded;
 
         //Components
+        [Header("Animator")] [Space(4)] 
         public Animator CharacterAnimator;
 
-        public Weapon CurrentWeapon;
+        [HideInInspector] public Weapon CurrentWeapon;
         private ConfigurableJoint _mainJoint;
 
+        //VFX
+        [Header("VFX")] [Space(4)] 
+        public GameObject FallSmoke;
+        public GameObject StunVfx;
+        public GameObject DeathVfx;
+        
+        
         //Inputs
         public Vector2 MoveInput;
-        public Rigidbody Rb;
+        [HideInInspector] public Rigidbody Rb;
         
         //PauseMenu
         [Header("PauseMenu Reference")] [Space(4)] 
         [SerializeField] private GameObject _pauseMenu;
-
+        
         public bool IsGrounded {
             get =>_isGrounded;
 

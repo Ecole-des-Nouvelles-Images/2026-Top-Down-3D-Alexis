@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 34ef9adbaedcc8345960e0164e67224f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.59
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 34ef9adbaedcc8345960e0164e67224f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.36
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 34ef9adbaedcc8345960e0164e67224f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.41
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 34ef9adbaedcc8345960e0164e67224f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -66,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 834a021be2f1e1e4298c7ed70421b522, type: 2}
     - target: {fileID: 919132149155446097, guid: 34ef9adbaedcc8345960e0164e67224f, type: 3}
       propertyPath: m_Name
-      value: NS_Props_03
+      value: NS_IceRock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
