@@ -53,5 +53,7 @@ namespace Baptiste.script
             transform.DOScale(1, speed).SetEase(curve).SetUpdate(true); 
             transform.DORotate(new Vector3(0, 0, 0), speed).SetUpdate(true); 
         }
+        
+        
     }
 }

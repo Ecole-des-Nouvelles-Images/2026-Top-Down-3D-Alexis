@@ -375,7 +375,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 34003009, guid: 881e7ab9809cf5f42beeb7f662606d1d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9dfa18e83e05b7547bf1b5ce0559beee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -450,8 +450,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8983215737789624913}
   - {fileID: 8669000528225448426}
+  - {fileID: 8983215737789624913}
   - {fileID: 8223570713648763118}
   m_Father: {fileID: 5309948434452823760}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -473,10 +473,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 6570183234897837928}
+    m_SelectOnDown: {fileID: 2316350227064837187}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -1014,7 +1014,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 34003009, guid: 881e7ab9809cf5f42beeb7f662606d1d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9dfa18e83e05b7547bf1b5ce0559beee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1226,7 +1226,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1028079788, guid: 5ba36c0699682974b9f2b161273e963d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6591d0a542def714a99c5f6fa75308ef, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1301,7 +1301,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1028079788, guid: 5ba36c0699682974b9f2b161273e963d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6591d0a542def714a99c5f6fa75308ef, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1322,6 +1322,7 @@ GameObject:
   - component: {fileID: 8334008394980345338}
   - component: {fileID: 4414293655344518576}
   - component: {fileID: 4380023179191629590}
+  - component: {fileID: 279568673805116273}
   m_Layer: 5
   m_Name: Options
   m_TagString: Untagged
@@ -1381,7 +1382,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1743001200, guid: b732d0fef283db448b2e6874a2beb735, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c373dcc89c5d9b408cd67ac8b92718d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1391,6 +1392,78 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &279568673805116273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5036489837766759011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4f97b405d5483a40a41835a54124d2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Baptiste.script.Transition
+  speed: 2
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.8063986
+      value: 0.98882794
+      inSlope: 6.371024
+      outSlope: 6.371024
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.11382532
+    - serializedVersion: 3
+      time: 0.9096831
+      value: 0.9778804
+      inSlope: -5.233196
+      outSlope: -5.233196
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.14138268
+      outWeight: 0.22965479
+    - serializedVersion: 3
+      time: 0.9873151
+      value: 0.9834451
+      inSlope: -7.962743
+      outSlope: -7.962743
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _startAnchorMin: {x: 0.25, y: 2.04}
+  _startAnchorMax: {x: 0.754, y: 1.97}
+  _endAnchorMin: {x: 0.25, y: 0.04}
+  _endAnchorMax: {x: 0.754, y: 0.97}
+  _isTransitioning: 0
+  _timer: 0
+  _transitionDuration: 0.5
+  _nameScene: 
 --- !u!1 &5338621904033924860
 GameObject:
   m_ObjectHideFlags: 0
@@ -1443,10 +1516,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 8867064053552283970}
+    m_SelectOnDown: {fileID: 8255465457632625027}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -1546,7 +1619,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1028079788, guid: 5ba36c0699682974b9f2b161273e963d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6591d0a542def714a99c5f6fa75308ef, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1608,10 +1681,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 2316350227064837187}
+    m_SelectOnDown: {fileID: 6570183234897837928}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -1858,7 +1931,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 34003009, guid: 881e7ab9809cf5f42beeb7f662606d1d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9dfa18e83e05b7547bf1b5ce0559beee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1959,10 +2032,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 8255465457632625027}
+    m_SelectOnDown: {fileID: 8867064053552283970}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1

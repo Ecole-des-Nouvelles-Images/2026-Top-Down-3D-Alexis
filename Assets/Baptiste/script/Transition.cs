@@ -27,6 +27,22 @@ namespace Baptiste.script
             rect.anchorMax = _startAnchorMax;
             rect.DOAnchorMin(_endAnchorMin, speed).SetEase(curve).SetUpdate(true);
             rect.DOAnchorMax(_endAnchorMax, speed).SetEase(curve).SetUpdate(true);
+            
         }
+
+        public void Jump()
+        {
+            RectTransform rect = transform.GetComponent<RectTransform>();
+            rect.DOAnchorMin(_endAnchorMin, speed).SetEase(curve).SetUpdate(true);
+            rect.DOAnchorMax(_endAnchorMax, speed).SetEase(curve).SetUpdate(true);
+        }
+
+        public void Back()
+        {
+            RectTransform rect = transform.GetComponent<RectTransform>();
+            rect.DOAnchorMin(_startAnchorMax, speed).SetEase(curve).SetUpdate(true);
+            rect.DOAnchorMax(_startAnchorMin, speed).SetEase(curve).SetUpdate(true);
+        }
+        
     }
 }
