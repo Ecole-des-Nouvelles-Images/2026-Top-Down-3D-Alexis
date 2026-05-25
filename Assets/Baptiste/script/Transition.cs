@@ -19,6 +19,7 @@ namespace Baptiste.script
         [SerializeField] private float _timer = 0;
         [SerializeField] private float _transitionDuration = 0.5f;
         [SerializeField] private string _nameScene;
+
     
         void Start()
         {
@@ -32,6 +33,7 @@ namespace Baptiste.script
 
         public void Jump()
         {
+            transform.DOPause();
             RectTransform rect = transform.GetComponent<RectTransform>();
             rect.DOAnchorMin(_endAnchorMin, speed).SetEase(curve).SetUpdate(true);
             rect.DOAnchorMax(_endAnchorMax, speed).SetEase(curve).SetUpdate(true);
@@ -39,9 +41,10 @@ namespace Baptiste.script
 
         public void Back()
         {
+            transform.DOPause();
             RectTransform rect = transform.GetComponent<RectTransform>();
-            rect.DOAnchorMin(_startAnchorMax, speed).SetEase(curve).SetUpdate(true);
-            rect.DOAnchorMax(_startAnchorMin, speed).SetEase(curve).SetUpdate(true);
+            rect.DOAnchorMin(_startAnchorMin, speed).SetEase(curve).SetUpdate(true);
+            rect.DOAnchorMax(_startAnchorMax, speed).SetEase(curve).SetUpdate(true);
         }
         
     }
