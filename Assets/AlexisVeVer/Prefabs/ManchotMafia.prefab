@@ -271,6 +271,8 @@ MonoBehaviour:
   currentWeapon: {fileID: 0}
   fallSmoke: {fileID: 293048816427003929, guid: 49a31a6eb4ffa6b43a03b3e9744118f4, type: 3}
   fallSmokeOffset: {x: 0, y: 0, z: 0}
+  walkVfx: {fileID: 0}
+  walkVfxOffset: {x: 0, y: 0, z: 0}
   stunVfx: {fileID: 6400998599525777253, guid: 1ef834d65f1d53749ae17ca7d05bce54, type: 3}
   stunVfxOffset: {x: 0, y: 0, z: 0}
   deathVfx: {fileID: 929230553782903710, guid: e31cfce16074bc9459d7dd6bd5a15492, type: 3}
@@ -292,10 +294,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f1c68716b88d841aa3476fe8f1adfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  _playerStats: {fileID: 11400000, guid: 70d37fcc2f3e88b43b335b69c1e66c9d, type: 2}
-  _playerController: {fileID: 4018240799022764144}
-  _animator: {fileID: 8406231144293257540}
-  _animationTime: 4
+  playerStats: {fileID: 11400000, guid: 70d37fcc2f3e88b43b335b69c1e66c9d, type: 2}
+  playerController: {fileID: 4018240799022764144}
+  animator: {fileID: 8406231144293257540}
+  skinnedMeshRendererMaterial: {fileID: -876546973899608171, guid: 6baf81f6d8abaf54cb75baaafb6ab270, type: 3}
+  animationTime: 4
 --- !u!1 &7309218936843598696
 GameObject:
   m_ObjectHideFlags: 0
