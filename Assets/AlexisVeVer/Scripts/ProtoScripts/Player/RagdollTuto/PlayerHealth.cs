@@ -52,9 +52,10 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             _playerController.isStunned = true;
         }
 
-        private void Dies()
+        public void Dies()
         {
             _playerController.isDead = true;
+            _currentHealth = 0;
         }
 
         [ContextMenu("TakeDamage")]

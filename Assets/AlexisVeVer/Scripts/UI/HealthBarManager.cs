@@ -28,6 +28,11 @@ namespace AlexisVeVer.Scripts.UI
             {
                 _healthBar.fillAmount = _playerHealth.CurrentHealth / _playerStats.MaxHealth;
             }
+
+            else
+            {
+                _healthBar.fillAmount = 0;
+            }
         }
     }
 }

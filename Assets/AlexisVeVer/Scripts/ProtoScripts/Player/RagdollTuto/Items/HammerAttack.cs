@@ -21,7 +21,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
 
         public override void Use(PlayerController playerController)
         {
-            playerController.CharacterAnimator.SetTrigger("HammerAttack");
+            playerController.characterAnimator.SetTrigger("HammerAttack");
         }
 
         public override void AutoUse(PlayerController playerController) {}

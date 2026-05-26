@@ -19,7 +19,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             if (hits.Length <= 0) {
                 playerController.IsGrounded = false;
                 playerController.canJump = false;
-                playerController.CharacterAnimator.SetBool("IsGrounded", false);
+                playerController.characterAnimator.SetBool("IsGrounded", false);
                 playerController.gameObject.transform.SetParent(null);
             }
 
@@ -27,7 +27,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             {
                 playerController.IsGrounded = true;
                 playerController.canJump = true;
-                playerController.CharacterAnimator.SetBool("IsGrounded", true);
+                playerController.characterAnimator.SetBool("IsGrounded", true);
                 playerController.gameObject.transform.SetParent(hits[0].transform);
             }
         }

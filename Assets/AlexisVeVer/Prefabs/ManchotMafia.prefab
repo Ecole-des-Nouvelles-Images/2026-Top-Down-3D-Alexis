@@ -250,9 +250,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7d4c7023412ea4dbad20c335845290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.PlayerController
-  PlayerStats: {fileID: 11400000, guid: 70d37fcc2f3e88b43b335b69c1e66c9d, type: 2}
+  playerStats: {fileID: 11400000, guid: 70d37fcc2f3e88b43b335b69c1e66c9d, type: 2}
   attackHitboxLeftHand: {fileID: 4091700449381247136}
-  _handSocket: {fileID: 613009741791217799}
+  handSocket: {fileID: 613009741791217799}
   attackHitboxRightHand: {fileID: 6502109409585541862}
   canAttack: 0
   canSlide: 0
@@ -265,20 +265,21 @@ MonoBehaviour:
   isStunned: 0
   isDead: 0
   isDrowned: 0
-  _isGrounded: 0
-  CharacterAnimator: {fileID: 8406231144293257540}
-  CurrentWeapon: {fileID: 0}
-  _fallSmoke: {fileID: 293048816427003929, guid: 49a31a6eb4ffa6b43a03b3e9744118f4, type: 3}
-  _fallSmokeOffset: {x: 0, y: 0, z: 0}
-  StunVfx: {fileID: 6400998599525777253, guid: 1ef834d65f1d53749ae17ca7d05bce54, type: 3}
-  StunVfxOffset: {x: 0, y: 0, z: 0}
-  _deathVfx: {fileID: 929230553782903710, guid: e31cfce16074bc9459d7dd6bd5a15492, type: 3}
-  _deathVfxOffset: {x: 0, y: 0, z: 0}
-  _drownedVfx: {fileID: 5104211682697277876, guid: 9ca83d800ebed84448cf421b763bca95, type: 3}
-  _drownedVfxOffset: {x: 0, y: 0, z: 0}
-  MoveInput: {x: 0, y: 0}
-  Rb: {fileID: 0}
-  _pauseMenu: {fileID: 0}
+  isGrounded: 0
+  playerHealth: {fileID: 1122931770099171514}
+  characterAnimator: {fileID: 8406231144293257540}
+  currentWeapon: {fileID: 0}
+  fallSmoke: {fileID: 293048816427003929, guid: 49a31a6eb4ffa6b43a03b3e9744118f4, type: 3}
+  fallSmokeOffset: {x: 0, y: 0, z: 0}
+  stunVfx: {fileID: 6400998599525777253, guid: 1ef834d65f1d53749ae17ca7d05bce54, type: 3}
+  stunVfxOffset: {x: 0, y: 0, z: 0}
+  deathVfx: {fileID: 929230553782903710, guid: e31cfce16074bc9459d7dd6bd5a15492, type: 3}
+  deathVfxOffset: {x: 0, y: 0, z: 0}
+  drownedVfx: {fileID: 5104211682697277876, guid: 9ca83d800ebed84448cf421b763bca95, type: 3}
+  drownedVfxOffset: {x: 0, y: 0, z: 0}
+  moveInput: {x: 0, y: 0}
+  rb: {fileID: 0}
+  pauseMenu: {fileID: 0}
 --- !u!114 &1122931770099171514
 MonoBehaviour:
   m_ObjectHideFlags: 0
