@@ -1,3 +1,4 @@
+using System;
 using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -7,8 +8,8 @@ namespace AlexisVeVer.Scripts.UI
 {
     public class HealthBarManager : MonoBehaviour
     {
-        [SerializeField] PlayerStats playerStats;
-        [SerializeField]private PlayerHealth playerHealth;
+        [SerializeField] private PlayerStats _playerStats;
+        [SerializeField] private PlayerHealth _playerHealth;
         
         private Image _healthBar;
         
@@ -16,12 +17,16 @@ namespace AlexisVeVer.Scripts.UI
         {
             _healthBar = GetComponent<Image>();
         }
-        
+
+        private void Start()
+        {
+        }
+
         void Update()
         {
-            if (playerHealth != null)
+            if (_playerHealth != null)
             {
-                _healthBar.fillAmount = playerHealth.CurrentHealth / playerStats.MaxHealth;
+                _healthBar.fillAmount = _playerHealth.CurrentHealth / _playerStats.MaxHealth;
             }
         }
     }
