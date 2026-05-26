@@ -15,9 +15,9 @@ MonoBehaviour:
   MaxHealth: 15
   MinStun: 0
   MaxStun: 5
-  AttackDamage: 0
-  AttackStun: 0
-  AttackDuration: 0
+  AttackDamage: 2
+  AttackStun: 1
+  AttackDuration: 0.5
   WalkingSpeedModifier: 10
   AirSpeedModifier: 5
   ItemCarrySpeedModifier: 7.5

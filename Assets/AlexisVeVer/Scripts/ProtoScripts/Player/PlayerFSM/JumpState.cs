@@ -8,13 +8,11 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
         public override void OnStateEnter(PlayerController playerController)
         {
             playerController.canAttack = false;
-            playerController.canJump = false;
             playerController.Rb.linearVelocity = Vector3.zero;
         }
 
         public override void OnUpdate(PlayerController playerController)
         {
-            Debug.Log("Current state is jump state");
             playerController.Move(playerController.PlayerStats.AirSpeedModifier);
             playerController.GravityModification(playerController.PlayerStats.AdditionalGravity);
         }

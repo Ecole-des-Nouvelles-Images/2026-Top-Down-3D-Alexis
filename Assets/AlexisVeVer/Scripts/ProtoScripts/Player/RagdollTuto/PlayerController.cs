@@ -18,9 +18,9 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         //Character parts
         [Header("Character hitboxes")] [Space(4)] 
-        [SerializeField] private GameObject _attackHitboxLeftHand;
+        public GameObject attackHitboxLeftHand;
         [SerializeField] private GameObject _handSocket;
-        [SerializeField] private GameObject _attackHitboxRightHand;
+        public GameObject attackHitboxRightHand;
         
         // FSM 
         private PlayerStateMachine _currentState;
@@ -97,6 +97,10 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         private void Start()
         {
+            if (GameManager.instance != null)
+            {
+                GameManager.instance.AddPlayer(gameObject);
+            }
             _currentState = new IdleState();
             _currentState.OnStateEnter(this);
         }
@@ -156,12 +160,20 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             if (isDead)
             {
                 Instantiate(_deathVfx, transform.position + _deathVfxOffset, Quaternion.Euler(-90, 0, 0));
+                if (GameManager.instance != null)
+                {
+                    GameManager.instance.RemovePlayer(gameObject);
+                }
                 Destroy(gameObject);
             }
 
             if (isDrowned)
             {
                 Instantiate(_drownedVfx, transform.position + _drownedVfxOffset, Quaternion.Euler(-90, 0, 0));
+                if (GameManager.instance != null)
+                {
+                    GameManager.instance.RemovePlayer(gameObject);
+                }
                 Destroy(gameObject);
             }
         }

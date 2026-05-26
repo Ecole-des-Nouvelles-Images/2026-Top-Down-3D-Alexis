@@ -60,7 +60,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         [ContextMenu("TakeDamage")]
         private void TakeDamage()
         {
-            GetHit(15, 0);
+            GetHit(2, 0);
         }
     }
 }
