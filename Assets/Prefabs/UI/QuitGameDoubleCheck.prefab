@@ -744,6 +744,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &8673157964010065741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1058,7 +1070,10 @@ MonoBehaviour:
   _startAnchorMax: {x: 0.9, y: -0.1}
   _endAnchorMin: {x: 0.1, y: 0.1}
   _endAnchorMax: {x: 0.9, y: 0.9}
-  _isTransitioning: 0
   _timer: 0
   _transitionDuration: 0.5
   _nameScene: 
+  _panelActive: 0
+  _eventSystem: {fileID: 0}
+  _selectable: {fileID: 7700933467679196440}
+  _doTheThing: 0

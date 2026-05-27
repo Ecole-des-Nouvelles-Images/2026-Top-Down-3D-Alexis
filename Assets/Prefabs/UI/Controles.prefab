@@ -1063,7 +1063,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2309332619276475644
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1141,7 +1141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4f97b405d5483a40a41835a54124d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Baptiste.script.Transition
-  speed: 2
+  speed: 0.5
   curve:
     serializedVersion: 2
     m_Curve:
@@ -1155,31 +1155,31 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.8063986
-      value: 0.98882794
-      inSlope: 6.371024
-      outSlope: 6.371024
+      time: 0.48556727
+      value: 1.0010731
+      inSlope: 1.9522519
+      outSlope: 1.9522519
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.11382532
+      outWeight: 0.2340892
     - serializedVersion: 3
-      time: 0.9096831
-      value: 0.9778804
-      inSlope: -5.233196
-      outSlope: -5.233196
+      time: 0.7430165
+      value: 0.9656341
+      inSlope: -0.336423
+      outSlope: -0.336423
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.14138268
+      inWeight: 0.63643557
       outWeight: 0.22965479
     - serializedVersion: 3
       time: 0.9873151
       value: 0.9834451
-      inSlope: -7.962743
-      outSlope: -7.962743
+      inSlope: -1.9052953
+      outSlope: -1.9052953
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.23802197
       outWeight: 1
     - serializedVersion: 3
       time: 1
@@ -1197,10 +1197,13 @@ MonoBehaviour:
   _startAnchorMax: {x: 0.8, y: 1.97}
   _endAnchorMin: {x: 0.2, y: 0.04}
   _endAnchorMax: {x: 0.8, y: 0.97}
-  _panelActive: 0
   _timer: 0
   _transitionDuration: 0.5
   _nameScene: 
+  _panelActive: 0
+  _eventSystem: {fileID: 0}
+  _selectable: {fileID: 5814254950356975279}
+  _doTheThing: 0
 --- !u!1 &7838098265008770133
 GameObject:
   m_ObjectHideFlags: 0

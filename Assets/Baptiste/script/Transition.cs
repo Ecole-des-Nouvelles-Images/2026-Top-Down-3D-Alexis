@@ -17,10 +17,14 @@ namespace Baptiste.script
         [SerializeField] private Vector2 _endAnchorMin=new Vector2(0,3);
         [SerializeField] private Vector2 _endAnchorMax=new Vector2(1,3);
         [Space (5)] 
-        [SerializeField] private bool _panelActive= false;
         [SerializeField] private float _timer = 0;
         [SerializeField] private float _transitionDuration = 0.5f;
         [SerializeField] private string _nameScene;
+        [Space(5)] 
+        [SerializeField] private bool _panelActive = false;
+        [SerializeField] private EventSystem _eventSystem;
+        [SerializeField] private Selectable _selectable;
+        [SerializeField] private bool _doTheThing = false;
     
         void Start()
         {
@@ -38,6 +42,7 @@ namespace Baptiste.script
             RectTransform rect = transform.GetComponent<RectTransform>();
             rect.DOAnchorMin(_endAnchorMin, speed).SetEase(curve).SetUpdate(true);
             rect.DOAnchorMax(_endAnchorMax, speed).SetEase(curve).SetUpdate(true);
+            _selectable?.Select();
         }
 
         public void Back()
@@ -47,6 +52,19 @@ namespace Baptiste.script
             rect.DOAnchorMin(_startAnchorMin, speed).SetEase(curve).SetUpdate(true);
             rect.DOAnchorMax(_startAnchorMax, speed).SetEase(curve).SetUpdate(true);
         }
+       
+       //private void Update()
+       //{
+       //    if (_panelActive && _doTheThing)
+       //    {
+       //        _eventSystem.SetSelectedGameObject(_selectable.gameObject);
+       //    }
+       //}
+
+       //public void DisableBool()
+       //{
+       //    _panelActive = false;
+       //}
         
     }
 }

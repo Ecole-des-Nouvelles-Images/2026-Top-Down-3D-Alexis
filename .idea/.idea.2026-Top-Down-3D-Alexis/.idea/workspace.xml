@@ -6,12 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="c7327bd5-3bda-4924-982b-1d4a14308c9e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2026-Top-Down-3D-Alexis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2026-Top-Down-3D-Alexis/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Baptiste/Shader/Texture/RT_Interactive_Snow.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Baptiste/Shader/Texture/RT_Interactive_Snow.renderTexture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Baptiste/Prefab/ui/Affichage_Menu_UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Baptiste/Prefab/ui/Affichage_Menu_UI.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Baptiste/script/Transition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Baptiste/script/Transition.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Baptiste/script/Tweening_bouton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Baptiste/script/Tweening_bouton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Controles.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Controles.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Crédits.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Crédits.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Options.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Options.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/QuitGameDoubleCheck.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/QuitGameDoubleCheck.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/GraffitiYouth-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/GraffitiYouth-Regular SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,20 +37,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Baptiste",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Baptiste&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.3.14f1\Editor\Unity.exe" />
@@ -111,6 +113,7 @@
       <workItem from="1779352642777" duration="3469000" />
       <workItem from="1779435812252" duration="4867000" />
       <workItem from="1779709722938" duration="4653000" />
+      <workItem from="1779868862701" duration="8390000" />
     </task>
     <servers />
   </component>

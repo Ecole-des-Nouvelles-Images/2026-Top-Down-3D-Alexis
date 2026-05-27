@@ -1,6 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Baptiste.script
 {
@@ -12,6 +13,8 @@ namespace Baptiste.script
         [SerializeField] private AnimationCurve curve = AnimationCurve.EaseInOut(0, 0, 1, 1);
         [SerializeField] private float rotate = 2;
         
+
+
 
         public void OnPointerEnter(PointerEventData eventData)
         { 
@@ -50,6 +53,7 @@ namespace Baptiste.script
             transform.DOScale(1, speed).SetEase(curve).SetUpdate(true); 
             transform.DORotate(new Vector3(0, 0, 0), speed).SetUpdate(true); 
         }
+
         
         
     }

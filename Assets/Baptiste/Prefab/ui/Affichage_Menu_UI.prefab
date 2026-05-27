@@ -92,12 +92,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
+  m_fontSize: 104.95
   m_fontSizeBase: 100
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 17.82
-  m_fontSizeMax: 160
+  m_fontSizeMax: 200
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 96.777985, y: 4.4624634, z: 147.86157, w: 18.819153}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -232,7 +232,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 3051816525298513111}
-    m_SelectOnDown: {fileID: 2729836493680291390}
+    m_SelectOnDown: {fileID: 1170751870874962744}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -260,9 +260,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4009496070706416835}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Baptiste.script.Transition, Assembly-CSharp
-        m_MethodName: Back
+        m_MethodName: Jump
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -308,6 +308,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &4009496070706416835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,7 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4f97b405d5483a40a41835a54124d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Baptiste.script.Transition
-  speed: 1.5
+  speed: 0.5
   curve:
     serializedVersion: 2
     m_Curve:
@@ -367,10 +379,13 @@ MonoBehaviour:
   _startAnchorMax: {x: -0.2, y: 0.3}
   _endAnchorMin: {x: 0.06, y: 0.05}
   _endAnchorMax: {x: 0.41, y: 0.3}
-  _isTransitioning: 0
   _timer: 0
   _transitionDuration: 0.5
   _nameScene: 
+  _panelActive: 0
+  _eventSystem: {fileID: 0}
+  _selectable: {fileID: 0}
+  _doTheThing: 0
 --- !u!114 &8475440666100037374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,6 +436,7 @@ GameObject:
   - component: {fileID: 498769074376750779}
   - component: {fileID: 2686482036429159491}
   - component: {fileID: 7872156181174812580}
+  - component: {fileID: 304869657391554124}
   m_Layer: 5
   m_Name: Affichage_Menu_UI
   m_TagString: Untagged
@@ -487,6 +503,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &304869657391554124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1361520046311305192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ace294405c4df54e909e138e1612381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.UI.SetFirstButton
+  _eventSystem: {fileID: 0}
+  _buttonToSelect: {fileID: 2729836493680291390}
 --- !u!1 &1893235117418572049
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,12 +611,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
+  m_fontSize: 102.35
   m_fontSizeBase: 100
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 200
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -620,7 +650,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 92.97998, y: 31.603577, z: 146.62256, w: 50.71994}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -636,6 +666,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3770906570987305926}
   - component: {fileID: 5826689674761179351}
+  - component: {fileID: 1470270250173612245}
   m_Layer: 5
   m_Name: Bouton
   m_TagString: Untagged
@@ -679,7 +710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4f97b405d5483a40a41835a54124d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Baptiste.script.Transition
-  speed: 3
+  speed: 1
   curve:
     serializedVersion: 2
     m_Curve:
@@ -735,10 +766,27 @@ MonoBehaviour:
   _startAnchorMax: {x: -1, y: 1}
   _endAnchorMin: {x: 0, y: 0.05}
   _endAnchorMax: {x: 1, y: 1}
-  _isTransitioning: 0
   _timer: 0
   _transitionDuration: 0.5
   _nameScene: 
+  _panelActive: 0
+  _eventSystem: {fileID: 0}
+  _selectable: {fileID: 2729836493680291390}
+  _doTheThing: 0
+--- !u!114 &1470270250173612245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5983307048323622701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ace294405c4df54e909e138e1612381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.UI.SetFirstButton
+  _eventSystem: {fileID: 0}
+  _buttonToSelect: {fileID: 2729836493680291390}
 --- !u!1 &6362092571027751471
 GameObject:
   m_ObjectHideFlags: 0
@@ -921,10 +969,13 @@ MonoBehaviour:
   _startAnchorMax: {x: -0.2, y: 0.75}
   _endAnchorMin: {x: 0.1, y: 0.5}
   _endAnchorMax: {x: 0.45, y: 0.75}
-  _isTransitioning: 0
   _timer: 0
   _transitionDuration: 0.5
   _nameScene: 
+  _panelActive: 0
+  _eventSystem: {fileID: 0}
+  _selectable: {fileID: 0}
+  _doTheThing: 0
 --- !u!114 &4128531122577170968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1058,8 +1109,8 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 3051816525298513111}
-    m_SelectOnDown: {fileID: 2729836493680291390}
+    m_SelectOnUp: {fileID: 8870416775002058812}
+    m_SelectOnDown: {fileID: 1873089613766936662}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -1135,6 +1186,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &6725706684155481152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1194,10 +1257,13 @@ MonoBehaviour:
   _startAnchorMax: {x: -0.2, y: 0.3}
   _endAnchorMin: {x: 0.06, y: 0.05}
   _endAnchorMax: {x: 0.41, y: 0.3}
-  _isTransitioning: 0
   _timer: 0
   _transitionDuration: 0.5
   _nameScene: 
+  _panelActive: 0
+  _eventSystem: {fileID: 0}
+  _selectable: {fileID: 0}
+  _doTheThing: 0
 --- !u!114 &2747089044960962718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1269,10 +1335,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 8217829721565249790}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.12}
-  m_AnchorMax: {x: 1, y: 0.8}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0.94}
+  m_AnchoredPosition: {x: 0, y: -7.5}
+  m_SizeDelta: {x: 0, y: -15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3701871874077120118
 CanvasRenderer:
@@ -1329,12 +1395,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
+  m_fontSize: 101.65
   m_fontSizeBase: 100
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 200
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -1368,7 +1434,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 103.06314, y: 52.040405, z: 153.95795, w: 72.3728}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1469,7 +1535,7 @@ MonoBehaviour:
     m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 2729836493680291390}
-    m_SelectOnDown: {fileID: 1873089613766936662}
+    m_SelectOnDown: {fileID: 8870416775002058812}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -1545,6 +1611,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 5826689674761179351}
+        m_TargetAssemblyTypeName: Baptiste.script.Transition, Assembly-CSharp
+        m_MethodName: DisableBool
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &831927338178996674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1604,10 +1694,13 @@ MonoBehaviour:
   _startAnchorMax: {x: -0.2, y: 0.525}
   _endAnchorMin: {x: 0.075, y: 0.275}
   _endAnchorMax: {x: 0.425, y: 0.525}
-  _isTransitioning: 0
   _timer: 0
   _transitionDuration: 0.5
   _nameScene: 
+  _panelActive: 0
+  _eventSystem: {fileID: 0}
+  _selectable: {fileID: 0}
+  _doTheThing: 0
 --- !u!114 &8714935348143952409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1741,7 +1834,7 @@ MonoBehaviour:
   m_Navigation:
     m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 3051816525298513111}
+    m_SelectOnUp: {fileID: 1170751870874962744}
     m_SelectOnDown: {fileID: 2729836493680291390}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
@@ -1771,8 +1864,20 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AlexisVeVer.Scripts.UI.MainSceneUI, Assembly-CSharp
-        m_MethodName: LeaveGame
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Baptiste.script.Transition, Assembly-CSharp
+        m_MethodName: Jump
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1780,7 +1885,43 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 5826689674761179351}
+        m_TargetAssemblyTypeName: Baptiste.script.Transition, Assembly-CSharp
+        m_MethodName: Back
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 3607547416033753301}
+        m_TargetAssemblyTypeName: Baptiste.script.Transition, Assembly-CSharp
+        m_MethodName: Back
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &3006632452146075700
 MonoBehaviour:
@@ -1841,10 +1982,13 @@ MonoBehaviour:
   _startAnchorMax: {x: -0.2, y: 0.3}
   _endAnchorMin: {x: 0.06, y: 0.05}
   _endAnchorMax: {x: 0.41, y: 0.3}
-  _isTransitioning: 0
   _timer: 0
   _transitionDuration: 0.5
   _nameScene: 
+  _panelActive: 0
+  _eventSystem: {fileID: 0}
+  _selectable: {fileID: 0}
+  _doTheThing: 0
 --- !u!114 &6943756132260305112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1976,12 +2120,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
+  m_fontSize: 103.45
   m_fontSizeBase: 100
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 200
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -2015,7 +2159,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 95.179535, y: 30.411621, z: 147.29535, w: 50.81671}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2054,8 +2198,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 498769074376750779}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: -0.5}
-  m_AnchorMax: {x: 0.6, y: 2.5}
+  m_AnchorMin: {x: -0.07, y: -0.5}
+  m_AnchorMax: {x: 0.7, y: 2.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2152,14 +2296,17 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _startAnchorMin: {x: 0, y: 1}
-  _startAnchorMax: {x: 0.6, y: 3}
-  _endAnchorMin: {x: 0, y: -0.5}
-  _endAnchorMax: {x: 0.6, y: 2.5}
-  _isTransitioning: 0
+  _startAnchorMin: {x: -0.07, y: 1}
+  _startAnchorMax: {x: 0.7, y: 3}
+  _endAnchorMin: {x: -0.07, y: -0.5}
+  _endAnchorMax: {x: 0.7, y: 2.5}
   _timer: 0
   _transitionDuration: 0.5
   _nameScene: 
+  _panelActive: 0
+  _eventSystem: {fileID: 0}
+  _selectable: {fileID: 0}
+  _doTheThing: 0
 --- !u!1 &9056634429030471964
 GameObject:
   m_ObjectHideFlags: 0
@@ -2252,12 +2399,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
+  m_fontSize: 103.9
   m_fontSizeBase: 100
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 200
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -2291,7 +2438,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 90.86395, y: 30.286896, z: 148.91168, w: 50.478493}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
