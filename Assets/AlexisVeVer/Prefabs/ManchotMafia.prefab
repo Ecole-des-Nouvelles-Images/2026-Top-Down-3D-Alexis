@@ -294,10 +294,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f1c68716b88d841aa3476fe8f1adfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  skinnedMeshHolder: {fileID: 6435931308866241455}
   playerStats: {fileID: 11400000, guid: 70d37fcc2f3e88b43b335b69c1e66c9d, type: 2}
   playerController: {fileID: 4018240799022764144}
   animator: {fileID: 8406231144293257540}
-  skinnedMeshRendererMaterial: {fileID: -876546973899608171, guid: 6baf81f6d8abaf54cb75baaafb6ab270, type: 3}
   animationTime: 4
 --- !u!1 &7309218936843598696
 GameObject:
@@ -705,6 +705,11 @@ CapsuleCollider:
 --- !u!1 &4091700449381247136 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3036100771434067165, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+  m_PrefabInstance: {fileID: 1363120028201852029}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6435931308866241455 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5457169901417963474, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
   m_PrefabInstance: {fileID: 1363120028201852029}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &6502109409585541862 stripped

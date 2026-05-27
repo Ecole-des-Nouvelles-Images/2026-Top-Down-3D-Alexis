@@ -23,7 +23,6 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         {
             if (other.CompareTag("Player"))
             {
-                Debug.Log("J'ai mis une baffe !");
                 other.GetComponent<PlayerHealth>().GetHit(playerStats.AttackDamage, playerStats.AttackStun);
                 gameObject.SetActive(false);
             }

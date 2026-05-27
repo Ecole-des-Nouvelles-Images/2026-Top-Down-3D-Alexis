@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57ad8409d70c65840a862c44d76c46e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GroundedScript
-  playerController: {fileID: 0}
+  playerController: {fileID: 4399000053606501606}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -300,9 +300,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7d4c7023412ea4dbad20c335845290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.PlayerController
-  PlayerStats: {fileID: 11400000, guid: 70d37fcc2f3e88b43b335b69c1e66c9d, type: 2}
+  playerStats: {fileID: 11400000, guid: 70d37fcc2f3e88b43b335b69c1e66c9d, type: 2}
   attackHitboxLeftHand: {fileID: 1593614833523875859}
-  _handSocket: {fileID: 2762064204684247092}
+  handSocket: {fileID: 2762064204684247092}
   attackHitboxRightHand: {fileID: 8424310554948352597}
   canAttack: 0
   canSlide: 0
@@ -315,20 +315,23 @@ MonoBehaviour:
   isStunned: 0
   isDead: 0
   isDrowned: 0
-  _isGrounded: 0
-  CharacterAnimator: {fileID: 735898539772403035}
-  CurrentWeapon: {fileID: 0}
-  _fallSmoke: {fileID: 293048816427003929, guid: 49a31a6eb4ffa6b43a03b3e9744118f4, type: 3}
-  _fallSmokeOffset: {x: 0, y: 0, z: 0}
-  StunVfx: {fileID: 6400998599525777253, guid: 1ef834d65f1d53749ae17ca7d05bce54, type: 3}
-  StunVfxOffset: {x: 0, y: 0, z: 0}
-  _deathVfx: {fileID: 929230553782903710, guid: e31cfce16074bc9459d7dd6bd5a15492, type: 3}
-  _deathVfxOffset: {x: 0, y: 0, z: 0}
-  _drownedVfx: {fileID: 5104211682697277876, guid: 9ca83d800ebed84448cf421b763bca95, type: 3}
-  _drownedVfxOffset: {x: 0, y: 0, z: 0}
-  MoveInput: {x: 0, y: 0}
-  Rb: {fileID: 0}
-  _pauseMenu: {fileID: 0}
+  isGrounded: 0
+  playerHealth: {fileID: 7468461322618876012}
+  characterAnimator: {fileID: 735898539772403035}
+  currentWeapon: {fileID: 0}
+  fallSmoke: {fileID: 293048816427003929, guid: 49a31a6eb4ffa6b43a03b3e9744118f4, type: 3}
+  fallSmokeOffset: {x: 0, y: 0, z: 0}
+  walkVfx: {fileID: 0}
+  walkVfxOffset: {x: 0, y: 0, z: 0}
+  stunVfx: {fileID: 6400998599525777253, guid: 1ef834d65f1d53749ae17ca7d05bce54, type: 3}
+  stunVfxOffset: {x: 0, y: 0, z: 0}
+  deathVfx: {fileID: 929230553782903710, guid: e31cfce16074bc9459d7dd6bd5a15492, type: 3}
+  deathVfxOffset: {x: 0, y: 0, z: 0}
+  drownedVfx: {fileID: 5104211682697277876, guid: 9ca83d800ebed84448cf421b763bca95, type: 3}
+  drownedVfxOffset: {x: 0, y: 0, z: 0}
+  moveInput: {x: 0, y: 0}
+  rb: {fileID: 0}
+  pauseMenu: {fileID: 0}
 --- !u!114 &7468461322618876012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,10 +344,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f1c68716b88d841aa3476fe8f1adfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  _playerStats: {fileID: 11400000, guid: 70d37fcc2f3e88b43b335b69c1e66c9d, type: 2}
-  _playerController: {fileID: 4399000053606501606}
-  _animator: {fileID: 735898539772403035}
-  _animationTime: 4
+  skinnedMeshHolder: {fileID: 6085646673622583228}
+  playerStats: {fileID: 11400000, guid: 70d37fcc2f3e88b43b335b69c1e66c9d, type: 2}
+  playerController: {fileID: 4399000053606501606}
+  animator: {fileID: 735898539772403035}
+  animationTime: 4
+  _flashTime: 0.01
 --- !u!1001 &1193874520437334731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21003,6 +21008,11 @@ CapsuleCollider:
 --- !u!136 &5462005604815500113 stripped
 CapsuleCollider:
   m_CorrespondingSourceObject: {fileID: 8643318661435516831, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+  m_PrefabInstance: {fileID: 4341414720052794574}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6085646673622583228 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7515173828661203826, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
   m_PrefabInstance: {fileID: 4341414720052794574}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &6863309654894550278 stripped

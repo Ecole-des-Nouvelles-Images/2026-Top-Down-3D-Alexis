@@ -9,13 +9,11 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
             if (playerController.doAttackLeftHand)
             {
                 playerController.characterAnimator.SetTrigger("AttackLeft");
-                playerController.attackHitboxLeftHand.SetActive(true);
             }
             
             if (playerController.doAttackRightHand)
             {
                 playerController.characterAnimator.SetTrigger("AttackRight");
-                playerController.attackHitboxRightHand.SetActive(true);
             }
         }
 

@@ -1,23 +1,22 @@
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
 
 namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 {
     public class PlayerHealth : MonoBehaviour
     {
-        [FormerlySerializedAs("_playerStats")] [SerializeField] private PlayerStats playerStats;
-        [FormerlySerializedAs("_playerController")] [SerializeField] private PlayerController playerController;
+        [SerializeField] private GameObject skinnedMeshHolder;
         
-        [FormerlySerializedAs("_animator")] [SerializeField] private Animator animator;
-        [FormerlySerializedAs("_skinnedMeshRendererMaterial")] [SerializeField] private Material skinnedMeshRendererMaterial;
+        [SerializeField] private PlayerStats playerStats;
+        [SerializeField] private PlayerController playerController;
+        [SerializeField] private Animator animator;
+        private Material skinnedMeshRendererMaterial;
         
-        [FormerlySerializedAs("_animationTime")] [SerializeField] private float animationTime;
+        [SerializeField] private float animationTime;
         private float _currentHealth;
         private float _currentStun;
 
         private float _timeInFlash;
-        private float _flashTime = 0.5f;
+        [SerializeField] private float _flashTime = 0.01f;
 
         public float CurrentHealth => _currentHealth;
         public float CurrentStun
@@ -30,6 +29,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         {
             _currentHealth = playerStats.MaxHealth;
             _currentStun = playerStats.MinStun;
+            skinnedMeshRendererMaterial = skinnedMeshHolder.GetComponent<Renderer>().materials[1];
         }
 
         private void Update()
@@ -44,12 +44,12 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
                 Dies();
             }
 
-            if (skinnedMeshRendererMaterial.GetFloat("HitIntensity") > 0)
+            if (skinnedMeshRendererMaterial.GetFloat("_HitIntensity") > 0)
             {
                 _timeInFlash += Time.deltaTime;
                 if (_timeInFlash >= animationTime)
                 {
-                    skinnedMeshRendererMaterial.SetFloat("HitIntensity", 0);
+                    skinnedMeshRendererMaterial.SetFloat("_HitIntensity", 0);
                     _timeInFlash = 0;
                 }
             }
@@ -59,7 +59,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         {
             _currentHealth -= damage;
             _currentStun += stun;
-            skinnedMeshRendererMaterial.SetFloat("HitIntensity", 0.7f);
+            skinnedMeshRendererMaterial.SetFloat("_HitIntensity", 0.7f);
         }
 
         private void GetStunned()
