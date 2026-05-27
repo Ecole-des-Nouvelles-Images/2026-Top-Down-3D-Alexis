@@ -1,6 +1,8 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Baptiste.script
 {
@@ -15,11 +17,10 @@ namespace Baptiste.script
         [SerializeField] private Vector2 _endAnchorMin=new Vector2(0,3);
         [SerializeField] private Vector2 _endAnchorMax=new Vector2(1,3);
         [Space (5)] 
-        [SerializeField] private bool _isTransitioning= false;
+        [SerializeField] private bool _panelActive= false;
         [SerializeField] private float _timer = 0;
         [SerializeField] private float _transitionDuration = 0.5f;
         [SerializeField] private string _nameScene;
-
     
         void Start()
         {
