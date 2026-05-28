@@ -8,7 +8,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
         public override void OnStateEnter(PlayerController playerController)
         {
             Debug.Log("Stun State Entry");
-            playerController.CharacterAnimator.SetBool("IsStunned", true);
+            playerController.characterAnimator.SetBool("IsStunned", true);
             playerController.canJump = false;
         }
 
@@ -20,7 +20,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
         public override void OnStateExit(PlayerController playerController)
         {
             Debug.Log("Stun State Exit");
-            playerController.CharacterAnimator.SetBool("IsStunned", false);
+            playerController.characterAnimator.SetBool("IsStunned", false);
         }
 
         public override PlayerStateMachine NextState(PlayerController playerController)

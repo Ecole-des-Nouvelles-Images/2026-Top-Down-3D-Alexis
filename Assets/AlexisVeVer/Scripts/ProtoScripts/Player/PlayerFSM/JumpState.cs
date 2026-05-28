@@ -8,15 +8,13 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
         public override void OnStateEnter(PlayerController playerController)
         {
             playerController.canAttack = false;
-            playerController.canJump = false;
-            playerController.Rb.linearVelocity = Vector3.zero;
+            playerController.rb.linearVelocity = Vector3.zero;
         }
 
         public override void OnUpdate(PlayerController playerController)
         {
-            Debug.Log("Current state is jump state");
-            playerController.Move(playerController.PlayerStats.AirSpeedModifier);
-            playerController.GravityModification(playerController.PlayerStats.AdditionalGravity);
+            playerController.Move(playerController.playerStats.AirSpeedModifier);
+            playerController.GravityModification(playerController.playerStats.AdditionalGravity);
         }
 
         public override void OnStateExit(PlayerController playerController)
@@ -27,17 +25,17 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 
         public override PlayerStateMachine NextState(PlayerController playerController)
         {
-            if (!playerController.canJump && playerController.Rb.linearVelocity.magnitude <= 0.2f)
+            if (!playerController.canJump && playerController.rb.linearVelocity.magnitude <= 0.2f)
             {
                 return new IdleState();
             }
             
-            if (!playerController.canJump && playerController.Rb.linearVelocity.magnitude >= 0.2f)
+            if (!playerController.canJump && playerController.rb.linearVelocity.magnitude >= 0.2f)
             {
                 return new MovementState();
             }
             
-            if (playerController.CurrentWeapon != null && playerController.IsGrounded)
+            if (playerController.currentWeapon != null && playerController.IsGrounded)
             {
                 return new ItemCarryState();
             }

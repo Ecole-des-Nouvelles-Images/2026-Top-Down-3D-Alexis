@@ -1,11 +1,6 @@
 using AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM;
 using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items;
-using AlexisVeVer.Scripts.UI;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Animations.Rigging;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
@@ -14,13 +9,13 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
     public class PlayerController : MonoBehaviour
     {
         //ScriptableObject Reference
-        public PlayerStats PlayerStats;
+        [FormerlySerializedAs("PlayerStats")] public PlayerStats playerStats;
 
         //Character parts
         [Header("Character hitboxes")] [Space(4)] 
-        [SerializeField] private GameObject _attackHitboxLeftHand;
-        [SerializeField] private GameObject _handSocket;
-        [SerializeField] private GameObject _attackHitboxRightHand;
+        public GameObject attackHitboxLeftHand;
+        [FormerlySerializedAs("_handSocket")] [SerializeField] private GameObject handSocket;
+        public GameObject attackHitboxRightHand;
         
         // FSM 
         private PlayerStateMachine _currentState;
@@ -41,62 +36,73 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         private float _timeSinceSlideInCd;
         
         //States
-        [SerializeField] private bool _isGrounded;
+        [FormerlySerializedAs("_isGrounded")] [SerializeField] private bool isGrounded;
 
         //Components
+        [FormerlySerializedAs("_playerHealth")]
         [Header("Animator")] [Space(4)] 
-        public Animator CharacterAnimator;
+        [SerializeField] private PlayerHealth playerHealth;
+        [FormerlySerializedAs("CharacterAnimator")] public Animator characterAnimator;
 
-        [HideInInspector] public Weapon CurrentWeapon;
+        [FormerlySerializedAs("CurrentWeapon")] [HideInInspector] public Weapon currentWeapon;
         private ConfigurableJoint _mainJoint;
 
         //VFX
+        [FormerlySerializedAs("_fallSmoke")]
         [Header("VFX")] [Space(4)]
-        [SerializeField] private GameObject _fallSmoke;
-        [SerializeField] private Vector3 _fallSmokeOffset;
+        [SerializeField] private GameObject fallSmoke;
+        [FormerlySerializedAs("_fallSmokeOffset")] [SerializeField] private Vector3 fallSmokeOffset;
         
-        public GameObject StunVfx;
-        public Vector3 StunVfxOffset;
+        public GameObject walkVfx;
+        public Vector3 walkVfxOffset;
         
-        [SerializeField] private GameObject _deathVfx;
-        [SerializeField] private Vector3 _deathVfxOffset;
+        [FormerlySerializedAs("StunVfx")] public GameObject stunVfx;
+        [FormerlySerializedAs("StunVfxOffset")] public Vector3 stunVfxOffset;
         
-        [SerializeField] private GameObject _drownedVfx;
-        [SerializeField] private Vector3 _drownedVfxOffset;
+        [FormerlySerializedAs("_deathVfx")] [SerializeField] private GameObject deathVfx;
+        [FormerlySerializedAs("_deathVfxOffset")] [SerializeField] private Vector3 deathVfxOffset;
+        
+        [FormerlySerializedAs("_drownedVfx")] [SerializeField] private GameObject drownedVfx;
+        [FormerlySerializedAs("_drownedVfxOffset")] [SerializeField] private Vector3 drownedVfxOffset;
         
         //Inputs
-        public Vector2 MoveInput;
-        [HideInInspector] public Rigidbody Rb;
+        [FormerlySerializedAs("MoveInput")] public Vector2 moveInput;
+        [FormerlySerializedAs("Rb")] [HideInInspector] public Rigidbody rb;
         
         //PauseMenu
+        [FormerlySerializedAs("_pauseMenu")]
         [Header("PauseMenu Reference")] [Space(4)] 
-        [SerializeField] private GameObject _pauseMenu;
+        [SerializeField] private GameObject pauseMenu;
         
         //Syncing of physics objects
         SyncPhysicsObject[] _syncPhysicsObjects;
 
         public bool IsGrounded {
-            get =>_isGrounded;
+            get =>isGrounded;
 
-            set { _isGrounded = value; }
+            set { isGrounded = value; }
         }
         
         public PlayerStateMachine CurrentState => _currentState;
         
-        public bool WeaponEquipped => CurrentWeapon != null;
+        public bool WeaponEquipped => currentWeapon != null;
         
         private void Awake()
         {
             _syncPhysicsObjects = GetComponentsInChildren<SyncPhysicsObject>();
-            Rb = GetComponent<Rigidbody>();
+            rb = GetComponent<Rigidbody>();
             _mainJoint = GetComponent<ConfigurableJoint>();
 
             //SO reset
-            PlayerStats.ItemPickedUp = false;
+            playerStats.ItemPickedUp = false;
         }
 
         private void Start()
         {
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.AddPlayer(gameObject);
+            }
             _currentState = new IdleState();
             _currentState.OnStateEnter(this);
         }
@@ -104,34 +110,34 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         private void Update()
         {
             //extra gravity to make the character less floaty
-            if (!_isGrounded) Rb.AddForce(Vector3.down * PlayerStats.AdditionalGravity);
+            if (!isGrounded) rb.AddForce(Vector3.down * playerStats.AdditionalGravity);
 
             // look towards the direction we want to move
-            var inputMagnitude = MoveInput.magnitude;
+            var inputMagnitude = moveInput.magnitude;
 
             if (inputMagnitude != 0)
             {
                 var desiredDirection =
-                    Quaternion.LookRotation(new Vector3(MoveInput.x, 0, MoveInput.y * -1), transform.up);
+                    Quaternion.LookRotation(new Vector3(moveInput.x, 0, moveInput.y * -1), transform.up);
 
                 // rotate target towards direction
                 _mainJoint.targetRotation = Quaternion.RotateTowards(_mainJoint.targetRotation, desiredDirection,
-                    Time.fixedDeltaTime * PlayerStats.RotationSpeed);
+                    Time.fixedDeltaTime * playerStats.RotationSpeed);
             }
 
             // slide cooldown
             if (!canSlide)
             {
                 _timeSinceSlideInCd += Time.deltaTime;
-                if (_timeSinceSlideInCd >= PlayerStats.SlideCd)
+                if (_timeSinceSlideInCd >= playerStats.SlideCd)
                 {
                     canSlide = true;
                     _timeSinceSlideInCd = 0;
                 }
             }
             
-            if (CurrentWeapon != null) {
-                CurrentWeapon.AutoUse(this);
+            if (currentWeapon != null) {
+                currentWeapon.AutoUse(this);
             }
             
             
@@ -155,13 +161,23 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             // Death gestion
             if (isDead)
             {
-                Instantiate(_deathVfx, transform.position + _deathVfxOffset, Quaternion.Euler(-90, 0, 0));
+                Instantiate(deathVfx, transform.position + deathVfxOffset, Quaternion.Euler(-90, 0, 0));
+                if (GameManager.Instance != null)
+                {
+                    GameManager.Instance.RemovePlayer(gameObject);
+                }
+                playerHealth.Dies();
                 Destroy(gameObject);
             }
 
             if (isDrowned)
             {
-                Instantiate(_drownedVfx, transform.position + _drownedVfxOffset, Quaternion.Euler(-90, 0, 0));
+                Instantiate(drownedVfx, transform.position + drownedVfxOffset, Quaternion.Euler(-90, 0, 0));
+                if (GameManager.Instance != null)
+                {
+                    GameManager.Instance.RemovePlayer(gameObject);
+                }
+                playerHealth.Dies();
                 Destroy(gameObject);
             }
         }
@@ -176,16 +192,16 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         private void OnMove(InputValue value)
         {
-            MoveInput = value.Get<Vector2>();
+            moveInput = value.Get<Vector2>();
         }
 
         private void OnJump()
         {
-            if (_isGrounded && canJump)
+            if (isGrounded && canJump)
             {
-                Rb.AddForce(Vector3.up * PlayerStats.JumpForceModifier, ForceMode.Impulse);
+                rb.AddForce(Vector3.up * playerStats.JumpForceModifier, ForceMode.Impulse);
                 jumped = true;
-                _isGrounded = false;
+                isGrounded = false;
             }
         }
 
@@ -209,24 +225,24 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         private void OnPauseGame()
         {
-            if (_pauseMenu.activeSelf)
+            if (pauseMenu.activeSelf)
             {
                 Time.timeScale = 1;
-                _pauseMenu.SetActive(false);
+                pauseMenu.SetActive(false);
             }
             else
             {
                 Time.timeScale = 0;
-                _pauseMenu.SetActive(true);
+                pauseMenu.SetActive(true);
             }
         }
 
         public void Equip(Weapon weapon)
         {
-            CurrentWeapon = weapon;
-            CurrentWeapon.Equip(this);
+            currentWeapon = weapon;
+            currentWeapon.Equip(this);
             weapon.GetComponent<ItemPickUp>().enabled = false;
-            weapon.transform.parent = _handSocket.transform;
+            weapon.transform.parent = handSocket.transform;
             weapon.transform.localPosition = Vector3.zero;
             // Changer la rotation en fonction de l'objet équipé
             if (weapon is HammerAttack)
@@ -246,19 +262,19 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         public void UnEquip()
         {
-            CurrentWeapon.Equip(null);
+            currentWeapon.Equip(null);
         }
 
         public void Move(float speedModifier)
         {
-            Rb.linearDamping = speedModifier / PlayerStats.MaxSpeed;
-            Rb.AddForce(new Vector3(MoveInput.x * speedModifier, 0,
-                MoveInput.y * speedModifier) * -1);
+            rb.linearDamping = speedModifier / playerStats.MaxSpeed;
+            rb.AddForce(new Vector3(moveInput.x * speedModifier, 0,
+                moveInput.y * speedModifier) * -1);
         }
         
         public void GravityModification(float gravityModifier)
         {
-            Rb.AddForce(Vector3.down * gravityModifier);
+            rb.AddForce(Vector3.down * gravityModifier);
         }
         //Update the joints rotation based on the animation
     }

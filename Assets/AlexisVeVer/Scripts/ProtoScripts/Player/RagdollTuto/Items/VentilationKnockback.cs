@@ -20,7 +20,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
         public void VentilationPushesPlayers(PlayerController playerController)
         {
             if (_rb == null) return;
-            _rb.AddForce(new Vector3(playerController.MoveInput.x, 0, playerController.MoveInput.y) * _ventilationForce, ForceMode.Impulse);
+            _rb.AddForce(new Vector3(playerController.moveInput.x, 0, playerController.moveInput.y) * _ventilationForce, ForceMode.Impulse);
         }
     }
 }

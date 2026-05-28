@@ -7,24 +7,24 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
     {
         public override void OnStateEnter(PlayerController playerController)
         {
-            playerController.CharacterAnimator.SetBool("Walking", true);
+            playerController.characterAnimator.SetBool("Walking", true);
             playerController.canAttack = true;
             playerController.canJump = true;
         }
 
         public override void OnUpdate(PlayerController playerController)
         {
-            playerController.Move(playerController.PlayerStats.WalkingSpeedModifier);
+            playerController.Move(playerController.playerStats.WalkingSpeedModifier);
         }
 
         public override void OnStateExit(PlayerController playerController)
         { 
-            playerController.CharacterAnimator.SetBool("Walking", false);
+            playerController.characterAnimator.SetBool("Walking", false);
         }
 
         public override PlayerStateMachine NextState(PlayerController playerController)
         {
-            if (playerController.Rb.linearVelocity.magnitude <= 0.2f)
+            if (playerController.rb.linearVelocity.magnitude <= 0.2f)
             {
                 return new IdleState();
             }
@@ -39,7 +39,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
                 return new SlideState();
             }
             
-            if (playerController.CurrentWeapon != null)
+            if (playerController.currentWeapon != null)
             {
                 return new ItemCarryState();
             }
