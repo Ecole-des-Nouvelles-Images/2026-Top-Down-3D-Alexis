@@ -289,10 +289,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f1c68716b88d841aa3476fe8f1adfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  _playerStats: {fileID: 11400000, guid: 70d37fcc2f3e88b43b335b69c1e66c9d, type: 2}
-  _playerController: {fileID: 4018240799022764144}
-  _animator: {fileID: 8406231144293257540}
-  _animationTime: 4
+  skinnedMeshHolder: {fileID: 6435931308866241455}
+  playerStats: {fileID: 11400000, guid: 70d37fcc2f3e88b43b335b69c1e66c9d, type: 2}
+  playerController: {fileID: 4018240799022764144}
+  animator: {fileID: 8406231144293257540}
+  animationTime: 4
 --- !u!1 &7309218936843598696
 GameObject:
   m_ObjectHideFlags: 0

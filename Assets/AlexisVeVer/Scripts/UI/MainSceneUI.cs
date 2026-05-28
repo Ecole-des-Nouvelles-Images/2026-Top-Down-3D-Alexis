@@ -1,5 +1,3 @@
-using System;
-using Baptiste.script;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,7 +13,8 @@ namespace AlexisVeVer.Scripts.UI
 
         [SerializeField] private float _timerForTransition = 2;
         [SerializeField] private float _transitionTime;
-        [SerializeField] private bool _doTransition;
+        private bool _doTransition;
+        private bool _transitionDone;
         
         void Awake()
         {
@@ -70,7 +69,7 @@ namespace AlexisVeVer.Scripts.UI
 
         private void Update()
         {
-            if (_doTransition)
+            if (_doTransition && !_transitionDone)
             {
                 _transitionTime += Time.deltaTime;
             }
@@ -80,6 +79,7 @@ namespace AlexisVeVer.Scripts.UI
                 SceneManager.LoadScene("GameScene");
                 _transitionTime = 0;
                 _doTransition = false;
+                _transitionDone = true;
                 Time.timeScale = 1;
             }
         }

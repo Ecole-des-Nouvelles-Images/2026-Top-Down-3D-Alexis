@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2cb6f128-d954-47fa-a5fd-8d628baab265" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Prefabs/ManchotMafia.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Prefabs/ManchotMafia.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/AnimationEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/AnimationEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/PlayerFSM/AttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/PlayerFSM/AttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/RagdollTuto/AttackDamage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/RagdollTuto/AttackDamage.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/RagdollTuto/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/RagdollTuto/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/RagdollTuto/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/RagdollTuto/PlayerHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/UI/MainSceneUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/UI/MainSceneUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ManchotGangster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ManchotGangster.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ManchotRacaille.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ManchotRacaille.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ManchotRappeur.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ManchotRappeur.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "Merging Int"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+</project>
