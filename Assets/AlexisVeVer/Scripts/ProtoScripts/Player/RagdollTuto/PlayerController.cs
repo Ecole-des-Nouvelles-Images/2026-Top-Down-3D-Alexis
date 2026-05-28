@@ -13,9 +13,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         //Character parts
         [Header("Character hitboxes")] [Space(4)] 
-        public GameObject attackHitboxLeftHand;
         [FormerlySerializedAs("_handSocket")] [SerializeField] private GameObject handSocket;
-        public GameObject attackHitboxRightHand;
         
         // FSM 
         private PlayerStateMachine _currentState;
@@ -55,6 +53,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         
         public GameObject walkVfx;
         public Vector3 walkVfxOffset;
+        public Vector3 walkVfxRotation;
         
         [FormerlySerializedAs("StunVfx")] public GameObject stunVfx;
         [FormerlySerializedAs("StunVfxOffset")] public Vector3 stunVfxOffset;

@@ -74,7 +74,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player
         public void OnFeetHitGround()
         {
             Instantiate(_playerController.walkVfx,
-                _playerController.transform.position + _playerController.walkVfxOffset, Quaternion.identity);
+                _playerController.transform.position + _playerController.walkVfxOffset, Quaternion.Euler(_playerController.walkVfxRotation));
         }
     }
 }
