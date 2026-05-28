@@ -16,7 +16,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 
         public override void OnUpdate(PlayerController playerController)
         {
-            playerController.Move(playerController.playerStats.WalkingSpeedModifier);
+            playerController.Move(playerController.PlayerStats.WalkingSpeedModifier);
         }
 
         public override void OnStateExit(PlayerController playerController)
@@ -26,7 +26,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 
         public override PlayerStateMachine NextState(PlayerController playerController)
         {
-            if (playerController.rb.linearVelocity.magnitude >= 0.2f)
+            if (playerController.Rb.linearVelocity.magnitude >= 0.2f)
             {
                 return new MovementState();
             }
@@ -36,7 +36,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
                 return new JumpState();
             }
 
-            if (playerController.currentWeapon != null)
+            if (playerController.CurrentWeapon != null)
             {
                 return new ItemCarryState();
             }

@@ -16,10 +16,10 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 
         public override void OnUpdate(PlayerController playerController)
         {
-            playerController.Move(playerController.playerStats.ItemCarrySpeedModifier);
+            playerController.Move(playerController.PlayerStats.ItemCarrySpeedModifier);
             if (playerController.doAttackRightHand || playerController.doAttackLeftHand)
             {
-                playerController.currentWeapon.Use(playerController);
+                playerController.CurrentWeapon.Use(playerController);
                 playerController.doAttackRightHand = false;
                 playerController.doAttackLeftHand  = false;
             }
@@ -32,22 +32,22 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 
         public override PlayerStateMachine NextState(PlayerController playerController)
         {
-            if (playerController.currentWeapon == null)
+            if (playerController.CurrentWeapon == null)
             {
                 return new IdleState();
             }
             
-            if (playerController.currentWeapon != null && playerController.rb.linearVelocity.magnitude >= 0.2f)
+            if (playerController.CurrentWeapon != null && playerController.Rb.linearVelocity.magnitude >= 0.2f)
             {
                 return new MovementState();
             }
             
-            if (playerController.currentWeapon != null && !playerController.IsGrounded)
+            if (playerController.CurrentWeapon != null && !playerController.IsGrounded)
             {
                 return new JumpState();
             }
             
-            if (playerController.currentWeapon != null && playerController.canSlide && playerController.doSlide)
+            if (playerController.CurrentWeapon != null && playerController.canSlide && playerController.doSlide)
             {
                 return new SlideState();
             }

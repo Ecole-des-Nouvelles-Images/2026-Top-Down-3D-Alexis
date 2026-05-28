@@ -34,7 +34,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         private void Update()
         {
-            if (_currentStun >= playerStats.MaxStun)
+            if (_currentStun >= _playerStats.MaxStun)
             {
                 GetStunned();
             }
@@ -64,19 +64,18 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         private void GetStunned()
         {
-            playerController.isStunned = true;
+            _playerController.isStunned = true;
         }
 
-        public void Dies()
+        private void Dies()
         {
-            playerController.isDead = true;
-            _currentHealth = 0;
+            _playerController.isDead = true;
         }
 
         [ContextMenu("TakeDamage")]
         private void TakeDamage()
         {
-            GetHit(2, 0);
+            GetHit(15, 0);
         }
     }
 }

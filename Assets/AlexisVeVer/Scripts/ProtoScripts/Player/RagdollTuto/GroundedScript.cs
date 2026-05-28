@@ -1,13 +1,12 @@
 using System;
 using AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 {
     public class GroundedScript : MonoBehaviour
     {
-        [SerializeField] private PlayerController playerController;
+        [SerializeField] private PlayerController _playerController;
         [SerializeField] LayerMask _groundLayer;
         [SerializeField] private Vector3 _offset;
         [SerializeField] private float _radius = 0.5f;
@@ -17,20 +16,19 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
                 transform.position + _offset, _radius, Vector3.down,  0,_groundLayer);
 
             if (hits.Length <= 0) {
-                playerController.IsGrounded = false;
-                playerController.canJump = false;
-                playerController.characterAnimator.SetBool("IsGrounded", false);
-                playerController.gameObject.transform.SetParent(null);
+                _playerController.IsGrounded = false;
+                _playerController.CharacterAnimator.SetBool("IsGrounded", false);
+                _playerController.gameObject.transform.SetParent(null);
             }
 
             else
             {
-                playerController.IsGrounded = true;
-                playerController.canJump = true;
-                playerController.characterAnimator.SetBool("IsGrounded", true);
-                playerController.gameObject.transform.SetParent(hits[0].transform);
+                _playerController.IsGrounded = true;
+                _playerController.CharacterAnimator.SetBool("IsGrounded", true);
+                _playerController.gameObject.transform.SetParent(hits[0].transform);
             }
         }
+        
         
         private void OnDrawGizmosSelected() {
             Gizmos.color = Color.red;

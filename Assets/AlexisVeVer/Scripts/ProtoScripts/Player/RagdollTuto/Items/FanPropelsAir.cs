@@ -34,7 +34,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
             }
             
             // Repousser en arrière le joueur qui le tiens
-            _rb.AddRelativeForce(-playerController.moveInput * _userPushBackForce);
+            _rb.AddRelativeForce(-playerController.MoveInput * _userPushBackForce);
         }
 
         private void Update()
