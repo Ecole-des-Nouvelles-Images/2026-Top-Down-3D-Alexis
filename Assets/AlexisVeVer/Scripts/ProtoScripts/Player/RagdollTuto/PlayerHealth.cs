@@ -1,18 +1,22 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 {
     public class PlayerHealth : MonoBehaviour
     {
-        [SerializeField] private PlayerStats _playerStats;
-        [SerializeField] private PlayerController _playerController;
+        [SerializeField] private GameObject skinnedMeshHolder;
         
-        [SerializeField] private Animator _animator;
+        [SerializeField] private PlayerStats playerStats;
+        [SerializeField] private PlayerController playerController;
+        [SerializeField] private Animator animator;
+        private Material skinnedMeshRendererMaterial;
         
-        [SerializeField] private float _animationTime;
+        [SerializeField] private float animationTime;
         private float _currentHealth;
         private float _currentStun;
+
+        private float _timeInFlash;
+        [SerializeField] private float _flashTime = 0.01f;
 
         public float CurrentHealth => _currentHealth;
         public float CurrentStun
@@ -23,13 +27,14 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         private void Awake()
         {
-            _currentHealth = _playerStats.MaxHealth;
-            _currentStun = _playerStats.MinStun;
+            _currentHealth = playerStats.MaxHealth;
+            _currentStun = playerStats.MinStun;
+            skinnedMeshRendererMaterial = skinnedMeshHolder.GetComponent<Renderer>().materials[1];
         }
 
         private void Update()
         {
-            if (_currentStun >= _playerStats.MaxStun)
+            if (_currentStun >= playerStats.MaxStun)
             {
                 GetStunned();
             }
@@ -38,29 +43,40 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             {
                 Dies();
             }
+
+            if (skinnedMeshRendererMaterial.GetFloat("_HitIntensity") > 0)
+            {
+                _timeInFlash += Time.deltaTime;
+                if (_timeInFlash >= animationTime)
+                {
+                    skinnedMeshRendererMaterial.SetFloat("_HitIntensity", 0);
+                    _timeInFlash = 0;
+                }
+            }
         }
 
         public void GetHit(float damage, float stun)
         {
             _currentHealth -= damage;
             _currentStun += stun;
-            Debug.Log("J'ai été touché. Ma vie est désormais de " + _currentHealth + " et ma valeur de stun est désormais de " +  _currentStun);
+            skinnedMeshRendererMaterial.SetFloat("_HitIntensity", 0.7f);
         }
 
         private void GetStunned()
         {
-            _playerController.isStunned = true;
+            playerController.isStunned = true;
         }
 
-        private void Dies()
+        public void Dies()
         {
-            _playerController.isDead = true;
+            playerController.isDead = true;
+            _currentHealth = 0;
         }
 
         [ContextMenu("TakeDamage")]
         private void TakeDamage()
         {
-            GetHit(15, 0);
+            GetHit(2, 0);
         }
     }
 }
