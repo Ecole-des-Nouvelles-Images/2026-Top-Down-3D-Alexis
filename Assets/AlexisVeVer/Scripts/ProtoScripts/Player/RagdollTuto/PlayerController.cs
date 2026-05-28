@@ -1,11 +1,6 @@
 using AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM;
 using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items;
-using AlexisVeVer.Scripts.UI;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Animations.Rigging;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 
@@ -56,6 +51,9 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         public GameObject walkVfx;
         public Vector3 walkVfxOffset;
         public Vector3 walkVfxRotation;
+        
+        public GameObject StunVfx;
+        public Vector3 StunVfxOffset;
         
         [SerializeField] private GameObject _deathVfx;
         [SerializeField] private Vector3 _deathVfxOffset;
@@ -225,7 +223,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             CurrentWeapon = weapon;
             CurrentWeapon.Equip(this);
             weapon.GetComponent<ItemPickUp>().enabled = false;
-            weapon.transform.parent = _handSocket.transform;
+            weapon.transform.parent = handSocket.transform;
             weapon.transform.localPosition = Vector3.zero;
             // Changer la rotation en fonction de l'objet équipé
             if (weapon is HammerAttack)

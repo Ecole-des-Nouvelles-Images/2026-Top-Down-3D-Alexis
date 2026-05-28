@@ -1,4 +1,3 @@
-using System;
 using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto;
 using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items;
 using UnityEngine;

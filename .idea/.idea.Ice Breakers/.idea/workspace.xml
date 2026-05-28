@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b8ada7f-aae0-47ba-9e7d-38fead33b1db" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/RagdollTuto/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/RagdollTuto/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/UI/MainSceneUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/UI/MainSceneUI.cs" afterDir="false" />
-    </list>
+    <list default="true" id="5b8ada7f-aae0-47ba-9e7d-38fead33b1db" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +12,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/RagdollTuto/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -93,7 +93,7 @@
       <option name="presentableId" value="Default" />
       <updated>1779788924006</updated>
       <workItem from="1779788925615" duration="7458000" />
-      <workItem from="1779953756227" duration="1117000" />
+      <workItem from="1779953756227" duration="2193000" />
     </task>
     <servers />
   </component>
