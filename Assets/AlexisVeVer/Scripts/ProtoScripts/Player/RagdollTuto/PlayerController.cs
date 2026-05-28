@@ -275,6 +275,5 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         {
             rb.AddForce(Vector3.down * gravityModifier);
         }
-        //Update the joints rotation based on the animation
     }
 }
