@@ -24,7 +24,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
             GameObject rocket = Instantiate(_rocketPrefab, _prePlacedRocket.transform.position, _prePlacedRocket.transform.rotation);
             Destroy(_prePlacedRocket);
             _rocketRb = rocket.GetComponent<Rigidbody>();
-            _rocketRb.AddForce(new Vector3(-_playerController.moveInput.x, 0, _playerController.moveInput.y) * _rocketLaunchingForce, 
+            _rocketRb.AddForce(new Vector3(-_playerController.MoveInput.x, 0, _playerController.MoveInput.y) * _rocketLaunchingForce, 
                 ForceMode.Impulse);
             Destroy(gameObject);
         }

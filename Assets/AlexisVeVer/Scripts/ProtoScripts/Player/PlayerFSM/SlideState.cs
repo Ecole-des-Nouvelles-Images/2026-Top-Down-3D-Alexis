@@ -11,9 +11,9 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
             playerController.canAttack = true;
             playerController.canJump = false;
             
-            playerController.rb.AddForce(
-                new Vector3(playerController.rb.linearVelocity.x * playerController.playerStats.SlideForceMultiplier, 0,
-                    playerController.rb.linearVelocity.z * playerController.playerStats.SlideForceMultiplier),
+            playerController.Rb.AddForce(
+                new Vector3(playerController.Rb.linearVelocity.x * playerController.PlayerStats.SlideForceMultiplier, 0,
+                    playerController.Rb.linearVelocity.z * playerController.PlayerStats.SlideForceMultiplier),
                 ForceMode.VelocityChange);
             playerController.canSlide = false;
         }
@@ -31,7 +31,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 
         public override PlayerStateMachine NextState(PlayerController playerController)
         {
-            if (playerController.IsGrounded && playerController.rb.linearVelocity.magnitude <= 0.3f)
+            if (playerController.IsGrounded && playerController.Rb.linearVelocity.magnitude <= 0.3f)
             {
                 return new MovementState();
             }
@@ -41,7 +41,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
                 return new JumpState();
             }
             
-            if (playerController.currentWeapon != null && playerController.IsGrounded && playerController.rb.linearVelocity.magnitude <= 0.3f)
+            if (playerController.CurrentWeapon != null && playerController.IsGrounded && playerController.Rb.linearVelocity.magnitude <= 0.3f)
             {
                 return new ItemCarryState();
             }

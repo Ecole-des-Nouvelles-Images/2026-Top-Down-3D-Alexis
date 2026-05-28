@@ -1,39 +1,38 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace AlexisVeVer.Scripts.UI
 {
     public class SetFirstButton : MonoBehaviour
     {
-        [FormerlySerializedAs("_eventSystem")] [SerializeField] private EventSystem eventSystem;
-        [FormerlySerializedAs("_buttonToSelect")] [SerializeField] private Selectable buttonToSelect;
+        [SerializeField] private EventSystem _eventSystem;
+        [SerializeField] private Selectable _buttonToSelect;
     
         private GameObject _lastSelected;
 
         public void OnEnable()
         {
             SelectButton();
-            _lastSelected = buttonToSelect.gameObject;
+            _lastSelected = _buttonToSelect.gameObject;
         }
 
         private void Update()
         {
-            if (eventSystem.currentSelectedGameObject != null)
+            if (_eventSystem.currentSelectedGameObject != null)
             {
-                _lastSelected = eventSystem.currentSelectedGameObject;
+                _lastSelected = _eventSystem.currentSelectedGameObject;
             }
 
-            if (eventSystem.currentSelectedGameObject == null)
+            if (_eventSystem.currentSelectedGameObject == null)
             {
-                eventSystem.SetSelectedGameObject(_lastSelected);
+                _eventSystem.SetSelectedGameObject(_lastSelected);
             }
         }
         private void SelectButton()
         {
-            if (buttonToSelect == null) return;
-            eventSystem.SetSelectedGameObject(buttonToSelect.gameObject);
+            if (_buttonToSelect == null) return;
+            _eventSystem.SetSelectedGameObject(_buttonToSelect.gameObject);
         }
     }
 }

@@ -40,7 +40,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
             playerController.UnEquip();
             
             // Lui donner de la force
-            _rb.AddForce(playerController.moveInput.x * _mineThrowingForce, -_gravityForce, playerController.moveInput.y * _mineThrowingForce);
+            _rb.AddForce(playerController.MoveInput.x * _mineThrowingForce, -_gravityForce, playerController.MoveInput.y * _mineThrowingForce);
             
             // La parenter au sol quand elle touche le sol
             _mineSent = true;
