@@ -55,6 +55,9 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         public Vector3 walkVfxOffset;
         public Vector3 walkVfxRotation;
         
+        public GameObject StunVfx;
+        public Vector3 StunVfxOffset;
+        
         [FormerlySerializedAs("StunVfx")] public GameObject stunVfx;
         [FormerlySerializedAs("StunVfxOffset")] public Vector3 stunVfxOffset;
         
