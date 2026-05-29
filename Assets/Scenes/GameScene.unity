@@ -897,6 +897,14 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 1640996284}
+    - target: {fileID: 4399000053606501606, guid: 28a8dc821f0e96442a51d5bb77b5f130, type: 3}
+      propertyPath: moveInput.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399000053606501606, guid: 28a8dc821f0e96442a51d5bb77b5f130, type: 3}
+      propertyPath: drownedVfxOffset.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6801632367160089296, guid: 28a8dc821f0e96442a51d5bb77b5f130, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.272451
@@ -972,6 +980,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72a25b4987ec1154e99c06ff0d7461c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TargetGroupAutoRegister
+--- !u!4 &426378434 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6801632367160089296, guid: 28a8dc821f0e96442a51d5bb77b5f130, type: 3}
+  m_PrefabInstance: {fileID: 426378431}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &438576244
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,7 +1183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4170153462387965591, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.54
+      value: 2.57
       objectReference: {fileID: 0}
     - target: {fileID: -4170153462387965591, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1214,15 +1227,15 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 48edd7eab1eb21245bc475e37ccf37dc, type: 2}
     - target: {fileID: 2719227093410558763, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: -0.61
       objectReference: {fileID: 0}
     - target: {fileID: 2719227093410558763, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.07
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2719227093410558763, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.44
+      value: 3.48
       objectReference: {fileID: 0}
     - target: {fileID: 3850520811905106634, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1615,6 +1628,10 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 1640996284}
+    - target: {fileID: 8787664403245628016, guid: 98ab69c34bd4b4046a9f9c68754debec, type: 3}
+      propertyPath: drownedVfxOffset.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9159628389595256525, guid: 98ab69c34bd4b4046a9f9c68754debec, type: 3}
       propertyPath: m_Name
       value: ManchotRappeur
@@ -1638,6 +1655,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f1c68716b88d841aa3476fe8f1adfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+--- !u!4 &764383186 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7417475201165815053, guid: 98ab69c34bd4b4046a9f9c68754debec, type: 3}
+  m_PrefabInstance: {fileID: 764383184}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &764781255 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 253463550041660005, guid: 9c06ef01a8e311f4385b8b5132ebcf49, type: 3}
@@ -7088,7 +7110,6 @@ GameObject:
   - component: {fileID: 1136962121}
   - component: {fileID: 1136962120}
   - component: {fileID: 1136962122}
-  - component: {fileID: 1136962118}
   - component: {fileID: 1136962117}
   m_Layer: 0
   m_Name: CinemachineCamera
@@ -7110,43 +7131,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineGroupFraming
   FramingMode: 2
-  FramingSize: 0.8
+  FramingSize: 0.59
   CenterOffset: {x: 0, y: 0}
   Damping: 2
   SizeAdjustment: 2
   LateralAdjustment: 0
-  FovRange: {x: 1, y: 100}
+  FovRange: {x: 1, y: 95.5126}
   DollyRange: {x: -100, y: 100}
   OrthoSizeRange: {x: 1, y: 1000}
---- !u!114 &1136962118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1136962116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f38bda98361e1de48a4ca2bd86ea3c17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineRotationComposer
-  Composition:
-    ScreenPosition: {x: 0.00000011920929, y: -0.0014806986}
-    DeadZone:
-      Enabled: 0
-      Size: {x: 0.2, y: 0.2}
-    HardLimits:
-      Enabled: 0
-      Size: {x: 0.8, y: 0.8}
-      Offset: {x: 0, y: 0}
-  CenterOnActivate: 1
-  TargetOffset: {x: 0, y: 0, z: 0}
-  Damping: {x: 0.5, y: 0.5}
-  Lookahead:
-    Enabled: 0
-    Time: 0
-    Smoothing: 0
-    IgnoreY: 0
 --- !u!114 &1136962120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7198,13 +7190,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136962116}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20956258, y: -0.11942876, z: 0.025798362, w: 0.97013134}
-  m_LocalPosition: {x: 0.5, y: 0.92999995, z: -2}
+  m_LocalRotation: {x: 0, y: 0.92387956, z: -0.38268343, w: 0}
+  m_LocalPosition: {x: -1.1791693, y: 9.374987, z: 9.350992}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 180, z: 0}
 --- !u!114 &1136962122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7214,23 +7206,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1136962116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 625c14eee3ad46c99df7c7c891ef668a, type: 3}
+  m_Script: {fileID: 11500000, guid: 886251e9a18ece04ea8e61686c173e1b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineThirdPersonFollow
-  Damping: {x: 0.1, y: 0.5, z: 0.3}
-  ShoulderOffset: {x: 0.5, y: 0.53, z: 0}
-  VerticalArmLength: 0.4
-  CameraSide: 1
-  CameraDistance: 2
-  AvoidObstacles:
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachinePositionComposer
+  CameraDistance: 10
+  DeadZoneDepth: 0
+  Composition:
+    ScreenPosition: {x: 0, y: 0}
+    DeadZone:
+      Enabled: 0
+      Size: {x: 0.2, y: 0.2}
+    HardLimits:
+      Enabled: 0
+      Size: {x: 0.98, y: 0.96}
+      Offset: {x: 0, y: 0}
+  CenterOnActivate: 1
+  TargetOffset: {x: 0, y: 0, z: 0}
+  Damping: {x: 1, y: 1, z: 1}
+  Lookahead:
     Enabled: 0
-    CollisionFilter:
-      serializedVersion: 2
-      m_Bits: 1
-    IgnoreTag: 
-    CameraRadius: 0.2
-    DampingIntoCollision: 0
-    DampingFromCollision: 0.5
+    Time: 0
+    Smoothing: 0
+    IgnoreY: 0
 --- !u!1001 &1237206995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7265,7 +7262,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3348195398648568390, guid: 6bb3e924c0c800a48ba44aeaa1542afb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.75
+      value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: 3348195398648568390, guid: 6bb3e924c0c800a48ba44aeaa1542afb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7378,7 +7375,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 1000
-  field of view: 59.997204
+  field of view: 57.585796
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -7404,8 +7401,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251047749}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.20956258, y: -0.11942876, z: 0.025798362, w: 0.97013134}
-  m_LocalPosition: {x: 0.0019295216, y: 0.003574729, z: -0.007648587}
+  m_LocalRotation: {x: 0, y: 0.92387956, z: -0.38268343, w: 0}
+  m_LocalPosition: {x: -0.7525579, y: 9.595578, z: 10.809893}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8395,7 +8392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9d505cc4211620b4e8e4c4cb247b78d5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.4300003
+      value: -2.42
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 9d505cc4211620b4e8e4c4cb247b78d5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8585,6 +8582,10 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 1640996284}
+    - target: {fileID: 5887720336453257097, guid: 75367a6f14aa0174584274047e95f6ef, type: 3}
+      propertyPath: drownedVfxOffset.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8604,6 +8605,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f1c68716b88d841aa3476fe8f1adfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+--- !u!4 &1545415838 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3391965987769952003, guid: 75367a6f14aa0174584274047e95f6ef, type: 3}
+  m_PrefabInstance: {fileID: 1545415836}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1574624192
 GameObject:
   m_ObjectHideFlags: 0
@@ -8689,7 +8695,19 @@ MonoBehaviour:
   PositionMode: 0
   RotationMode: 0
   UpdateMethod: 2
-  Targets: []
+  Targets:
+  - Object: {fileID: 3090804956477728522}
+    Weight: 1
+    Radius: 1
+  - Object: {fileID: 1545415838}
+    Weight: 1
+    Radius: 1
+  - Object: {fileID: 764383186}
+    Weight: 1
+    Radius: 1
+  - Object: {fileID: 426378434}
+    Weight: 1
+    Radius: 1
   m_LegacyTargets: []
 --- !u!4 &1658774046
 Transform:
@@ -8700,7 +8718,7 @@ Transform:
   m_GameObject: {fileID: 1658774044}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.1791693, y: 2.30392, z: 2.2799253}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8713,14 +8731,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658774044}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bba286e64c23324ba3043aa7ff1384b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MultiplayerTargetGroupManager
   targetGroup: {fileID: 1658774045}
   defaultWeight: 1
-  defaultRadius: 2
+  defaultRadius: 4
 --- !u!1 &1786871068 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7050405306620935679, guid: 9c06ef01a8e311f4385b8b5132ebcf49, type: 3}
@@ -9164,6 +9182,10 @@ PrefabInstance:
       propertyPath: _pauseMenu
       value: 
       objectReference: {fileID: 1640996284}
+    - target: {fileID: 4018240799022764144, guid: 9c100541d2b446c4aa6463228d14fc46, type: 3}
+      propertyPath: drownedVfxOffset.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5049916010468643274, guid: 9c100541d2b446c4aa6463228d14fc46, type: 3}
       propertyPath: playerController
       value: 
@@ -9227,6 +9249,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f1c68716b88d841aa3476fe8f1adfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+--- !u!4 &3090804956477728522 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8397861366321964962, guid: 9c100541d2b446c4aa6463228d14fc46, type: 3}
+  m_PrefabInstance: {fileID: 3090804956477728520}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3090804956477728524
 MonoBehaviour:
   m_ObjectHideFlags: 0
