@@ -11,6 +11,7 @@ namespace AlexisVeVer.Scripts.UI
 
         public void ResumeGame()
         {
+            Debug.Log("ResumeGame");
             _pauseMenu.SetActive(false);
             Time.timeScale = 1;
         }

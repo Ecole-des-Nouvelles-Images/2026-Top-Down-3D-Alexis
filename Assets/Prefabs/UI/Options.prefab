@@ -1323,6 +1323,7 @@ GameObject:
   - component: {fileID: 4414293655344518576}
   - component: {fileID: 4380023179191629590}
   - component: {fileID: 279568673805116273}
+  - component: {fileID: 2537281451145955721}
   m_Layer: 5
   m_Name: Options
   m_TagString: Untagged
@@ -1464,7 +1465,20 @@ MonoBehaviour:
   _timer: 0
   _transitionDuration: 0.5
   _nameScene: 
-  _selectable: {fileID: 0}
+--- !u!114 &2537281451145955721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5036489837766759011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ace294405c4df54e909e138e1612381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.UI.SetFirstButton
+  eventSystem: {fileID: 0}
+  buttonToSelect: {fileID: 8867064053552283970}
 --- !u!1 &5338621904033924860
 GameObject:
   m_ObjectHideFlags: 0

@@ -6936,6 +6936,52 @@ PrefabInstance:
       addedObject: {fileID: 1501010068}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e001c2d92b76184caca229feb2a840e, type: 3}
+--- !u!1 &1553901632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1553901634}
+  - component: {fileID: 1553901633}
+  m_Layer: 0
+  m_Name: CursorManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1553901633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553901632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae6ce7db7fd13d84b9918d52f2265e35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CustomCursor
+  cursorTexture: {fileID: 2800000, guid: 2267fa2486640a24db74555d29efde3e, type: 3}
+  hotspot: {x: 0, y: 0}
+--- !u!4 &1553901634
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553901632}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.85894, y: 3.07077, z: 2.42058}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1658774044
 GameObject:
   m_ObjectHideFlags: 0
@@ -7430,6 +7476,10 @@ PrefabInstance:
       propertyPath: walkVfx
       value: 
       objectReference: {fileID: 4878385393882852332, guid: db4c5f541795d474ca4c13046d89628c, type: 3}
+    - target: {fileID: 4018240799022764144, guid: 9c100541d2b446c4aa6463228d14fc46, type: 3}
+      propertyPath: walkVfxRotation.x
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 8397861366321964962, guid: 9c100541d2b446c4aa6463228d14fc46, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.12
@@ -7540,10 +7590,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5791167927860661421, guid: f4700c3def85a5746aba8feef9642d09, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7242085674447750002, guid: f4700c3def85a5746aba8feef9642d09, type: 3}
-      propertyPath: soundEffects.Array.size
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7685,7 +7731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7936699376788253790, guid: 28a8dc821f0e96442a51d5bb77b5f130, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7782,7 +7828,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9159628389595256525, guid: 98ab69c34bd4b4046a9f9c68754debec, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8092,7 +8138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 277917252196718521, guid: 75367a6f14aa0174584274047e95f6ef, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3391965987769952003, guid: 75367a6f14aa0174584274047e95f6ef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8506,3 +8552,4 @@ SceneRoots:
   - {fileID: 4073871317468150757}
   - {fileID: 3432446229261210287}
   - {fileID: 3096320452802469789}
+  - {fileID: 1553901634}

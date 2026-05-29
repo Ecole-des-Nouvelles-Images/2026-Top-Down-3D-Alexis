@@ -512,6 +512,7 @@ GameObject:
   - component: {fileID: 3751948906580010416}
   - component: {fileID: 6704683384358318118}
   - component: {fileID: 6359180725123483632}
+  - component: {fileID: 7137517187155509014}
   m_Layer: 5
   m_Name: Panel_classique 1
   m_TagString: Untagged
@@ -580,6 +581,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7137517187155509014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5273293709004870511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ace294405c4df54e909e138e1612381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.UI.SetFirstButton
+  eventSystem: {fileID: 0}
+  buttonToSelect: {fileID: 0}
 --- !u!1 &5949328982012076992
 GameObject:
   m_ObjectHideFlags: 0
