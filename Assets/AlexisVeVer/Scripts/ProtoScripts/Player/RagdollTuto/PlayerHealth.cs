@@ -16,7 +16,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         private float _currentStun;
 
         private float _timeInFlash;
-        [SerializeField] private float _flashTime = 0.01f;
+        [SerializeField] private float _flashTime = 0.001f;
 
         public float CurrentHealth => _currentHealth;
         public float CurrentStun

@@ -5,6 +5,8 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 {
     public class MovementState : PlayerStateMachine
     {
+        private float _movementCheck = 0.2f;
+        
         public override void OnStateEnter(PlayerController playerController)
         {
             playerController.characterAnimator.SetBool("Walking", true);
@@ -24,7 +26,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 
         public override PlayerStateMachine NextState(PlayerController playerController)
         {
-            if (playerController.rb.linearVelocity.magnitude <= 0.2f)
+            if (playerController.rb.linearVelocity.magnitude <= _movementCheck)
             {
                 return new IdleState();
             }

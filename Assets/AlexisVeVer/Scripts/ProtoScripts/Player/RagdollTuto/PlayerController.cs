@@ -13,7 +13,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         //Character parts
         [Header("Character hitboxes")] [Space(4)] 
-        [FormerlySerializedAs("_handSocket")] [SerializeField] private GameObject handSocket;
+        [SerializeField] private GameObject handSocket;
         
         // FSM 
         private PlayerStateMachine _currentState;
@@ -34,42 +34,40 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         private float _timeSinceSlideInCd;
         
         //States
-        [FormerlySerializedAs("_isGrounded")] [SerializeField] private bool isGrounded;
+        [SerializeField] private bool isGrounded;
+        [HideInInspector] public bool IsTerrainMoving;
 
         //Components
-        [FormerlySerializedAs("_playerHealth")]
         [Header("Animator")] [Space(4)] 
         [SerializeField] private PlayerHealth playerHealth;
-        [FormerlySerializedAs("CharacterAnimator")] public Animator characterAnimator;
+        public Animator characterAnimator;
 
-        [FormerlySerializedAs("CurrentWeapon")] [HideInInspector] public Weapon currentWeapon;
+        [HideInInspector] public Weapon currentWeapon;
         private ConfigurableJoint _mainJoint;
 
         //VFX
-        [FormerlySerializedAs("_fallSmoke")]
         [Header("VFX")] [Space(4)]
         [SerializeField] private GameObject fallSmoke;
-        [FormerlySerializedAs("_fallSmokeOffset")] [SerializeField] private Vector3 fallSmokeOffset;
+        [SerializeField] private Vector3 fallSmokeOffset;
         
         public GameObject walkVfx;
         public Vector3 walkVfxOffset;
         public Vector3 walkVfxRotation;
         
-        [FormerlySerializedAs("StunVfx")] public GameObject stunVfx;
-        [FormerlySerializedAs("StunVfxOffset")] public Vector3 stunVfxOffset;
+        public GameObject stunVfx;
+        public Vector3 stunVfxOffset;
         
-        [FormerlySerializedAs("_deathVfx")] [SerializeField] private GameObject deathVfx;
-        [FormerlySerializedAs("_deathVfxOffset")] [SerializeField] private Vector3 deathVfxOffset;
+        [SerializeField] private GameObject deathVfx;
+        [SerializeField] private Vector3 deathVfxOffset;
         
-        [FormerlySerializedAs("_drownedVfx")] [SerializeField] private GameObject drownedVfx;
-        [FormerlySerializedAs("_drownedVfxOffset")] [SerializeField] private Vector3 drownedVfxOffset;
+        [SerializeField] private GameObject drownedVfx;
+        [SerializeField] private Vector3 drownedVfxOffset;
         
         //Inputs
-        [FormerlySerializedAs("MoveInput")] public Vector2 moveInput;
-        [FormerlySerializedAs("Rb")] [HideInInspector] public Rigidbody rb;
+         public Vector2 moveInput;
+        [HideInInspector] public Rigidbody rb;
         
         //PauseMenu
-        [FormerlySerializedAs("_pauseMenu")]
         [Header("PauseMenu Reference")] [Space(4)] 
         [SerializeField] private GameObject pauseMenu;
         
@@ -267,8 +265,16 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         public void Move(float speedModifier)
         {
             rb.linearDamping = speedModifier / playerStats.MaxSpeed;
-            rb.AddForce(new Vector3(moveInput.x * speedModifier, 0,
-                moveInput.y * speedModifier) * -1);
+            if (IsTerrainMoving)
+            {
+                rb.AddForce(new Vector3(moveInput.x * speedModifier, 0, 
+                    moveInput.y * speedModifier) * (playerStats.FloatingTerrainSpeedModifier * -1));
+            }
+            else
+            {
+                rb.AddForce(new Vector3(moveInput.x * speedModifier, 0,
+                    moveInput.y * speedModifier) * -1);
+            }
         }
         
         public void GravityModification(float gravityModifier)

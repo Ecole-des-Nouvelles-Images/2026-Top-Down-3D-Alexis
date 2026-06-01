@@ -22,6 +22,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         public float WalkingSpeedModifier;
         public float AirSpeedModifier;
         public float ItemCarrySpeedModifier;
+        public float FloatingTerrainSpeedModifier;
         public float RotationSpeed;
         public float JumpForceModifier;
         public float AdditionalGravity = 10;

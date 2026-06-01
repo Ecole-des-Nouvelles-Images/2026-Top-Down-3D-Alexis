@@ -42,7 +42,7 @@ namespace AlexisVeVer.Scripts.UI
 
         public void GoToMainMenu()
         {
-            SceneManager.LoadScene("AlexisVeVer/Scenes/MainMenu");
+            SceneManager.LoadScene("Scenes/MainMenu");
         }
     }
 }

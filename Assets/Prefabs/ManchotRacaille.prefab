@@ -10068,11 +10068,11 @@ PrefabInstance:
     - target: {fileID: 5281153259605872735, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
       propertyPath: _leftHandHitbox
       value: 
-      objectReference: {fileID: 1593614833523875859}
+      objectReference: {fileID: 8424310554948352597}
     - target: {fileID: 5281153259605872735, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
       propertyPath: _rightHandHitbox
       value: 
-      objectReference: {fileID: 8424310554948352597}
+      objectReference: {fileID: 1593614833523875859}
     - target: {fileID: 5281153259605872735, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
       propertyPath: _playerController
       value: 
@@ -10213,6 +10213,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6801632367160089296}
     m_Modifications:
+    - target: {fileID: 186729247487022205, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: m_Radius
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 186729247487022205, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: m_Center.x
+      value: 0.0025
+      objectReference: {fileID: 0}
     - target: {fileID: 258135700804807738, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -10253,6 +10261,14 @@ PrefabInstance:
       propertyPath: m_ConnectedBody
       value: 
       objectReference: {fileID: 2179382140015986511}
+    - target: {fileID: 1690783337358945107, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: m_Radius
+      value: 0.005
+      objectReference: {fileID: 0}
+    - target: {fileID: 1690783337358945107, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: m_Center.x
+      value: -0.0025
+      objectReference: {fileID: 0}
     - target: {fileID: 1860402513595076833, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -20720,6 +20736,10 @@ PrefabInstance:
     - target: {fileID: 3036100771434067165, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3036100771434067165, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3162057048595413064, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
       propertyPath: m_Layer

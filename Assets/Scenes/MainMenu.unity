@@ -1139,7 +1139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4165560979394137329, guid: 4b346ba86cb67304997287300840a244, type: 3}
       propertyPath: speed
-      value: 8
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4165560979394137329, guid: 4b346ba86cb67304997287300840a244, type: 3}
       propertyPath: _endAnchorMax.x
@@ -1148,6 +1148,10 @@ PrefabInstance:
     - target: {fileID: 4165560979394137329, guid: 4b346ba86cb67304997287300840a244, type: 3}
       propertyPath: _endAnchorMin.x
       value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165560979394137329, guid: 4b346ba86cb67304997287300840a244, type: 3}
+      propertyPath: _transitionDuration
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7021181475460491608, guid: 4b346ba86cb67304997287300840a244, type: 3}
       propertyPath: m_AnchorMax.x
