@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c7327bd5-3bda-4924-982b-1d4a14308c9e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2026-Top-Down-3D-Alexis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2026-Top-Down-3D-Alexis/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/Alexis.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisTaTa/Alexis.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +114,7 @@
       <workItem from="1779352642777" duration="3469000" />
       <workItem from="1779435812252" duration="4867000" />
       <workItem from="1779789303278" duration="4366000" />
-      <workItem from="1779871267846" duration="2674000" />
+      <workItem from="1779871267846" duration="3271000" />
     </task>
     <servers />
   </component>

@@ -19,7 +19,7 @@ public class TargetGroupAutoRegister : MonoBehaviour
     {
         if (manager != null)
         {
-            manager.UnregisterTarget(transform);
+            manager.UnRegisterTarget(transform);
         }
     }
 }
