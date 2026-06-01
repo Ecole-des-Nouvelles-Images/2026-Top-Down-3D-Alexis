@@ -71,6 +71,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         {
             playerController.isDead = true;
             _currentHealth = 0;
+            GameManager.Instance.PlayerDead(gameObject);
         }
 
         [ContextMenu("TakeDamage")]
