@@ -6,6 +6,29 @@
   <component name="ChangeListManager">
     <list default="true" id="c7327bd5-3bda-4924-982b-1d4a14308c9e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2026-Top-Down-3D-Alexis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2026-Top-Down-3D-Alexis/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/Alexis.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisTaTa/Alexis.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisTaTa/AudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Animations/Animations_finales_reprises_pour_event/NS_Pinguin01_Skeleton_Run.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Animations/Animations_finales_reprises_pour_event/NS_Pinguin01_Skeleton_Run.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Animations/Animations_finales_reprises_pour_event/NS_Pinguin01_Skeleton_Walk.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Animations/Animations_finales_reprises_pour_event/NS_Pinguin01_Skeleton_Walk.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Prefabs/ManchotMafia.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Prefabs/ManchotMafia.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/AnimationEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/AnimationEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/PlayerFSM/AttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/PlayerFSM/AttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/PlayerFSM/JumpState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/PlayerFSM/JumpState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/RagdollTuto/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/ProtoScripts/Player/RagdollTuto/PlayerHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AudioMix.mixer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AudioMix.mixer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Accessory1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Accessory1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Accessory3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Accessory3.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/M_Landmine.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/M_Landmine.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AudioManager.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AudioManager.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Landmine_low.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Landmine_low.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ManchotGangster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ManchotGangster.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ManchotRacaille.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ManchotRacaille.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ManchotRappeur.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ManchotRappeur.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Vfx/PS_Death.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Vfx/PS_Death.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Vfx/PS_Snow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Vfx/PS_Snow.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Vfx/PS_WaterSplashdown.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Vfx/PS_WaterSplashdown.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +41,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/AlexisTaTa/ConfigurableJointExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AlexisTaTa/TargetGroupAutoRegister.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AlexisVeVer/Animations/Animations_finales_reprises_pour_event/NS_Pinguin01_Skeleton_AttackLeft.anim" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@3b809f23691d/Runtime/Passes/ScriptableRenderPass.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@3b809f23691d/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -115,6 +139,7 @@
       <workItem from="1779435812252" duration="4867000" />
       <workItem from="1779789303278" duration="4366000" />
       <workItem from="1779871267846" duration="3271000" />
+      <workItem from="1780306697578" duration="5808000" />
     </task>
     <servers />
   </component>

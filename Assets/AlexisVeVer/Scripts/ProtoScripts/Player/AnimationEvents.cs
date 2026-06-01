@@ -73,6 +73,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player
 
         public void OnFeetHitGround()
         {
+            AudioManager.Instance.PlaySound("Step1");
             Instantiate(_playerController.walkVfx,
                 _playerController.transform.position + _playerController.walkVfxOffset, Quaternion.Euler(_playerController.walkVfxRotation));
         }

@@ -57,6 +57,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         public void GetHit(float damage, float stun)
         {
+            AudioManager.Instance.PlaySound("Slap");
             _currentHealth -= damage;
             _currentStun += stun;
             skinnedMeshRendererMaterial.SetFloat("_HitIntensity", 0.7f);

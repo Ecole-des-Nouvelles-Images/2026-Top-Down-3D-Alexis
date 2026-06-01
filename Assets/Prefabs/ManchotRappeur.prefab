@@ -10080,7 +10080,7 @@ PrefabInstance:
     - target: {fileID: 6070684425507538884, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1665474748020888108, guid: 9ec54a37d1cf5e3469b292cbb6ffb262, type: 3}
+      objectReference: {fileID: 1665474748020888108, guid: 3487453a4c6513f41a7566dfefbd9191, type: 3}
     - target: {fileID: 6070684425507538884, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -10220,7 +10220,7 @@ PrefabInstance:
     - target: {fileID: 586395217771194691, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1665474748020888108, guid: 9ec54a37d1cf5e3469b292cbb6ffb262, type: 3}
+      objectReference: {fileID: 1665474748020888108, guid: 3487453a4c6513f41a7566dfefbd9191, type: 3}
     - target: {fileID: 586395217771194691, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -10242,8 +10242,40 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1533130342590026429, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533130342590026429, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533130342590026429, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533130342590026429, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.694
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533130342590026429, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533130342590026429, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533130342590026429, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533130342590026429, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1533130342590026429, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1614274254436548949, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
       propertyPath: _animatedRb
