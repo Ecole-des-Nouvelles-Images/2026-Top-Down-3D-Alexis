@@ -18,8 +18,8 @@ MonoBehaviour:
   AttackDamage: 2
   AttackStun: 1
   AttackDuration: 0.5
-  WalkingSpeedModifier: 10
-  AirSpeedModifier: 0.5
+  WalkingSpeedModifier: 2
+  AirSpeedModifier: 0
   ItemCarrySpeedModifier: 7.5
   RotationSpeed: 300
   JumpForceModifier: 15

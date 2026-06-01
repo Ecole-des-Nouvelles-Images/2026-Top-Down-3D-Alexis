@@ -301,9 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.PlayerController
   playerStats: {fileID: 11400000, guid: 70d37fcc2f3e88b43b335b69c1e66c9d, type: 2}
-  attackHitboxLeftHand: {fileID: 5879022794719485588}
   handSocket: {fileID: 7052363137710882483}
-  attackHitboxRightHand: {fileID: 3702801097796289746}
   canAttack: 0
   canSlide: 0
   doSlide: 0
@@ -323,6 +321,7 @@ MonoBehaviour:
   fallSmokeOffset: {x: 0, y: 0, z: 0}
   walkVfx: {fileID: 0}
   walkVfxOffset: {x: 0, y: 0, z: 0}
+  walkVfxRotation: {x: 0, y: 0, z: 0}
   stunVfx: {fileID: 6400998599525777253, guid: 1ef834d65f1d53749ae17ca7d05bce54, type: 3}
   stunVfxOffset: {x: 0, y: 0, z: 0}
   deathVfx: {fileID: 929230553782903710, guid: e31cfce16074bc9459d7dd6bd5a15492, type: 3}
@@ -344,7 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f1c68716b88d841aa3476fe8f1adfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  skinnedMeshHolder: {fileID: 1440970745421887803}
+  skinnedMeshHolder: {fileID: 8868499353858281456}
   playerStats: {fileID: 11400000, guid: 70d37fcc2f3e88b43b335b69c1e66c9d, type: 2}
   playerController: {fileID: 8787664403245628016}
   animator: {fileID: 8508358981289836853}
@@ -10199,6 +10198,11 @@ Rigidbody:
 --- !u!95 &8508358981289836853 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1920522868581629840, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
+  m_PrefabInstance: {fileID: 7833116779824774821}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8868499353858281456 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1704593876315697493, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
   m_PrefabInstance: {fileID: 7833116779824774821}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8913777624014137929
@@ -20057,11 +20061,6 @@ CapsuleCollider:
 --- !u!136 &1082256000058555100 stripped
 CapsuleCollider:
   m_CorrespondingSourceObject: {fileID: 8408479561724350613, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
-  m_PrefabInstance: {fileID: 8913777624014137929}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1440970745421887803 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7515173828661203826, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
   m_PrefabInstance: {fileID: 8913777624014137929}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1780201610227065729 stripped

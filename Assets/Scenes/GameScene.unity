@@ -952,6 +952,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f1c68716b88d841aa3476fe8f1adfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+--- !u!4 &426378433 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6801632367160089296, guid: 28a8dc821f0e96442a51d5bb77b5f130, type: 3}
+  m_PrefabInstance: {fileID: 426378431}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &438576244
 GameObject:
   m_ObjectHideFlags: 0
@@ -1615,6 +1620,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f1c68716b88d841aa3476fe8f1adfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+--- !u!4 &764383186 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7417475201165815053, guid: 98ab69c34bd4b4046a9f9c68754debec, type: 3}
+  m_PrefabInstance: {fileID: 764383184}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &764781255 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 253463550041660005, guid: 9c06ef01a8e311f4385b8b5132ebcf49, type: 3}
@@ -7065,35 +7075,13 @@ GameObject:
   - component: {fileID: 1136962121}
   - component: {fileID: 1136962120}
   - component: {fileID: 1136962118}
-  - component: {fileID: 1136962117}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1136962117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1136962116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eb4843bae7d24943842ea23130dcd55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineGroupFraming
-  FramingMode: 2
-  FramingSize: 0.8
-  CenterOffset: {x: 0, y: 0}
-  Damping: 2
-  SizeAdjustment: 2
-  LateralAdjustment: 0
-  FovRange: {x: 1, y: 100}
-  DollyRange: {x: -100, y: 100}
-  OrthoSizeRange: {x: 1, y: 1000}
+  m_IsActive: 0
 --- !u!114 &1136962118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7101,7 +7089,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136962116}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f38bda98361e1de48a4ca2bd86ea3c17, type: 3}
   m_Name: 
@@ -7147,7 +7135,7 @@ MonoBehaviour:
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
-    FieldOfView: 60.000004
+    FieldOfView: 57.1
     OrthographicSize: 5
     NearClipPlane: 0.1
     FarClipPlane: 1000
@@ -7174,13 +7162,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136962116}
   serializedVersion: 2
-  m_LocalRotation: {x: -4.5696433e-10, y: -4.6565984e-10, z: -2.1363534e-19, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalRotation: {x: 0.06553149, y: 0.9141867, z: -0.3646633, w: 0.1642831}
+  m_LocalPosition: {x: -4, y: 10.9, z: 10.77}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 12.34, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 96.382996, y: -3.8649902, z: 180}
 --- !u!1001 &1237206995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7328,7 +7316,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 1000
-  field of view: 44.8
+  field of view: 57.1
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -7355,7 +7343,7 @@ Transform:
   m_GameObject: {fileID: 1251047749}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.9396927, z: -0.3420201, w: 0}
-  m_LocalPosition: {x: -1.3, y: 11.4, z: 14.16}
+  m_LocalPosition: {x: -0.4, y: 10, z: 12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8551,6 +8539,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f1c68716b88d841aa3476fe8f1adfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+--- !u!4 &1545415838 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3391965987769952003, guid: 75367a6f14aa0174584274047e95f6ef, type: 3}
+  m_PrefabInstance: {fileID: 1545415836}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1619738624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8588,7 +8581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1658774045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8601,10 +8594,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5eb80d8e62d9d145bb50fb783c0f731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineTargetGroup
-  PositionMode: 0
+  PositionMode: 1
   RotationMode: 0
   UpdateMethod: 2
-  Targets: []
+  Targets:
+  - Object: {fileID: 3090804956477728522}
+    Weight: 0
+    Radius: 0
+  - Object: {fileID: 1545415838}
+    Weight: 0
+    Radius: 0
+  - Object: {fileID: 764383186}
+    Weight: 0
+    Radius: 0
+  - Object: {fileID: 426378433}
+    Weight: 0
+    Radius: 0
   m_LegacyTargets: []
 --- !u!4 &1658774046
 Transform:
@@ -9085,6 +9090,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f1c68716b88d841aa3476fe8f1adfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+--- !u!4 &3090804956477728522 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8397861366321964962, guid: 9c100541d2b446c4aa6463228d14fc46, type: 3}
+  m_PrefabInstance: {fileID: 3090804956477728520}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4489078782053051537
 PrefabInstance:
   m_ObjectHideFlags: 0
