@@ -70,7 +70,7 @@ public class AudioManager : MonoBehaviour
         return audioSources.Count > 0 ? audioSources[0] : null;
     }
 
-    public void PlaySound(string soundName)
+    public void PlaySound(string soundName, float pitchMultiplier = 1f)
     {
         if (!soundDictionary.TryGetValue(soundName, out AudioClip clip))
         {
@@ -91,6 +91,7 @@ public class AudioManager : MonoBehaviour
                 }
             }
             source.clip = clip;
+            source.pitch = 1f * pitchMultiplier;
             source.volume = soundVolume;
             source.Play();
         }
