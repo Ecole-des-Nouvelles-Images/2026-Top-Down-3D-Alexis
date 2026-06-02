@@ -264,6 +264,7 @@ MonoBehaviour:
   isDead: 0
   isDrowned: 0
   isGrounded: 0
+  IsTerrainMoving: 0
   playerHealth: {fileID: 1122931770099171514}
   characterAnimator: {fileID: 8406231144293257540}
   currentWeapon: {fileID: 0}
@@ -385,6 +386,22 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 1537487711120047832, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: _playerHealth
+      value: 
+      objectReference: {fileID: 1122931770099171514}
+    - target: {fileID: 1537487711120047832, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: _leftHandHitbox
+      value: 
+      objectReference: {fileID: 4091700449381247136}
+    - target: {fileID: 1537487711120047832, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: _rightHandHitbox
+      value: 
+      objectReference: {fileID: 6502109409585541862}
+    - target: {fileID: 1537487711120047832, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: _playerController
+      value: 
+      objectReference: {fileID: 4018240799022764144}
     - target: {fileID: 1614274254436548949, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
       propertyPath: _animatedRb
       value: 
@@ -588,6 +605,10 @@ PrefabInstance:
     - target: {fileID: 7515173828661203826, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7515173828661203826, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7609167801717555765, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
       propertyPath: m_Layer

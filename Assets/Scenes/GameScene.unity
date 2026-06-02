@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Terrain.TerrainFloatAway
   _generalTerrain: {fileID: 1280191105}
   _floatAwayDistance: 20
-  _speedToFloatAway: 0.00001
+  _speedToFloatAway: 0.0001
   FloatsAway: 0
 --- !u!1 &9444421
 GameObject:
@@ -2803,7 +2803,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Terrain.TerrainFloatAway
   _generalTerrain: {fileID: 1280191105}
   _floatAwayDistance: 20
-  _speedToFloatAway: 0.00001
+  _speedToFloatAway: 0.0001
   FloatsAway: 0
 --- !u!114 &1119144356
 MonoBehaviour:
@@ -2819,7 +2819,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Terrain.TerrainFloatAway
   _generalTerrain: {fileID: 1280191105}
   _floatAwayDistance: 20
-  _speedToFloatAway: 0.00001
+  _speedToFloatAway: 0.0001
   FloatsAway: 0
 --- !u!1 &1136962116
 GameObject:
@@ -3385,7 +3385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Terrain.TerrainFloatAway
   _generalTerrain: {fileID: 1280191105}
   _floatAwayDistance: 20
-  _speedToFloatAway: 0.00001
+  _speedToFloatAway: 0.0001
   FloatsAway: 0
 --- !u!1 &1312386745
 GameObject:
@@ -4858,7 +4858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Terrain.TerrainFloatAway
   _generalTerrain: {fileID: 1280191105}
   _floatAwayDistance: 20
-  _speedToFloatAway: 0.00001
+  _speedToFloatAway: 0.0001
   FloatsAway: 0
 --- !u!1 &1640996284 stripped
 GameObject:
@@ -5135,7 +5135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Terrain.TerrainFloatAway
   _generalTerrain: {fileID: 1280191105}
   _floatAwayDistance: 20
-  _speedToFloatAway: 0.00001
+  _speedToFloatAway: 0.0001
   FloatsAway: 0
 --- !u!1 &1967605081
 GameObject:
@@ -5180,7 +5180,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1280191105}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77af1a3313bb7a4469d66c919edb10b3, type: 3}
   m_Name: 
@@ -5194,7 +5194,7 @@ MonoBehaviour:
   - {fileID: 1119144339}
   - {fileID: 1119144338}
   _terrainsTransform: []
-  _timeBetweenSplits: 15
+  _timeBetweenSplits: 20000
 --- !u!114 &2061473412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5209,7 +5209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Terrain.TerrainFloatAway
   _generalTerrain: {fileID: 1280191105}
   _floatAwayDistance: 20
-  _speedToFloatAway: 0.00001
+  _speedToFloatAway: 0.0001
   FloatsAway: 0
 --- !u!4 &2087258966 stripped
 Transform:

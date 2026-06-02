@@ -22,7 +22,6 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
         public override void OnStateExit(PlayerController playerController)
         {
             playerController.jumped = false;
-            Debug.Log("Jump state exit, new state is " + playerController.CurrentState);
         }
 
         public override PlayerStateMachine NextState(PlayerController playerController)

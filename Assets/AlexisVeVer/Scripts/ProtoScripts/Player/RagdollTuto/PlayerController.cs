@@ -264,17 +264,20 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
 
         public void Move(float speedModifier)
         {
-            rb.linearDamping = speedModifier / playerStats.MaxSpeed;
-            if (IsTerrainMoving)
-            {
-                rb.AddForce(new Vector3(moveInput.x * speedModifier, 0, 
-                    moveInput.y * speedModifier) * (playerStats.FloatingTerrainSpeedModifier * -1));
-            }
-            else
-            {
-                rb.AddForce(new Vector3(moveInput.x * speedModifier, 0,
-                    moveInput.y * speedModifier) * -1);
-            }
+            Vector3 movement = new Vector3(moveInput.x, 0, moveInput.y) * (speedModifier * -1);
+            // rb.linearDamping = speedModifier / playerStats.MaxSpeed;
+            // if (IsTerrainMoving)
+            // {
+            //     rb.AddForce(new Vector3(moveInput.x * speedModifier, 0, 
+            //         moveInput.y * speedModifier) * (playerStats.FloatingTerrainSpeedModifier * Time.deltaTime * -1));
+            // }
+            // else
+            // {
+            //     rb.AddForce(new Vector3(moveInput.x * speedModifier, 0,
+            //         moveInput.y * speedModifier) * (Time.deltaTime * -1));
+            // }
+            rb.AddForce(movement * Time.deltaTime);
+            rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, playerStats.MaxSpeed);
         }
         
         public void GravityModification(float gravityModifier)
