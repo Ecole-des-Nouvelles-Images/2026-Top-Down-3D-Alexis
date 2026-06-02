@@ -5,6 +5,8 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 {
     public class JumpState : PlayerStateMachine
     {
+        private float _movementCheck = 0.2f;
+        
         public override void OnStateEnter(PlayerController playerController)
         {
             playerController.canAttack = false;
@@ -25,12 +27,12 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 
         public override PlayerStateMachine NextState(PlayerController playerController)
         {
-            if (!playerController.canJump && playerController.rb.linearVelocity.magnitude <= 0.2f)
+            if (!playerController.canJump && playerController.rb.linearVelocity.magnitude <= _movementCheck)
             {
                 return new IdleState();
             }
             
-            if (!playerController.canJump && playerController.rb.linearVelocity.magnitude >= 0.2f)
+            if (!playerController.canJump && playerController.rb.linearVelocity.magnitude >= _movementCheck)
             {
                 return new MovementState();
             }

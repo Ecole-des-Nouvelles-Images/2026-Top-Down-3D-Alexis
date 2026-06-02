@@ -7,18 +7,38 @@ namespace AlexisVeVer.Scripts
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance;
-        
+
         public List<GameObject> players = new List<GameObject>();
         public List<PlayerHealth> playerHealths = new List<PlayerHealth>();
-        
-        [SerializeField] private List<PlayerHealth> _assignedPlayerHealths = new List<PlayerHealth>();
-        private int _playerHealthIndex;
+
+        [SerializeField] private GameObject _victoryScreen;
+        [SerializeField] private GameObject _drawScreen;
         
         void Awake()
         {
             if (Instance == null) Instance = this;
         }
 
+        void Start()
+        {
+            Time.timeScale = 1;
+        }
+
+        void Update()
+        {
+            if (players.Count == 1)
+            {
+                Time.timeScale = 0;
+                _victoryScreen.SetActive(true);
+            }
+
+            if (players.Count < 1)
+            {
+                Time.timeScale = 0;
+                _drawScreen.SetActive(true);
+            }
+        }
+        
         public void AddPlayer(GameObject player)
         {
             players.Add(player);
@@ -31,39 +51,16 @@ namespace AlexisVeVer.Scripts
             playerHealths.Remove(player.GetComponent<PlayerHealth>());
         }
 
-        public PlayerHealth GetHealthComponent()
+        public void PlayerDead(GameObject deadPlayer)
         {
-            if (playerHealths[0] == null)
+            foreach (GameObject player in players)
             {
-                Debug.Log("No playerHealthFound");
-                return null;
+                if (player == deadPlayer)
+                {
+                    players.Remove(player);
+                    playerHealths.Remove(player.GetComponent<PlayerHealth>());
+                }
             }
-
-            if (playerHealths.Count > 0)
-            {
-                _assignedPlayerHealths.Add(playerHealths[0]);
-                playerHealths.RemoveAt(0);
-                return _assignedPlayerHealths[_assignedPlayerHealths.Count - 1];
-            }
-            
-            // foreach (PlayerHealth playerHealth in playerHealths)
-            // {
-            //     if (!_assignedPlayerHealths.Contains(playerHealth))
-            //     {
-            //         _assignedPlayerHealths.Add(playerHealth);
-            //         playerHealths.Remove(playerHealth);
-            //         Debug.Log("Assigned PlayerHealth : " + playerHealth);
-            //         return playerHealth;
-            //     }
-            // }
-            //
-            // if (playerHealths.Count == 1)
-            // {
-            //     return playerHealths[0];
-            // }
-            
-            Debug.Log("No PlayerHealth assigned, all are already assigned.");
-            return null;
         }
     }
 }

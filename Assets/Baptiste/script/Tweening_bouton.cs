@@ -14,6 +14,7 @@ namespace Baptiste.script
         [SerializeField] private float rotate = 2;
         [SerializeField] private float pos = 1.2f;
         [SerializeField] private float rotate_shake = 5;
+        [SerializeField] private float _endSize = 1;
 
 
         public void OnPointerEnter(PointerEventData eventData)
@@ -35,7 +36,7 @@ namespace Baptiste.script
         { 
             Debug.Log("OnPointerExit"); 
             transform.DOPause(); 
-            transform.DOScale(1, speed).SetEase(curve).SetUpdate(true); 
+            transform.DOScale(_endSize, speed).SetEase(curve).SetUpdate(true); 
             transform.DORotate(new Vector3(0, 0, 0), speed).SetUpdate(true);
         }
 
@@ -50,7 +51,7 @@ namespace Baptiste.script
         
         { 
             transform.DOPause(); 
-            transform.DOScale(1, speed).SetEase(curve).SetUpdate(true); 
+            transform.DOScale(_endSize, speed).SetEase(curve).SetUpdate(true); 
             transform.DORotate(new Vector3(0, 0, 0), speed).SetUpdate(true); 
         }
         
