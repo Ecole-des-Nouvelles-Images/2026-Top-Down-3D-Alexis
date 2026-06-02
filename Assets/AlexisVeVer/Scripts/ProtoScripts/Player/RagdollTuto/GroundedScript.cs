@@ -1,5 +1,6 @@
 using System;
 using AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM;
+using AlexisVeVer.Scripts.ProtoScripts.Terrain;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -21,6 +22,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
                 playerController.canJump = false;
                 playerController.characterAnimator.SetBool("IsGrounded", false);
                 playerController.gameObject.transform.SetParent(null);
+                playerController.IsTerrainMoving = false;
             }
 
             else
@@ -29,6 +31,10 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
                 playerController.canJump = true;
                 playerController.characterAnimator.SetBool("IsGrounded", true);
                 playerController.gameObject.transform.SetParent(hits[0].transform);
+                if (hits[0].transform.gameObject.GetComponent<TerrainFloatAway>()?.FloatsAway == true)
+                {
+                    playerController.IsTerrainMoving = true;
+                }
             }
         }
         

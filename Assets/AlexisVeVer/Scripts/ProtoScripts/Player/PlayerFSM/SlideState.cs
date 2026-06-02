@@ -7,7 +7,8 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
     {
         public override void OnStateEnter(PlayerController playerController)
         {
-            //playerController.Animator.SetBool("Slide", true);
+            Debug.Log("Entered Slide State");
+            playerController.characterAnimator.SetBool("IsSliding", true);
             playerController.canAttack = true;
             playerController.canJump = false;
             
@@ -26,7 +27,6 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
         public override void OnStateExit(PlayerController playerController)
         {
             playerController.doSlide = false;
-            Debug.Log("Exiting slide state");
         }
 
         public override PlayerStateMachine NextState(PlayerController playerController)

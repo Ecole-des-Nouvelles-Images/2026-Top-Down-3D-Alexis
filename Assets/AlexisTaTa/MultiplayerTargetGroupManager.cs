@@ -23,7 +23,7 @@ public class MultiplayerTargetGroupManager : MonoBehaviour
         targetGroup.AddMember(target, defaultWeight, defaultRadius);
     }
 
-    public void UnregisterTarget(Transform target)
+    public void UnRegisterTarget(Transform target)
     {
         if (target == null || targetGroup == null)
             return;

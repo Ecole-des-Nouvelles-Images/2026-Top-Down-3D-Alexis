@@ -7,6 +7,8 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 {
     public class IdleState : PlayerStateMachine
     {
+        private float _movementCheck = 0.5f;
+        
         public override void OnStateEnter(PlayerController playerController)
         {
             //fsmControllerSetup.Animator.SetBool("isIdle", true);
@@ -26,7 +28,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 
         public override PlayerStateMachine NextState(PlayerController playerController)
         {
-            if (playerController.rb.linearVelocity.magnitude >= 0.2f)
+            if (playerController.rb.linearVelocity.magnitude >= _movementCheck)
             {
                 return new MovementState();
             }

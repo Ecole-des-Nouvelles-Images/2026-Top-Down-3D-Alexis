@@ -16,6 +16,12 @@ namespace AlexisVeVer.Scripts.UI
             Time.timeScale = 1;
         }
 
+        public void replayFromVictory()
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
         public void OpenOptionsMenu()
         {
             _pauseMenu.SetActive(false);
@@ -42,7 +48,7 @@ namespace AlexisVeVer.Scripts.UI
 
         public void GoToMainMenu()
         {
-            SceneManager.LoadScene("AlexisVeVer/Scenes/MainMenu");
+            SceneManager.LoadScene("Scenes/MainMenu");
         }
     }
 }
