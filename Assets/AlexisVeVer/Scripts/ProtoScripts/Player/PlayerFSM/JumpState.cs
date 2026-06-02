@@ -30,12 +30,12 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 
         public override PlayerStateMachine NextState(PlayerController playerController)
         {
-            if (!playerController.canJump && playerController.rb.linearVelocity.magnitude <= _movementCheck)
+            if (!playerController.canJump && playerController.moveInput.magnitude <= _movementCheck)
             {
                 return new IdleState();
             }
             
-            if (!playerController.canJump && playerController.rb.linearVelocity.magnitude >= _movementCheck)
+            if (!playerController.canJump && playerController.moveInput.magnitude >= _movementCheck)
             {
                 return new MovementState();
             }

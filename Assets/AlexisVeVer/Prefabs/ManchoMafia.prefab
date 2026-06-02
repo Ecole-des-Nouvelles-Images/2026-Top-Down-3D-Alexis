@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 4018240799022764144}
   - component: {fileID: 1122931770099171514}
   m_Layer: 6
-  m_Name: ManchotMafia
+  m_Name: ManchoMafia
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5297,6 +5297,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1537487711120047832, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: _activeSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537487711120047832, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
       propertyPath: _playerHealth
       value: 
       objectReference: {fileID: 1122931770099171514}
@@ -5771,6 +5775,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 143.76485
       objectReference: {fileID: 0}
+    - target: {fileID: 1861609130428529829, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 16.200216
+      objectReference: {fileID: 0}
     - target: {fileID: 3771604994500541941, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
       propertyPath: m_Name
       value: NS_Pinguin_01_Animated
@@ -5782,6 +5790,10 @@ PrefabInstance:
     - target: {fileID: 4237579630417094917, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: -0.0000009604952
+      objectReference: {fileID: 0}
+    - target: {fileID: 4237579630417094917, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 8.400139
       objectReference: {fileID: 0}
     - target: {fileID: 4547719107167610703, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5822,6 +5834,10 @@ PrefabInstance:
     - target: {fileID: 4547719107167610703, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4614714509216262357, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 6.444682
       objectReference: {fileID: 0}
     - target: {fileID: 4666589386662543524, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

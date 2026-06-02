@@ -20,7 +20,7 @@ MonoBehaviour:
   AttackDuration: 0.5
   WalkingSpeedModifier: 10000
   AirSpeedModifier: 100
-  ItemCarrySpeedModifier: 7.5
+  ItemCarrySpeedModifier: 10000
   FloatingTerrainSpeedModifier: 6
   RotationSpeed: 300
   JumpForceModifier: 20

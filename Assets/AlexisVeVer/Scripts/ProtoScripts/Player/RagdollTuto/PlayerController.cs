@@ -238,11 +238,10 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         {
             currentWeapon = weapon;
             currentWeapon.Equip(this);
-            weapon.GetComponent<ItemPickUp>().enabled = false;
             weapon.transform.parent = handSocket.transform;
             weapon.transform.localPosition = Vector3.zero;
             // Changer la rotation en fonction de l'objet équipé
-            if (weapon is HammerAttack)
+            if (weapon is Hammer)
             {
                 weapon.transform.localRotation = Quaternion.Euler(new Vector3(-30, 340, 160));
             }
@@ -251,6 +250,12 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             {
                 weapon.transform.localRotation = Quaternion.Euler(new Vector3(-90, 0, 90));
             }
+
+            if (weapon is Katana)
+            {
+                weapon.transform.localRotation = Quaternion.Euler(new Vector3(-57, 46, -130));
+            }
+            
             else
             {
                 weapon.transform.localRotation = Quaternion.Euler(new Vector3(90, 90, 0));
@@ -265,17 +270,6 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         public void Move(float speedModifier)
         {
             Vector3 movement = new Vector3(moveInput.x, 0, moveInput.y) * (speedModifier * -1);
-            // rb.linearDamping = speedModifier / playerStats.MaxSpeed;
-            // if (IsTerrainMoving)
-            // {
-            //     rb.AddForce(new Vector3(moveInput.x * speedModifier, 0, 
-            //         moveInput.y * speedModifier) * (playerStats.FloatingTerrainSpeedModifier * Time.deltaTime * -1));
-            // }
-            // else
-            // {
-            //     rb.AddForce(new Vector3(moveInput.x * speedModifier, 0,
-            //         moveInput.y * speedModifier) * (Time.deltaTime * -1));
-            // }
             rb.AddForce(movement * Time.deltaTime);
             rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, playerStats.MaxSpeed);
         }
