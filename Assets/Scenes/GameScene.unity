@@ -5541,6 +5541,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5810885387924326435, guid: db2e801abe511e044a8842e09faa16e0, type: 3}
+      propertyPath: rotate
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6103756201005944628, guid: db2e801abe511e044a8842e09faa16e0, type: 3}
       propertyPath: m_Name
       value: rejouer
@@ -5579,7 +5583,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8213535642139967370, guid: db2e801abe511e044a8842e09faa16e0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
