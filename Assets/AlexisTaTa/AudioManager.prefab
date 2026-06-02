@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &683611914286744173
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7038488308652679396}
+  - component: {fileID: 3170607173135968171}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &7038488308652679396
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683611914286744173}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3170607173135968171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683611914286744173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48c68ec576644074892e1525adc63258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  soundEffects:
+  - name: 'Stun '
+    clip: {fileID: 8300000, guid: ea607f388a7e28141822b3d330d70672, type: 3}
+    volume: 1
+    pitch: 0
+  - name: Slap
+    clip: {fileID: 8300000, guid: 52af3a774c18fd4419c569e4bb736caa, type: 3}
+    volume: 1
+    pitch: 0
+  - name: Step1
+    clip: {fileID: 8300000, guid: 4c93a4ef35cee2a4ea191d79d80220b8, type: 3}
+    volume: 1
+    pitch: 0
+  - name: Step2
+    clip: {fileID: 8300000, guid: d2ec93c048b717a448694779bbc52f0c, type: 3}
+    volume: 1
+    pitch: 0
+  - name: Step3
+    clip: {fileID: 8300000, guid: 931af2832cc08c14fbf6b3a62927a123, type: 3}
+    volume: 1
+    pitch: 0
+  - name: Fan
+    clip: {fileID: 8300000, guid: a8e9acdd5f3ee704ea82342dfe87ba8d, type: 3}
+    volume: 1
+    pitch: 0
+  - name: KatanaHit
+    clip: {fileID: 8300000, guid: d0e2f22279a1a074ebc4c8314dd3602d, type: 3}
+    volume: 1
+    pitch: 0
+  - name: LandmineBeep
+    clip: {fileID: 8300000, guid: 3aaf5718050ae0c49a1926be75307846, type: 3}
+    volume: 1
+    pitch: 0
+  - name: Explosion
+    clip: {fileID: 8300000, guid: 7cce4415f642b6c4181307e8b2802914, type: 3}
+    volume: 1
+    pitch: 0
+  - name: Whoosh
+    clip: {fileID: 8300000, guid: dfb7da201a6d895438056434c9dcfca9, type: 3}
+    volume: 0.115
+    pitch: 0
+  - name: Ground
+    clip: {fileID: 8300000, guid: e3086d0d72117e94d9c88f6388750396, type: 3}
+    volume: 0.115
+    pitch: 0
+  poolSize: 10
+  _mixerGroup: {fileID: -4726506608736359942, guid: b5d952fcee964954bb42dc01a5c128db, type: 2}
