@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto;
 using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items;
 using UnityEngine;
+using Random = System.Random;
 
 namespace AlexisVeVer.Scripts.ProtoScripts.Player
 {
@@ -9,6 +11,9 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player
     {
         [Header("PlayerController")]
         [SerializeField] private PlayerController _playerController;
+        
+        [Header("Sounds")]
+        [SerializeField] private List<AudioClip> _sounds;
         
         [Header("PlayerHealth"), Space(10)]
         [SerializeField] private PlayerHealth _playerHealth;
@@ -26,6 +31,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player
 
         public void OnStunAnimationStart()
         {
+            AudioManager.Instance.PlaySound("Stun");
             Instantiate(_playerController.stunVfx, _playerController.transform.position + _playerController.stunVfxOffset, Quaternion.Euler(90, 0, 0));
         }
         
@@ -73,8 +79,9 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player
 
         public void OnFeetHitGround()
         {
+            AudioManager.Instance.PlaySound("Step1", UnityEngine.Random.Range(0.1f, 1.9f));
             Instantiate(_playerController.walkVfx,
-                _playerController.transform.position + _playerController.walkVfxOffset, Quaternion.Euler(_playerController.walkVfxRotation));
+                _playerController.transform.position + _playerController.walkVfxOffset, Quaternion.Euler(_playerController.walkVfxRotation + _playerController.transform.rotation.eulerAngles));
         }
     }
 }
