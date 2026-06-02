@@ -706,6 +706,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.UI.HealthBarManager
   _playerStats: {fileID: 11400000, guid: 70d37fcc2f3e88b43b335b69c1e66c9d, type: 2}
   _playerHealth: {fileID: 170648537}
+--- !u!4 &216034113 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6801632367160089296, guid: 28a8dc821f0e96442a51d5bb77b5f130, type: 3}
+  m_PrefabInstance: {fileID: 2136895184}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &268172594 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8334008394980345338, guid: 9a420185bb0570e4384eb68cfac48d4e, type: 3}
@@ -2908,7 +2913,7 @@ Transform:
   m_GameObject: {fileID: 1136962116}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.92387956, z: -0.38268343, w: 0}
-  m_LocalPosition: {x: -5.63, y: 9.60566, z: 4.581067}
+  m_LocalPosition: {x: -1.8766131, y: 9.387702, z: 6.5633802}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3093,7 +3098,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 1000
-  field of view: 54.73521
+  field of view: 55.895348
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -3120,7 +3125,7 @@ Transform:
   m_GameObject: {fileID: 1251047749}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.92387956, z: -0.38268343, w: 0}
-  m_LocalPosition: {x: -6.2507343, y: 10.352466, z: 6.033313}
+  m_LocalPosition: {x: -2.0309973, y: 13.1532, z: 10.460682}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4877,7 +4882,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1658774045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4900,10 +4905,10 @@ MonoBehaviour:
   - Object: {fileID: 1545415838}
     Weight: 1
     Radius: 1
-  - Object: {fileID: 0}
+  - Object: {fileID: 216034113}
     Weight: 1
     Radius: 1
-  - Object: {fileID: 0}
+  - Object: {fileID: 1771468290}
     Weight: 1
     Radius: 1
   m_LegacyTargets: []
@@ -4916,7 +4921,7 @@ Transform:
   m_GameObject: {fileID: 1658774044}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.63, y: 2.534593, z: -2.49}
+  m_LocalPosition: {x: -1.8766131, y: 2.3166354, z: -0.50768733}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4937,6 +4942,11 @@ MonoBehaviour:
   targetGroup: {fileID: 1658774045}
   defaultWeight: 1
   defaultRadius: 4
+--- !u!4 &1771468290 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7417475201165815053, guid: 98ab69c34bd4b4046a9f9c68754debec, type: 3}
+  m_PrefabInstance: {fileID: 1880989499}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1786871068 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7050405306620935679, guid: 9c06ef01a8e311f4385b8b5132ebcf49, type: 3}
@@ -5170,7 +5180,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1280191105}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77af1a3313bb7a4469d66c919edb10b3, type: 3}
   m_Name: 
