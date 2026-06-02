@@ -6789,8 +6789,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7220216958799663903}
   - {fileID: 1255618925}
+  - {fileID: 7220216958799663903}
   - {fileID: 268172594}
   - {fileID: 1399208616}
   m_Father: {fileID: 0}
@@ -6813,7 +6813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.UI.InGameUI
   _pauseMenu: {fileID: 1640996284}
-  _optionsMenu: {fileID: 4489078782053051538}
+  _optionsMenu: {fileID: 0}
   _mainMenuDoubleCheck: {fileID: 1399208615}
 --- !u!1001 &1079567301
 PrefabInstance:
@@ -9398,11 +9398,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a420185bb0570e4384eb68cfac48d4e, type: 3}
---- !u!1 &4489078782053051538 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5036489837766759011, guid: 9a420185bb0570e4384eb68cfac48d4e, type: 3}
-  m_PrefabInstance: {fileID: 4489078782053051537}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5544984153462078559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9909,7 +9904,7 @@ PrefabInstance:
     - target: {fileID: 7137517187155509014, guid: 5cf12c28dabddac459334c643fae2d5d, type: 3}
       propertyPath: buttonToSelect
       value: 
-      objectReference: {fileID: 583525743}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
