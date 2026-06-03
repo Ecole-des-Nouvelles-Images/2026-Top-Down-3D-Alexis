@@ -3,28 +3,27 @@ using UnityEngine.Rendering.Universal;
 
 public class FadeOutDecal : MonoBehaviour
 {
-    [SerializeField] private float fadeDuration = 2f;
-    private DecalProjector decalProjector;
+    [SerializeField] private float _fadeDuration = 2f;
+    private DecalProjector _decalProjector;
 
-    private void Start()
+    private void Awake()
     {
-        decalProjector = GetComponent<DecalProjector>();
-        StartCoroutine(FadeOut());
+        _decalProjector = GetComponent<DecalProjector>();
     }
-
-    private System.Collections.IEnumerator FadeOut()
+    
+    private void Update()
     {
         float elapsed = 0f;
-        float initialOpacity = decalProjector.fadeFactor;
 
-        while (elapsed < fadeDuration)
+        if (elapsed < _fadeDuration)
         {
             elapsed += Time.deltaTime;
-            decalProjector.fadeFactor = Mathf.Lerp(initialOpacity, 0, elapsed / fadeDuration);
-            yield return null;
+            _decalProjector.fadeFactor -= elapsed / _fadeDuration;
         }
         
-        decalProjector.fadeFactor = 0;
-        gameObject.SetActive(false);
+        if (_decalProjector.fadeFactor <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }

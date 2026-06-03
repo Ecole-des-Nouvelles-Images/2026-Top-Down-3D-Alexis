@@ -80,7 +80,12 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player
 
         public void OnHammerLeavesGround()
         {
-            _playerController.gameObject.GetComponentInChildren<Hammer>().EndAttack();
+            
+        }
+
+        public void OnHammerAttackOver()
+        {
+            _playerController.gameObject.GetComponentInChildren<Hammer>().DestroyHammer();
         }
 
         public void OnFeetHitGround()

@@ -243,7 +243,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             // Changer la rotation en fonction de l'objet équipé
             if (weapon is Hammer)
             {
-                weapon.transform.localRotation = Quaternion.Euler(new Vector3(-30, 340, 160));
+                weapon.transform.localRotation = Quaternion.Euler(new Vector3(-90, 0, -90));
             }
 
             if (weapon is BazookaAttack)
