@@ -9970,4 +9970,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ExplosionDamage
   _hitDamage: 10
   _hitStun: 5
-  _explosionKnockback: 30
+  _explosionKnockback: 15
