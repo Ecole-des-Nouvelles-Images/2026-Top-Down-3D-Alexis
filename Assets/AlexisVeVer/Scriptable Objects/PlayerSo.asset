@@ -23,8 +23,8 @@ MonoBehaviour:
   ItemCarrySpeedModifier: 10000
   FloatingTerrainSpeedModifier: 6
   RotationSpeed: 300
-  JumpForceModifier: 20
-  AdditionalGravity: 3
+  JumpForceModifier: 5000
+  AdditionalGravity: 30
   MaxSpeed: 3
   SlideForceMultiplier: 3
   SlideCd: 5

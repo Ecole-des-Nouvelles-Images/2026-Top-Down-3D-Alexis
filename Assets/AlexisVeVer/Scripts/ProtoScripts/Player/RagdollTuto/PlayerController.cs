@@ -196,7 +196,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         {
             if (isGrounded && canJump)
             {
-                rb.AddForce(Vector3.up * playerStats.JumpForceModifier, ForceMode.Impulse);
+                rb.AddForce(Vector3.up * playerStats.JumpForceModifier * Time.deltaTime, ForceMode.Impulse);
                 jumped = true;
                 isGrounded = false;
             }

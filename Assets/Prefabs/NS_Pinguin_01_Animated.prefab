@@ -66,7 +66,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6853c9afb03c8242a559dfe19249a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackDamage
-  playerStats: {fileID: 0}
+  _playerStats: {fileID: 0}
+  _hitParticle: {fileID: 0}
 --- !u!1 &5077583630889532029
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6853c9afb03c8242a559dfe19249a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackDamage
-  playerStats: {fileID: 0}
+  _playerStats: {fileID: 0}
+  _hitParticle: {fileID: 0}
 --- !u!1001 &4077454293471723684
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1851,9 +1853,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.AnimationEvents
   _playerController: {fileID: 0}
+  _sounds: []
   _playerHealth: {fileID: 0}
   _leftHandHitbox: {fileID: 0}
   _rightHandHitbox: {fileID: 0}
+  _unArmedflash: {fileID: 3410229704999675051, guid: 24e41982406471f409108cd491f707fa, type: 3}
+  _anticipationSpeed: 2
+  _activeSpeed: 2
+  _recoverySpeed: 1
 --- !u!1 &5029771189488647782 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9032902730878877378, guid: 857bddeaffa52ea4ba03e29d271e5d15, type: 3}

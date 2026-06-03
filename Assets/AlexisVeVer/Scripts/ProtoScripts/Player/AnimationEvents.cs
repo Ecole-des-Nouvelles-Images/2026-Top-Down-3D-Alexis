@@ -19,8 +19,11 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player
         [Header("Attack Parameters"), Space(10)]
         [SerializeField] private GameObject _leftHandHitbox;
         [SerializeField] private GameObject _rightHandHitbox;
-
-        [Header("Animation Speed")] 
+        
+        // [Header("Attack Vfx"), Space(10)]
+        // [SerializeField] private GameObject _unArmedflash;
+        
+        [Header("Animation Speed"), Space(10)] 
         [SerializeField] private float _anticipationSpeed = 2;
         [SerializeField] private float _activeSpeed = 2;
         [SerializeField] private float _recoverySpeed = 1;
@@ -51,11 +54,17 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player
         public void OnActiveLeftHandHitbox()
         {
             _leftHandHitbox.SetActive(true);
+            // GameObject hitFlash = Instantiate(_unArmedflash, _rightHandHitbox.transform.position, Quaternion.identity);
+            // hitFlash.transform.SetParent(_rightHandHitbox.transform);
+            // hitFlash.transform.localRotation = Quaternion.Euler(20,-80,0);
         }
 
         public void OnActiveRightHandHitbox()
         {
             _rightHandHitbox.SetActive(true);
+            // GameObject hitFlash = Instantiate(_unArmedflash, _leftHandHitbox.transform.position, Quaternion.Euler(20,-80,0));
+            // hitFlash.transform.SetParent(_leftHandHitbox.transform);
+            // hitFlash.transform.localRotation = Quaternion.Euler(20,-80,0);
         }
         
         public void OnDeactivateLeftHandHitbox()
