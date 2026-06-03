@@ -12,7 +12,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
         {
             if (collider.gameObject.CompareTag("Player") && gameObject.transform.parent.transform != collider.gameObject.transform)
             {
-                collider.GetComponent<PlayerHealth>().GetHit(_hitDamage, _hitStun);
+                //collider.GetComponent<PlayerHealth>().GetHit(_hitDamage, _hitStun);
             }
         }
     }

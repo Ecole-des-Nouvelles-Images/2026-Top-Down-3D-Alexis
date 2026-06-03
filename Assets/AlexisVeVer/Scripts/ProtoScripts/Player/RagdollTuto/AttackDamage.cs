@@ -24,9 +24,10 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         {
             if (other.CompareTag("Player"))
             {
-                other.GetComponent<PlayerHealth>().GetHit(_playerStats.AttackDamage, _playerStats.AttackStun);
+                if (other.GetComponent<PlayerController>() == GetComponentInParent<PlayerController>()) return;
+                
+                other.GetComponent<PlayerHealth>().GetHit(_playerStats.AttackDamage, _playerStats.AttackStun, _playerStats.KnockBackForce);
                 Instantiate(_hitParticle, other.transform.position, Quaternion.identity);
-                gameObject.SetActive(false);
             }
         }
     }

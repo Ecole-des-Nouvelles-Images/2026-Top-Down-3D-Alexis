@@ -21,7 +21,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
         private void Explosion()
         {
             // Infliger des dégats aux joueurs dans la zone d'explosion
-            _playerInExplosionRadius.GetComponent<PlayerHealth>().GetHit(_mineDamage, _mineStun);
+            // _playerInExplosionRadius.GetComponent<PlayerHealth>().GetHit(_mineDamage, _mineStun);
             
             // repousser les joueurs dans la zone d'explosion
             _playerInExplosionRadius.GetComponent<Rigidbody>().AddExplosionForce(_explosionForce, gameObject.transform.position, 

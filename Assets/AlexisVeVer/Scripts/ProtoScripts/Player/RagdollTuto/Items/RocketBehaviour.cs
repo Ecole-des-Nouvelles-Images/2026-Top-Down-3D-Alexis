@@ -32,7 +32,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
 
             if (collider.gameObject.CompareTag("Player"))
             {
-                collider.GetComponent<PlayerHealth>().GetHit(_directHitDamage, _directHitStun);
+                // collider.GetComponent<PlayerHealth>().GetHit(_directHitDamage, _directHitStun);
             }
         }
     }

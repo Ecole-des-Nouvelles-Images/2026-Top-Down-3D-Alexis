@@ -20,8 +20,10 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player
         [SerializeField] private GameObject _leftHandHitbox;
         [SerializeField] private GameObject _rightHandHitbox;
         
-        // [Header("Attack Vfx"), Space(10)]
-        // [SerializeField] private GameObject _unArmedflash;
+        [Header("Attack Vfx"), Space(10)]
+        [SerializeField] private GameObject _unArmedflash;
+        [SerializeField] private GameObject _leftHandHitboxVisual;
+        [SerializeField] private GameObject _rightHandHitboxVisual;
         
         [Header("Animation Speed"), Space(10)] 
         [SerializeField] private float _anticipationSpeed = 2;
@@ -51,20 +53,28 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player
             _playerHealth.CurrentStun = 0;
         }
 
+        public void OnActiveLeftHandAttack()
+        {
+            GameObject hitFlash = Instantiate(_unArmedflash, _rightHandHitboxVisual.transform.position, Quaternion.identity);
+            hitFlash.transform.SetParent(_rightHandHitboxVisual.transform);
+            hitFlash.transform.localRotation = Quaternion.Euler(20,-80,0);
+        }
+
+        public void OnActiveRightHandAttack()
+        {
+            GameObject hitFlash = Instantiate(_unArmedflash, _leftHandHitboxVisual.transform.position, Quaternion.Euler(20,-80,0));
+            hitFlash.transform.SetParent(_leftHandHitboxVisual.transform);
+            hitFlash.transform.localRotation = Quaternion.Euler(20,-80,0);
+        }
+        
         public void OnActiveLeftHandHitbox()
         {
             _leftHandHitbox.SetActive(true);
-            // GameObject hitFlash = Instantiate(_unArmedflash, _rightHandHitbox.transform.position, Quaternion.identity);
-            // hitFlash.transform.SetParent(_rightHandHitbox.transform);
-            // hitFlash.transform.localRotation = Quaternion.Euler(20,-80,0);
         }
 
         public void OnActiveRightHandHitbox()
         {
             _rightHandHitbox.SetActive(true);
-            // GameObject hitFlash = Instantiate(_unArmedflash, _leftHandHitbox.transform.position, Quaternion.Euler(20,-80,0));
-            // hitFlash.transform.SetParent(_leftHandHitbox.transform);
-            // hitFlash.transform.localRotation = Quaternion.Euler(20,-80,0);
         }
         
         public void OnDeactivateLeftHandHitbox()

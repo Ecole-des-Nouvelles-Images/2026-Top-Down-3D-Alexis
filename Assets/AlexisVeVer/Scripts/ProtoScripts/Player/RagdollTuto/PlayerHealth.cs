@@ -9,6 +9,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         [SerializeField] private PlayerStats playerStats;
         [SerializeField] private PlayerController playerController;
         [SerializeField] private Animator animator;
+        private Rigidbody rigidbody;
         private Material skinnedMeshRendererMaterial;
         
         [SerializeField] private float animationTime;
@@ -30,6 +31,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             _currentHealth = playerStats.MaxHealth;
             _currentStun = playerStats.MinStun;
             skinnedMeshRendererMaterial = skinnedMeshHolder.GetComponent<Renderer>().materials[1];
+            rigidbody = GetComponent<Rigidbody>();
         }
 
         private void Update()
@@ -57,12 +59,13 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         
         //, Vector3 knockBack
 
-        public void GetHit(float damage, float stun)
+        public void GetHit(float damage, float stun, float knockBackForce)
         {
             AudioManager.Instance.PlaySound("Slap");
             _currentHealth -= damage;
             _currentStun += stun;
             skinnedMeshRendererMaterial.SetFloat("_HitIntensity", 0.7f);
+            rigidbody.AddForce(Vector3.back * knockBackForce, ForceMode.Impulse);
         }
 
         private void GetStunned()
@@ -75,12 +78,6 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             playerController.isDead = true;
             _currentHealth = 0;
             GameManager.Instance.PlayerDead(gameObject);
-        }
-
-        [ContextMenu("TakeDamage")]
-        private void TakeDamage()
-        {
-            GetHit(2, 0);
         }
     }
 }

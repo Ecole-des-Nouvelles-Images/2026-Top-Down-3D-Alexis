@@ -17,6 +17,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         public float AttackDamage;
         public float AttackStun;
         public float AttackDuration;
+        public float KnockBackForce;
         
         [Header("Movements parameters"), Space(4)]
         public float WalkingSpeedModifier;
