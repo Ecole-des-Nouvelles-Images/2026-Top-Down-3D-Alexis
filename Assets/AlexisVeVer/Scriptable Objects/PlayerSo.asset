@@ -18,14 +18,14 @@ MonoBehaviour:
   AttackDamage: 2
   AttackStun: 1
   AttackDuration: 0.5
-  WalkingSpeedModifier: 1
-  AirSpeedModifier: 0
-  ItemCarrySpeedModifier: 7.5
+  WalkingSpeedModifier: 10000
+  AirSpeedModifier: 100
+  ItemCarrySpeedModifier: 10000
   FloatingTerrainSpeedModifier: 6
   RotationSpeed: 300
   JumpForceModifier: 20
   AdditionalGravity: 3
-  MaxSpeed: 15
+  MaxSpeed: 3
   SlideForceMultiplier: 3
   SlideCd: 5
   ItemPickedUp: 0

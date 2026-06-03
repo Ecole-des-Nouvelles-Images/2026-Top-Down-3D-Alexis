@@ -26,17 +26,16 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
         {
             AudioManager.Instance.PlaySound("Ground");
             playerController.jumped = false;
-            Debug.Log("Jump state exit, new state is " + playerController.CurrentState);
         }
 
         public override PlayerStateMachine NextState(PlayerController playerController)
         {
-            if (!playerController.canJump && playerController.rb.linearVelocity.magnitude <= _movementCheck)
+            if (!playerController.canJump && playerController.moveInput.magnitude <= _movementCheck)
             {
                 return new IdleState();
             }
             
-            if (!playerController.canJump && playerController.rb.linearVelocity.magnitude >= _movementCheck)
+            if (!playerController.canJump && playerController.moveInput.magnitude >= _movementCheck)
             {
                 return new MovementState();
             }

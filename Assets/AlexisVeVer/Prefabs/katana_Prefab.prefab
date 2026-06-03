@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6010755526055320731
 Transform:
   m_ObjectHideFlags: 0
@@ -78,15 +78,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: be23dcc5567487543a98c9eb2bd2d06d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2.6320665
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: be23dcc5567487543a98c9eb2bd2d06d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.081187
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: be23dcc5567487543a98c9eb2bd2d06d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -3.656147
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: be23dcc5567487543a98c9eb2bd2d06d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -183,6 +183,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items.KatanaAttack
   _hitbox: {fileID: 2609748025045920900}
+  _itemAttack: {fileID: 3445091437203507735}
+  _hitDamage: 5
+  _hitStun: 1
+  _hitParticle: {fileID: 0}
 --- !u!65 &4639134758468076806
 BoxCollider:
   m_ObjectHideFlags: 0

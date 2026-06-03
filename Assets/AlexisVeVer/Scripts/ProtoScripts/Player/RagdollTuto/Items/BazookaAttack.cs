@@ -10,13 +10,12 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
         [SerializeField] private GameObject _rocketPrefab;
         [SerializeField] private GameObject _prePlacedRocket;
         [SerializeField] private float _rocketLaunchingForce;
-
-        private PlayerController _playerController;
+        
         private Rigidbody _rocketRb;
 
         public override void Equip(PlayerController playerController)
         {
-            _playerController = playerController;
+            CurrentHolder = playerController;
         }
 
         public override void Use(PlayerController playerController)
@@ -24,7 +23,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
             GameObject rocket = Instantiate(_rocketPrefab, _prePlacedRocket.transform.position, _prePlacedRocket.transform.rotation);
             Destroy(_prePlacedRocket);
             _rocketRb = rocket.GetComponent<Rigidbody>();
-            _rocketRb.AddForce(new Vector3(-_playerController.moveInput.x, 0, _playerController.moveInput.y) * _rocketLaunchingForce, 
+            _rocketRb.AddForce(new Vector3(-CurrentHolder.moveInput.x, 0, CurrentHolder.moveInput.y) * _rocketLaunchingForce, 
                 ForceMode.Impulse);
             Destroy(gameObject);
         }
