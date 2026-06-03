@@ -1,4 +1,5 @@
 using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto;
+using UnityEngine;
 
 namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 {
@@ -16,6 +17,8 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
             {
                 playerController.characterAnimator.SetTrigger("AttackRight");
             }
+            
+            playerController.rb.AddForce(playerController.transform.forward * playerController.playerStats.LungeForce);
         }
 
         public override void OnUpdate(PlayerController playerController)

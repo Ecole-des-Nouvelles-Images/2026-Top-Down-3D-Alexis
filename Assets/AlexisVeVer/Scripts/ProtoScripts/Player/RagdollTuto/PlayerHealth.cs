@@ -65,7 +65,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             _currentHealth -= damage;
             _currentStun += stun;
             skinnedMeshRendererMaterial.SetFloat("_HitIntensity", 0.7f);
-            rigidbody.AddForce(Vector3.back * knockBackForce, ForceMode.Impulse);
+            rigidbody.AddForce(- transform.forward * knockBackForce, ForceMode.Impulse);
         }
 
         private void GetStunned()

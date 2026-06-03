@@ -5268,30 +5268,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8397861366321964962}
     m_Modifications:
-    - target: {fileID: 586395217771194691, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
-      propertyPath: m_AABB.m_Center.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 586395217771194691, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
-      propertyPath: m_AABB.m_Center.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 586395217771194691, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
-      propertyPath: m_AABB.m_Center.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 586395217771194691, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
-      propertyPath: m_AABB.m_Extent.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 586395217771194691, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
-      propertyPath: m_AABB.m_Extent.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 586395217771194691, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
-      propertyPath: m_AABB.m_Extent.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 796345975876625023, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
       propertyPath: _animatedRb
       value: 
