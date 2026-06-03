@@ -53,12 +53,11 @@ namespace AlexisVeVer.Scripts
 
         public void PlayerDead(GameObject deadPlayer)
         {
-            foreach (GameObject player in players)
+            for(int i = players.Count - 1; i >= 0; i--)
             {
-                if (player == deadPlayer)
+                if (players[i] == deadPlayer)
                 {
-                    players.Remove(player);
-                    playerHealths.Remove(player.GetComponent<PlayerHealth>());
+                    players.RemoveAt(i);
                 }
             }
         }

@@ -26,7 +26,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
         public float RotationSpeed;
         public float JumpForceModifier;
         public float AdditionalGravity = 10;
-        public float MaxSpeed;
+        public float MaxSpeed = 3;
         public float SlideForceMultiplier;
 
         [Header("Slide parameters"), Space(4)] 

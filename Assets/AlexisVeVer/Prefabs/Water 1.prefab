@@ -52,7 +52,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 5, y: 0, z: 5}
+  m_Size: {x: 20, y: 0, z: 20}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8532646769546664838
 MonoBehaviour:
@@ -152,9 +152,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cf792ee50d15209489e09718dffa32cf, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4830828136484696759}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cf792ee50d15209489e09718dffa32cf, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 9069123005435426200}
   m_SourcePrefab: {fileID: 100100000, guid: cf792ee50d15209489e09718dffa32cf, type: 3}
 --- !u!1 &2683298020153082108 stripped
 GameObject:
@@ -182,20 +179,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 0.06, z: 2}
   m_Center: {x: 0, y: -0.01, z: 0}
---- !u!114 &9069123005435426200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2683298020153082108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7a9fcb218ae215448413359079eeb1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlanarReflections
-  ReflectionCamera: {fileID: 0}
-  ReflectionRenderTexture: {fileID: 8400000, guid: 62d74b205ab890e45a65c691cd258972, type: 2}
 --- !u!4 &3348195398648568390 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cf792ee50d15209489e09718dffa32cf, type: 3}

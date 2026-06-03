@@ -14,8 +14,8 @@ public class Victory_Apparition : MonoBehaviour
     
     void Start()
     {
-        transform.DORotate(new Vector3(0, 0, _rotate), _duration).SetEase(_curve);
-        transform.DOScale(_scale, _duration).SetEase(_curve);
+        transform.DORotate(new Vector3(0, 0, _rotate), _duration).SetEase(_curve).SetUpdate(true);
+        transform.DOScale(_scale, _duration).SetEase(_curve).SetUpdate(true);
         _button?.Select();
     }
 }

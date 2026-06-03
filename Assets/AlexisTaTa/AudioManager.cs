@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using System.Collections.Generic;
 public class AudioManager : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class AudioManager : MonoBehaviour
         public string name;
         
         public AudioClip clip;
-        
+
         [Range(0f, 1f)] public float volume = 1f;
         
         [Range(0f, 1f)] public float pitch = 1f;
@@ -17,6 +18,7 @@ public class AudioManager : MonoBehaviour
     
     [SerializeField] private SoundEffect[] soundEffects;
     [SerializeField] private int poolSize = 5;
+    [SerializeField] private AudioMixerGroup _mixerGroup;
     
     private List<AudioSource> audioSources = new List<AudioSource>();
     
@@ -28,7 +30,7 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance != null)
+        if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
@@ -42,7 +44,9 @@ public class AudioManager : MonoBehaviour
         for (int i = 0; i < poolSize; i++)
         {
             AudioSource source = gameObject.AddComponent<AudioSource>();
+            source.outputAudioMixerGroup = _mixerGroup;
             audioSources.Add(source);
+            
         }
 
         foreach (SoundEffect sound in soundEffects)
@@ -66,7 +70,7 @@ public class AudioManager : MonoBehaviour
         return audioSources.Count > 0 ? audioSources[0] : null;
     }
 
-    public void PlaySound(string soundName)
+    public void PlaySound(string soundName, float pitchMultiplier = 1f)
     {
         if (!soundDictionary.TryGetValue(soundName, out AudioClip clip))
         {
@@ -82,10 +86,12 @@ public class AudioManager : MonoBehaviour
             {
                 if (sound.name == soundName)
                 {
+                    soundVolume = sound.volume;
                     break;
                 }
             }
             source.clip = clip;
+            source.pitch = 1f * pitchMultiplier;
             source.volume = soundVolume;
             source.Play();
         }

@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7327bd5-3bda-4924-982b-1d4a14308c9e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.2026-Top-Down-3D-Alexis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2026-Top-Down-3D-Alexis/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c7327bd5-3bda-4924-982b-1d4a14308c9e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +16,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/AlexisTaTa/ConfigurableJointExtensions.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AlexisTaTa/TargetGroupAutoRegister.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/AlexisVeVer/Animations/Animations_finales_reprises_pour_event/NS_Pinguin01_Skeleton_AttackLeft.anim" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@3b809f23691d/Runtime/Passes/ScriptableRenderPass.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@3b809f23691d/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -115,6 +114,7 @@
       <workItem from="1779435812252" duration="4867000" />
       <workItem from="1779789303278" duration="4366000" />
       <workItem from="1779871267846" duration="3271000" />
+      <workItem from="1780306697578" duration="7857000" />
     </task>
     <servers />
   </component>

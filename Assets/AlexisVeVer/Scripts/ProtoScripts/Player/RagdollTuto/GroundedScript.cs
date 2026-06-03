@@ -21,7 +21,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
                 playerController.IsGrounded = false;
                 playerController.canJump = false;
                 playerController.characterAnimator.SetBool("IsGrounded", false);
-                playerController.gameObject.transform.SetParent(null);
+                // playerController.gameObject.transform.SetParent(null);
                 playerController.IsTerrainMoving = false;
             }
 
@@ -30,7 +30,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
                 playerController.IsGrounded = true;
                 playerController.canJump = true;
                 playerController.characterAnimator.SetBool("IsGrounded", true);
-                playerController.gameObject.transform.SetParent(hits[0].transform);
+                // playerController.gameObject.transform.SetParent(hits[0].transform);
                 if (hits[0].transform.gameObject.GetComponent<TerrainFloatAway>()?.FloatsAway == true)
                 {
                     playerController.IsTerrainMoving = true;
