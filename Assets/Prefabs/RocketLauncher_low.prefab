@@ -63,51 +63,5 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e2fc961944304224f94cc98f3663191a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6009987333817559786}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e2fc961944304224f94cc98f3663191a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2544201363205605419}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2fc961944304224f94cc98f3663191a, type: 3}
---- !u!1 &8214903078970105699 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e2fc961944304224f94cc98f3663191a, type: 3}
-  m_PrefabInstance: {fileID: 9133400110775640626}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6009987333817559786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8214903078970105699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbd313a34c401604a827a19bac6723b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items.ItemPickUp
-  _parent: {fileID: 0}
-  _groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  _rotationVector: {x: 0, y: 0, z: 0}
-  _offset: {x: 0, y: 0, z: 0}
-  _timeBeforeDestroy: 0
-  _radius: 1
---- !u!114 &2544201363205605419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8214903078970105699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 787722724bcebb547a35aa6062b3ae3e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items.BazookaAttack
-  _rocketPrefab: {fileID: 0}
-  _prePlacedRocket: {fileID: 0}
-  _rocketLaunchingForce: 0

@@ -246,7 +246,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
                 weapon.transform.localRotation = Quaternion.Euler(new Vector3(-90, 0, -90));
             }
 
-            if (weapon is BazookaAttack)
+            if (weapon is Bazooka)
             {
                 weapon.transform.localRotation = Quaternion.Euler(new Vector3(-90, 0, 90));
             }

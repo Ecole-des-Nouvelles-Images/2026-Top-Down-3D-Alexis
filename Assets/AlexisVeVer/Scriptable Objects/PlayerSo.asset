@@ -18,6 +18,7 @@ MonoBehaviour:
   AttackDamage: 2
   AttackStun: 1
   AttackDuration: 0.5
+  LungeForce: 200
   KnockBackForce: 15
   WalkingSpeedModifier: 10000
   AirSpeedModifier: 100

@@ -1,15 +1,13 @@
-using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
 {
     public class RocketBehaviour : MonoBehaviour
     {
         [SerializeField] private float _gravityForce;
-        [SerializeField] private float _directHitDamage;
-        [SerializeField] private float _directHitStun;
-        
         [SerializeField] private GameObject _explosionPrefab;
+        public LayerMask _layerToAvoid;
         
         private Rigidbody _rb;
 
@@ -21,19 +19,14 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
         // Update is called once per frame
         void Update()
         {
-            _rb.AddForce(Vector3.down * _gravityForce);
+            _rb.AddForce(Vector3.down * (_gravityForce * Time.deltaTime));
         }
 
         private void OnTriggerEnter(Collider collider)
         {
-            if (collider.gameObject.CompareTag("Bazooka")) return;
-            Instantiate(_explosionPrefab);
+            if (collider.gameObject.CompareTag("Bazooka") || collider.gameObject.layer == _layerToAvoid) return;
+            Instantiate(_explosionPrefab, transform.position, Quaternion.Euler(-90, 0, 0));
             Destroy(gameObject);
-
-            if (collider.gameObject.CompareTag("Player"))
-            {
-                // collider.GetComponent<PlayerHealth>().GetHit(_directHitDamage, _directHitStun);
-            }
         }
     }
 }

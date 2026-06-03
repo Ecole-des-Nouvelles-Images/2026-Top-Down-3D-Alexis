@@ -10,10 +10,10 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
         
         private void OnTriggerEnter(Collider collider)
         {
-            if (collider.gameObject.CompareTag("Player") && gameObject.transform.parent.transform != collider.gameObject.transform)
-            {
-                //collider.GetComponent<PlayerHealth>().GetHit(_hitDamage, _hitStun);
-            }
+            // if (collider.gameObject.CompareTag("Player") && gameObject.transform.parent.transform != collider.gameObject.transform)
+            // {
+            //     //collider.GetComponent<PlayerHealth>().GetHit(_hitDamage, _hitStun);
+            // }
         }
     }
 }
