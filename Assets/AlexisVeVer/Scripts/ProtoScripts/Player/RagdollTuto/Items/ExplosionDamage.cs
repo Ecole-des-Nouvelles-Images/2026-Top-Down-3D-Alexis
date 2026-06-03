@@ -6,14 +6,15 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
     {
         [SerializeField] private float _hitDamage;
         [SerializeField] private float _hitStun;
+        [SerializeField] private float _explosionKnockback;
         
         
         private void OnTriggerEnter(Collider collider)
         {
-            // if (collider.gameObject.CompareTag("Player") && gameObject.transform.parent.transform != collider.gameObject.transform)
-            // {
-            //     //collider.GetComponent<PlayerHealth>().GetHit(_hitDamage, _hitStun);
-            // }
+            if (collider.gameObject.CompareTag("Player"))
+            {
+                collider.GetComponent<PlayerHealth>().GetHit(_hitDamage, _hitStun, _explosionKnockback);
+            }
         }
     }
 }

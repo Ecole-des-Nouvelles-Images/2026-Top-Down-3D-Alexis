@@ -9968,5 +9968,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6064a453a7a7a745880e89b4ca378ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExplosionDamage
-  _directHitDamage: 5
-  _directHitStun: 5
+  _hitDamage: 10
+  _hitStun: 5
+  _explosionKnockback: 30
