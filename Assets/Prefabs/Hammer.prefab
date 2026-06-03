@@ -1,5 +1,79 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1913703344702837614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6167529328313531878}
+  - component: {fileID: 542231847666162091}
+  - component: {fileID: 8462647816844997093}
+  m_Layer: 0
+  m_Name: ItemPickUp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6167529328313531878
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913703344702837614}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1882748428546518139}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &542231847666162091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913703344702837614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbd313a34c401604a827a19bac6723b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items.ItemPickUp
+  _parent: {fileID: 4713868974010988111}
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  _rotationVector: {x: 0, y: 0, z: 0}
+  _offset: {x: 0, y: 0, z: 0}
+  _timeBeforeDestroy: 0
+  _radius: 1
+--- !u!65 &8462647816844997093
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1913703344702837614}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6, y: 13, z: 9}
+  m_Center: {x: 0, y: 6, z: 0}
 --- !u!1 &4713868974010988111
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,7 +84,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1882748428546518139}
   - component: {fileID: 322184668033638669}
-  - component: {fileID: 4017068430465244959}
   - component: {fileID: 3216084888838979005}
   m_Layer: 0
   m_Name: Hammer
@@ -32,8 +105,9 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 9213601990859639745}
   - {fileID: 781128043872813941}
+  - {fileID: 6167529328313531878}
+  - {fileID: 3351749563335777823}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &322184668033638669
@@ -57,25 +131,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6, y: 12, z: 10}
   m_Center: {x: 0, y: 6, z: 0}
---- !u!114 &4017068430465244959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4713868974010988111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbd313a34c401604a827a19bac6723b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items.ItemPickUp
-  _groundLayer:
-    serializedVersion: 2
-    m_Bits: 8
-  _rotationVector: {x: 0, y: 0, z: 10}
-  _offset: {x: 0, y: 0, z: 0}
-  _timeBeforeDestroy: 0
-  _radius: 1
 --- !u!114 &3216084888838979005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,13 +143,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c99c920bc902b47a28103a1034fcfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items.HammerAttack
-  _hitbox: {fileID: 6383298053977706934}
+  _hitbox: {fileID: 7011834412797258712}
   _attackVfx: {fileID: 7991347955089512951, guid: dc25d4aa60aefea498a8be421cd7ae46, type: 3}
-  _attackVfxOffset: {x: -0.5, y: -0.1, z: 0.6}
   _decal: {fileID: 7192839355555750716, guid: f954ae62f83c3644d8a40b7e5ac14dda, type: 3}
-  _decalOffset: {x: -2.2, y: -2.1, z: 0.5}
   _animationTime: 0
---- !u!1 &6383298053977706934
+--- !u!1 &7011834412797258712
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -102,38 +155,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 9213601990859639745}
-  - component: {fileID: 1100541821883157899}
-  - component: {fileID: 6113596093969320281}
+  - component: {fileID: 3351749563335777823}
+  - component: {fileID: 6359267184333514854}
+  - component: {fileID: 9184886879468697790}
   m_Layer: 0
-  m_Name: HammerHitBox
+  m_Name: Hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!4 &9213601990859639745
+--- !u!4 &3351749563335777823
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6383298053977706934}
+  m_GameObject: {fileID: 7011834412797258712}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.25, y: 8, z: 2.3}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1882748428546518139}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!65 &1100541821883157899
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6359267184333514854
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6383298053977706934}
+  m_GameObject: {fileID: 7011834412797258712}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -146,22 +199,20 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3, y: 0.4, z: 3}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6113596093969320281
+  m_Size: {x: 15, y: 15, z: 1.5}
+  m_Center: {x: 0, y: 9, z: 5}
+--- !u!114 &9184886879468697790
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6383298053977706934}
+  m_GameObject: {fileID: 7011834412797258712}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 280ff46fbdba79847ba5dd6ff16649b3, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::HammerDamage
-  _hitDamage: 3
-  _hitStun: 8
+  m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items.ItemAttack
 --- !u!1001 &4360282404149291226
 PrefabInstance:
   m_ObjectHideFlags: 0

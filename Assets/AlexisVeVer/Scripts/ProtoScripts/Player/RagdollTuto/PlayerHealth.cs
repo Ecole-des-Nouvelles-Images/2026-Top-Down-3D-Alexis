@@ -47,16 +47,19 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto
             if (skinnedMeshRendererMaterial.GetFloat("_HitIntensity") > 0)
             {
                 _timeInFlash += Time.deltaTime;
-                if (_timeInFlash >= animationTime)
+                if (_timeInFlash >= _flashTime)
                 {
                     skinnedMeshRendererMaterial.SetFloat("_HitIntensity", 0);
                     _timeInFlash = 0;
                 }
             }
         }
+        
+        //, Vector3 knockBack
 
         public void GetHit(float damage, float stun)
         {
+            AudioManager.Instance.PlaySound("Slap");
             _currentHealth -= damage;
             _currentStun += stun;
             skinnedMeshRendererMaterial.SetFloat("_HitIntensity", 0.7f);

@@ -1,4 +1,4 @@
-using System;
+using System.Collections.Generic;
 using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto;
 using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items;
 using UnityEngine;
@@ -10,22 +10,34 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player
         [Header("PlayerController")]
         [SerializeField] private PlayerController _playerController;
         
+        [Header("Sounds")]
+        [SerializeField] private List<AudioClip> _sounds;
+        
         [Header("PlayerHealth"), Space(10)]
         [SerializeField] private PlayerHealth _playerHealth;
         
         [Header("Attack Parameters"), Space(10)]
         [SerializeField] private GameObject _leftHandHitbox;
         [SerializeField] private GameObject _rightHandHitbox;
+
+        [Header("Animation Speed")] 
+        [SerializeField] private float _anticipationSpeed = 2;
+        [SerializeField] private float _activeSpeed = 2;
+        [SerializeField] private float _recoverySpeed = 1;
+        
+        // [Header("FX"), Space(10)]
+        // [SerializeField] private GameObject _katanaParticle;
      
         private Animator _animator;
 
-        private void Start()
+        private void Awake()
         {
-            
+            _animator = GetComponent<Animator>();
         }
 
         public void OnStunAnimationStart()
         {
+            AudioManager.Instance.PlaySound("Stun");
             Instantiate(_playerController.stunVfx, _playerController.transform.position + _playerController.stunVfxOffset, Quaternion.Euler(90, 0, 0));
         }
         
@@ -63,18 +75,21 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player
 
         public void OnHammerHitGround()
         {
-            _playerController.gameObject.GetComponentInChildren<HammerAttack>().OnAttack();
+            _playerController.gameObject.GetComponentInChildren<Hammer>().OnAttack();
         }
 
         public void OnHammerLeavesGround()
         {
-            _playerController.gameObject.GetComponentInChildren<HammerAttack>().EndAttack();
+            _playerController.gameObject.GetComponentInChildren<Hammer>().EndAttack();
         }
 
         public void OnFeetHitGround()
         {
-            Instantiate(_playerController.walkVfx,
-                _playerController.transform.position + _playerController.walkVfxOffset, Quaternion.Euler(_playerController.walkVfxRotation));
+            AudioManager.Instance.PlaySound("Step1", UnityEngine.Random.Range(0.1f, 1.9f));
+            GameObject vfx = Instantiate(_playerController.walkVfx,
+                _playerController.transform.position + _playerController.walkVfxOffset, 
+                Quaternion.identity);
+            vfx.transform.forward = transform.forward;
         }
     }
 }

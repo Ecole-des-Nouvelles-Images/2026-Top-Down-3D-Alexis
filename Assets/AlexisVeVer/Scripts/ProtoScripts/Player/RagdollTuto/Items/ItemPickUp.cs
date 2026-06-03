@@ -1,10 +1,10 @@
-using System;
 using UnityEngine;
 
 namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
 {
     public class ItemPickUp : MonoBehaviour
     {
+        [SerializeField] private GameObject _parent;
         [SerializeField] private LayerMask _groundLayer;
         [SerializeField] private Vector3 _rotationVector;
         [SerializeField] private Vector3 _offset;
@@ -16,26 +16,26 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
 
         private void Awake()
         {
-            _weapon = GetComponent<Weapon>();
+            _weapon = GetComponentInParent<Weapon>();
         }
 
         void Update()
         {
             ItemRotation();
             RaycastHit[] hits =Physics.SphereCastAll(
-                transform.position + _offset, _radius, Vector3.down,  0,_groundLayer);
+                _parent.transform.position + _offset, _radius, Vector3.down,  0,_groundLayer);
 
             if (hits.Length <= 0) {
-                gameObject.transform.SetParent(null);
+                _parent.transform.SetParent(null);
                 return;
             }
             
-            gameObject.transform.SetParent(hits[0].transform);
+            _parent.transform.SetParent(hits[0].transform);
         }
         
         private void ItemRotation()
         {
-            gameObject.transform.rotation = Quaternion.Euler(gameObject.transform.rotation.eulerAngles + _rotationVector * Time.deltaTime);
+            _parent.transform.rotation = Quaternion.Euler(_parent.transform.rotation.eulerAngles + _rotationVector * Time.deltaTime);
           
         }
 
@@ -47,6 +47,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
                 
                 if (_playerController.WeaponEquipped) return;
                 _playerController.Equip(_weapon);
+                gameObject.SetActive(false);
             }
         }
     }
