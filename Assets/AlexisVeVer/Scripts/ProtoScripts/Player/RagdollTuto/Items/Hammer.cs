@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
@@ -22,7 +20,7 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
             playerController.characterAnimator.SetTrigger("HammerAttack");
         }
 
-        public override void AutoUse(PlayerController playerController) {}
+        public override void AutoUse(PlayerController playerController) { }
 
         public void OnAttack()
         {
