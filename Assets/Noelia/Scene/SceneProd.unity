@@ -371,11 +371,11 @@ PrefabInstance:
     - target: {fileID: 5904697903220254232, guid: dda53d207f643ec48bf8dc3ef4bc6521, type: 3}
       propertyPath: _grabHitboxLeftHand
       value: 
-      objectReference: {fileID: 1301858146}
+      objectReference: {fileID: 0}
     - target: {fileID: 5904697903220254232, guid: dda53d207f643ec48bf8dc3ef4bc6521, type: 3}
       propertyPath: _grabHitboxRightHand
       value: 
-      objectReference: {fileID: 705224682}
+      objectReference: {fileID: 0}
     - target: {fileID: 6404279710823874837, guid: dda53d207f643ec48bf8dc3ef4bc6521, type: 3}
       propertyPath: _rigidbody
       value: 
@@ -878,11 +878,11 @@ PrefabInstance:
     - target: {fileID: 5904697903220254232, guid: dda53d207f643ec48bf8dc3ef4bc6521, type: 3}
       propertyPath: _grabHitboxLeftHand
       value: 
-      objectReference: {fileID: 540885142}
+      objectReference: {fileID: 0}
     - target: {fileID: 5904697903220254232, guid: dda53d207f643ec48bf8dc3ef4bc6521, type: 3}
       propertyPath: _grabHitboxRightHand
       value: 
-      objectReference: {fileID: 1865431697}
+      objectReference: {fileID: 0}
     - target: {fileID: 5904697903220254232, guid: dda53d207f643ec48bf8dc3ef4bc6521, type: 3}
       propertyPath: _slideForceMultiplier
       value: 10
@@ -1262,11 +1262,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1248927917}
   m_SourcePrefab: {fileID: 100100000, guid: d7df178cb5599a645bcdee7270caf512, type: 3}
---- !u!135 &540885142 stripped
-SphereCollider:
-  m_CorrespondingSourceObject: {fileID: 2665371613227346586, guid: dda53d207f643ec48bf8dc3ef4bc6521, type: 3}
-  m_PrefabInstance: {fileID: 472786751}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &554464900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1384,7 +1379,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 570621330}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 4, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1392,11 +1387,11 @@ RectTransform:
   - {fileID: 334717332}
   - {fileID: 689369539}
   m_Father: {fileID: 1998033365}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 30, y: -50}
-  m_SizeDelta: {x: 117.83, y: 100}
+  m_AnchoredPosition: {x: 492, y: -50}
+  m_SizeDelta: {x: 117.83, y: 87.081}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &570621332
 MonoBehaviour:
@@ -1418,7 +1413,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: a18383426e7c8864297947637f922368, type: 3}
+  m_Texture: {fileID: 2800000, guid: 067ec0c28ea353a488153b8a586e6f11, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -1601,11 +1596,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!135 &705224682 stripped
-SphereCollider:
-  m_CorrespondingSourceObject: {fileID: 4251331694309400383, guid: dda53d207f643ec48bf8dc3ef4bc6521, type: 3}
-  m_PrefabInstance: {fileID: 300561152}
-  m_PrefabAsset: {fileID: 0}
 --- !u!54 &710435199 stripped
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 1209549556167227730, guid: dda53d207f643ec48bf8dc3ef4bc6521, type: 3}
@@ -2484,11 +2474,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8163837291003038857, guid: 271f6fa68b1df4e4fafa836dc6a5c60d, type: 3}
---- !u!135 &1301858146 stripped
-SphereCollider:
-  m_CorrespondingSourceObject: {fileID: 2665371613227346586, guid: dda53d207f643ec48bf8dc3ef4bc6521, type: 3}
-  m_PrefabInstance: {fileID: 300561152}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1355982141
 GameObject:
   m_ObjectHideFlags: 0
@@ -2963,11 +2948,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7d4c7023412ea4dbad20c335845290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.PlayerController
---- !u!135 &1865431697 stripped
-SphereCollider:
-  m_CorrespondingSourceObject: {fileID: 4251331694309400383, guid: dda53d207f643ec48bf8dc3ef4bc6521, type: 3}
-  m_PrefabInstance: {fileID: 472786751}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1909148921 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5403266460701730717, guid: dda53d207f643ec48bf8dc3ef4bc6521, type: 3}
