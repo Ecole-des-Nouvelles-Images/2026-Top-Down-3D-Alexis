@@ -208,23 +208,23 @@
             },
             "m_InputSlot": {
                 "m_Node": {
-                    "m_Id": "f8d63fcc9143459b83c01f33b126a4b4"
+                    "m_Id": "0f3442693527402084ee9014b2513b18"
                 },
-                "m_SlotId": 0
+                "m_SlotId": 1
             }
         },
         {
             "m_OutputSlot": {
                 "m_Node": {
-                    "m_Id": "f8d63fcc9143459b83c01f33b126a4b4"
+                    "m_Id": "f40d998f6bc94d669dd041ba10aff2e9"
                 },
-                "m_SlotId": 2
+                "m_SlotId": 4
             },
             "m_InputSlot": {
                 "m_Node": {
-                    "m_Id": "0f3442693527402084ee9014b2513b18"
+                    "m_Id": "f8d63fcc9143459b83c01f33b126a4b4"
                 },
-                "m_SlotId": 1
+                "m_SlotId": 0
             }
         },
         {
@@ -645,10 +645,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -849.0,
-            "y": -100.99999237060547,
+            "x": -776.0000610351563,
+            "y": -170.00001525878907,
             "width": 105.0,
-            "height": 34.00000762939453
+            "height": 34.00001525878906
         }
     },
     "m_Slots": [
@@ -1074,9 +1074,9 @@
     "m_PerRendererData": false,
     "m_customAttributes": [],
     "m_Value": {
-        "r": 1.0,
-        "g": 1.0,
-        "b": 1.0,
+        "r": 4.0,
+        "g": 4.0,
+        "b": 4.0,
         "a": 1.0
     },
     "isMainColor": false,
@@ -1106,7 +1106,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "FadeContrast",
     "m_StageCapability": 2,
-    "m_Value": 1.0,
+    "m_Value": 0.09000000357627869,
     "m_DefaultValue": 1.0,
     "m_Labels": [],
     "m_LiteralMode": false
@@ -1629,7 +1629,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "NoiseValue",
     "m_StageCapability": 2,
-    "m_Value": 0.0,
+    "m_Value": -3.0,
     "m_DefaultValue": 0.5,
     "m_Labels": [],
     "m_LiteralMode": false
@@ -1993,10 +1993,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -932.0000610351563,
-            "y": -0.0000457763671875,
-            "width": 207.99981689453126,
-            "height": 302.00006103515627
+            "x": -929.9998779296875,
+            "y": 1.9999980926513672,
+            "width": 208.0,
+            "height": 301.9999694824219
         }
     },
     "m_Slots": [

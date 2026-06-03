@@ -20,7 +20,10 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
             Invoke(nameof(DestroyMe), 3f);
         }
 
-        public override void Use(PlayerController playerController) { }
+        public override void Use(PlayerController playerController)
+        {
+            CurrentHolder = playerController;
+        }
 
         public override void AutoUse(PlayerController playerController)
         {

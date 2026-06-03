@@ -9,6 +9,9 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
         
         public override void OnStateEnter(PlayerController playerController)
         {
+            Debug.Log("Jump state enter");
+            AudioManager.Instance.PlaySound("Whoosh");
+            AudioManager.Instance.PlaySound("Step3");
             playerController.canAttack = false;
             playerController.rb.linearVelocity = Vector3.zero;
         }
@@ -21,18 +24,18 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.PlayerFSM
 
         public override void OnStateExit(PlayerController playerController)
         {
+            AudioManager.Instance.PlaySound("Ground");
             playerController.jumped = false;
-            Debug.Log("Jump state exit, new state is " + playerController.CurrentState);
         }
 
         public override PlayerStateMachine NextState(PlayerController playerController)
         {
-            if (!playerController.canJump && playerController.rb.linearVelocity.magnitude <= _movementCheck)
+            if (!playerController.canJump && playerController.moveInput.magnitude <= _movementCheck)
             {
                 return new IdleState();
             }
             
-            if (!playerController.canJump && playerController.rb.linearVelocity.magnitude >= _movementCheck)
+            if (!playerController.canJump && playerController.moveInput.magnitude >= _movementCheck)
             {
                 return new MovementState();
             }

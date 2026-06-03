@@ -29,7 +29,10 @@ namespace AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items
             _rb = GetComponent<Rigidbody>();
         }
 
-        public override void Equip(PlayerController playerController) { }
+        public override void Equip(PlayerController playerController)
+        {
+            CurrentHolder = playerController;
+        }
 
         public override void Use(PlayerController playerController)
         {
