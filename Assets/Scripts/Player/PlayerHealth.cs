@@ -1,5 +1,6 @@
 using UnityEngine;
-
+using UnityEngine.InputSystem;
+using System.Collections;
 namespace Player
 {
     public class PlayerHealth : MonoBehaviour
@@ -61,6 +62,7 @@ namespace Player
 
         public void GetHit(float damage, float stun, float knockBackForce)
         {
+            StartCoroutine(DamageVibration());
             AudioManager.Instance.PlaySound("Slap");
             _currentHealth -= damage;
             _currentStun += stun;
@@ -75,9 +77,27 @@ namespace Player
 
         public void Dies()
         {
+            StartCoroutine(DamageVibration());
             playerController.isDead = true;
             _currentHealth = 0;
             AlexisVeVer.Scripts.GameManager.Instance.PlayerDead(gameObject);
+        }
+        
+        private IEnumerator DamageVibration()
+        {
+            if (Gamepad.current != null)
+            {
+                // moteur gauche (basse fréquence), moteur droit (haute fréquence)
+                Gamepad.current.SetMotorSpeeds(0.5f, 1f);
+
+                yield return new WaitForSeconds(0.2f);
+
+                Gamepad.current.SetMotorSpeeds(0f, 0f);
+            }
+        }
+        private void OnDestroy()
+        {
+            Gamepad.current?.ResetHaptics();
         }
     }
 }

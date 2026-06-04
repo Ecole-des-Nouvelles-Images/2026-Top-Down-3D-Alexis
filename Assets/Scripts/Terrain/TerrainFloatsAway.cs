@@ -27,6 +27,7 @@ namespace Terrain
         [ContextMenu("SplitTerrain")]
         public void SplitTerrain()
         {
+            AudioManager.Instance.PlaySound("IceBreak");
             int terraincounter = 0;
             foreach (GameObject terrain in _terrains)
             {
