@@ -25,7 +25,7 @@ namespace Player
             {
                 if (other.GetComponent<PlayerController>() == GetComponentInParent<PlayerController>()) return;
                 
-                other.GetComponent<PlayerHealth>().GetHit(_playerStats.AttackDamage, _playerStats.AttackStun, _playerStats.KnockBackForce);
+                other.GetComponent<PlayerHealth>().GetHit(_playerStats.AttackDamage, _playerStats.AttackStun, _playerStats.KnockBackForce, gameObject);
                 Instantiate(_hitParticle, other.transform.position, Quaternion.identity);
             }
         }

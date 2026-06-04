@@ -23,6 +23,7 @@ namespace Player
         [SerializeField] private GameObject _unArmedflash;
         [SerializeField] private GameObject _leftHandHitboxVisual;
         [SerializeField] private GameObject _rightHandHitboxVisual;
+        [SerializeField] private GameObject _katanaVfx;
         
         [Header("Animation Speed"), Space(10)] 
         [SerializeField] private float _anticipationSpeed = 2;
@@ -113,6 +114,14 @@ namespace Player
                 _playerController.transform.position + _playerController.walkVfxOffset, 
                 Quaternion.identity);
             vfx.transform.forward = transform.forward;
+        }
+
+        public void OnActiveKatanaSlash()
+        { 
+            GameObject KatanaVfx = Instantiate(_katanaVfx, _rightHandHitboxVisual.transform.position, Quaternion.identity);
+            KatanaVfx.transform.parent = _rightHandHitboxVisual.transform;
+            KatanaVfx.transform.localRotation = Quaternion.Euler(20,-80,0);
+            KatanaVfx.transform.parent = null;
         }
     }
 }

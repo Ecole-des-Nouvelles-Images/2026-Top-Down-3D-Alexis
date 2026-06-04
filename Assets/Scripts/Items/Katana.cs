@@ -1,4 +1,3 @@
-using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto;
 using Player;
 using UnityEngine;
 
@@ -16,9 +15,6 @@ namespace Items
         [SerializeField] private float _hitStun;
         [SerializeField] private float _hitKnockBack;
         
-        [Header("ParticleReferences"), Space(10)]
-        [SerializeField] private GameObject _hitParticle;
-        
         private void Awake()
         {
             _itemAttack.onHit += OnHit;
@@ -27,7 +23,7 @@ namespace Items
         private void OnHit(object itemDamage, Collider collider)
         {
             if (collider == null || collider.GetComponentInParent<PlayerController>() == CurrentHolder) return;
-            collider.GetComponent<PlayerHealth>().GetHit(_hitDamage,  _hitStun, _hitKnockBack);
+            collider.GetComponent<PlayerHealth>().GetHit(_hitDamage,  _hitStun, _hitKnockBack, gameObject);
             Destroy(gameObject, 0.1f);
         }
         
@@ -40,7 +36,6 @@ namespace Items
         {
             _hitbox.SetActive(true);
             playerController.characterAnimator.SetTrigger("KatanaAttack");
-            //Instantiate(_hitParticle, transform.position, Quaternion.identity);
         }
 
         public override void AutoUse(PlayerController playerController) { }
