@@ -21,6 +21,9 @@ namespace UI
         [SerializeField] private string _nameScene;
         [Space (5)]
         [SerializeField] private Selectable _selectable;
+        [Space (5)]
+        [SerializeField] private float _scale = 1f;
+        [SerializeField] private float _rotation = 0;
         void Start()
         {
             RectTransform rect = transform.GetComponent<RectTransform>();
@@ -28,6 +31,8 @@ namespace UI
             rect.anchorMax = _startAnchorMax;
             rect.DOAnchorMin(_endAnchorMin, speed).SetEase(curve).SetUpdate(true);
             rect.DOAnchorMax(_endAnchorMax, speed).SetEase(curve).SetUpdate(true);
+            transform.DOScale(_scale, speed).SetUpdate(true);
+            transform.DORotate(new Vector3(0,0,_rotation), 0.2f).SetEase(curve).SetLoops(-1, LoopType.Yoyo).SetUpdate(true);
             
         }
 
