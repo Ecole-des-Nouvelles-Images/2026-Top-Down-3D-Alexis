@@ -42,12 +42,12 @@ namespace Player
         public void OnStunAnimationStart()
         {
             AudioManager.Instance.PlaySound("Stun");
-            Instantiate(_playerController.stunVfx, _playerController.transform.position + _playerController.stunVfxOffset, Quaternion.Euler(90, 0, 0));
+            GameObject StunVFX = Instantiate(_playerController.stunVfx, _playerController.transform.position + _playerController.stunVfxOffset, Quaternion.Euler(90, 0, 0));
+            StunVFX.transform.parent = _playerController.transform;
         }
         
         public void OnStunAnimationEnd()
         {
-            Debug.Log("Stun end");
             _playerController.isStunned = false;
             _playerHealth.CurrentStun = 0;
         }

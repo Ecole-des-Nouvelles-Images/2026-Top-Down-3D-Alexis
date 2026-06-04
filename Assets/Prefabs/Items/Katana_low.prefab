@@ -49,7 +49,7 @@ MonoBehaviour:
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  _rotationVector: {x: 0, y: 0, z: 0}
+  _rotationVector: {x: 0, y: 20, z: 0}
   _offset: {x: 0, y: 0, z: 0}
   _timeBeforeDestroy: 0
   _radius: 1
@@ -243,6 +243,7 @@ MonoBehaviour:
   _itemAttack: {fileID: 551672421833422671}
   _hitDamage: 6
   _hitStun: 1
+  _hitKnockBack: 0
   _hitParticle: {fileID: 0}
 --- !u!4 &1739204617798543552 stripped
 Transform:

@@ -24,7 +24,7 @@ namespace Terrain
             if (FloatsAway)
             {
                 transform.position = Vector3.MoveTowards(transform.position, 
-                    _targetPosition, _speedToFloatAway);
+                    _targetPosition, _speedToFloatAway * Time.deltaTime);
             }
         }
     }

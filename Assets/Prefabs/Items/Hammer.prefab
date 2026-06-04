@@ -50,6 +50,7 @@ MonoBehaviour:
   _itemAttack: {fileID: 6407811095006318814}
   _hitDamage: 4
   _hitStun: 5
+  _hitKnockBack: 0
   _attackVfx: {fileID: 1752170938166243780, guid: bc8d90ee1c7e65a41b47f278b89cb5bc, type: 3}
   _decal: {fileID: 7192839355555750716, guid: f954ae62f83c3644d8a40b7e5ac14dda, type: 3}
   _vfxOffset: {x: 0, y: -2, z: 0}
@@ -132,6 +133,10 @@ PrefabInstance:
       propertyPath: _parent
       value: 
       objectReference: {fileID: 133926493735317269}
+    - target: {fileID: 542231847666162091, guid: 8d100f5591aeebd41ad1c4607ba10cee, type: 3}
+      propertyPath: _rotationVector.y
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1882748428546518139, guid: 8d100f5591aeebd41ad1c4607ba10cee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

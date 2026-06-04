@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Terrain.TerrainFloatAway
   _generalTerrain: {fileID: 1280191105}
   _floatAwayDistance: 20
-  _speedToFloatAway: 0.0001
+  _speedToFloatAway: 0.001
   FloatsAway: 0
 --- !u!1 &9444421
 GameObject:
@@ -987,6 +987,7 @@ GameObject:
   - component: {fileID: 438576248}
   - component: {fileID: 438576245}
   - component: {fileID: 438576247}
+  - component: {fileID: 438576249}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1085,6 +1086,35 @@ MonoBehaviour:
   playerHealths: []
   _victoryScreen: {fileID: 4699048781754490311}
   _drawScreen: {fileID: 630916994}
+--- !u!114 &438576249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438576244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2502fd8ed0521694caf658a30f563d13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSpawner
+  _spawnableTerrains:
+  - {fileID: 1619738624}
+  - {fileID: 1293141819}
+  - {fileID: 1119144356}
+  - {fileID: 2061473412}
+  - {fileID: 1119144355}
+  - {fileID: 2212809}
+  - {fileID: 1957506788}
+  _spawnableItems:
+  - {fileID: 5525930262604782777, guid: d4593892dcf788249bbb569525123925, type: 3}
+  - {fileID: 133926493735317269, guid: 4e420c8a79a0b50408b69082c40bae7a, type: 3}
+  - {fileID: 1398708318174294650, guid: 15e6c63e8e1528f4fb5551f8eb7f30b4, type: 3}
+  - {fileID: 1774387348790771946, guid: 92b9d4dc9abc91c41941bd1faf6b7043, type: 3}
+  _apparitionFx: {fileID: 528437620311186007, guid: 49daf4213256b8d4095efd4fa87eae85, type: 3}
+  _itemSpawnOffset: {x: 0, y: 10, z: 0}
+  _timeBetweenSpawns: 15
+  _dropSpeed: 3
 --- !u!114 &475320955 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6693131775328500846, guid: 5cf12c28dabddac459334c643fae2d5d, type: 3}
@@ -2603,7 +2633,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Terrain.TerrainFloatAway
   _generalTerrain: {fileID: 1280191105}
   _floatAwayDistance: 20
-  _speedToFloatAway: 0.0001
+  _speedToFloatAway: 0.001
   FloatsAway: 0
 --- !u!114 &1119144356
 MonoBehaviour:
@@ -2619,7 +2649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Terrain.TerrainFloatAway
   _generalTerrain: {fileID: 1280191105}
   _floatAwayDistance: 20
-  _speedToFloatAway: 0.0001
+  _speedToFloatAway: 0.001
   FloatsAway: 0
 --- !u!1 &1136962116
 GameObject:
@@ -3201,7 +3231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Terrain.TerrainFloatAway
   _generalTerrain: {fileID: 1280191105}
   _floatAwayDistance: 20
-  _speedToFloatAway: 0.0001
+  _speedToFloatAway: 0.001
   FloatsAway: 0
 --- !u!1 &1312386745
 GameObject:
@@ -4489,7 +4519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Terrain.TerrainFloatAway
   _generalTerrain: {fileID: 1280191105}
   _floatAwayDistance: 20
-  _speedToFloatAway: 0.0001
+  _speedToFloatAway: 0.001
   FloatsAway: 0
 --- !u!1 &1640996284 stripped
 GameObject:
@@ -4948,7 +4978,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Terrain.TerrainFloatAway
   _generalTerrain: {fileID: 1280191105}
   _floatAwayDistance: 20
-  _speedToFloatAway: 0.0001
+  _speedToFloatAway: 0.001
   FloatsAway: 0
 --- !u!1 &1967605081
 GameObject:
@@ -5007,7 +5037,7 @@ MonoBehaviour:
   - {fileID: 1119144339}
   - {fileID: 1119144338}
   _terrainsTransform: []
-  _timeBetweenSplits: 20000
+  _timeBetweenSplits: 30
 --- !u!114 &2061473412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5022,7 +5052,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Terrain.TerrainFloatAway
   _generalTerrain: {fileID: 1280191105}
   _floatAwayDistance: 20
-  _speedToFloatAway: 0.0001
+  _speedToFloatAway: 0.001
   FloatsAway: 0
 --- !u!4 &2087258966 stripped
 Transform:
