@@ -43,6 +43,11 @@ namespace Items
                 _launchPoint.transform.localRotation = Quaternion.Euler(0, 0, 0);
                 _launchPointSet = true;
             }
+
+            if (_launchPointSet)
+            {
+                transform.localPosition = Vector3.zero;
+            }
         }
     }
 }

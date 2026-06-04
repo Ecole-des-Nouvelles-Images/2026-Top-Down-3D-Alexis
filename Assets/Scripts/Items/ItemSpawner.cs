@@ -17,7 +17,7 @@ namespace Items
         [SerializeField] private float _timeBetweenSpawns;
         [SerializeField] private float _dropSpeed;
 
-        private GameObject Indic;
+        private GameObject _indic;
         private GameObject _spawnedItem;
         private float _timeSinceLastSpawn;
 
@@ -37,16 +37,16 @@ namespace Items
             {
                 GameObject randomTerrain = _spawnableTerrains[Random.Range(0, _spawnableItems.Count)].gameObject;
             
-                Indic = Instantiate(_apparitionFx, randomTerrain.transform.position, transform.rotation);
+                _indic = Instantiate(_apparitionFx, randomTerrain.transform.position, transform.rotation);
                 _spawnedItem = Instantiate(_spawnableItems[Random.Range(0, _spawnableItems.Count)], 
                     randomTerrain.transform.position + _itemSpawnOffset, Quaternion.identity);
                 _timeSinceLastSpawn = 0;
             }
         
-            if (_spawnedItem != null && Indic != null)
+            if (_spawnedItem != null && _indic != null)
             {
                 _spawnedItem.transform.position = Vector3.MoveTowards(_spawnedItem.transform.position,
-                    Indic.transform.position, _dropSpeed * Time.deltaTime);
+                    _indic.transform.position, _dropSpeed * Time.deltaTime);
             }
         }
     }

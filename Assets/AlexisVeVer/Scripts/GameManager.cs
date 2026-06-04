@@ -29,13 +29,11 @@ namespace AlexisVeVer.Scripts
         {
             if (players.Count == 1)
             {
-                Time.timeScale = 0;
                 _victoryScreen.SetActive(true);
             }
 
             if (players.Count < 1)
             {
-                Time.timeScale = 0;
                 _drawScreen.SetActive(true);
             }
            

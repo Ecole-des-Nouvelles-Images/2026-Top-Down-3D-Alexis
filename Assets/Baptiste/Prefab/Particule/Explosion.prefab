@@ -4978,7 +4978,7 @@ GameObject:
   - component: {fileID: 5027136552309213253}
   - component: {fileID: 6921813295982586340}
   - component: {fileID: 4450009590865213172}
-  - component: {fileID: 4951636637895950851}
+  - component: {fileID: 6975007191386411378}
   m_Layer: 0
   m_Name: Explosion
   m_TagString: Untagged
@@ -9956,7 +9956,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4951636637895950851
+--- !u!114 &6975007191386411378
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9967,7 +9967,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6064a453a7a7a745880e89b4ca378ea, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ExplosionDamage
-  _hitDamage: 10
-  _hitStun: 5
-  _explosionKnockback: 15
+  m_EditorClassIdentifier: Assembly-CSharp::Items.ExplosionDamage
+  _hitDamage: 15
+  _hitStun: 4
+  _explosionKnockback: 3

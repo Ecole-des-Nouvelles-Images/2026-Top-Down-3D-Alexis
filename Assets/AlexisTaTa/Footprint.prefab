@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5815131246975854458}
   - component: {fileID: 9053999174824619458}
+  - component: {fileID: 256598265679381804}
   m_Layer: 0
   m_Name: enfant
   m_TagString: Untagged
@@ -60,6 +61,19 @@ MonoBehaviour:
   m_FadeFactor: 1
   version: 1
   m_DecalLayerMask: 1
+--- !u!114 &256598265679381804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4307580895704967701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce60c8b7cdefc6848a7ace1efeec4c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.FadeOutDecal
+  _fadeDuration: 3
 --- !u!1 &4878385393882852332
 GameObject:
   m_ObjectHideFlags: 0

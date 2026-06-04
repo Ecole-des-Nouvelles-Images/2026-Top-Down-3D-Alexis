@@ -17,6 +17,7 @@ namespace Items
         [Header("VfxReferences"), Space(10)]
         [SerializeField] private GameObject _attackVfx;
         [SerializeField] private GameObject _decal;
+        [SerializeField] private GameObject _hitParticle;
         [SerializeField] private Vector3 _vfxOffset;
         
         [Header("other"), Space(10)]
@@ -46,10 +47,15 @@ namespace Items
             if (!_itemPickUp.activeSelf && !_hitboxSet)
             {
                 _hitbox.transform.SetParent(GetComponentInParent<PlayerController>().transform);
-                _hitbox.transform.localPosition = Vector3.zero;
+                _hitbox.transform.localPosition = new Vector3(0, 0, 3);
                 _hitbox.transform.localRotation = Quaternion.Euler(0, 0, 0);
                 transform.localRotation = Quaternion.Euler(-90, 0, -90);
                 _hitboxSet = true;
+            }
+
+            if (_hitboxSet)
+            {
+                transform.localPosition = Vector3.zero;
             }
         }
         
@@ -62,8 +68,9 @@ namespace Items
         
         private void OnHit(object itemDamage, Collider collider)
         {
-            if (collider == null || collider.GetComponentInParent<PlayerController>() == CurrentHolder) return;
-            collider.GetComponent<PlayerHealth>().GetHit(_hitDamage,  _hitStun, _hitKnockBack);
+            if (collider == null || collider.GetComponent<PlayerController>() == CurrentHolder) return;
+            collider.GetComponent<PlayerHealth>().GetHit(_hitDamage,  _hitStun, _hitKnockBack, gameObject);
+            Instantiate(_hitParticle, collider.transform.position, Quaternion.identity);
         }
 
         public void DestroyHammer()

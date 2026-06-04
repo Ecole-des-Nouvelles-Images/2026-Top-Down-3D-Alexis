@@ -73,6 +73,7 @@ Transform:
   - {fileID: 4936749439936190372}
   - {fileID: 4747139156723629466}
   - {fileID: 1165500708181227530}
+  - {fileID: 190278689508104126}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &6670721633479241207
@@ -285,7 +286,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.PlayerController
   playerStats: {fileID: 11400000, guid: 70d37fcc2f3e88b43b335b69c1e66c9d, type: 2}
-  handSocket: {fileID: 613009741791217799}
+  _handSocket: {fileID: 613009741791217799}
+  _fanHolder: {fileID: 0}
   canAttack: 0
   canSlide: 0
   doSlide: 0
@@ -5260,6 +5262,37 @@ MonoBehaviour:
     m_Bits: 8
   _offset: {x: 0, y: 0, z: 0}
   _radius: 0.25
+--- !u!1 &8564740176527000705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 190278689508104126}
+  m_Layer: 0
+  m_Name: FanPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &190278689508104126
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8564740176527000705}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8397861366321964962}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1363120028201852029
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5296,10 +5329,18 @@ PrefabInstance:
       propertyPath: _animatedRb
       value: 
       objectReference: {fileID: 6106883649399247726}
+    - target: {fileID: 3943237712333306128, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5504972196679071288, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
       propertyPath: _animatedRb
       value: 
       objectReference: {fileID: 7272377578644807089}
+    - target: {fileID: 5626445732241981689, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7133862798686783944, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5470,11 +5511,11 @@ PrefabInstance:
     - target: {fileID: 5281153259605872735, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
       propertyPath: _leftHandHitbox
       value: 
-      objectReference: {fileID: 6701322044056460420}
+      objectReference: {fileID: 2330784832358646868}
     - target: {fileID: 5281153259605872735, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
       propertyPath: _rightHandHitbox
       value: 
-      objectReference: {fileID: 2330784832358646868}
+      objectReference: {fileID: 6701322044056460420}
     - target: {fileID: 5281153259605872735, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
       propertyPath: _playerController
       value: 

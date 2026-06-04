@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Terrain
 {
-    public class TerrainFloatsAway : MonoBehaviour
+    public class TerrainSplitting : MonoBehaviour
     {
         [SerializeField] private List<GameObject> _terrains;
         [SerializeField] private List<Transform> _terrainsTransform;

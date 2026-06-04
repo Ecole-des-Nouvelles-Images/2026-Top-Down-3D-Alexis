@@ -52,6 +52,11 @@ namespace Items
                 //transform.localRotation = Quaternion.Euler(-90, 0, -90);
                 _hitboxSet = true;
             }
+
+            if (_hitboxSet)
+            {
+                transform.localPosition = Vector3.zero;
+            }
         }
 
         private void DestroyMe()
