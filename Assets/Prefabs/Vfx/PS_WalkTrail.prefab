@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3395650938060613593}
   - component: {fileID: 7416854940279671853}
   m_Layer: 0
-  m_Name: WalkTrail
+  m_Name: PS_WalkTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

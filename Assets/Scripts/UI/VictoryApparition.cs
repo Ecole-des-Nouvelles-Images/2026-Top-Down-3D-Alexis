@@ -12,6 +12,11 @@ namespace UI
         [SerializeField] private AnimationCurve _curve;
         [SerializeField] private Selectable _button;
         [SerializeField] private GameObject _HUD;
+        [SerializeField] private float _timeToAppear = 2f;
+        [SerializeField] private GameObject _text;
+        [SerializeField] private float _elapsed = 0f;
+
+
     
         void Start()
         {
@@ -20,6 +25,21 @@ namespace UI
             _button?.Select();
             _HUD.SetActive(false);
             AudioManager.Instance.PlaySound("Victory");
+        }
+        
+        private void Update()
+        {
+
+            if (_elapsed > _timeToAppear)
+            {
+                _text.SetActive(true);
+                Time.timeScale = 0;
+            }
+
+            else
+            {
+                _elapsed += Time.deltaTime ;
+            }
         }
     }
 }
