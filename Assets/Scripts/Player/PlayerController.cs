@@ -257,12 +257,6 @@ namespace Player
             {
                 weapon.transform.localRotation = Quaternion.Euler(new Vector3(-57, 46, -130));
             }
-
-            if (weapon is LandMine)
-            {
-                weapon.AddComponent<Rigidbody>().useGravity = false;
-            }
-            
             
             else
             {
@@ -284,7 +278,7 @@ namespace Player
         
         public void GravityModification(float gravityModifier)
         {
-            rb.AddForce(Vector3.down * gravityModifier);
+            rb.AddForce(Vector3.down * (gravityModifier * Time.deltaTime));
         }
     }
 }
