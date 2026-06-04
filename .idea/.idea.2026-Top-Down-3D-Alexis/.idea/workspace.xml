@@ -4,7 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7327bd5-3bda-4924-982b-1d4a14308c9e" name="Changes" comment="" />
+    <list default="true" id="c7327bd5-3bda-4924-982b-1d4a14308c9e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.2026-Top-Down-3D-Alexis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2026-Top-Down-3D-Alexis/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/Alexis.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisTaTa/Alexis.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/AlexisTATAv2/Global Volume Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisTaTa/AlexisTATAv2/Global Volume Profile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/AudioManager.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/AudioManager.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/Footprint.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisTaTa/Footprint.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/M_Circle.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisTaTa/M_Circle.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/M_Star.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisTaTa/M_Star.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/DeathParticles.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/DeathParticles.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Footprints.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Footprints.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/M_Landmine.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/M_Landmine.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Vfx/WalkTrail.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Vfx/WalkTrail.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/AnimationEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/AnimationEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ButonTweening.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ButonTweening.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/ObjectIndicator.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/ObjectIndicator.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/ObjectIndicatorGradient.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/ObjectIndicatorGradient.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/GraffitiYouth-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/GraffitiYouth-Regular SDF.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

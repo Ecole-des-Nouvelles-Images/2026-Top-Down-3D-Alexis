@@ -105,4 +105,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a53c5d8f951403448b9c3a6bfe786a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.AutoDestroy
-  _timeToDestroy: 3
+  _timeToDestroy: 8

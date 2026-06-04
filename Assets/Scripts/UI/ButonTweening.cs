@@ -19,6 +19,7 @@ namespace UI
 
         public void OnPointerEnter(PointerEventData eventData)
         { 
+            AudioManager.Instance.PlaySound("OnSelect");
             Debug.Log("OnPointerEnter");
             transform.DOPause();
             transform.DORotate(new Vector3(0, 0, rotate), speed).SetUpdate(true);
@@ -34,6 +35,7 @@ namespace UI
         
         public void OnPointerExit(PointerEventData eventData) 
         { 
+            AudioManager.Instance.PlaySound("OnExit");
             Debug.Log("OnPointerExit"); 
             transform.DOPause(); 
             transform.DOScale(_endSize, speed).SetEase(curve).SetUpdate(true); 
@@ -42,6 +44,7 @@ namespace UI
 
         public void OnSelect(BaseEventData eventData) 
         { 
+            AudioManager.Instance.PlaySound("OnSelect");
             transform.DOPause(); 
             transform.DOScale(size, speed).SetEase(curve).SetUpdate(true); 
             transform.DORotate(new Vector3(0, 0, rotate), speed).SetUpdate(true);
@@ -50,6 +53,7 @@ namespace UI
         public void OnDeselect(BaseEventData eventData)
         
         { 
+            AudioManager.Instance.PlaySound("OnExit");
             transform.DOPause(); 
             transform.DOScale(_endSize, speed).SetEase(curve).SetUpdate(true); 
             transform.DORotate(new Vector3(0, 0, 0), speed).SetUpdate(true); 
