@@ -38,6 +38,15 @@ namespace AlexisVeVer.Scripts
                 Time.timeScale = 0;
                 _drawScreen.SetActive(true);
             }
+           
+            if (Time.timeScale >= 1)
+            {
+                Cursor.visible = false;
+            }
+            else
+            {
+                Cursor.visible = true;
+            }
         }
         
         public void AddPlayer(GameObject player)

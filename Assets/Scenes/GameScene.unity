@@ -4855,6 +4855,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4878385393882852332, guid: db4c5f541795d474ca4c13046d89628c, type: 3}
     - target: {fileID: 8787664403245628016, guid: 98ab69c34bd4b4046a9f9c68754debec, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1640996284}
+    - target: {fileID: 8787664403245628016, guid: 98ab69c34bd4b4046a9f9c68754debec, type: 3}
       propertyPath: walkVfxOffset.y
       value: 0.5
       objectReference: {fileID: 0}
@@ -5215,6 +5219,10 @@ PrefabInstance:
       propertyPath: walkVfx
       value: 
       objectReference: {fileID: 4878385393882852332, guid: db4c5f541795d474ca4c13046d89628c, type: 3}
+    - target: {fileID: 4399000053606501606, guid: 28a8dc821f0e96442a51d5bb77b5f130, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1640996284}
     - target: {fileID: 4399000053606501606, guid: 28a8dc821f0e96442a51d5bb77b5f130, type: 3}
       propertyPath: walkVfxOffset.y
       value: 0.5
