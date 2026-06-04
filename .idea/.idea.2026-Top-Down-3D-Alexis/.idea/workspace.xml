@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7327bd5-3bda-4924-982b-1d4a14308c9e" name="Changes" comment="" />
+    <list default="true" id="c7327bd5-3bda-4924-982b-1d4a14308c9e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.2026-Top-Down-3D-Alexis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2026-Top-Down-3D-Alexis/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/Alexis.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisTaTa/Alexis.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisTaTa/AudioManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisTaTa/AudioManager.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/M_Landmine.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/M_Landmine.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Terrain/TerrainFloatsAway.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Terrain/TerrainFloatsAway.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/GraffitiYouth-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/GraffitiYouth-Regular SDF.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,6 +125,7 @@
       <workItem from="1779789303278" duration="4366000" />
       <workItem from="1779871267846" duration="3271000" />
       <workItem from="1780306697578" duration="7857000" />
+      <workItem from="1780559199822" duration="3234000" />
     </task>
     <servers />
   </component>
@@ -146,19 +157,6 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/AlexisTaTa/FootstepSpawner.cs</url>
-          <line>28</line>
-          <properties documentPath="D:\IceBreakers\2026-Top-Down-3D-Alexis\Assets\AlexisTaTa\FootstepSpawner.cs" containingFunctionPresentation="Method 'RightStep'">
-            <startOffsets>
-              <option value="642" />
-            </startOffsets>
-            <endOffsets>
-              <option value="643" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
