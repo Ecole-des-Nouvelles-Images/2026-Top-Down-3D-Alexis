@@ -18,6 +18,8 @@ namespace Items
         [Header("VfxReferences"), Space(10)]
         [SerializeField] private GameObject _hitParticle;
         
+        private bool _isEquipped;
+        
         private void Awake()
         {
             _itemAttack.onHit += OnHit;
@@ -43,5 +45,13 @@ namespace Items
         }
 
         public override void AutoUse(PlayerController playerController) { }
+
+        private void Update()
+        {
+            if (_isEquipped)
+            {
+                transform.localPosition = Vector3.zero;
+            }
+        }
     }
 }
