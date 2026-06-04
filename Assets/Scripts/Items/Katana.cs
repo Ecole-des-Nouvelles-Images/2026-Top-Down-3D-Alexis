@@ -7,7 +7,7 @@ namespace Items
     {
         
         [Header("HitboxReferences"),  Space(10)]
-        [SerializeField] private GameObject _hitbox;
+        public GameObject Hitbox;
         [SerializeField] private ItemAttack _itemAttack;
         
         [Header("DamageReferences"), Space(10)]
@@ -41,7 +41,6 @@ namespace Items
 
         public override void Use(PlayerController playerController)
         {
-            _hitbox.SetActive(true);
             playerController.characterAnimator.SetTrigger("KatanaAttack");
         }
 

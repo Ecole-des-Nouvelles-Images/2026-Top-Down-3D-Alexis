@@ -7895,6 +7895,8 @@ MonoBehaviour:
   _transitionDuration: 0.5
   _nameScene: 
   _selectable: {fileID: 475320955}
+  _scale: 1
+  _rotation: 0
 --- !u!1001 &8169494071161228705
 PrefabInstance:
   m_ObjectHideFlags: 0

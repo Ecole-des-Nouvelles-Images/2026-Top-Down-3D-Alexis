@@ -91,7 +91,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &521518558322461918
 Transform:
   m_ObjectHideFlags: 0
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4288743e573768b488ccaf46332a1486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items.Katana
-  _hitbox: {fileID: 8214001289762959991}
+  Hitbox: {fileID: 8214001289762959991}
   _itemAttack: {fileID: 551672421833422671}
   _hitDamage: 6
   _hitStun: 1

@@ -1,9 +1,6 @@
-using System;
 using System.Collections.Generic;
 using Items;
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
-using System.Collections;
 
 namespace Player
 {
@@ -38,6 +35,7 @@ namespace Player
         [SerializeField] private float _recoverySpeed = 1;
      
         private GameObject _stunVfx;
+        private GameObject _katanaHitbox;
         private Animator _animator;
 
         
@@ -119,7 +117,7 @@ namespace Player
 
         public void OnFeetHitGround()
         {
-            AudioManager.Instance.PlaySound("Step1", UnityEngine.Random.Range(0.1f, 1.9f));
+            AudioManager.Instance.PlaySound("Step1", Random.Range(0.1f, 1.9f));
             GameObject vfx = Instantiate(_playerController.walkVfx,
                 _playerController.transform.position + _playerController.walkVfxOffset, 
                 Quaternion.identity);
@@ -128,13 +126,20 @@ namespace Player
         }
 
         public void OnActiveKatanaSlash()
-        { 
+        {
+            _katanaHitbox = _playerController.gameObject.GetComponentInChildren<Katana>().Hitbox;
+            _katanaHitbox.SetActive(true);
+            
             GameObject KatanaVfx = Instantiate(_katanaVfx, _rightHandHitboxVisual.transform.position, Quaternion.identity);
             KatanaVfx.transform.parent = _rightHandHitboxVisual.transform;
             KatanaVfx.transform.localRotation = Quaternion.Euler(20,-80,0);
             KatanaVfx.transform.parent = null;
         }
-        
-      
+
+        public void OnRecoveryKatanaSlash()
+        {
+            _katanaHitbox.SetActive(false);
+            _katanaHitbox = null;
+        }
     }
 }
