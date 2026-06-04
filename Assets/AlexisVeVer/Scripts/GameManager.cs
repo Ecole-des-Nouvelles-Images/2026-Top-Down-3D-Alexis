@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto;
+using Player;
 using UnityEngine;
 
 namespace AlexisVeVer.Scripts
