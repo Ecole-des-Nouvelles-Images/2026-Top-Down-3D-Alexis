@@ -43,12 +43,12 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 5
   simulationSpeed: 2
-  stopAction: 0
+  stopAction: 2
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -4925,11 +4925,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 1a89a00e02e9422488c081a6696d383e, type: 2}
     - target: {fileID: 4232925614312151877, guid: 75e694c18e01555449597488b326093b, type: 3}
       propertyPath: looping
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5027136552309213253, guid: 75e694c18e01555449597488b326093b, type: 3}
       propertyPath: looping
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5027136552309213253, guid: 75e694c18e01555449597488b326093b, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
