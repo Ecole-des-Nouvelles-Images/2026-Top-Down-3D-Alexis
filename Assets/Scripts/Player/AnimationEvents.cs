@@ -1,6 +1,9 @@
+using System;
 using System.Collections.Generic;
 using Items;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
+using System.Collections;
 
 namespace Player
 {
@@ -33,6 +36,8 @@ namespace Player
         // [SerializeField] private GameObject _katanaParticle;
      
         private Animator _animator;
+
+        
 
         private void Awake()
         {
@@ -113,6 +118,17 @@ namespace Player
                 _playerController.transform.position + _playerController.walkVfxOffset, 
                 Quaternion.identity);
             vfx.transform.forward = transform.forward;
+            
         }
+
+        public void OnActiveKatanaSlash()
+        { 
+            GameObject KatanaVfx = Instantiate(_katanaVfx, _rightHandHitboxVisual.transform.position, Quaternion.identity);
+            KatanaVfx.transform.parent = _rightHandHitboxVisual.transform;
+            KatanaVfx.transform.localRotation = Quaternion.Euler(20,-80,0);
+            KatanaVfx.transform.parent = null;
+        }
+        
+      
     }
 }

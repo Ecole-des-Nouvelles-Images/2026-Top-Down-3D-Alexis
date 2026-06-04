@@ -89,5 +89,33 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: e3086d0d72117e94d9c88f6388750396, type: 3}
     volume: 0.115
     pitch: 0
-  poolSize: 10
+  - name: IceBreak
+    clip: {fileID: 8300000, guid: 015c7f50eaa3c68469becff5b4996569, type: 3}
+    volume: 1
+    pitch: 0
+  - name: WaterSplash
+    clip: {fileID: 8300000, guid: 8f2cb29707fbd9d4a9f8b4b0b77f8f22, type: 3}
+    volume: 1
+    pitch: 0
+  - name: PinguinDeath
+    clip: {fileID: 8300000, guid: 51f268cc30c49694fb95fa8d64a04c64, type: 3}
+    volume: 1
+    pitch: 0
+  - name: PinguinSounds
+    clip: {fileID: 8300000, guid: 55514f512dc7d3a43a40b32cfb120d38, type: 3}
+    volume: 1
+    pitch: 0
+  - name: Victory
+    clip: {fileID: 8300000, guid: 84a99bb8f783ded4baf15c38ad4a645b, type: 3}
+    volume: 1
+    pitch: 0
+  - name: OnSelect
+    clip: {fileID: 8300000, guid: b8a24fbd188a5dc49a0d5c61d7ee8e9c, type: 3}
+    volume: 0.5
+    pitch: 0
+  - name: OnExit
+    clip: {fileID: 8300000, guid: 4ff90d29cb5851447b5e72e40d374ff2, type: 3}
+    volume: 0.5
+    pitch: 0
+  poolSize: 15
   _mixerGroup: {fileID: -4726506608736359942, guid: b5d952fcee964954bb42dc01a5c128db, type: 2}
