@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ccc08f77207dcb4da988e35015bb4a2, type: 3}
   m_Name: PlayerSo
   m_EditorClassIdentifier: Assembly-CSharp::PlayerOneStats
-  MaxHealth: 15
+  MaxHealth: 40
   MinStun: 0
   MaxStun: 5
   AttackDamage: 2
@@ -26,7 +26,7 @@ MonoBehaviour:
   FloatingTerrainSpeedModifier: 6
   RotationSpeed: 300
   JumpForceModifier: 5000
-  AdditionalGravity: 30
+  AdditionalGravity: 10
   MaxSpeed: 3
   SlideForceMultiplier: 3
   SlideCd: 5

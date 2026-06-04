@@ -53,6 +53,7 @@ MonoBehaviour:
   _hitKnockBack: 0
   _attackVfx: {fileID: 1752170938166243780, guid: bc8d90ee1c7e65a41b47f278b89cb5bc, type: 3}
   _decal: {fileID: 7192839355555750716, guid: f954ae62f83c3644d8a40b7e5ac14dda, type: 3}
+  _hitParticle: {fileID: 7505315398482676827, guid: f13a1cd23b85b1140af4a6829adbb2de, type: 3}
   _vfxOffset: {x: 0, y: -2, z: 0}
   _itemPickUp: {fileID: 6674613301021858599}
 --- !u!1 &1167660108616089452

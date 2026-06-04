@@ -6,7 +6,7 @@ namespace Items
     public class Katana : Weapon
     {
         
-        [Header("HitboxReferences")]
+        [Header("HitboxReferences"),  Space(10)]
         [SerializeField] private GameObject _hitbox;
         [SerializeField] private ItemAttack _itemAttack;
         
@@ -14,6 +14,9 @@ namespace Items
         [SerializeField] private float _hitDamage;
         [SerializeField] private float _hitStun;
         [SerializeField] private float _hitKnockBack;
+        
+        [Header("VfxReferences"), Space(10)]
+        [SerializeField] private GameObject _hitParticle;
         
         private void Awake()
         {
@@ -24,6 +27,7 @@ namespace Items
         {
             if (collider == null || collider.GetComponentInParent<PlayerController>() == CurrentHolder) return;
             collider.GetComponent<PlayerHealth>().GetHit(_hitDamage,  _hitStun, _hitKnockBack, gameObject);
+            Instantiate(_hitParticle, collider.transform.position, Quaternion.identity);
             Destroy(gameObject, 0.1f);
         }
         

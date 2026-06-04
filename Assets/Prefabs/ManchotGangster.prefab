@@ -251,7 +251,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.PlayerController
   playerStats: {fileID: 11400000, guid: 70d37fcc2f3e88b43b335b69c1e66c9d, type: 2}
-  handSocket: {fileID: 8052546532734115385}
+  _handSocket: {fileID: 8052546532734115385}
+  _fanHolder: {fileID: 3018118703910107572}
   canAttack: 0
   canSlide: 0
   doSlide: 0
@@ -270,7 +271,7 @@ MonoBehaviour:
   currentWeapon: {fileID: 0}
   fallSmoke: {fileID: 293048816427003929, guid: 49a31a6eb4ffa6b43a03b3e9744118f4, type: 3}
   fallSmokeOffset: {x: 0, y: 0, z: 0}
-  walkVfx: {fileID: 0}
+  walkVfx: {fileID: 4878385393882852332, guid: db4c5f541795d474ca4c13046d89628c, type: 3}
   walkVfxOffset: {x: 0, y: 0, z: 0}
   walkVfxRotation: {x: 0, y: 0, z: 0}
   stunVfx: {fileID: 6400998599525777253, guid: 1ef834d65f1d53749ae17ca7d05bce54, type: 3}
@@ -1824,6 +1825,11 @@ Cloth:
 --- !u!1 &2856607027387074124 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5913173472619646095, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+  m_PrefabInstance: {fileID: 8479005986748320451}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3018118703910107572 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6650121189879280503, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
   m_PrefabInstance: {fileID: 8479005986748320451}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &4304981167452490298 stripped

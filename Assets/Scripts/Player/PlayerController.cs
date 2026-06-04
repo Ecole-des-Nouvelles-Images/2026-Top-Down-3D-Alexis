@@ -1,7 +1,5 @@
-using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items;
 using Items;
 using Player.PlayerFSM;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
@@ -15,7 +13,8 @@ namespace Player
 
         //Character parts
         [Header("Character hitboxes")] [Space(4)] 
-        [SerializeField] private GameObject handSocket;
+        [SerializeField] private GameObject _handSocket;
+        [SerializeField] private GameObject _fanHolder;
         
         // FSM 
         private PlayerStateMachine _currentState;
@@ -139,8 +138,6 @@ namespace Player
                 currentWeapon.AutoUse(this);
             }
             
-            
-            
             // FSM Gestion
             if (_currentState != null)
             {
@@ -242,7 +239,7 @@ namespace Player
         {
             currentWeapon = weapon;
             currentWeapon.Equip(this);
-            weapon.transform.parent = handSocket.transform;
+            weapon.transform.parent = _handSocket.transform;
             weapon.transform.localPosition = Vector3.zero;
             // Changer la rotation en fonction de l'objet équipé
             if (weapon is Hammer)
@@ -259,10 +256,12 @@ namespace Player
             {
                 weapon.transform.localRotation = Quaternion.Euler(new Vector3(-57, 46, -130));
             }
-            
-            else
+
+            if (weapon is Fan)
             {
-                weapon.transform.localRotation = Quaternion.Euler(new Vector3(90, 90, 0));
+                weapon.transform.parent = _fanHolder.transform;
+                weapon.transform.localPosition = Vector3.zero;
+                weapon.transform.localRotation = Quaternion.Euler(new Vector3(0, 90, 90));
             }
         }
 

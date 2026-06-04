@@ -301,7 +301,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.PlayerController
   playerStats: {fileID: 11400000, guid: 70d37fcc2f3e88b43b335b69c1e66c9d, type: 2}
-  handSocket: {fileID: 2762064204684247092}
+  _handSocket: {fileID: 2762064204684247092}
+  _fanHolder: {fileID: 6950800604493735865}
   canAttack: 0
   canSlide: 0
   doSlide: 0
@@ -21235,6 +21236,11 @@ CapsuleCollider:
 --- !u!4 &6863309654894550278 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7133862798686783944, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+  m_PrefabInstance: {fileID: 4341414720052794574}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6950800604493735865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6650121189879280503, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
   m_PrefabInstance: {fileID: 4341414720052794574}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &7939848745966360641 stripped
