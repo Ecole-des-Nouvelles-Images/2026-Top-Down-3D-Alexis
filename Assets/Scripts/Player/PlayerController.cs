@@ -249,7 +249,7 @@ namespace Player
 
             if (weapon is Bazooka)
             {
-                weapon.transform.localRotation = Quaternion.Euler(new Vector3(-90, 0, 90));
+                weapon.transform.localRotation = Quaternion.Euler(new Vector3(-160, 90, 50));
             }
 
             if (weapon is Katana)

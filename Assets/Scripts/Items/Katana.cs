@@ -36,6 +36,7 @@ namespace Items
         public override void Equip(PlayerController playerController)
         {
             CurrentHolder = playerController;
+            _isEquipped = true;
         }
 
         public override void Use(PlayerController playerController)

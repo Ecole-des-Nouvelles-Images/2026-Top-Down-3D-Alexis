@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f1c68716b88d841aa3476fe8f1adfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
-  skinnedMeshHolder: {fileID: 8868499353858281456}
+  skinnedMeshHolder: {fileID: 3463226990122284443}
   playerStats: {fileID: 11400000, guid: 70d37fcc2f3e88b43b335b69c1e66c9d, type: 2}
   playerController: {fileID: 8787664403245628016}
   animator: {fileID: 8508358981289836853}
@@ -10102,11 +10102,11 @@ PrefabInstance:
     - target: {fileID: 5281153259605872735, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
       propertyPath: _leftHandHitbox
       value: 
-      objectReference: {fileID: 3864439296509078192}
+      objectReference: {fileID: 5261967434375115360}
     - target: {fileID: 5281153259605872735, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
       propertyPath: _rightHandHitbox
       value: 
-      objectReference: {fileID: 5261967434375115360}
+      objectReference: {fileID: 3864439296509078192}
     - target: {fileID: 5281153259605872735, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
       propertyPath: _playerController
       value: 
@@ -10240,11 +10240,6 @@ Rigidbody:
 --- !u!95 &8508358981289836853 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1920522868581629840, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
-  m_PrefabInstance: {fileID: 7833116779824774821}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8868499353858281456 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1704593876315697493, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
   m_PrefabInstance: {fileID: 7833116779824774821}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8913777624014137929
@@ -20003,6 +19998,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3943237712333306128, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4019578870944259524, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -20051,6 +20050,10 @@ PrefabInstance:
       propertyPath: _animatedRb
       value: 
       objectReference: {fileID: 7374505003324952000}
+    - target: {fileID: 5626445732241981689, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5913173472619646095, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -20193,6 +20196,11 @@ Transform:
 --- !u!1 &3007232970926974662 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5913173472619646095, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+  m_PrefabInstance: {fileID: 8913777624014137929}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3463226990122284443 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5457169901417963474, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
   m_PrefabInstance: {fileID: 8913777624014137929}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &3864439296509078192 stripped

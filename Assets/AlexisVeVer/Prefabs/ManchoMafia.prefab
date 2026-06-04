@@ -5329,10 +5329,18 @@ PrefabInstance:
       propertyPath: _animatedRb
       value: 
       objectReference: {fileID: 6106883649399247726}
+    - target: {fileID: 3943237712333306128, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5504972196679071288, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
       propertyPath: _animatedRb
       value: 
       objectReference: {fileID: 7272377578644807089}
+    - target: {fileID: 5626445732241981689, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7133862798686783944, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5503,11 +5511,11 @@ PrefabInstance:
     - target: {fileID: 5281153259605872735, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
       propertyPath: _leftHandHitbox
       value: 
-      objectReference: {fileID: 6701322044056460420}
+      objectReference: {fileID: 2330784832358646868}
     - target: {fileID: 5281153259605872735, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
       propertyPath: _rightHandHitbox
       value: 
-      objectReference: {fileID: 2330784832358646868}
+      objectReference: {fileID: 6701322044056460420}
     - target: {fileID: 5281153259605872735, guid: 5097900abd395274487cc5b5fa07fc28, type: 3}
       propertyPath: _playerController
       value: 
