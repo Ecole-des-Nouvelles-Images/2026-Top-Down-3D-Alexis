@@ -1730,7 +1730,6 @@ MonoBehaviour:
   _unArmedflash: {fileID: 1233556986442773638, guid: 64e5d2b65f7c8ad478640ff5a7336fd0, type: 3}
   _leftHandHitboxVisual: {fileID: 0}
   _rightHandHitboxVisual: {fileID: 0}
-  _katanaVfx: {fileID: 7209829753500064991, guid: a350a0891464ffd4b8ada2484cad364a, type: 3}
   _anticipationSpeed: 2
   _activeSpeed: 2
   _recoverySpeed: 1

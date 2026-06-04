@@ -115,7 +115,6 @@
       <workItem from="1779789303278" duration="4366000" />
       <workItem from="1779871267846" duration="3271000" />
       <workItem from="1780306697578" duration="7857000" />
-      <workItem from="1780559199822" duration="3234000" />
     </task>
     <servers />
   </component>
@@ -147,6 +146,19 @@
           <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/AlexisTaTa/FootstepSpawner.cs</url>
+          <line>28</line>
+          <properties documentPath="D:\IceBreakers\2026-Top-Down-3D-Alexis\Assets\AlexisTaTa\FootstepSpawner.cs" containingFunctionPresentation="Method 'RightStep'">
+            <startOffsets>
+              <option value="642" />
+            </startOffsets>
+            <endOffsets>
+              <option value="643" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
