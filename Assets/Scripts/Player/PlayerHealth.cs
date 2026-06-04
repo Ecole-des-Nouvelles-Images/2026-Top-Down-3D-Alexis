@@ -59,13 +59,14 @@ namespace Player
         
         //, Vector3 knockBack
 
-        public void GetHit(float damage, float stun, float knockBackForce)
+        public void GetHit(float damage, float stun, float knockBackForce, GameObject attacker)
         {
             AudioManager.Instance.PlaySound("Slap");
             _currentHealth -= damage;
             _currentStun += stun;
             skinnedMeshRendererMaterial.SetFloat("_HitIntensity", 0.7f);
-            rigidbody.AddForce(- transform.forward * knockBackForce, ForceMode.Impulse);
+            rigidbody.AddForce(new Vector3(transform.position.x - attacker.transform.position.x, 0,
+                transform.position.z - attacker.transform.position.z) * knockBackForce, ForceMode.Impulse);
         }
 
         private void GetStunned()
