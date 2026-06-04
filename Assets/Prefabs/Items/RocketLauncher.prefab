@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto.Items.BazookaAttack
   _rocketPrefab: {fileID: 7169906933001963534, guid: 985ca2bd3c0448e4c9c6d338e604d365, type: 3}
   _launchPoint: {fileID: 1757614727116127252}
-  _rocketLaunchingForce: 100000
+  _rocketLaunchingForce: 10000
   _itemPickUp: {fileID: 1522936661566934256}
 --- !u!1001 &4206782393855255286
 PrefabInstance:

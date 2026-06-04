@@ -27,7 +27,7 @@ namespace Items
             GameObject rocket = Instantiate(_rocketPrefab, _launchPoint.transform.position, _launchPoint.transform.rotation);
             rocket.GetComponent<RocketBehaviour>()._layerToAvoid = playerController.gameObject.layer;
             _rocketRb = rocket.GetComponent<Rigidbody>();
-            _rocketRb.AddForce(_launchPoint.transform.forward * (_rocketLaunchingForce * Time.deltaTime));
+            _rocketRb.AddForce(_launchPoint.transform.forward * (_rocketLaunchingForce * Time.deltaTime), ForceMode.Impulse);
             Destroy(gameObject);
         }
 
