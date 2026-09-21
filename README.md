@@ -63,7 +63,7 @@ This game supports **PCs. It is playable both with keyboard and mouse and gamepa
 ---
 
 ## Development
-This project is currently **[status: finished, in development, etc.]**. Future updates might include **[examples of planned features or fixes]**.  
+This project is currently **needing fixes**. Future updates might include **bufixes**.  
 
 If you encounter any bugs or have suggestions, please open an **[issue ticket](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/issues/new)**.
 
@@ -71,12 +71,10 @@ If you encounter any bugs or have suggestions, please open an **[issue ticket](h
 
 ## Special Thanks
 We would like to thank:
-- **[Name 1]**: [Contribution, e.g., mentorship, inspiration]
-- **[Name 2]**: [Contribution]
-- **[Name 3]**: [Contribution]
+- **The teachers of ENSI**: For their help through the all project.
 
 ---
 
 ## Recommendations
 For the best experience, we recommend playing with **[optimal player setup, equipment, or difficulty settings]**.  
-[Additional recommendations, such as tutorials or preparation tips.]
+It will help a lot to check the controls before playing so you dont fell lost.
