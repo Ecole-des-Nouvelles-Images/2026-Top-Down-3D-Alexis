@@ -1,7 +1,6 @@
 
 # IceBreakers
 
-[A brief and engaging tagline or description of the game]
 
 [![Unity Version](https://img.shields.io/badge/Unity-2022.3.47-blue?style=flat&logo=unity)](https://unity.com/)
 [![GitHub Release](https://img.shields.io/github/v/release/Ecole-des-Nouvelles-Images/Unity-Template)](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/releases)
@@ -31,10 +30,10 @@ The development process included **one week of production, three weeks of produc
 
 ## Team
 This game was brought to life by **[Team Name or "a group of X developers/artists"]**:
-- **[Name 1]**: [Role and contributions]
-- **[Name 2]**: [Role and contributions]
-- **[Name 3]**: [Role and contributions]
-- **[Name 4]**: [Role and contributions]
+- **[Alexis Taverdet]**: [Product Owner and Lead Artist]
+- **[Baptiste Gelly]**: [Scrum Master and Artist]
+- **[Noelia Gerouville]**: [Artist]
+- **[Alexis Verne-Rey]**: [Game Developer]
 
 ![Team](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/MetaData/team-photo.png)
 
