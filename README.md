@@ -24,29 +24,29 @@
 ## Introduction
 **IceBreakers** is a beat'em up party game developed by **Team/Organization Name** during **five weeks**.  
 This project was created as part of **the top down 3D project of second year in the Ecole des Nouvelles Images**.  
-The development process included **one week of production, three weeks of production, and a final week of postproduction**.
+The development process included **one week of preproduction, three weeks of production, and a final week of postproduction**.
 
 ---
 
 ## Team
 This game was brought to life by **[Team Name or "a group of X developers/artists"]**:
-- **[Alexis Taverdet]**: [Product Owner and Lead Artist]
-- **[Baptiste Gelly]**: [Scrum Master and Artist]
-- **[Noelia Gerouville]**: [Artist]
-- **[Alexis Verne-Rey]**: [Game Developer]
+- **Alexis Taverdet**: Product Owner and Lead Artist
+- **Baptiste Gelly**: Scrum Master and Artist
+- **Noelia Gerouville**: Artist
+- **Alexis Verne-Rey**: Game Developer
 
 ![Team](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/MetaData/team-photo.png)
 
 ---
 
 ## Gameplay
-[Describe the core gameplay loop, mechanics, and objectives of the game. Include details like number of players, perspective, and unique gameplay features.]
+In Ice Breakers, the goal is to either push the other players out of the pack ice or kill in order to be the last one standing. Various items spawn over time to help you win, but be mindfull of the pack ice that will fracture under your feet if you don't want to fall.
 
-### Phase 1: [Phase Name]
-[Describe the first phase of gameplay, objectives, and player actions.]
+### Phase 1: Fight !
+When the game is started, all four players are free to moove and fistfight to try and kill or push their oponents in the water.
 
-### Phase 2: [Phase Name]
-[Describe the second phase, any escalating challenges, and goals.]
+### Phase 2: Fight more !
+Items rapidly spawn in the map, allow players that grab them to take an advantage over the others. The ice pack also starts to fracture, making movements more risky and giving more oportunities to push other players out.
 
 ![Gameplay Screenshot](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/MetaData/gameplay-screenshot.png)
 
@@ -58,9 +58,7 @@ This game was brought to life by **[Team Name or "a group of X developers/artist
 ---
 
 ## Release
-[Provide details about the platform, availability, and installation instructions. Mention if the game is available on PC, console, or mobile, and provide links to download or install.]
-
-This game supports **[platform requirements, e.g., Android 5.1+]**.
+This game supports **PCs. It is playable both with keyboard and mouse and gamepad**.
 
 ---
 
