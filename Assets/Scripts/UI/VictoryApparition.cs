@@ -23,8 +23,6 @@ namespace UI
             transform.DORotate(new Vector3(0, 0, _rotate), _duration).SetEase(_curve).SetUpdate(true);
             transform.DOScale(_scale, _duration).SetEase(_curve).SetUpdate(true);
             _button?.Select();
-            _HUD.SetActive(false);
-            AudioManager.Instance.PlaySound("Victory");
         }
         
         private void Update()

@@ -14,7 +14,7 @@ namespace Items
         {
             if (collider.gameObject.CompareTag("Player"))
             {
-                collider.GetComponent<PlayerHealth>().GetHit(_hitDamage, _hitStun, _explosionKnockback, gameObject);
+                collider.GetComponent<PlayerHealth>().GetHit(_hitDamage, _hitStun, _explosionKnockback);
             }
         }
     }

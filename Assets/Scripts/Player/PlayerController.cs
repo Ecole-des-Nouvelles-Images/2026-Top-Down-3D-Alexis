@@ -157,7 +157,6 @@ namespace Player
             // Death gestion
             if (isDead)
             {
-                AudioManager.Instance.PlaySound("PinguinDeath");
                 Instantiate(deathVfx, transform.position + deathVfxOffset, Quaternion.Euler(-90, 0, 0));
                 if (AlexisVeVer.Scripts.GameManager.Instance != null)
                 {
@@ -169,7 +168,6 @@ namespace Player
 
             if (isDrowned)
             {
-                AudioManager.Instance.PlaySound("WaterSplash");
                 Instantiate(drownedVfx, transform.position + drownedVfxOffset, Quaternion.Euler(-90, 0, 0));
                 if (AlexisVeVer.Scripts.GameManager.Instance != null)
                 {
@@ -279,7 +277,7 @@ namespace Player
         
         public void GravityModification(float gravityModifier)
         {
-            rb.AddForce(Vector3.down * (gravityModifier * Time.deltaTime));
+            rb.AddForce(Vector3.down * gravityModifier);
         }
     }
 }

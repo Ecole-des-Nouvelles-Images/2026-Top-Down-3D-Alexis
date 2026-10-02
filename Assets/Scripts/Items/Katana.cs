@@ -1,3 +1,4 @@
+using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto;
 using Player;
 using UnityEngine;
 
@@ -42,6 +43,7 @@ namespace Items
         public override void Use(PlayerController playerController)
         {
             playerController.characterAnimator.SetTrigger("KatanaAttack");
+            //Instantiate(_hitParticle, transform.position, Quaternion.identity);
         }
 
         public override void AutoUse(PlayerController playerController) { }
