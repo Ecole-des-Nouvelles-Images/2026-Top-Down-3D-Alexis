@@ -7,7 +7,8 @@
 [![License](https://img.shields.io/github/license/Ecole-des-Nouvelles-Images/Unity-Template)](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/LICENSE)
 [![Repo Size](https://img.shields.io/github/repo-size/Ecole-des-Nouvelles-Images/Unity-Template?color=lightgrey)](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template)
 
-![Main Banner](![Uploading Banniere_Icebreakers.png…]())
+<img width="5300" height="2012" alt="Banniere_Icebreakers" src="https://github.com/user-attachments/assets/868c1bc4-3985-4cb0-a971-ba72007a4e06" />
+
 
 ## Table of Contents
 1. [Introduction](#introduction)
