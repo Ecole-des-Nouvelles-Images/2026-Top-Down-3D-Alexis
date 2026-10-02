@@ -1,3 +1,4 @@
+using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto;
 using Player;
 using UnityEngine;
 
@@ -28,7 +29,7 @@ namespace Items
         private void OnHit(object itemDamage, Collider collider)
         {
             if (collider == null || collider.GetComponentInParent<PlayerController>() == CurrentHolder) return;
-            collider.GetComponent<PlayerHealth>().GetHit(_hitDamage,  _hitStun, _hitKnockBack, gameObject);
+            collider.GetComponent<PlayerHealth>().GetHit(_hitDamage,  _hitStun, _hitKnockBack);
             Instantiate(_hitParticle, collider.transform.position, Quaternion.identity);
             Destroy(gameObject, 0.1f);
         }
@@ -42,6 +43,7 @@ namespace Items
         public override void Use(PlayerController playerController)
         {
             playerController.characterAnimator.SetTrigger("KatanaAttack");
+            //Instantiate(_hitParticle, transform.position, Quaternion.identity);
         }
 
         public override void AutoUse(PlayerController playerController) { }
