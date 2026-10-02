@@ -7,7 +7,8 @@
 [![License](https://img.shields.io/github/license/Ecole-des-Nouvelles-Images/Unity-Template)](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/LICENSE)
 [![Repo Size](https://img.shields.io/github/repo-size/Ecole-des-Nouvelles-Images/Unity-Template?color=lightgrey)](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template)
 
-![Main Banner](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/MetaData/main-banner.png)
+<img width="5300" height="2012" alt="Banniere_Icebreakers" src="https://github.com/user-attachments/assets/868c1bc4-3985-4cb0-a971-ba72007a4e06" />
+
 
 ## Table of Contents
 1. [Introduction](#introduction)
@@ -35,8 +36,6 @@ This game was brought to life by **[Team Name or "a group of X developers/artist
 - **Noelia Gerouville**: Artist
 - **Alexis Verne-Rey**: Game Developer
 
-![Team](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/MetaData/team-photo.png)
-
 ---
 
 ## Gameplay
@@ -48,7 +47,7 @@ When the game is started, all four players are free to moove and fistfight to tr
 ### Phase 2: Fight more !
 Items rapidly spawn in the map, allow players that grab them to take an advantage over the others. The ice pack also starts to fracture, making movements more risky and giving more oportunities to push other players out.
 
-![Gameplay Screenshot](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/MetaData/gameplay-screenshot.png)
+<img width="1780" height="997" alt="Capture d&#39;écran 2026-10-02 114533" src="https://github.com/user-attachments/assets/24e19592-d686-4603-9eee-a195803f47cd" />
 
 ---
 
