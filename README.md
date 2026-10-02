@@ -49,7 +49,7 @@ When the game is started, all four players are free to moove and fistfight to tr
 ### Phase 2: Fight more !
 Items rapidly spawn in the map, allow players that grab them to take an advantage over the others. The ice pack also starts to fracture, making movements more risky and giving more oportunities to push other players out.
 
-![Gameplay Screenshot](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/MetaData/gameplay-screenshot.png)
+![Gameplay Screenshot](<img width="1780" height="997" alt="Capture d&#39;écran 2026-10-02 114533" src="https://github.com/user-attachments/assets/24e19592-d686-4603-9eee-a195803f47cd" />)
 
 ---
 
