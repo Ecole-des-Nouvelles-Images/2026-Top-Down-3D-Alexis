@@ -29,7 +29,7 @@ namespace Items
         private void OnHit(object itemDamage, Collider collider)
         {
             if (collider == null || collider.GetComponentInParent<PlayerController>() == CurrentHolder) return;
-            collider.GetComponent<PlayerHealth>().GetHit(_hitDamage,  _hitStun, _hitKnockBack, gameObject);
+            collider.GetComponent<PlayerHealth>().GetHit(_hitDamage,  _hitStun, _hitKnockBack);
             Instantiate(_hitParticle, collider.transform.position, Quaternion.identity);
             Destroy(gameObject, 0.1f);
         }
