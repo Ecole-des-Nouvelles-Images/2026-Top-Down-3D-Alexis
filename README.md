@@ -36,8 +36,6 @@ This game was brought to life by **[Team Name or "a group of X developers/artist
 - **Noelia Gerouville**: Artist
 - **Alexis Verne-Rey**: Game Developer
 
-![Team](https://github.com/Ecole-des-Nouvelles-Images/Unity-Template/blob/main/MetaData/team-photo.png)
-
 ---
 
 ## Gameplay
