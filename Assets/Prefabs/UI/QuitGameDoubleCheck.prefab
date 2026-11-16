@@ -228,12 +228,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnRight: {fileID: 1434412943266618254}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 0.5686275, g: 0.5686275, b: 0.5686275, a: 1}
@@ -283,7 +283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76ee2db12324bfb43919e7e7a3b87e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Baptiste.script.Tweening_bouton
-  _target: {fileID: 0}
   size: 1.2
   speed: 0.3
   curve:
@@ -311,9 +310,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   rotate: 2
-  pos: 1.2
-  rotate_shake: 5
   _endSize: 1
+  audioClips: []
 --- !u!1 &1624046324464694748
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4f97b405d5483a40a41835a54124d2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Baptiste.script.Transition
-  speed: 4
+  speed: 0.5
   curve:
     serializedVersion: 2
     m_Curve:
@@ -455,6 +453,8 @@ MonoBehaviour:
   _transitionDuration: 0.5
   _nameScene: 
   _selectable: {fileID: 7123704450117095254}
+  _scale: 1
+  _rotation: 0
 --- !u!1 &2112754982773693557
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,11 +685,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnLeft: {fileID: 7123704450117095254}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
@@ -776,7 +776,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76ee2db12324bfb43919e7e7a3b87e83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Baptiste.script.Tweening_bouton
-  _target: {fileID: 0}
   size: 1.2
   speed: 0.3
   curve:
@@ -804,9 +803,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   rotate: 2
-  pos: 1.2
-  rotate_shake: 5
   _endSize: 1
+  audioClips: []
 --- !u!1 &4664528775161492167
 GameObject:
   m_ObjectHideFlags: 0

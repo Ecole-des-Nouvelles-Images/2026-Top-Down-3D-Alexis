@@ -19,7 +19,7 @@ public class AudioManager : MonoBehaviour
     
     public void SwitchMusicValue(float value)
     {
-        audioMixerGroup.SetFloat("Music", Mathf.Log10(value) * 20);
+        audioMixerGroup.SetFloat("Musique", Mathf.Log10(value) * 20);
     }
     
     public void SwitchSfxValue(float value)

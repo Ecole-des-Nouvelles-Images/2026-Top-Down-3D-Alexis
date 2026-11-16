@@ -13,15 +13,14 @@
     <list default="true" id="c7327bd5-3bda-4924-982b-1d4a14308c9e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2026-Top-Down-3D-Alexis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2026-Top-Down-3D-Alexis/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AudioMix.mixer" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AudioMix.mixer" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Crédits.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Crédits.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Baptiste/Prefab/ui/Affichage_Menu_UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Baptiste/Prefab/ui/Affichage_Menu_UI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Noelia/testvideo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Noelia/testvideo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/Options.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/Options.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/QuitGameDoubleCheck.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/QuitGameDoubleCheck.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AudioManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/AnimationEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/AnimationEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerFSM/AttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerFSM/AttackState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerFSM/JumpState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerFSM/JumpState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ButonTweening.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ButonTweening.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/InGameUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/InGameUI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/GraffitiYouth-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/GraffitiYouth-Regular SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +152,8 @@
       <workItem from="1780306697578" duration="7857000" />
       <workItem from="1780559199822" duration="3234000" />
       <workItem from="1780568462415" duration="1840000" />
-      <workItem from="1794825373725" duration="6141000" />
+      <workItem from="1794825373725" duration="6366000" />
+      <workItem from="1794838885128" duration="1504000" />
     </task>
     <servers />
   </component>

@@ -11,12 +11,11 @@ namespace UI
 
         public void ResumeGame()
         {
-            Debug.Log("ResumeGame");
             _pauseMenu.SetActive(false);
             Time.timeScale = 1;
         }
 
-        public void replayFromVictory()
+        public void ReplayFromVictory()
         {
             Time.timeScale = 1;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

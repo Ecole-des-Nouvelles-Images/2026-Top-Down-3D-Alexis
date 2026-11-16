@@ -7,8 +7,6 @@ public class VideoLoader : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Début préparation : " + Time.realtimeSinceStartup);
-
         videoPlayer.prepareCompleted += OnPrepared;
         videoPlayer.Prepare();
     }

@@ -9,7 +9,7 @@ namespace Player
     public class PlayerController : MonoBehaviour
     {
         //ScriptableObject Reference
-        [FormerlySerializedAs("PlayerStats")] public PlayerStats playerStats;
+        public PlayerStats playerStats;
 
         //Character parts
         [Header("Character hitboxes")] [Space(4)] 
@@ -221,16 +221,16 @@ namespace Player
 
         private void OnPauseGame()
         {
-            if (pauseMenu.activeSelf)
-            {
-                Time.timeScale = 1;
-                pauseMenu.SetActive(false);
-            }
-            else
-            {
-                Time.timeScale = 0;
-                pauseMenu.SetActive(true);
-            }
+            // if (pauseMenu.activeSelf)
+            // {
+            //     Time.timeScale = 1;
+            //     pauseMenu.SetActive(false);
+            // }
+            // else
+            // {
+            Time.timeScale = 0;
+            pauseMenu.SetActive(true);
+            //}
         }
 
         public void Equip(Weapon weapon)
