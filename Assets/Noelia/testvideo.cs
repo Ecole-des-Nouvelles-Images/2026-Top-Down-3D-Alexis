@@ -12,17 +12,9 @@ public class VideoLoader : MonoBehaviour
         videoPlayer.prepareCompleted += OnPrepared;
         videoPlayer.Prepare();
     }
-    void Update()
-    {
-        if (videoPlayer.isPlaying)
-        {
-            Debug.Log("Playing frame : " + videoPlayer.frame);
-        }
-    }
 
     void OnPrepared(VideoPlayer vp)
     {
-        Debug.Log("Préparée après : " + Time.realtimeSinceStartup + " secondes");
         vp.Pause();
         vp.frame = 1;
         vp.Play();
