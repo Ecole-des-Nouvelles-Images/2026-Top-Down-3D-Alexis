@@ -47,7 +47,7 @@ namespace Player
 
         public void OnStunAnimationStart()
         {
-            AudioManager.Instance.PlaySound("Stun");
+            //AudioManager.Instance.PlaySound("Stun");
             _stunVfx = Instantiate(_playerController.stunVfx, _playerController.transform.position + _playerController.stunVfxOffset, Quaternion.Euler(90, 0, 0));
             _stunVfx.transform.parent = _playerController.transform;
         }
@@ -117,7 +117,7 @@ namespace Player
 
         public void OnFeetHitGround()
         {
-            AudioManager.Instance.PlaySound("Step1", Random.Range(0.1f, 1.9f));
+            //AudioManager.Instance.PlaySound("Step1", Random.Range(0.1f, 1.9f));
             GameObject vfx = Instantiate(_playerController.walkVfx,
                 _playerController.transform.position + _playerController.walkVfxOffset, 
                 Quaternion.identity);

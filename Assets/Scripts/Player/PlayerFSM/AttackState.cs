@@ -4,7 +4,7 @@ namespace Player.PlayerFSM
     {
         public override void OnStateEnter(PlayerController playerController)
         {
-            AudioManager.Instance.PlaySound("Whoosh");
+            //AudioManager.Instance.PlaySound("Whoosh");
             if (playerController.doAttackLeftHand)
             {
                 playerController.characterAnimator.SetTrigger("AttackLeft");

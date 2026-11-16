@@ -1,99 +1,29 @@
 using UnityEngine;
 using UnityEngine.Audio;
 using System.Collections.Generic;
+using UnityEngine.Serialization;
+
 public class AudioManager : MonoBehaviour
 {
-    [System.Serializable]
-    public class SoundEffect
-    {
-        public string name;
-        
-        public AudioClip clip;
+    [SerializeField] private AudioMixer audioMixerGroup;
 
-        [Range(0f, 1f)] public float volume = 1f;
-        
-        [Range(0f, 1f)] public float pitch = 1f;
-        
+    public void SwitchMasterValue(float value)
+    {
+        audioMixerGroup.SetFloat("Master", Mathf.Log10(value) * 20);
     }
     
-    [SerializeField] private SoundEffect[] soundEffects;
-    [SerializeField] private int poolSize = 5;
-    [SerializeField] private AudioMixerGroup _mixerGroup;
-    
-    private List<AudioSource> audioSources = new List<AudioSource>();
-    
-    private Dictionary<string, AudioClip> soundDictionary = new Dictionary<string, AudioClip>();
-    
-    private float globalSfxVolume = 1f;
-    
-    public static AudioManager Instance { get; private set; }
-
-    private void Awake()
+    public void SwitchAmbianceValue(float value)
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-        
-        for (int i = 0; i < poolSize; i++)
-        {
-            AudioSource source = gameObject.AddComponent<AudioSource>();
-            source.outputAudioMixerGroup = _mixerGroup;
-            audioSources.Add(source);
-            
-        }
-
-        foreach (SoundEffect sound in soundEffects)
-        {
-            if (sound.clip != null)
-            {
-                soundDictionary[sound.name] = sound.clip;
-            }
-        }
+        audioMixerGroup.SetFloat("Ambiance", Mathf.Log10(value) * 20);
     }
-
-    private AudioSource GetAvailableAudioSource()
+    
+    public void SwitchMusicValue(float value)
     {
-        foreach (AudioSource source in audioSources)
-        {
-            if (!source.isPlaying)
-            {
-                return source;
-            }
-        }
-        return audioSources.Count > 0 ? audioSources[0] : null;
+        audioMixerGroup.SetFloat("Music", Mathf.Log10(value) * 20);
     }
-
-    public void PlaySound(string soundName, float pitchMultiplier = 1f)
+    
+    public void SwitchSfxValue(float value)
     {
-        if (!soundDictionary.TryGetValue(soundName, out AudioClip clip))
-        {
-            Debug.LogWarning($"No audio sound found for {soundName}");
-            return;
-        }
-        
-        AudioSource source = GetAvailableAudioSource();
-        if (source != null)
-        {
-            float soundVolume = 1f;
-            foreach (SoundEffect sound in soundEffects)
-            {
-                if (sound.name == soundName)
-                {
-                    soundVolume = sound.volume;
-                    break;
-                }
-            }
-            source.clip = clip;
-            source.pitch = 1f * pitchMultiplier;
-            source.volume = soundVolume;
-            source.Play();
-        }
+        audioMixerGroup.SetFloat("SFX", Mathf.Log10(value) * 20);
     }
 }

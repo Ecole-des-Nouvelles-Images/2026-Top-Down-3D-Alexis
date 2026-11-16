@@ -61,7 +61,7 @@ namespace Player
 
         public void GetHit(float damage, float stun, float knockBackForce)
         {
-            AudioManager.Instance.PlaySound("Slap");
+            //AudioManager.Instance.PlaySound("Slap");
             _currentHealth -= damage;
             _currentStun += stun;
             skinnedMeshRendererMaterial.SetFloat("_HitIntensity", 0.7f);
