@@ -6,8 +6,9 @@ namespace Player
 {
     public class AnimationEvents : MonoBehaviour
     {
-        [Header("PlayerController")]
-        [SerializeField] private PlayerController _playerController;
+        [Header("SyncPlayerVisual")] 
+        [SerializeField] private SyncPlayerVisual _syncPlayerVisual;
+        private PlayerController _playerController;
         
         [Header("Sounds")]
         [SerializeField] private List<AudioClip> _sounds;
@@ -43,6 +44,11 @@ namespace Player
         private void Awake()
         {
             _animator = GetComponent<Animator>();
+        }
+
+        private void Start()
+        {
+            _playerController = _syncPlayerVisual.playerController;
         }
 
         public void OnStunAnimationStart()

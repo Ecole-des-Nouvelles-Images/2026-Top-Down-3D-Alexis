@@ -6012,6 +6012,7 @@ MonoBehaviour:
   _colliderThatIgnoresCollision: {fileID: 1128768068139709766}
   _collidersToIgnore:
   - {fileID: 4370037310464397566}
+  playerController: {fileID: 0}
 --- !u!1 &1902924328060680288 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -80325309611272637, guid: 857bddeaffa52ea4ba03e29d271e5d15, type: 3}
@@ -6198,6 +6199,7 @@ MonoBehaviour:
   _colliderThatIgnoresCollision: {fileID: 8408479561724350613}
   _collidersToIgnore:
   - {fileID: 4329475346772670709}
+  playerController: {fileID: 0}
 --- !u!1 &2981930060511564288 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5614821608158739491, guid: 857bddeaffa52ea4ba03e29d271e5d15, type: 3}
@@ -6563,6 +6565,7 @@ MonoBehaviour:
   - {fileID: 1317518533790421197}
   - {fileID: 8408479561724350613}
   - {fileID: 1128768068139709766}
+  playerController: {fileID: 0}
 --- !u!4 &4150861255535670480 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -2517238105970943245, guid: 857bddeaffa52ea4ba03e29d271e5d15, type: 3}
@@ -7143,7 +7146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b16920132fa0d2840bf1269704e68aed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlexisVeVer.Scripts.ProtoScripts.Player.AnimationEvents
-  _playerController: {fileID: 0}
+  _syncPlayerVisual: {fileID: 0}
   _sounds: []
   _playerHealth: {fileID: 0}
   _leftHandHitbox: {fileID: 0}

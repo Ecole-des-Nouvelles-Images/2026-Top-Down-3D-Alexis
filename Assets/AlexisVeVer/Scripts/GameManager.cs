@@ -27,15 +27,15 @@ namespace AlexisVeVer.Scripts
 
         void Update()
         {
-            if (players.Count == 1)
-            {
-                _victoryScreen.SetActive(true);
-            }
-
-            if (players.Count < 1)
-            {
-                _drawScreen.SetActive(true);
-            }
+            // if (players.Count == 1)
+            // {
+            //     _victoryScreen.SetActive(true);
+            // }
+            //
+            // if (players.Count < 1)
+            // {
+            //     _drawScreen.SetActive(true);
+            // }
            
             if (Time.timeScale >= 1)
             {

@@ -8,6 +8,10 @@ namespace Player
 {
     public class PlayerController : MonoBehaviour
     {
+        //Synchronisation player / visual
+        [SerializeField] private SyncPlayerVisual[] _syncPlayerVisual;
+        private SyncPlayerVisual _addedVisual;
+        
         //ScriptableObject Reference
         public PlayerStats playerStats;
 
@@ -40,7 +44,8 @@ namespace Player
 
         //Components
         [Header("Animator")] [Space(4)] 
-        [SerializeField] private PlayerHealth playerHealth;
+        [SerializeField] private PlayerHealth playerHealth; 
+        private PlayerInput _playerInput;
         public Animator characterAnimator;
 
         [HideInInspector] public Weapon currentWeapon;
@@ -75,6 +80,10 @@ namespace Player
         //Syncing of physics objects
         SyncPhysicsObject[] _syncPhysicsObjects;
 
+        public SyncPlayerVisual PlayerVisual {
+            get => _addedVisual;
+        }
+        
         public bool IsGrounded {
             get =>isGrounded;
 
@@ -87,16 +96,17 @@ namespace Player
         
         private void Awake()
         {
-            _syncPhysicsObjects = GetComponentsInChildren<SyncPhysicsObject>();
             rb = GetComponent<Rigidbody>();
             _mainJoint = GetComponent<ConfigurableJoint>();
-
+            
             //SO reset
             playerStats.ItemPickedUp = false;
         }
 
         private void Start()
         {
+            _playerInput = GetComponent<PlayerInput>();
+            SetUpPlayerVisual(_syncPlayerVisual[_playerInput.playerIndex]);
             if (AlexisVeVer.Scripts.GameManager.Instance != null)
             {
                 AlexisVeVer.Scripts.GameManager.Instance.AddPlayer(gameObject);
@@ -178,6 +188,16 @@ namespace Player
             }
         }
 
+        private void SetUpPlayerVisual(SyncPlayerVisual PrfVisual)
+        {
+            _addedVisual = Instantiate(PrfVisual, transform);
+            _handSocket = _addedVisual.handSocket;
+            characterAnimator = _addedVisual.characterAnimator;
+            _syncPhysicsObjects = _addedVisual.syncPhysicsObjects;
+            _addedVisual.visualParentJoint.connectedBody = rb;
+            _addedVisual.playerController = this;
+        }
+        
         private void FixedUpdate()
         {
             for (int i = 0; i < _syncPhysicsObjects.Length; i++)

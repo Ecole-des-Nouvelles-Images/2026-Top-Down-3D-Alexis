@@ -4,7 +4,7 @@ namespace Player
 {
     public class PlayerHealth : MonoBehaviour
     {
-        [SerializeField] private GameObject skinnedMeshHolder;
+        //[SerializeField] private Renderer skinnedMeshHolder;
         
         [SerializeField] private PlayerStats playerStats;
         [SerializeField] private PlayerController playerController;
@@ -30,10 +30,14 @@ namespace Player
         {
             _currentHealth = playerStats.MaxHealth;
             _currentStun = playerStats.MinStun;
-            skinnedMeshRendererMaterial = skinnedMeshHolder.GetComponent<Renderer>().materials[1];
             rigidbody = GetComponent<Rigidbody>();
         }
 
+        private void Start()
+        {
+            skinnedMeshRendererMaterial = playerController.PlayerVisual.skinnedMeshHolder.materials[1];
+        }
+        
         private void Update()
         {
             if (_currentStun >= playerStats.MaxStun)
