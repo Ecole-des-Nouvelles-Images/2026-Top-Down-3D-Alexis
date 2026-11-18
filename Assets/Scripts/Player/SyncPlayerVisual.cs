@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 namespace Player
 {
@@ -21,6 +22,9 @@ namespace Player
 
         [Header("AnimationEvent"), Space(5)] 
         public PlayerController playerController;
+
+        [Header("Sprite"), Space(5)] 
+        public Sprite sprite;
         
         [ContextMenu("GetSyncPhysicObjects")]
         public void GetSyncPhysicObjects()

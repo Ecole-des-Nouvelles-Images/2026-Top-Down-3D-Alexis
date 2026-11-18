@@ -1,14 +1,20 @@
+using System;
 using UnityEngine;
 
 namespace Player
 {
     public class PlayerHealth : MonoBehaviour
     {
+        public event EventHandler<PlayerController> OnDeath;
+        
+        public event EventHandler<float> OnHpChanged;
+        
         //[SerializeField] private Renderer skinnedMeshHolder;
         
         [SerializeField] private PlayerStats playerStats;
         [SerializeField] private PlayerController playerController;
         [SerializeField] private Animator animator;
+        [SerializeField] private PlayerStats _playerStats;
         private Rigidbody rigidbody;
         private Material skinnedMeshRendererMaterial;
         
@@ -66,6 +72,8 @@ namespace Player
         public void GetHit(float damage, float stun, float knockBackForce)
         {
             //AudioManager.Instance.PlaySound("Slap");
+             Debug.Log(" Curren hp = "+ CurrentHealth + " and Max HP" + _playerStats);
+            OnHpChanged?.Invoke(this, CurrentHealth / _playerStats.MaxHealth);
             _currentHealth -= damage;
             _currentStun += stun;
             skinnedMeshRendererMaterial.SetFloat("_HitIntensity", 0.7f);
@@ -79,6 +87,7 @@ namespace Player
 
         public void Dies()
         {
+            OnDeath?.Invoke(this, playerController);
             playerController.isDead = true;
             _currentHealth = 0;
             AlexisVeVer.Scripts.GameManager.Instance.PlayerDead(gameObject);

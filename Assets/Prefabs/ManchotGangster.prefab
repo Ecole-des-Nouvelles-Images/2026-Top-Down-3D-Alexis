@@ -334,6 +334,7 @@ MonoBehaviour:
   playerStats: {fileID: 11400000, guid: 70d37fcc2f3e88b43b335b69c1e66c9d, type: 2}
   playerController: {fileID: 5887720336453257097}
   animator: {fileID: 0}
+  _playerStats: {fileID: 11400000, guid: 70d37fcc2f3e88b43b335b69c1e66c9d, type: 2}
   animationTime: 4
   _flashTime: 0.01
 --- !u!1 &6061821774042587212

@@ -12,18 +12,23 @@
   <component name="ChangeListManager">
     <list default="true" id="c7327bd5-3bda-4924-982b-1d4a14308c9e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2026-Top-Down-3D-Alexis/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2026-Top-Down-3D-Alexis/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Prefabs/ManchoMafia.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Prefabs/ManchoMafia.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scenes/PrototypingScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Scenes/PrototypingScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/PlayerSpawnPosition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AlexisVeVer/Scripts/PlayerSpawnPosition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Noelia/UI/Icone final rouge.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Noelia/UI/Icone final rouge.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Noelia/UI/icone finale rose.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Noelia/UI/icone finale rose.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ManchotGangster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ManchotGangster.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ManchotMafia.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ManchotMafia.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ManchotRacaille.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ManchotRacaille.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/ManchotRappeur.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/ManchotRappeur.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NS_Pinguin_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/NS_Pinguin_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/AnimationEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/AnimationEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/IgnoreCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/IgnoreCollision.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/HUD.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/HUD.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/VisuelManchotGangster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/VisuelManchotGangster.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/VisuelManchotMafia.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/VisuelManchotMafia.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/VisuelManchotRacaille.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/VisuelManchotRacaille.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/VisuelManchotRappeur.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/VisuelManchotRappeur.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/SyncPlayerVisual.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/SyncPlayerVisual.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/GraffitiYouth-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/GraffitiYouth-Regular SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +45,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/AlexisVeVer/Animations/Animations_finales_reprises_pour_event/NS_Pinguin01_Skeleton_AttackLeft.anim" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Noelia/testvideo.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/SyncPlayerVisual.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/PlayerPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@3b809f23691d/Runtime/Passes/ScriptableRenderPass.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@3b809f23691d/Runtime/UniversalRenderPipeline.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@3b809f23691d/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
@@ -160,6 +166,7 @@
       <workItem from="1794825373725" duration="6366000" />
       <workItem from="1794838885128" duration="2213000" />
       <workItem from="1794904752525" duration="8337000" />
+      <workItem from="1794991980431" duration="10737000" />
     </task>
     <servers />
   </component>

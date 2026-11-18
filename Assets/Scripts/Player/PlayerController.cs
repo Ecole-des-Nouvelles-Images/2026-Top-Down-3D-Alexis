@@ -1,3 +1,5 @@
+using System;
+using AlexisVeVer.Scripts;
 using Items;
 using Player.PlayerFSM;
 using UnityEngine;
@@ -8,6 +10,11 @@ namespace Player
 {
     public class PlayerController : MonoBehaviour
     {
+        public event EventHandler OnDashUsed;
+        public event EventHandler<float> OnDashCd;
+        public event EventHandler OnDashReady;
+        public event EventHandler OnWeaponEquiped;
+        
         //Synchronisation player / visual
         [SerializeField] private SyncPlayerVisual[] _syncPlayerVisual;
         private SyncPlayerVisual _addedVisual;
@@ -44,7 +51,7 @@ namespace Player
 
         //Components
         [Header("Animator")] [Space(4)] 
-        [SerializeField] private PlayerHealth playerHealth; 
+        public PlayerHealth playerHealth; 
         private PlayerInput _playerInput;
         public Animator characterAnimator;
 
@@ -91,6 +98,8 @@ namespace Player
         }
         
         public PlayerStateMachine CurrentState => _currentState;
+
+        public Sprite CharacterSprite => _addedVisual.sprite;
         
         public bool WeaponEquipped => currentWeapon != null;
         
@@ -107,9 +116,9 @@ namespace Player
         {
             _playerInput = GetComponent<PlayerInput>();
             SetUpPlayerVisual(_syncPlayerVisual[_playerInput.playerIndex]);
-            if (AlexisVeVer.Scripts.GameManager.Instance != null)
+            if (GameManager.Instance != null)
             {
-                AlexisVeVer.Scripts.GameManager.Instance.AddPlayer(gameObject);
+                GameManager.Instance.AddPlayer(this);
             }
             _currentState = new IdleState();
             _currentState.OnStateEnter(this);
@@ -137,9 +146,11 @@ namespace Player
             if (!canSlide)
             {
                 _timeSinceSlideInCd += Time.deltaTime;
+                OnDashCd?.Invoke(this, _timeSinceSlideInCd/playerStats.SlideCd);
                 if (_timeSinceSlideInCd >= playerStats.SlideCd)
                 {
                     canSlide = true;
+                    OnDashReady?.Invoke(this, EventArgs.Empty);
                     _timeSinceSlideInCd = 0;
                 }
             }
@@ -168,9 +179,9 @@ namespace Player
             if (isDead)
             {
                 Instantiate(deathVfx, transform.position + deathVfxOffset, Quaternion.Euler(-90, 0, 0));
-                if (AlexisVeVer.Scripts.GameManager.Instance != null)
+                if (GameManager.Instance != null)
                 {
-                    AlexisVeVer.Scripts.GameManager.Instance.RemovePlayer(gameObject);
+                    GameManager.Instance.RemovePlayer(this);
                 }
                 playerHealth.Dies();
                 Destroy(gameObject);
@@ -179,9 +190,9 @@ namespace Player
             if (isDrowned)
             {
                 Instantiate(drownedVfx, transform.position + drownedVfxOffset, Quaternion.Euler(-90, 0, 0));
-                if (AlexisVeVer.Scripts.GameManager.Instance != null)
+                if (GameManager.Instance != null)
                 {
-                    AlexisVeVer.Scripts.GameManager.Instance.RemovePlayer(gameObject);
+                    GameManager.Instance.RemovePlayer(this);
                 }
                 playerHealth.Dies();
                 Destroy(gameObject);
@@ -235,6 +246,7 @@ namespace Player
         {
             if (canSlide)
             {
+                OnDashUsed?.Invoke(this, EventArgs.Empty);
                 doSlide = true;
             }
         }
@@ -263,16 +275,19 @@ namespace Player
             if (weapon is Hammer)
             {
                 weapon.transform.localRotation = Quaternion.Euler(new Vector3(-90, 0, -90));
+                OnWeaponEquiped?.Invoke(this,  EventArgs.Empty);
             }
 
             if (weapon is Bazooka)
             {
                 weapon.transform.localRotation = Quaternion.Euler(new Vector3(-160, 90, 50));
+                OnWeaponEquiped?.Invoke(this,  EventArgs.Empty);
             }
 
             if (weapon is Katana)
             {
                 weapon.transform.localRotation = Quaternion.Euler(new Vector3(-57, 46, -130));
+                OnWeaponEquiped?.Invoke(this,  EventArgs.Empty);
             }
 
             if (weapon is Fan)
@@ -280,6 +295,7 @@ namespace Player
                 weapon.transform.parent = _fanHolder.transform;
                 weapon.transform.localPosition = Vector3.zero;
                 weapon.transform.localRotation = Quaternion.Euler(new Vector3(0, 90, 90));
+                OnWeaponEquiped?.Invoke(this,  EventArgs.Empty);
             }
         }
 

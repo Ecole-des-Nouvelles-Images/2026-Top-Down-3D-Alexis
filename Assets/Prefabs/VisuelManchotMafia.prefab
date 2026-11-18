@@ -71,6 +71,7 @@ MonoBehaviour:
   - {fileID: 1579953885165914271}
   skinnedMeshHolder: {fileID: 4372811493882738885}
   playerController: {fileID: 0}
+  sprite: {fileID: 21300000, guid: 5ad8452c94e0ff74f930928431573a6a, type: 3}
 --- !u!1001 &821679664067798273
 PrefabInstance:
   m_ObjectHideFlags: 0

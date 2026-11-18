@@ -71,6 +71,7 @@ MonoBehaviour:
   - {fileID: 1003564581462058333}
   skinnedMeshHolder: {fileID: 8423047716122300843}
   playerController: {fileID: 0}
+  sprite: {fileID: -1736154604, guid: 9dc8166b164531548881b2d4a9ecef30, type: 3}
 --- !u!1001 &4840460212994231407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10814,6 +10815,10 @@ PrefabInstance:
     - target: {fileID: 5138973457744298266, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5192646437805283257, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5192646437805283257, guid: 4bd06eac70e700a4f85f740f1e321e52, type: 3}
       propertyPath: m_Coefficients.Array.size
