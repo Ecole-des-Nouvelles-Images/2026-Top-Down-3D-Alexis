@@ -116,9 +116,9 @@ namespace Player
         {
             _playerInput = GetComponent<PlayerInput>();
             SetUpPlayerVisual(_syncPlayerVisual[_playerInput.playerIndex]);
-            if (GameManager.Instance != null)
-            {
+            if (GameManager.Instance != null) {
                 GameManager.Instance.AddPlayer(this);
+                rb.position = transform.position;
             }
             _currentState = new IdleState();
             _currentState.OnStateEnter(this);

@@ -24,6 +24,8 @@ namespace AlexisVeVer.Scripts
         [SerializeField] private CinemachineTargetGroup _targetGroup;
 
         private PlayerSpawnPosition _playerSpawnPosition;
+
+        private bool _timeInGame;
         
         void Awake()
         {
@@ -56,17 +58,25 @@ namespace AlexisVeVer.Scripts
             {
                 Cursor.visible = true;
             }
+
+            if (Time.time > 3f)
+            {
+                _timeInGame = true;
+            }
         }
         
         public void AddPlayer(PlayerController player)
         {
-            players.Add(player);
-            //_playerSpawnPosition.OnPlayerJoined(player.GetComponent<PlayerInput>());
-            playerHealths.Add(player.GetComponent<PlayerHealth>());
-            playerHealths[playerHealths.Count - 1].OnDeath += OnDeath;
-            _playerPanels[players.Count - 1].gameObject.SetActive(true);
-            _playerPanels[players.Count - 1].SetupUi(player);
-            _targetGroup.AddMember(player.transform,1 ,1);
+            if (_timeInGame)
+            {
+                players.Add(player);
+                //_playerSpawnPosition.OnPlayerJoined(player.GetComponent<PlayerInput>());
+                playerHealths.Add(player.GetComponent<PlayerHealth>());
+                playerHealths[playerHealths.Count - 1].OnDeath += OnDeath;
+                _playerPanels[players.Count - 1].gameObject.SetActive(true);
+                _playerPanels[players.Count - 1].SetupUi(player);
+                _targetGroup.AddMember(player.transform, 1, 1);
+            }
         }
 
         private void OnDeath(object sender, PlayerController playerController) {
