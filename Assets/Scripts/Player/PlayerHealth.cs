@@ -49,6 +49,7 @@ namespace Player
             if (_currentStun >= playerStats.MaxStun)
             {
                 GetStunned();
+                _currentStun = playerStats.MinStun;
             }
 
             if (_currentHealth <= 0)
@@ -72,7 +73,6 @@ namespace Player
         public void GetHit(float damage, float stun, float knockBackForce)
         {
             //AudioManager.Instance.PlaySound("Slap");
-             Debug.Log(" Curren hp = "+ CurrentHealth + " and Max HP" + _playerStats);
             OnHpChanged?.Invoke(this, CurrentHealth / _playerStats.MaxHealth);
             _currentHealth -= damage;
             _currentStun += stun;

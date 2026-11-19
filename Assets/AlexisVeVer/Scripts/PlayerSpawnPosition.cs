@@ -13,7 +13,6 @@ namespace AlexisVeVer.Scripts
         
         public void OnPlayerJoined(PlayerInput player)
         {
-            print("replace player");
             Transform playerController = player.GetComponent<Transform>();
             playerController.transform.position = spawnPoints[_spawnPointIndex].position;
             _spawnPointIndex++; // the position

@@ -1,3 +1,4 @@
+using System;
 using Player;
 using UnityEngine;
 
@@ -16,6 +17,11 @@ namespace Items
             {
                 collider.GetComponent<PlayerHealth>().GetHit(_hitDamage, _hitStun, _explosionKnockback);
             }
+        }
+
+        private void FixedUpdate()
+        {
+            enabled = false;
         }
     }
 }

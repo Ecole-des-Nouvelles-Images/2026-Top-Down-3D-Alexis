@@ -6,7 +6,6 @@ namespace Player.PlayerFSM
     {
         public override void OnStateEnter(PlayerController playerController)
         {
-            Debug.Log("Entered Slide State");
             playerController.characterAnimator.SetBool("IsSliding", true);
             playerController.canAttack = true;
             playerController.canJump = false;

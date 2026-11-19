@@ -18,6 +18,8 @@ namespace Player.PlayerFSM
         public override void OnStateExit(PlayerController playerController)
         {
             playerController.characterAnimator.SetBool("IsStunned", false);
+            playerController.canJump = true;
+            Debug.Log("exit stun state");
         }
 
         public override PlayerStateMachine NextState(PlayerController playerController)

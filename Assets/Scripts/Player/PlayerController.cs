@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using AlexisVeVer.Scripts;
 using Items;
 using Player.PlayerFSM;
@@ -13,6 +14,7 @@ namespace Player
         public event EventHandler OnDashUsed;
         public event EventHandler<float> OnDashCd;
         public event EventHandler OnDashReady;
+        public event EventHandler OnPausePressed;
         public event EventHandler OnWeaponEquiped;
         
         //Synchronisation player / visual
@@ -75,6 +77,14 @@ namespace Player
         
         [SerializeField] private GameObject drownedVfx;
         [SerializeField] private Vector3 drownedVfxOffset;
+        
+        //Sound References
+        [FormerlySerializedAs("step")] [Header("Sound references"), Space(5)] 
+        public List<AudioSource> stepSound;
+        public List<AudioSource> attackSound;
+        public AudioSource jumpSound;
+        public List<AudioSource> landingSound;
+        public AudioSource stunSound;
         
         //Inputs
          public Vector2 moveInput;
@@ -253,6 +263,7 @@ namespace Player
 
         private void OnPauseGame()
         {
+            OnPausePressed?.Invoke(this, EventArgs.Empty);
             // if (pauseMenu.activeSelf)
             // {
             //     Time.timeScale = 1;
@@ -260,8 +271,8 @@ namespace Player
             // }
             // else
             // {
-            Time.timeScale = 0;
-            pauseMenu.SetActive(true);
+            // Time.timeScale = 0;
+            // pauseMenu.SetActive(true);
             //}
         }
 

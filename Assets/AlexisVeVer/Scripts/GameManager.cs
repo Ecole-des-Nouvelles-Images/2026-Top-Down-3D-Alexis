@@ -4,6 +4,7 @@ using AlexisVeVer.Scripts.ProtoScripts.Player.RagdollTuto;
 using Player;
 using UI;
 using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
@@ -21,6 +22,7 @@ namespace AlexisVeVer.Scripts
         [SerializeField] private PlayerPanel[] _playerPanels;
         [SerializeField] private GameObject _victoryScreen;
         [SerializeField] private GameObject _drawScreen;
+        [SerializeField] private GameObject _pauseMenu;
         [SerializeField] private CinemachineTargetGroup _targetGroup;
 
         private PlayerSpawnPosition _playerSpawnPosition;
@@ -58,24 +60,28 @@ namespace AlexisVeVer.Scripts
             {
                 Cursor.visible = true;
             }
-
-            if (Time.time > 3f)
-            {
-                _timeInGame = true;
-            }
         }
         
         public void AddPlayer(PlayerController player)
         {
-            if (_timeInGame)
-            {
-                players.Add(player);
-                //_playerSpawnPosition.OnPlayerJoined(player.GetComponent<PlayerInput>());
-                playerHealths.Add(player.GetComponent<PlayerHealth>());
-                playerHealths[playerHealths.Count - 1].OnDeath += OnDeath;
-                _playerPanels[players.Count - 1].gameObject.SetActive(true);
-                _playerPanels[players.Count - 1].SetupUi(player);
-                _targetGroup.AddMember(player.transform, 1, 1);
+            player.OnPausePressed += PlayerOnPausePressed;
+            players.Add(player);
+            playerHealths.Add(player.GetComponent<PlayerHealth>());
+            playerHealths[playerHealths.Count - 1].OnDeath += OnDeath;
+            _playerPanels[players.Count - 1].gameObject.SetActive(true);
+            _playerPanels[players.Count - 1].SetupUi(player);
+            _targetGroup.AddMember(player.transform, 1, 1);
+        }
+
+        private void PlayerOnPausePressed(object sender, EventArgs e)
+        {
+            if (_pauseMenu.activeSelf) {
+                Time.timeScale = 1;
+                _pauseMenu.SetActive(false);
+            }
+            else {
+                Time.timeScale = 0;
+                _pauseMenu.SetActive(true);
             }
         }
 
@@ -88,7 +94,6 @@ namespace AlexisVeVer.Scripts
                     return;
                 }
             }
-            
             playerHealths.Remove((PlayerHealth)sender);
             
             if (players.Count == 1)

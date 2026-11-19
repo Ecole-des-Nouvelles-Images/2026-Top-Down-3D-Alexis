@@ -9,8 +9,7 @@ namespace Player.PlayerFSM
         
         public override void OnStateEnter(PlayerController playerController)
         {
-            //AudioManager.Instance.PlaySound("Whoosh");
-            //AudioManager.Instance.PlaySound("Step3");
+            playerController.jumpSound.Play();
             playerController.canAttack = false;
             playerController.rb.linearVelocity = Vector3.zero;
         }
@@ -23,7 +22,7 @@ namespace Player.PlayerFSM
 
         public override void OnStateExit(PlayerController playerController)
         {
-            //AudioManager.Instance.PlaySound("Ground");
+            playerController.landingSound[Random.Range(0, playerController.landingSound.Count)].Play();
             playerController.jumped = false;
         }
 

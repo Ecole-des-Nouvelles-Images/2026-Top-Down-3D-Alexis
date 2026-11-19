@@ -1,10 +1,12 @@
+using UnityEngine;
+
 namespace Player.PlayerFSM
 {
     public class AttackState : PlayerStateMachine
     {
         public override void OnStateEnter(PlayerController playerController)
         {
-            //AudioManager.Instance.PlaySound("Whoosh");
+            playerController.attackSound[Random.Range(0, playerController.attackSound.Count)].Play();
             if (playerController.doAttackLeftHand)
             {
                 playerController.characterAnimator.SetTrigger("AttackLeft");
